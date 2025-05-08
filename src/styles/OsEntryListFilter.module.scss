@@ -2,7 +2,9 @@
 
 .searchRow {
     display: flex;
+    justify-content: space-between;
     gap: .75em;
+    margin-bottom: .75em;
 }
 
 .searchContainer {
@@ -10,8 +12,7 @@
     gap: .75em;
     flex-flow: row nowrap;
     align-items: center;
-    margin-bottom: .75em;
-    padding: .7em 1em;
+    padding: 0em 1em;
     border-radius: 8px;
     background: $c-bg-lighter;
     flex-grow: 1;
@@ -37,19 +38,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1.5em;
-    width: 1.5em;
     transition: background $t-hover, color $t-hover;
     border-radius: 100%;
-    margin-right: .5em;
-
-    &.left {
-        margin-right: 0;
-    }
-
-    i.fa-chevron-right {
-        font-size: 0.9em;
-    }
 }
 
 .filterItem {
@@ -62,22 +52,14 @@
     font-weight: 500;
     cursor: pointer;
     transition: background $t-hover, color $t-hover, transform $t-hover;
-    padding-left: .5em;
-    height: 42px;
-    min-width: 34px;
     justify-content: center;
+    padding-inline: 1em;
+
+    height: 42px;
 
     span {
-        padding-left: .5em;;
-        padding-block: .7em;
         -webkit-user-select: none;
         user-select: none;
-    }
-
-    &.left span {
-        padding-left: 0;
-        padding-right: 1em;
-        margin-left: -4px;
     }
 
     &.release {
