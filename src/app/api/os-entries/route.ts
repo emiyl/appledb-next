@@ -1,8 +1,53 @@
+import { OsEntry } from '@/types';
 import { NextRequest } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
+let queryCache = new Map<string, { data: any[]; timestamp: number }>();
+const MAX_CACHE_SIZE = 100;
+const CACHE_LIFETIME_MS = 1 * 60 * 60 * 1000;
+
+function manageCacheSize() {
+    const now = Date.now();
+
+    // Remove expired entries
+    for (const [key, value] of queryCache.entries()) {
+        if (value.timestamp && now - value.timestamp > CACHE_LIFETIME_MS) {
+            queryCache.delete(key);
+        }
+    }
+
+    // Enforce maximum cache size
+    if (queryCache.size > MAX_CACHE_SIZE) {
+        const firstKey = queryCache.keys().next().value;
+        if (firstKey) {
+            queryCache.delete(firstKey);
+        }
+    }
+}
+
+function setCache(key: string, data: any[]) {
+    queryCache.set(key, { data, timestamp: Date.now() });
+}
+
+function getCache(key: string) {
+    const cached = queryCache.get(key);
+    if (cached && Date.now() - cached.timestamp <= CACHE_LIFETIME_MS) {
+        return cached.data;
+    }
+    queryCache.delete(key);
+    return null;
+}
+
 export async function GET(req: NextRequest) {
     const { searchParams } = req.nextUrl;
+
+    const cacheKey = JSON.stringify(Object.fromEntries(searchParams.entries()));
+
+    const cachedData = getCache(cacheKey);
+    if (cachedData) {
+        return Response.json(cachedData);
+    }
+    manageCacheSize();
 
     const page = parseInt(searchParams.get('page') || '1');
     const limit = parseInt(searchParams.get('limit') || '20');
@@ -75,6 +120,10 @@ export async function GET(req: NextRequest) {
             },
         },
     });
+
+    if (!searchString) {
+        setCache(cacheKey, entries);
+    }
 
     return Response.json(entries);
 }
