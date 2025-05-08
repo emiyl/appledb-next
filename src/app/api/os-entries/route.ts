@@ -36,12 +36,9 @@ export async function GET(req: NextRequest) {
         }
         : undefined;
 
-    const rawSearch = searchParams.get("search");
-    const search = rawSearch ? decodeURIComponent(rawSearch).trim() : undefined;
 
-    const searchCondition = search
-      ? { search: { search: `"${search}"` } }
-      : undefined;
+    const rawSearch = searchParams.get("search");
+    const searchString = rawSearch ? decodeURIComponent(rawSearch).trim() : undefined;
 
     const reverse = searchParams.get('reverse') === 'true';
 
@@ -51,25 +48,22 @@ export async function GET(req: NextRequest) {
                 ...(kindFilters.length > 0 ? [{ OR: kindFilters }] : []),
                 ...(filtersEnabled && !sdk ? [{ is_sdk: false }] : []),
                 ...(filtersEnabled && !simulator ? [{ is_simulator: false }] : []),
-                ...(searchCondition ? [searchCondition] : []),
                 ...(nameIdCondition ? [nameIdCondition] : []),
+                {
+                    search: {
+                        contains: searchString,
+                        mode: 'insensitive'
+                    }
+                }
             ],
         },
-        orderBy: search
-            ? [
-                {
-                    _relevance: {
-                        fields: ['search'],
-                        search: `"${search}"`,
-                        sort: 'desc',
-                    },
-                },
-            ]
-            : [
+        orderBy:
+            [
                 { release_datetime: reverse ? 'asc' : 'desc' },
                 { OsLookupName: { name: reverse ? 'desc' : 'asc' } },
                 { version: reverse ? 'desc' : 'asc' },
                 { build: reverse ? 'desc' : 'asc' },
+                { search: 'desc' },
             ],
         skip: offset,
         take: limit,

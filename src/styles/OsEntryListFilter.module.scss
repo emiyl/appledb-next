@@ -8,7 +8,7 @@
 .searchContainer {
     display: flex;
     gap: .75em;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
     margin-bottom: .75em;
     padding: .7em 1em;
@@ -26,6 +26,7 @@
     border: none;
     font-size: 1em;
     background: none;
+    width: 0px;
 
     &:focus {
         outline: none;
