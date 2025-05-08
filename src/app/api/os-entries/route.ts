@@ -3,7 +3,7 @@ import { NextRequest } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
 let queryCache = new Map<string, { data: any[]; timestamp: number }>();
-const MAX_CACHE_SIZE = 100;
+const MAX_CACHE_SIZE = 1000;
 const CACHE_LIFETIME_MS = 1 * 60 * 60 * 1000;
 
 function manageCacheSize() {
