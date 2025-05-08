@@ -31,3 +31,9 @@ $dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
     flex-flow: row wrap;
     gap: .7em;
 }
+
+@media screen and (max-width: 800px) {
+    .dropdown {
+        right: 2em;
+    }   
+}
