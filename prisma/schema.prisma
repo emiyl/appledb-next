@@ -1,27 +1,28 @@
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearchPostgres"]
   output   = "../src/generated/prisma"
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model ColorLookup {
-  id                Int                 @id @default(autoincrement()) @db.UnsignedInt
-  name              String              @db.Text
+  id                Int                 @id @default(autoincrement())
+  name              String
   DeviceImageColors DeviceImageColors[]
 }
 
 model DeviceEntry {
-  id                    Int                     @id @default(autoincrement()) @db.UnsignedInt
+  id                    Int                     @id @default(autoincrement())
   name                  String                  @db.VarChar(512)
-  category_id           Int                     @db.UnsignedInt
-  image_id              Int?                    @db.UnsignedInt
+  category_id           Int
+  image_id              Int?
   is_internal           Boolean?                @default(false)
-  legacy_unique_key     String?                 @db.Text
-  DeviceLookupCategory  DeviceLookupCategory    @relation(fields: [category_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "deviceentry_ibfk_1")
+  legacy_unique_key     String?
+  DeviceLookupCategory  DeviceLookupCategory    @relation(fields: [category_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
   DeviceGroupMapDevice  DeviceGroupMapDevice[]
   DeviceMapArchitecture DeviceMapArchitecture[]
   DeviceMapIdentifier   DeviceMapIdentifier[]
@@ -32,139 +33,139 @@ model DeviceEntry {
   OsEntryPreinstalled   OsEntryPreinstalled[]
   SourceMapDevice       SourceMapDevice[]
 
-  @@index([category_id], map: "category_id")
+  @@index([category_id])
 }
 
 model DeviceGroupEntry {
-  id                                                                                    Int                         @id @default(autoincrement()) @db.UnsignedInt
+  id                                                                                    Int                         @id @default(autoincrement())
   name                                                                                  String                      @db.VarChar(512)
-  category_id                                                                           Int?                        @db.UnsignedInt
-  image_id                                                                              Int?                        @db.UnsignedInt
+  category_id                                                                           Int?
+  image_id                                                                              Int?
   is_internal                                                                           Boolean?                    @default(false)
-  legacy_unique_key                                                                     String?                     @db.Text
+  legacy_unique_key                                                                     String?
   DeviceGroupMapDevice                                                                  DeviceGroupMapDevice[]
   DeviceGroupMapDeviceGroup_DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry DeviceGroupMapDeviceGroup[] @relation("DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry")
   DeviceGroupMapDeviceGroup_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry  DeviceGroupMapDeviceGroup[] @relation("DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry")
 }
 
 model DeviceGroupMapDevice {
-  group_id         Int              @db.UnsignedInt
-  device_id        Int              @db.UnsignedInt
-  DeviceGroupEntry DeviceGroupEntry @relation(fields: [group_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicegroupmapdevice_ibfk_1")
-  DeviceEntry      DeviceEntry      @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicegroupmapdevice_ibfk_2")
+  group_id         Int
+  device_id        Int
+  DeviceGroupEntry DeviceGroupEntry @relation(fields: [group_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  DeviceEntry      DeviceEntry      @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([group_id, device_id])
-  @@index([device_id], map: "device_id")
+  @@index([device_id])
 }
 
 model DeviceGroupMapDeviceGroup {
-  parent_group_id                                                              Int              @db.UnsignedInt
-  child_group_id                                                               Int              @db.UnsignedInt
-  DeviceGroupEntry_DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry DeviceGroupEntry @relation("DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry", fields: [parent_group_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicegroupmapdevicegroup_ibfk_1")
-  DeviceGroupEntry_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry  DeviceGroupEntry @relation("DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry", fields: [child_group_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicegroupmapdevicegroup_ibfk_2")
+  parent_group_id                                                              Int
+  child_group_id                                                               Int
+  DeviceGroupEntry_DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry DeviceGroupEntry @relation("DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry", fields: [parent_group_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  DeviceGroupEntry_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry  DeviceGroupEntry @relation("DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry", fields: [child_group_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([parent_group_id, child_group_id])
-  @@index([child_group_id], map: "child_group_id")
+  @@index([child_group_id])
 }
 
 model DeviceImageColors {
-  device_image_id   Int               @db.UnsignedInt
-  color_id          Int               @db.UnsignedInt
+  device_image_id   Int
+  color_id          Int
   dark_mode         Boolean?          @default(false)
-  DeviceLookupImage DeviceLookupImage @relation(fields: [device_image_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "deviceimagecolors_ibfk_1")
-  ColorLookup       ColorLookup       @relation(fields: [color_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "deviceimagecolors_ibfk_2")
+  DeviceLookupImage DeviceLookupImage @relation(fields: [device_image_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  ColorLookup       ColorLookup       @relation(fields: [color_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([device_image_id, color_id])
-  @@index([color_id], map: "color_id")
+  @@index([color_id])
 }
 
 model DeviceLookupArchitecture {
-  id                    Int                     @id @default(autoincrement()) @db.UnsignedInt
-  name                  String                  @db.Text
+  id                    Int                     @id @default(autoincrement())
+  name                  String
   DeviceMapArchitecture DeviceMapArchitecture[]
 }
 
 model DeviceLookupCategory {
-  id          Int           @id @default(autoincrement()) @db.UnsignedInt
-  name        String        @db.Text
+  id          Int           @id @default(autoincrement())
+  name        String
   DeviceEntry DeviceEntry[]
 }
 
 model DeviceLookupImage {
-  id                Int                 @id @default(autoincrement()) @db.UnsignedInt
-  name              String              @db.Text
+  id                Int                 @id @default(autoincrement())
+  name              String
   DeviceImageColors DeviceImageColors[]
 }
 
 model DeviceLookupSoc {
-  id           Int            @id @default(autoincrement()) @db.UnsignedInt
-  name         String         @db.Text
+  id           Int            @id @default(autoincrement())
+  name         String
   DeviceMapSoc DeviceMapSoc[]
 }
 
 model DeviceMapArchitecture {
-  device_id                Int                      @db.UnsignedInt
-  architecture_id          Int                      @db.UnsignedInt
-  DeviceEntry              DeviceEntry              @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemaparchitecture_ibfk_1")
-  DeviceLookupArchitecture DeviceLookupArchitecture @relation(fields: [architecture_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemaparchitecture_ibfk_2")
+  device_id                Int
+  architecture_id          Int
+  DeviceEntry              DeviceEntry              @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  DeviceLookupArchitecture DeviceLookupArchitecture @relation(fields: [architecture_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([device_id, architecture_id])
-  @@index([architecture_id], map: "architecture_id")
+  @@index([architecture_id])
 }
 
 model DeviceMapIdentifier {
-  device_id   Int         @db.UnsignedInt
+  device_id   Int
   identifier  String      @db.VarChar(512)
-  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemapidentifier_ibfk_1")
+  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([device_id, identifier])
 }
 
 model DeviceMapModel {
-  device_id   Int         @db.UnsignedInt
+  device_id   Int
   model       String      @db.VarChar(512)
-  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemapmodel_ibfk_1")
+  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([device_id, model])
 }
 
 model DeviceMapRelease {
-  id          Int          @id @default(autoincrement()) @db.UnsignedInt
-  device_id   Int?         @db.UnsignedInt
-  datetime    DateTime?    @db.DateTime(0)
-  depth       Int?         @default(3) @db.UnsignedInt
-  DeviceEntry DeviceEntry? @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemaprelease_ibfk_1")
+  id          Int          @id @default(autoincrement())
+  device_id   Int?
+  datetime    DateTime?
+  depth       Int?         @default(3)
+  DeviceEntry DeviceEntry? @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
-  @@index([device_id], map: "device_id")
+  @@index([device_id])
 }
 
 model DeviceMapSoc {
-  device_id       Int             @db.UnsignedInt
-  soc_id          Int             @db.UnsignedInt
-  DeviceEntry     DeviceEntry     @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemapsoc_ibfk_1")
-  DeviceLookupSoc DeviceLookupSoc @relation(fields: [soc_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemapsoc_ibfk_2")
+  device_id       Int
+  soc_id          Int
+  DeviceEntry     DeviceEntry     @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  DeviceLookupSoc DeviceLookupSoc @relation(fields: [soc_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([device_id, soc_id])
-  @@index([soc_id], map: "soc_id")
+  @@index([soc_id])
 }
 
 model MapDeviceOs {
-  device_id   Int         @db.UnsignedInt
-  os_id       Int         @db.UnsignedInt
-  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "mapdeviceos_ibfk_1")
-  OsEntry     OsEntry     @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "mapdeviceos_ibfk_2")
+  device_id   Int
+  os_id       Int
+  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  OsEntry     OsEntry     @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([device_id, os_id])
-  @@index([os_id], map: "os_id")
+  @@index([os_id])
 }
 
 model OsEntry {
-  id                     Int                    @id @default(autoincrement()) @db.UnsignedInt
-  name_id                Int                    @db.UnsignedInt
-  version                String                 @db.Text
-  build                  String?                @db.Text
-  release_datetime       DateTime?              @db.DateTime(0)
-  release_datetime_depth Int?                   @default(3) @db.UnsignedInt
+  id                     Int                    @id @default(autoincrement())
+  name_id                Int
+  version                String
+  build                  String?
+  release_datetime       DateTime?
+  release_datetime_depth Int?                   @default(3)
   is_release             Boolean?               @default(true)
   is_beta                Boolean?               @default(false)
   is_rc                  Boolean?               @default(false)
@@ -172,14 +173,14 @@ model OsEntry {
   is_rsr                 Boolean?               @default(false)
   is_sdk                 Boolean?               @default(false)
   is_simulator           Boolean?               @default(false)
-  image_id               String?                @db.Text
-  embedded_os_build      String?                @db.Text
-  bridge_os_build        String?                @db.Text
-  notes                  String?                @db.Text
-  legacy_unique_key      String?                @db.Text
-  search                 String?                @db.Text
+  image_id               String?
+  embedded_os_build      String?
+  bridge_os_build        String?
+  notes                  String?
+  legacy_unique_key      String?
+  search                 String?
   MapDeviceOs            MapDeviceOs[]
-  OsLookupName           OsLookupName           @relation(fields: [name_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentry_ibfk_1")
+  OsLookupName           OsLookupName           @relation(fields: [name_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
   OsEntryBuildTrain      OsEntryBuildTrain[]
   OsEntryIpd             OsEntryIpd[]
   OsEntryOsStringMap     OsEntryOsStringMap[]
@@ -189,135 +190,134 @@ model OsEntry {
   OsEntrySecurityNote    OsEntrySecurityNote[]
   SourceEntry            SourceEntry[]
 
-  @@index([name_id], map: "name_id")
-  @@fulltext([search], map: "search")
+  @@index([name_id])
 }
 
 model OsEntryBuildTrain {
-  os_id       Int     @db.UnsignedInt
-  build_train String  @db.VarChar(512)
-  OsEntry     OsEntry @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentrybuildtrain_ibfk_1")
+  os_id       Int
+  build_train String      @db.VarChar(512)
+  OsEntry     OsEntry     @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([os_id, build_train])
 }
 
 model OsEntryIpd {
-  os_id    Int      @db.UnsignedInt
+  os_id    Int
   ipd_type String   @db.VarChar(512)
-  url      String?  @db.Text
+  url      String?
   active   Boolean?
-  OsEntry  OsEntry  @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentryipd_ibfk_1")
+  OsEntry  OsEntry  @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([os_id, ipd_type])
 }
 
 model OsEntryOsStringMap {
-  os_id     Int     @db.UnsignedInt
+  os_id     Int
   os_string String  @db.VarChar(512)
-  OsEntry   OsEntry @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentryosstringmap_ibfk_1")
+  OsEntry   OsEntry @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([os_id, os_string])
 }
 
 model OsEntryPreinstalled {
-  os_id       Int         @db.UnsignedInt
-  device_id   Int         @db.UnsignedInt
-  OsEntry     OsEntry     @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentrypreinstalled_ibfk_1")
-  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentrypreinstalled_ibfk_2")
+  os_id       Int
+  device_id   Int
+  OsEntry     OsEntry     @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([os_id, device_id])
-  @@index([device_id], map: "device_id")
+  @@index([device_id])
 }
 
 model OsEntryReleaseNote {
-  os_id   Int      @db.UnsignedInt
+  os_id   Int
   url     String   @db.VarChar(512)
   active  Boolean?
-  OsEntry OsEntry  @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentryreleasenote_ibfk_1")
+  OsEntry OsEntry  @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([os_id, url])
 }
 
 model OsEntrySafariVersion {
-  os_id   Int     @db.UnsignedInt
+  os_id   Int
   version String  @db.VarChar(512)
-  OsEntry OsEntry @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentrysafariversion_ibfk_1")
+  OsEntry OsEntry @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([os_id, version])
 }
 
 model OsEntrySecurityNote {
-  os_id   Int      @db.UnsignedInt
+  os_id   Int
   url     String   @db.VarChar(512)
   active  Boolean?
-  OsEntry OsEntry  @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentrysecuritynote_ibfk_1")
+  OsEntry OsEntry  @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([os_id, url])
 }
 
 model OsLookupName {
-  id       Int       @id @default(autoincrement()) @db.UnsignedInt
-  name     String    @unique(map: "name") @db.VarChar(512)
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
   priority Int?      @default(0)
   OsEntry  OsEntry[]
 }
 
 model SourceEntry {
-  id                    Int                     @id @default(autoincrement()) @db.UnsignedInt
-  os_id                 Int?                    @db.UnsignedInt
-  source_type           String?                 @db.Text
+  id                    Int                     @id @default(autoincrement())
+  os_id                 Int?
+  source_type           String?
   skip_update_links     Boolean?
-  size                  BigInt?                 @db.UnsignedBigInt
-  windows_update_id     String?                 @db.Text
-  windows_revision_id   String?                 @db.Text
-  OsEntry               OsEntry?                @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourceentry_ibfk_1")
+  size                  BigInt?
+  windows_update_id     String?
+  windows_revision_id   String?
+  OsEntry               OsEntry?                @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
   SourceHash            SourceHash[]
   SourceLink            SourceLink[]
   SourceMapDevice       SourceMapDevice[]
   SourcePrequisiteBuild SourcePrequisiteBuild[]
 
-  @@index([os_id], map: "os_id")
+  @@index([os_id])
 }
 
 model SourceHash {
-  source_id   Int         @db.UnsignedInt
+  source_id   Int
   hash_type   String      @db.VarChar(512)
-  hash_value  String?     @db.Text
-  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourcehash_ibfk_1")
+  hash_value  String?
+  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([source_id, hash_type])
 }
 
 model SourceLink {
-  source_id   Int         @db.UnsignedInt
+  source_id   Int
   url         String      @db.VarChar(512)
   active      Boolean?
-  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourcelink_ibfk_1")
+  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([source_id, url])
 }
 
 model SourceMapDevice {
-  source_id   Int         @db.UnsignedInt
-  device_id   Int         @db.UnsignedInt
-  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourcemapdevice_ibfk_1")
-  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourcemapdevice_ibfk_2")
+  source_id   Int
+  device_id   Int
+  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([source_id, device_id])
-  @@index([device_id], map: "device_id")
+  @@index([device_id])
 }
 
 model SourceMapOsString {
-  source_id Int    @db.UnsignedInt
-  os_string String @db.VarChar(512)
+  source_id Int
+  os_string String  @db.VarChar(512)
 
   @@id([source_id, os_string])
 }
 
 model SourcePrequisiteBuild {
-  source_id   Int         @db.UnsignedInt
+  source_id   Int
   build       String      @db.VarChar(512)
-  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourceprequisitebuild_ibfk_1")
+  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([source_id, build])
 }

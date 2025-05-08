@@ -1128,6 +1128,10 @@ export namespace Prisma {
             args: Prisma.ColorLookupCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.ColorLookupCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ColorLookupPayload>[]
+          }
           delete: {
             args: Prisma.ColorLookupDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$ColorLookupPayload>
@@ -1143,6 +1147,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.ColorLookupUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ColorLookupUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ColorLookupPayload>[]
           }
           upsert: {
             args: Prisma.ColorLookupUpsertArgs<ExtArgs>
@@ -1194,6 +1202,10 @@ export namespace Prisma {
             args: Prisma.DeviceEntryCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceEntryCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceEntryPayload>[]
+          }
           delete: {
             args: Prisma.DeviceEntryDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceEntryPayload>
@@ -1209,6 +1221,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceEntryUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceEntryUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceEntryPayload>[]
           }
           upsert: {
             args: Prisma.DeviceEntryUpsertArgs<ExtArgs>
@@ -1260,6 +1276,10 @@ export namespace Prisma {
             args: Prisma.DeviceGroupEntryCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceGroupEntryCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceGroupEntryPayload>[]
+          }
           delete: {
             args: Prisma.DeviceGroupEntryDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceGroupEntryPayload>
@@ -1275,6 +1295,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceGroupEntryUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceGroupEntryUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceGroupEntryPayload>[]
           }
           upsert: {
             args: Prisma.DeviceGroupEntryUpsertArgs<ExtArgs>
@@ -1326,6 +1350,10 @@ export namespace Prisma {
             args: Prisma.DeviceGroupMapDeviceCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceGroupMapDeviceCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceGroupMapDevicePayload>[]
+          }
           delete: {
             args: Prisma.DeviceGroupMapDeviceDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceGroupMapDevicePayload>
@@ -1341,6 +1369,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceGroupMapDeviceUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceGroupMapDeviceUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceGroupMapDevicePayload>[]
           }
           upsert: {
             args: Prisma.DeviceGroupMapDeviceUpsertArgs<ExtArgs>
@@ -1392,6 +1424,10 @@ export namespace Prisma {
             args: Prisma.DeviceGroupMapDeviceGroupCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceGroupMapDeviceGroupCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceGroupMapDeviceGroupPayload>[]
+          }
           delete: {
             args: Prisma.DeviceGroupMapDeviceGroupDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceGroupMapDeviceGroupPayload>
@@ -1407,6 +1443,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceGroupMapDeviceGroupUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceGroupMapDeviceGroupUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceGroupMapDeviceGroupPayload>[]
           }
           upsert: {
             args: Prisma.DeviceGroupMapDeviceGroupUpsertArgs<ExtArgs>
@@ -1458,6 +1498,10 @@ export namespace Prisma {
             args: Prisma.DeviceImageColorsCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceImageColorsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceImageColorsPayload>[]
+          }
           delete: {
             args: Prisma.DeviceImageColorsDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceImageColorsPayload>
@@ -1473,6 +1517,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceImageColorsUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceImageColorsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceImageColorsPayload>[]
           }
           upsert: {
             args: Prisma.DeviceImageColorsUpsertArgs<ExtArgs>
@@ -1524,6 +1572,10 @@ export namespace Prisma {
             args: Prisma.DeviceLookupArchitectureCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceLookupArchitectureCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupArchitecturePayload>[]
+          }
           delete: {
             args: Prisma.DeviceLookupArchitectureDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceLookupArchitecturePayload>
@@ -1539,6 +1591,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceLookupArchitectureUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceLookupArchitectureUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupArchitecturePayload>[]
           }
           upsert: {
             args: Prisma.DeviceLookupArchitectureUpsertArgs<ExtArgs>
@@ -1590,6 +1646,10 @@ export namespace Prisma {
             args: Prisma.DeviceLookupCategoryCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceLookupCategoryCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupCategoryPayload>[]
+          }
           delete: {
             args: Prisma.DeviceLookupCategoryDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceLookupCategoryPayload>
@@ -1605,6 +1665,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceLookupCategoryUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceLookupCategoryUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupCategoryPayload>[]
           }
           upsert: {
             args: Prisma.DeviceLookupCategoryUpsertArgs<ExtArgs>
@@ -1656,6 +1720,10 @@ export namespace Prisma {
             args: Prisma.DeviceLookupImageCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceLookupImageCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupImagePayload>[]
+          }
           delete: {
             args: Prisma.DeviceLookupImageDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceLookupImagePayload>
@@ -1671,6 +1739,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceLookupImageUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceLookupImageUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupImagePayload>[]
           }
           upsert: {
             args: Prisma.DeviceLookupImageUpsertArgs<ExtArgs>
@@ -1722,6 +1794,10 @@ export namespace Prisma {
             args: Prisma.DeviceLookupSocCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceLookupSocCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupSocPayload>[]
+          }
           delete: {
             args: Prisma.DeviceLookupSocDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceLookupSocPayload>
@@ -1737,6 +1813,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceLookupSocUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceLookupSocUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupSocPayload>[]
           }
           upsert: {
             args: Prisma.DeviceLookupSocUpsertArgs<ExtArgs>
@@ -1788,6 +1868,10 @@ export namespace Prisma {
             args: Prisma.DeviceMapArchitectureCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceMapArchitectureCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapArchitecturePayload>[]
+          }
           delete: {
             args: Prisma.DeviceMapArchitectureDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceMapArchitecturePayload>
@@ -1803,6 +1887,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceMapArchitectureUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceMapArchitectureUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapArchitecturePayload>[]
           }
           upsert: {
             args: Prisma.DeviceMapArchitectureUpsertArgs<ExtArgs>
@@ -1854,6 +1942,10 @@ export namespace Prisma {
             args: Prisma.DeviceMapIdentifierCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceMapIdentifierCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapIdentifierPayload>[]
+          }
           delete: {
             args: Prisma.DeviceMapIdentifierDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceMapIdentifierPayload>
@@ -1869,6 +1961,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceMapIdentifierUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceMapIdentifierUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapIdentifierPayload>[]
           }
           upsert: {
             args: Prisma.DeviceMapIdentifierUpsertArgs<ExtArgs>
@@ -1920,6 +2016,10 @@ export namespace Prisma {
             args: Prisma.DeviceMapModelCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceMapModelCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapModelPayload>[]
+          }
           delete: {
             args: Prisma.DeviceMapModelDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceMapModelPayload>
@@ -1935,6 +2035,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceMapModelUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceMapModelUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapModelPayload>[]
           }
           upsert: {
             args: Prisma.DeviceMapModelUpsertArgs<ExtArgs>
@@ -1986,6 +2090,10 @@ export namespace Prisma {
             args: Prisma.DeviceMapReleaseCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceMapReleaseCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapReleasePayload>[]
+          }
           delete: {
             args: Prisma.DeviceMapReleaseDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceMapReleasePayload>
@@ -2001,6 +2109,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceMapReleaseUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceMapReleaseUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapReleasePayload>[]
           }
           upsert: {
             args: Prisma.DeviceMapReleaseUpsertArgs<ExtArgs>
@@ -2052,6 +2164,10 @@ export namespace Prisma {
             args: Prisma.DeviceMapSocCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.DeviceMapSocCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapSocPayload>[]
+          }
           delete: {
             args: Prisma.DeviceMapSocDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$DeviceMapSocPayload>
@@ -2067,6 +2183,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.DeviceMapSocUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceMapSocUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapSocPayload>[]
           }
           upsert: {
             args: Prisma.DeviceMapSocUpsertArgs<ExtArgs>
@@ -2118,6 +2238,10 @@ export namespace Prisma {
             args: Prisma.MapDeviceOsCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.MapDeviceOsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MapDeviceOsPayload>[]
+          }
           delete: {
             args: Prisma.MapDeviceOsDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$MapDeviceOsPayload>
@@ -2133,6 +2257,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.MapDeviceOsUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.MapDeviceOsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MapDeviceOsPayload>[]
           }
           upsert: {
             args: Prisma.MapDeviceOsUpsertArgs<ExtArgs>
@@ -2184,6 +2312,10 @@ export namespace Prisma {
             args: Prisma.OsEntryCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.OsEntryCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryPayload>[]
+          }
           delete: {
             args: Prisma.OsEntryDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$OsEntryPayload>
@@ -2199,6 +2331,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.OsEntryUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.OsEntryUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryPayload>[]
           }
           upsert: {
             args: Prisma.OsEntryUpsertArgs<ExtArgs>
@@ -2250,6 +2386,10 @@ export namespace Prisma {
             args: Prisma.OsEntryBuildTrainCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.OsEntryBuildTrainCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryBuildTrainPayload>[]
+          }
           delete: {
             args: Prisma.OsEntryBuildTrainDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$OsEntryBuildTrainPayload>
@@ -2265,6 +2405,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.OsEntryBuildTrainUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.OsEntryBuildTrainUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryBuildTrainPayload>[]
           }
           upsert: {
             args: Prisma.OsEntryBuildTrainUpsertArgs<ExtArgs>
@@ -2316,6 +2460,10 @@ export namespace Prisma {
             args: Prisma.OsEntryIpdCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.OsEntryIpdCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryIpdPayload>[]
+          }
           delete: {
             args: Prisma.OsEntryIpdDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$OsEntryIpdPayload>
@@ -2331,6 +2479,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.OsEntryIpdUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.OsEntryIpdUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryIpdPayload>[]
           }
           upsert: {
             args: Prisma.OsEntryIpdUpsertArgs<ExtArgs>
@@ -2382,6 +2534,10 @@ export namespace Prisma {
             args: Prisma.OsEntryOsStringMapCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.OsEntryOsStringMapCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryOsStringMapPayload>[]
+          }
           delete: {
             args: Prisma.OsEntryOsStringMapDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$OsEntryOsStringMapPayload>
@@ -2397,6 +2553,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.OsEntryOsStringMapUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.OsEntryOsStringMapUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryOsStringMapPayload>[]
           }
           upsert: {
             args: Prisma.OsEntryOsStringMapUpsertArgs<ExtArgs>
@@ -2448,6 +2608,10 @@ export namespace Prisma {
             args: Prisma.OsEntryPreinstalledCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.OsEntryPreinstalledCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryPreinstalledPayload>[]
+          }
           delete: {
             args: Prisma.OsEntryPreinstalledDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$OsEntryPreinstalledPayload>
@@ -2463,6 +2627,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.OsEntryPreinstalledUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.OsEntryPreinstalledUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryPreinstalledPayload>[]
           }
           upsert: {
             args: Prisma.OsEntryPreinstalledUpsertArgs<ExtArgs>
@@ -2514,6 +2682,10 @@ export namespace Prisma {
             args: Prisma.OsEntryReleaseNoteCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.OsEntryReleaseNoteCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryReleaseNotePayload>[]
+          }
           delete: {
             args: Prisma.OsEntryReleaseNoteDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$OsEntryReleaseNotePayload>
@@ -2529,6 +2701,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.OsEntryReleaseNoteUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.OsEntryReleaseNoteUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntryReleaseNotePayload>[]
           }
           upsert: {
             args: Prisma.OsEntryReleaseNoteUpsertArgs<ExtArgs>
@@ -2580,6 +2756,10 @@ export namespace Prisma {
             args: Prisma.OsEntrySafariVersionCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.OsEntrySafariVersionCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntrySafariVersionPayload>[]
+          }
           delete: {
             args: Prisma.OsEntrySafariVersionDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$OsEntrySafariVersionPayload>
@@ -2595,6 +2775,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.OsEntrySafariVersionUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.OsEntrySafariVersionUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntrySafariVersionPayload>[]
           }
           upsert: {
             args: Prisma.OsEntrySafariVersionUpsertArgs<ExtArgs>
@@ -2646,6 +2830,10 @@ export namespace Prisma {
             args: Prisma.OsEntrySecurityNoteCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.OsEntrySecurityNoteCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntrySecurityNotePayload>[]
+          }
           delete: {
             args: Prisma.OsEntrySecurityNoteDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$OsEntrySecurityNotePayload>
@@ -2661,6 +2849,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.OsEntrySecurityNoteUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.OsEntrySecurityNoteUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsEntrySecurityNotePayload>[]
           }
           upsert: {
             args: Prisma.OsEntrySecurityNoteUpsertArgs<ExtArgs>
@@ -2712,6 +2904,10 @@ export namespace Prisma {
             args: Prisma.OsLookupNameCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.OsLookupNameCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsLookupNamePayload>[]
+          }
           delete: {
             args: Prisma.OsLookupNameDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$OsLookupNamePayload>
@@ -2727,6 +2923,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.OsLookupNameUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.OsLookupNameUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OsLookupNamePayload>[]
           }
           upsert: {
             args: Prisma.OsLookupNameUpsertArgs<ExtArgs>
@@ -2778,6 +2978,10 @@ export namespace Prisma {
             args: Prisma.SourceEntryCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.SourceEntryCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourceEntryPayload>[]
+          }
           delete: {
             args: Prisma.SourceEntryDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$SourceEntryPayload>
@@ -2793,6 +2997,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.SourceEntryUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SourceEntryUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourceEntryPayload>[]
           }
           upsert: {
             args: Prisma.SourceEntryUpsertArgs<ExtArgs>
@@ -2844,6 +3052,10 @@ export namespace Prisma {
             args: Prisma.SourceHashCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.SourceHashCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourceHashPayload>[]
+          }
           delete: {
             args: Prisma.SourceHashDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$SourceHashPayload>
@@ -2859,6 +3071,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.SourceHashUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SourceHashUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourceHashPayload>[]
           }
           upsert: {
             args: Prisma.SourceHashUpsertArgs<ExtArgs>
@@ -2910,6 +3126,10 @@ export namespace Prisma {
             args: Prisma.SourceLinkCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.SourceLinkCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourceLinkPayload>[]
+          }
           delete: {
             args: Prisma.SourceLinkDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$SourceLinkPayload>
@@ -2925,6 +3145,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.SourceLinkUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SourceLinkUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourceLinkPayload>[]
           }
           upsert: {
             args: Prisma.SourceLinkUpsertArgs<ExtArgs>
@@ -2976,6 +3200,10 @@ export namespace Prisma {
             args: Prisma.SourceMapDeviceCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.SourceMapDeviceCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourceMapDevicePayload>[]
+          }
           delete: {
             args: Prisma.SourceMapDeviceDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$SourceMapDevicePayload>
@@ -2991,6 +3219,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.SourceMapDeviceUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SourceMapDeviceUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourceMapDevicePayload>[]
           }
           upsert: {
             args: Prisma.SourceMapDeviceUpsertArgs<ExtArgs>
@@ -3042,6 +3274,10 @@ export namespace Prisma {
             args: Prisma.SourceMapOsStringCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.SourceMapOsStringCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourceMapOsStringPayload>[]
+          }
           delete: {
             args: Prisma.SourceMapOsStringDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$SourceMapOsStringPayload>
@@ -3057,6 +3293,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.SourceMapOsStringUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SourceMapOsStringUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourceMapOsStringPayload>[]
           }
           upsert: {
             args: Prisma.SourceMapOsStringUpsertArgs<ExtArgs>
@@ -3108,6 +3348,10 @@ export namespace Prisma {
             args: Prisma.SourcePrequisiteBuildCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.SourcePrequisiteBuildCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourcePrequisiteBuildPayload>[]
+          }
           delete: {
             args: Prisma.SourcePrequisiteBuildDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$SourcePrequisiteBuildPayload>
@@ -3123,6 +3367,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.SourcePrequisiteBuildUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SourcePrequisiteBuildUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SourcePrequisiteBuildPayload>[]
           }
           upsert: {
             args: Prisma.SourcePrequisiteBuildUpsertArgs<ExtArgs>
@@ -4027,7 +4275,15 @@ export namespace Prisma {
     _count?: boolean | ColorLookupCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["colorLookup"]>
 
+  export type ColorLookupSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["colorLookup"]>
 
+  export type ColorLookupSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["colorLookup"]>
 
   export type ColorLookupSelectScalar = {
     id?: boolean
@@ -4039,6 +4295,8 @@ export namespace Prisma {
     DeviceImageColors?: boolean | ColorLookup$DeviceImageColorsArgs<ExtArgs>
     _count?: boolean | ColorLookupCountOutputTypeDefaultArgs<ExtArgs>
   }
+  export type ColorLookupIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type ColorLookupIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $ColorLookupPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ColorLookup"
@@ -4166,6 +4424,30 @@ export namespace Prisma {
     createMany<T extends ColorLookupCreateManyArgs>(args?: SelectSubset<T, ColorLookupCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many ColorLookups and returns the data saved in the database.
+     * @param {ColorLookupCreateManyAndReturnArgs} args - Arguments to create many ColorLookups.
+     * @example
+     * // Create many ColorLookups
+     * const colorLookup = await prisma.colorLookup.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ColorLookups and only return the `id`
+     * const colorLookupWithIdOnly = await prisma.colorLookup.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ColorLookupCreateManyAndReturnArgs>(args?: SelectSubset<T, ColorLookupCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ColorLookupPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a ColorLookup.
      * @param {ColorLookupDeleteArgs} args - Arguments to delete one ColorLookup.
      * @example
@@ -4228,6 +4510,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends ColorLookupUpdateManyArgs>(args: SelectSubset<T, ColorLookupUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ColorLookups and returns the data updated in the database.
+     * @param {ColorLookupUpdateManyAndReturnArgs} args - Arguments to update many ColorLookups.
+     * @example
+     * // Update many ColorLookups
+     * const colorLookup = await prisma.colorLookup.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ColorLookups and only return the `id`
+     * const colorLookupWithIdOnly = await prisma.colorLookup.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ColorLookupUpdateManyAndReturnArgs>(args: SelectSubset<T, ColorLookupUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ColorLookupPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one ColorLookup.
@@ -4653,6 +4965,25 @@ export namespace Prisma {
   }
 
   /**
+   * ColorLookup createManyAndReturn
+   */
+  export type ColorLookupCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ColorLookup
+     */
+    select?: ColorLookupSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ColorLookup
+     */
+    omit?: ColorLookupOmit<ExtArgs> | null
+    /**
+     * The data used to create many ColorLookups.
+     */
+    data: ColorLookupCreateManyInput | ColorLookupCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
    * ColorLookup update
    */
   export type ColorLookupUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4682,6 +5013,32 @@ export namespace Prisma {
    * ColorLookup updateMany
    */
   export type ColorLookupUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ColorLookups.
+     */
+    data: XOR<ColorLookupUpdateManyMutationInput, ColorLookupUncheckedUpdateManyInput>
+    /**
+     * Filter which ColorLookups to update
+     */
+    where?: ColorLookupWhereInput
+    /**
+     * Limit how many ColorLookups to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ColorLookup updateManyAndReturn
+   */
+  export type ColorLookupUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ColorLookup
+     */
+    select?: ColorLookupSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ColorLookup
+     */
+    omit?: ColorLookupOmit<ExtArgs> | null
     /**
      * The data used to update ColorLookups.
      */
@@ -5032,7 +5389,25 @@ export namespace Prisma {
     _count?: boolean | DeviceEntryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceEntry"]>
 
+  export type DeviceEntrySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    category_id?: boolean
+    image_id?: boolean
+    is_internal?: boolean
+    legacy_unique_key?: boolean
+    DeviceLookupCategory?: boolean | DeviceLookupCategoryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceEntry"]>
 
+  export type DeviceEntrySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    category_id?: boolean
+    image_id?: boolean
+    is_internal?: boolean
+    legacy_unique_key?: boolean
+    DeviceLookupCategory?: boolean | DeviceLookupCategoryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceEntry"]>
 
   export type DeviceEntrySelectScalar = {
     id?: boolean
@@ -5056,6 +5431,12 @@ export namespace Prisma {
     OsEntryPreinstalled?: boolean | DeviceEntry$OsEntryPreinstalledArgs<ExtArgs>
     SourceMapDevice?: boolean | DeviceEntry$SourceMapDeviceArgs<ExtArgs>
     _count?: boolean | DeviceEntryCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type DeviceEntryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceLookupCategory?: boolean | DeviceLookupCategoryDefaultArgs<ExtArgs>
+  }
+  export type DeviceEntryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceLookupCategory?: boolean | DeviceLookupCategoryDefaultArgs<ExtArgs>
   }
 
   export type $DeviceEntryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -5197,6 +5578,30 @@ export namespace Prisma {
     createMany<T extends DeviceEntryCreateManyArgs>(args?: SelectSubset<T, DeviceEntryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceEntries and returns the data saved in the database.
+     * @param {DeviceEntryCreateManyAndReturnArgs} args - Arguments to create many DeviceEntries.
+     * @example
+     * // Create many DeviceEntries
+     * const deviceEntry = await prisma.deviceEntry.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceEntries and only return the `id`
+     * const deviceEntryWithIdOnly = await prisma.deviceEntry.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceEntryCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceEntryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceEntryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceEntry.
      * @param {DeviceEntryDeleteArgs} args - Arguments to delete one DeviceEntry.
      * @example
@@ -5259,6 +5664,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceEntryUpdateManyArgs>(args: SelectSubset<T, DeviceEntryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceEntries and returns the data updated in the database.
+     * @param {DeviceEntryUpdateManyAndReturnArgs} args - Arguments to update many DeviceEntries.
+     * @example
+     * // Update many DeviceEntries
+     * const deviceEntry = await prisma.deviceEntry.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceEntries and only return the `id`
+     * const deviceEntryWithIdOnly = await prisma.deviceEntry.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceEntryUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceEntryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceEntryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceEntry.
@@ -5697,6 +6132,29 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceEntry createManyAndReturn
+   */
+  export type DeviceEntryCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceEntry
+     */
+    select?: DeviceEntrySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceEntry
+     */
+    omit?: DeviceEntryOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceEntries.
+     */
+    data: DeviceEntryCreateManyInput | DeviceEntryCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceEntryIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * DeviceEntry update
    */
   export type DeviceEntryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -5738,6 +6196,36 @@ export namespace Prisma {
      * Limit how many DeviceEntries to update.
      */
     limit?: number
+  }
+
+  /**
+   * DeviceEntry updateManyAndReturn
+   */
+  export type DeviceEntryUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceEntry
+     */
+    select?: DeviceEntrySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceEntry
+     */
+    omit?: DeviceEntryOmit<ExtArgs> | null
+    /**
+     * The data used to update DeviceEntries.
+     */
+    data: XOR<DeviceEntryUpdateManyMutationInput, DeviceEntryUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceEntries to update
+     */
+    where?: DeviceEntryWhereInput
+    /**
+     * Limit how many DeviceEntries to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceEntryIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -6261,7 +6749,23 @@ export namespace Prisma {
     _count?: boolean | DeviceGroupEntryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceGroupEntry"]>
 
+  export type DeviceGroupEntrySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    category_id?: boolean
+    image_id?: boolean
+    is_internal?: boolean
+    legacy_unique_key?: boolean
+  }, ExtArgs["result"]["deviceGroupEntry"]>
 
+  export type DeviceGroupEntrySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    category_id?: boolean
+    image_id?: boolean
+    is_internal?: boolean
+    legacy_unique_key?: boolean
+  }, ExtArgs["result"]["deviceGroupEntry"]>
 
   export type DeviceGroupEntrySelectScalar = {
     id?: boolean
@@ -6279,6 +6783,8 @@ export namespace Prisma {
     DeviceGroupMapDeviceGroup_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntry$DeviceGroupMapDeviceGroup_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntryArgs<ExtArgs>
     _count?: boolean | DeviceGroupEntryCountOutputTypeDefaultArgs<ExtArgs>
   }
+  export type DeviceGroupEntryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type DeviceGroupEntryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $DeviceGroupEntryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "DeviceGroupEntry"
@@ -6412,6 +6918,30 @@ export namespace Prisma {
     createMany<T extends DeviceGroupEntryCreateManyArgs>(args?: SelectSubset<T, DeviceGroupEntryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceGroupEntries and returns the data saved in the database.
+     * @param {DeviceGroupEntryCreateManyAndReturnArgs} args - Arguments to create many DeviceGroupEntries.
+     * @example
+     * // Create many DeviceGroupEntries
+     * const deviceGroupEntry = await prisma.deviceGroupEntry.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceGroupEntries and only return the `id`
+     * const deviceGroupEntryWithIdOnly = await prisma.deviceGroupEntry.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceGroupEntryCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceGroupEntryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceGroupEntryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceGroupEntry.
      * @param {DeviceGroupEntryDeleteArgs} args - Arguments to delete one DeviceGroupEntry.
      * @example
@@ -6474,6 +7004,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceGroupEntryUpdateManyArgs>(args: SelectSubset<T, DeviceGroupEntryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceGroupEntries and returns the data updated in the database.
+     * @param {DeviceGroupEntryUpdateManyAndReturnArgs} args - Arguments to update many DeviceGroupEntries.
+     * @example
+     * // Update many DeviceGroupEntries
+     * const deviceGroupEntry = await prisma.deviceGroupEntry.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceGroupEntries and only return the `id`
+     * const deviceGroupEntryWithIdOnly = await prisma.deviceGroupEntry.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceGroupEntryUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceGroupEntryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceGroupEntryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceGroupEntry.
@@ -6905,6 +7465,25 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceGroupEntry createManyAndReturn
+   */
+  export type DeviceGroupEntryCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceGroupEntry
+     */
+    select?: DeviceGroupEntrySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceGroupEntry
+     */
+    omit?: DeviceGroupEntryOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceGroupEntries.
+     */
+    data: DeviceGroupEntryCreateManyInput | DeviceGroupEntryCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
    * DeviceGroupEntry update
    */
   export type DeviceGroupEntryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -6934,6 +7513,32 @@ export namespace Prisma {
    * DeviceGroupEntry updateMany
    */
   export type DeviceGroupEntryUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update DeviceGroupEntries.
+     */
+    data: XOR<DeviceGroupEntryUpdateManyMutationInput, DeviceGroupEntryUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceGroupEntries to update
+     */
+    where?: DeviceGroupEntryWhereInput
+    /**
+     * Limit how many DeviceGroupEntries to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * DeviceGroupEntry updateManyAndReturn
+   */
+  export type DeviceGroupEntryUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceGroupEntry
+     */
+    select?: DeviceGroupEntrySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceGroupEntry
+     */
+    omit?: DeviceGroupEntryOmit<ExtArgs> | null
     /**
      * The data used to update DeviceGroupEntries.
      */
@@ -7287,7 +7892,19 @@ export namespace Prisma {
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceGroupMapDevice"]>
 
+  export type DeviceGroupMapDeviceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    group_id?: boolean
+    device_id?: boolean
+    DeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceGroupMapDevice"]>
 
+  export type DeviceGroupMapDeviceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    group_id?: boolean
+    device_id?: boolean
+    DeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceGroupMapDevice"]>
 
   export type DeviceGroupMapDeviceSelectScalar = {
     group_id?: boolean
@@ -7296,6 +7913,14 @@ export namespace Prisma {
 
   export type DeviceGroupMapDeviceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"group_id" | "device_id", ExtArgs["result"]["deviceGroupMapDevice"]>
   export type DeviceGroupMapDeviceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }
+  export type DeviceGroupMapDeviceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }
+  export type DeviceGroupMapDeviceIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }
@@ -7427,6 +8052,30 @@ export namespace Prisma {
     createMany<T extends DeviceGroupMapDeviceCreateManyArgs>(args?: SelectSubset<T, DeviceGroupMapDeviceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceGroupMapDevices and returns the data saved in the database.
+     * @param {DeviceGroupMapDeviceCreateManyAndReturnArgs} args - Arguments to create many DeviceGroupMapDevices.
+     * @example
+     * // Create many DeviceGroupMapDevices
+     * const deviceGroupMapDevice = await prisma.deviceGroupMapDevice.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceGroupMapDevices and only return the `group_id`
+     * const deviceGroupMapDeviceWithGroup_idOnly = await prisma.deviceGroupMapDevice.createManyAndReturn({
+     *   select: { group_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceGroupMapDeviceCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceGroupMapDeviceCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceGroupMapDevicePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceGroupMapDevice.
      * @param {DeviceGroupMapDeviceDeleteArgs} args - Arguments to delete one DeviceGroupMapDevice.
      * @example
@@ -7489,6 +8138,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceGroupMapDeviceUpdateManyArgs>(args: SelectSubset<T, DeviceGroupMapDeviceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceGroupMapDevices and returns the data updated in the database.
+     * @param {DeviceGroupMapDeviceUpdateManyAndReturnArgs} args - Arguments to update many DeviceGroupMapDevices.
+     * @example
+     * // Update many DeviceGroupMapDevices
+     * const deviceGroupMapDevice = await prisma.deviceGroupMapDevice.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceGroupMapDevices and only return the `group_id`
+     * const deviceGroupMapDeviceWithGroup_idOnly = await prisma.deviceGroupMapDevice.updateManyAndReturn({
+     *   select: { group_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceGroupMapDeviceUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceGroupMapDeviceUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceGroupMapDevicePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceGroupMapDevice.
@@ -7915,6 +8594,29 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceGroupMapDevice createManyAndReturn
+   */
+  export type DeviceGroupMapDeviceCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceGroupMapDevice
+     */
+    select?: DeviceGroupMapDeviceSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceGroupMapDevice
+     */
+    omit?: DeviceGroupMapDeviceOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceGroupMapDevices.
+     */
+    data: DeviceGroupMapDeviceCreateManyInput | DeviceGroupMapDeviceCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceGroupMapDeviceIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * DeviceGroupMapDevice update
    */
   export type DeviceGroupMapDeviceUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -7956,6 +8658,36 @@ export namespace Prisma {
      * Limit how many DeviceGroupMapDevices to update.
      */
     limit?: number
+  }
+
+  /**
+   * DeviceGroupMapDevice updateManyAndReturn
+   */
+  export type DeviceGroupMapDeviceUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceGroupMapDevice
+     */
+    select?: DeviceGroupMapDeviceSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceGroupMapDevice
+     */
+    omit?: DeviceGroupMapDeviceOmit<ExtArgs> | null
+    /**
+     * The data used to update DeviceGroupMapDevices.
+     */
+    data: XOR<DeviceGroupMapDeviceUpdateManyMutationInput, DeviceGroupMapDeviceUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceGroupMapDevices to update
+     */
+    where?: DeviceGroupMapDeviceWhereInput
+    /**
+     * Limit how many DeviceGroupMapDevices to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceGroupMapDeviceIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -8225,7 +8957,19 @@ export namespace Prisma {
     DeviceGroupEntry_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceGroupMapDeviceGroup"]>
 
+  export type DeviceGroupMapDeviceGroupSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    parent_group_id?: boolean
+    child_group_id?: boolean
+    DeviceGroupEntry_DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+    DeviceGroupEntry_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceGroupMapDeviceGroup"]>
 
+  export type DeviceGroupMapDeviceGroupSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    parent_group_id?: boolean
+    child_group_id?: boolean
+    DeviceGroupEntry_DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+    DeviceGroupEntry_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceGroupMapDeviceGroup"]>
 
   export type DeviceGroupMapDeviceGroupSelectScalar = {
     parent_group_id?: boolean
@@ -8234,6 +8978,14 @@ export namespace Prisma {
 
   export type DeviceGroupMapDeviceGroupOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"parent_group_id" | "child_group_id", ExtArgs["result"]["deviceGroupMapDeviceGroup"]>
   export type DeviceGroupMapDeviceGroupInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceGroupEntry_DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+    DeviceGroupEntry_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+  }
+  export type DeviceGroupMapDeviceGroupIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceGroupEntry_DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+    DeviceGroupEntry_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
+  }
+  export type DeviceGroupMapDeviceGroupIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceGroupEntry_DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
     DeviceGroupEntry_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry?: boolean | DeviceGroupEntryDefaultArgs<ExtArgs>
   }
@@ -8365,6 +9117,30 @@ export namespace Prisma {
     createMany<T extends DeviceGroupMapDeviceGroupCreateManyArgs>(args?: SelectSubset<T, DeviceGroupMapDeviceGroupCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceGroupMapDeviceGroups and returns the data saved in the database.
+     * @param {DeviceGroupMapDeviceGroupCreateManyAndReturnArgs} args - Arguments to create many DeviceGroupMapDeviceGroups.
+     * @example
+     * // Create many DeviceGroupMapDeviceGroups
+     * const deviceGroupMapDeviceGroup = await prisma.deviceGroupMapDeviceGroup.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceGroupMapDeviceGroups and only return the `parent_group_id`
+     * const deviceGroupMapDeviceGroupWithParent_group_idOnly = await prisma.deviceGroupMapDeviceGroup.createManyAndReturn({
+     *   select: { parent_group_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceGroupMapDeviceGroupCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceGroupMapDeviceGroupCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceGroupMapDeviceGroupPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceGroupMapDeviceGroup.
      * @param {DeviceGroupMapDeviceGroupDeleteArgs} args - Arguments to delete one DeviceGroupMapDeviceGroup.
      * @example
@@ -8427,6 +9203,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceGroupMapDeviceGroupUpdateManyArgs>(args: SelectSubset<T, DeviceGroupMapDeviceGroupUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceGroupMapDeviceGroups and returns the data updated in the database.
+     * @param {DeviceGroupMapDeviceGroupUpdateManyAndReturnArgs} args - Arguments to update many DeviceGroupMapDeviceGroups.
+     * @example
+     * // Update many DeviceGroupMapDeviceGroups
+     * const deviceGroupMapDeviceGroup = await prisma.deviceGroupMapDeviceGroup.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceGroupMapDeviceGroups and only return the `parent_group_id`
+     * const deviceGroupMapDeviceGroupWithParent_group_idOnly = await prisma.deviceGroupMapDeviceGroup.updateManyAndReturn({
+     *   select: { parent_group_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceGroupMapDeviceGroupUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceGroupMapDeviceGroupUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceGroupMapDeviceGroupPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceGroupMapDeviceGroup.
@@ -8853,6 +9659,29 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceGroupMapDeviceGroup createManyAndReturn
+   */
+  export type DeviceGroupMapDeviceGroupCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceGroupMapDeviceGroup
+     */
+    select?: DeviceGroupMapDeviceGroupSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceGroupMapDeviceGroup
+     */
+    omit?: DeviceGroupMapDeviceGroupOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceGroupMapDeviceGroups.
+     */
+    data: DeviceGroupMapDeviceGroupCreateManyInput | DeviceGroupMapDeviceGroupCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceGroupMapDeviceGroupIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * DeviceGroupMapDeviceGroup update
    */
   export type DeviceGroupMapDeviceGroupUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -8894,6 +9723,36 @@ export namespace Prisma {
      * Limit how many DeviceGroupMapDeviceGroups to update.
      */
     limit?: number
+  }
+
+  /**
+   * DeviceGroupMapDeviceGroup updateManyAndReturn
+   */
+  export type DeviceGroupMapDeviceGroupUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceGroupMapDeviceGroup
+     */
+    select?: DeviceGroupMapDeviceGroupSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceGroupMapDeviceGroup
+     */
+    omit?: DeviceGroupMapDeviceGroupOmit<ExtArgs> | null
+    /**
+     * The data used to update DeviceGroupMapDeviceGroups.
+     */
+    data: XOR<DeviceGroupMapDeviceGroupUpdateManyMutationInput, DeviceGroupMapDeviceGroupUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceGroupMapDeviceGroups to update
+     */
+    where?: DeviceGroupMapDeviceGroupWhereInput
+    /**
+     * Limit how many DeviceGroupMapDeviceGroups to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceGroupMapDeviceGroupIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -9171,7 +10030,21 @@ export namespace Prisma {
     ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceImageColors"]>
 
+  export type DeviceImageColorsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_image_id?: boolean
+    color_id?: boolean
+    dark_mode?: boolean
+    DeviceLookupImage?: boolean | DeviceLookupImageDefaultArgs<ExtArgs>
+    ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceImageColors"]>
 
+  export type DeviceImageColorsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_image_id?: boolean
+    color_id?: boolean
+    dark_mode?: boolean
+    DeviceLookupImage?: boolean | DeviceLookupImageDefaultArgs<ExtArgs>
+    ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceImageColors"]>
 
   export type DeviceImageColorsSelectScalar = {
     device_image_id?: boolean
@@ -9181,6 +10054,14 @@ export namespace Prisma {
 
   export type DeviceImageColorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"device_image_id" | "color_id" | "dark_mode", ExtArgs["result"]["deviceImageColors"]>
   export type DeviceImageColorsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceLookupImage?: boolean | DeviceLookupImageDefaultArgs<ExtArgs>
+    ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
+  }
+  export type DeviceImageColorsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceLookupImage?: boolean | DeviceLookupImageDefaultArgs<ExtArgs>
+    ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
+  }
+  export type DeviceImageColorsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceLookupImage?: boolean | DeviceLookupImageDefaultArgs<ExtArgs>
     ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
   }
@@ -9313,6 +10194,30 @@ export namespace Prisma {
     createMany<T extends DeviceImageColorsCreateManyArgs>(args?: SelectSubset<T, DeviceImageColorsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceImageColors and returns the data saved in the database.
+     * @param {DeviceImageColorsCreateManyAndReturnArgs} args - Arguments to create many DeviceImageColors.
+     * @example
+     * // Create many DeviceImageColors
+     * const deviceImageColors = await prisma.deviceImageColors.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceImageColors and only return the `device_image_id`
+     * const deviceImageColorsWithDevice_image_idOnly = await prisma.deviceImageColors.createManyAndReturn({
+     *   select: { device_image_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceImageColorsCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceImageColorsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceImageColorsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceImageColors.
      * @param {DeviceImageColorsDeleteArgs} args - Arguments to delete one DeviceImageColors.
      * @example
@@ -9375,6 +10280,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceImageColorsUpdateManyArgs>(args: SelectSubset<T, DeviceImageColorsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceImageColors and returns the data updated in the database.
+     * @param {DeviceImageColorsUpdateManyAndReturnArgs} args - Arguments to update many DeviceImageColors.
+     * @example
+     * // Update many DeviceImageColors
+     * const deviceImageColors = await prisma.deviceImageColors.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceImageColors and only return the `device_image_id`
+     * const deviceImageColorsWithDevice_image_idOnly = await prisma.deviceImageColors.updateManyAndReturn({
+     *   select: { device_image_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceImageColorsUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceImageColorsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceImageColorsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceImageColors.
@@ -9802,6 +10737,29 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceImageColors createManyAndReturn
+   */
+  export type DeviceImageColorsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceImageColors
+     */
+    select?: DeviceImageColorsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceImageColors
+     */
+    omit?: DeviceImageColorsOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceImageColors.
+     */
+    data: DeviceImageColorsCreateManyInput | DeviceImageColorsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceImageColorsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * DeviceImageColors update
    */
   export type DeviceImageColorsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -9843,6 +10801,36 @@ export namespace Prisma {
      * Limit how many DeviceImageColors to update.
      */
     limit?: number
+  }
+
+  /**
+   * DeviceImageColors updateManyAndReturn
+   */
+  export type DeviceImageColorsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceImageColors
+     */
+    select?: DeviceImageColorsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceImageColors
+     */
+    omit?: DeviceImageColorsOmit<ExtArgs> | null
+    /**
+     * The data used to update DeviceImageColors.
+     */
+    data: XOR<DeviceImageColorsUpdateManyMutationInput, DeviceImageColorsUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceImageColors to update
+     */
+    where?: DeviceImageColorsWhereInput
+    /**
+     * Limit how many DeviceImageColors to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceImageColorsIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -10108,7 +11096,15 @@ export namespace Prisma {
     _count?: boolean | DeviceLookupArchitectureCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceLookupArchitecture"]>
 
+  export type DeviceLookupArchitectureSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["deviceLookupArchitecture"]>
 
+  export type DeviceLookupArchitectureSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["deviceLookupArchitecture"]>
 
   export type DeviceLookupArchitectureSelectScalar = {
     id?: boolean
@@ -10120,6 +11116,8 @@ export namespace Prisma {
     DeviceMapArchitecture?: boolean | DeviceLookupArchitecture$DeviceMapArchitectureArgs<ExtArgs>
     _count?: boolean | DeviceLookupArchitectureCountOutputTypeDefaultArgs<ExtArgs>
   }
+  export type DeviceLookupArchitectureIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type DeviceLookupArchitectureIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $DeviceLookupArchitecturePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "DeviceLookupArchitecture"
@@ -10247,6 +11245,30 @@ export namespace Prisma {
     createMany<T extends DeviceLookupArchitectureCreateManyArgs>(args?: SelectSubset<T, DeviceLookupArchitectureCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceLookupArchitectures and returns the data saved in the database.
+     * @param {DeviceLookupArchitectureCreateManyAndReturnArgs} args - Arguments to create many DeviceLookupArchitectures.
+     * @example
+     * // Create many DeviceLookupArchitectures
+     * const deviceLookupArchitecture = await prisma.deviceLookupArchitecture.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceLookupArchitectures and only return the `id`
+     * const deviceLookupArchitectureWithIdOnly = await prisma.deviceLookupArchitecture.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceLookupArchitectureCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceLookupArchitectureCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceLookupArchitecturePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceLookupArchitecture.
      * @param {DeviceLookupArchitectureDeleteArgs} args - Arguments to delete one DeviceLookupArchitecture.
      * @example
@@ -10309,6 +11331,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceLookupArchitectureUpdateManyArgs>(args: SelectSubset<T, DeviceLookupArchitectureUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceLookupArchitectures and returns the data updated in the database.
+     * @param {DeviceLookupArchitectureUpdateManyAndReturnArgs} args - Arguments to update many DeviceLookupArchitectures.
+     * @example
+     * // Update many DeviceLookupArchitectures
+     * const deviceLookupArchitecture = await prisma.deviceLookupArchitecture.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceLookupArchitectures and only return the `id`
+     * const deviceLookupArchitectureWithIdOnly = await prisma.deviceLookupArchitecture.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceLookupArchitectureUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceLookupArchitectureUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceLookupArchitecturePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceLookupArchitecture.
@@ -10734,6 +11786,25 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceLookupArchitecture createManyAndReturn
+   */
+  export type DeviceLookupArchitectureCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupArchitecture
+     */
+    select?: DeviceLookupArchitectureSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupArchitecture
+     */
+    omit?: DeviceLookupArchitectureOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceLookupArchitectures.
+     */
+    data: DeviceLookupArchitectureCreateManyInput | DeviceLookupArchitectureCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
    * DeviceLookupArchitecture update
    */
   export type DeviceLookupArchitectureUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10763,6 +11834,32 @@ export namespace Prisma {
    * DeviceLookupArchitecture updateMany
    */
   export type DeviceLookupArchitectureUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update DeviceLookupArchitectures.
+     */
+    data: XOR<DeviceLookupArchitectureUpdateManyMutationInput, DeviceLookupArchitectureUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceLookupArchitectures to update
+     */
+    where?: DeviceLookupArchitectureWhereInput
+    /**
+     * Limit how many DeviceLookupArchitectures to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * DeviceLookupArchitecture updateManyAndReturn
+   */
+  export type DeviceLookupArchitectureUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupArchitecture
+     */
+    select?: DeviceLookupArchitectureSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupArchitecture
+     */
+    omit?: DeviceLookupArchitectureOmit<ExtArgs> | null
     /**
      * The data used to update DeviceLookupArchitectures.
      */
@@ -11064,7 +12161,15 @@ export namespace Prisma {
     _count?: boolean | DeviceLookupCategoryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceLookupCategory"]>
 
+  export type DeviceLookupCategorySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["deviceLookupCategory"]>
 
+  export type DeviceLookupCategorySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["deviceLookupCategory"]>
 
   export type DeviceLookupCategorySelectScalar = {
     id?: boolean
@@ -11076,6 +12181,8 @@ export namespace Prisma {
     DeviceEntry?: boolean | DeviceLookupCategory$DeviceEntryArgs<ExtArgs>
     _count?: boolean | DeviceLookupCategoryCountOutputTypeDefaultArgs<ExtArgs>
   }
+  export type DeviceLookupCategoryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type DeviceLookupCategoryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $DeviceLookupCategoryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "DeviceLookupCategory"
@@ -11203,6 +12310,30 @@ export namespace Prisma {
     createMany<T extends DeviceLookupCategoryCreateManyArgs>(args?: SelectSubset<T, DeviceLookupCategoryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceLookupCategories and returns the data saved in the database.
+     * @param {DeviceLookupCategoryCreateManyAndReturnArgs} args - Arguments to create many DeviceLookupCategories.
+     * @example
+     * // Create many DeviceLookupCategories
+     * const deviceLookupCategory = await prisma.deviceLookupCategory.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceLookupCategories and only return the `id`
+     * const deviceLookupCategoryWithIdOnly = await prisma.deviceLookupCategory.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceLookupCategoryCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceLookupCategoryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceLookupCategoryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceLookupCategory.
      * @param {DeviceLookupCategoryDeleteArgs} args - Arguments to delete one DeviceLookupCategory.
      * @example
@@ -11265,6 +12396,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceLookupCategoryUpdateManyArgs>(args: SelectSubset<T, DeviceLookupCategoryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceLookupCategories and returns the data updated in the database.
+     * @param {DeviceLookupCategoryUpdateManyAndReturnArgs} args - Arguments to update many DeviceLookupCategories.
+     * @example
+     * // Update many DeviceLookupCategories
+     * const deviceLookupCategory = await prisma.deviceLookupCategory.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceLookupCategories and only return the `id`
+     * const deviceLookupCategoryWithIdOnly = await prisma.deviceLookupCategory.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceLookupCategoryUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceLookupCategoryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceLookupCategoryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceLookupCategory.
@@ -11690,6 +12851,25 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceLookupCategory createManyAndReturn
+   */
+  export type DeviceLookupCategoryCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupCategory
+     */
+    select?: DeviceLookupCategorySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupCategory
+     */
+    omit?: DeviceLookupCategoryOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceLookupCategories.
+     */
+    data: DeviceLookupCategoryCreateManyInput | DeviceLookupCategoryCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
    * DeviceLookupCategory update
    */
   export type DeviceLookupCategoryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -11719,6 +12899,32 @@ export namespace Prisma {
    * DeviceLookupCategory updateMany
    */
   export type DeviceLookupCategoryUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update DeviceLookupCategories.
+     */
+    data: XOR<DeviceLookupCategoryUpdateManyMutationInput, DeviceLookupCategoryUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceLookupCategories to update
+     */
+    where?: DeviceLookupCategoryWhereInput
+    /**
+     * Limit how many DeviceLookupCategories to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * DeviceLookupCategory updateManyAndReturn
+   */
+  export type DeviceLookupCategoryUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupCategory
+     */
+    select?: DeviceLookupCategorySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupCategory
+     */
+    omit?: DeviceLookupCategoryOmit<ExtArgs> | null
     /**
      * The data used to update DeviceLookupCategories.
      */
@@ -12020,7 +13226,15 @@ export namespace Prisma {
     _count?: boolean | DeviceLookupImageCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceLookupImage"]>
 
+  export type DeviceLookupImageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["deviceLookupImage"]>
 
+  export type DeviceLookupImageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["deviceLookupImage"]>
 
   export type DeviceLookupImageSelectScalar = {
     id?: boolean
@@ -12032,6 +13246,8 @@ export namespace Prisma {
     DeviceImageColors?: boolean | DeviceLookupImage$DeviceImageColorsArgs<ExtArgs>
     _count?: boolean | DeviceLookupImageCountOutputTypeDefaultArgs<ExtArgs>
   }
+  export type DeviceLookupImageIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type DeviceLookupImageIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $DeviceLookupImagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "DeviceLookupImage"
@@ -12159,6 +13375,30 @@ export namespace Prisma {
     createMany<T extends DeviceLookupImageCreateManyArgs>(args?: SelectSubset<T, DeviceLookupImageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceLookupImages and returns the data saved in the database.
+     * @param {DeviceLookupImageCreateManyAndReturnArgs} args - Arguments to create many DeviceLookupImages.
+     * @example
+     * // Create many DeviceLookupImages
+     * const deviceLookupImage = await prisma.deviceLookupImage.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceLookupImages and only return the `id`
+     * const deviceLookupImageWithIdOnly = await prisma.deviceLookupImage.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceLookupImageCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceLookupImageCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceLookupImagePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceLookupImage.
      * @param {DeviceLookupImageDeleteArgs} args - Arguments to delete one DeviceLookupImage.
      * @example
@@ -12221,6 +13461,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceLookupImageUpdateManyArgs>(args: SelectSubset<T, DeviceLookupImageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceLookupImages and returns the data updated in the database.
+     * @param {DeviceLookupImageUpdateManyAndReturnArgs} args - Arguments to update many DeviceLookupImages.
+     * @example
+     * // Update many DeviceLookupImages
+     * const deviceLookupImage = await prisma.deviceLookupImage.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceLookupImages and only return the `id`
+     * const deviceLookupImageWithIdOnly = await prisma.deviceLookupImage.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceLookupImageUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceLookupImageUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceLookupImagePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceLookupImage.
@@ -12646,6 +13916,25 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceLookupImage createManyAndReturn
+   */
+  export type DeviceLookupImageCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupImage
+     */
+    select?: DeviceLookupImageSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupImage
+     */
+    omit?: DeviceLookupImageOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceLookupImages.
+     */
+    data: DeviceLookupImageCreateManyInput | DeviceLookupImageCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
    * DeviceLookupImage update
    */
   export type DeviceLookupImageUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -12675,6 +13964,32 @@ export namespace Prisma {
    * DeviceLookupImage updateMany
    */
   export type DeviceLookupImageUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update DeviceLookupImages.
+     */
+    data: XOR<DeviceLookupImageUpdateManyMutationInput, DeviceLookupImageUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceLookupImages to update
+     */
+    where?: DeviceLookupImageWhereInput
+    /**
+     * Limit how many DeviceLookupImages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * DeviceLookupImage updateManyAndReturn
+   */
+  export type DeviceLookupImageUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupImage
+     */
+    select?: DeviceLookupImageSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupImage
+     */
+    omit?: DeviceLookupImageOmit<ExtArgs> | null
     /**
      * The data used to update DeviceLookupImages.
      */
@@ -12976,7 +14291,15 @@ export namespace Prisma {
     _count?: boolean | DeviceLookupSocCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceLookupSoc"]>
 
+  export type DeviceLookupSocSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["deviceLookupSoc"]>
 
+  export type DeviceLookupSocSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["deviceLookupSoc"]>
 
   export type DeviceLookupSocSelectScalar = {
     id?: boolean
@@ -12988,6 +14311,8 @@ export namespace Prisma {
     DeviceMapSoc?: boolean | DeviceLookupSoc$DeviceMapSocArgs<ExtArgs>
     _count?: boolean | DeviceLookupSocCountOutputTypeDefaultArgs<ExtArgs>
   }
+  export type DeviceLookupSocIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type DeviceLookupSocIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $DeviceLookupSocPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "DeviceLookupSoc"
@@ -13115,6 +14440,30 @@ export namespace Prisma {
     createMany<T extends DeviceLookupSocCreateManyArgs>(args?: SelectSubset<T, DeviceLookupSocCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceLookupSocs and returns the data saved in the database.
+     * @param {DeviceLookupSocCreateManyAndReturnArgs} args - Arguments to create many DeviceLookupSocs.
+     * @example
+     * // Create many DeviceLookupSocs
+     * const deviceLookupSoc = await prisma.deviceLookupSoc.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceLookupSocs and only return the `id`
+     * const deviceLookupSocWithIdOnly = await prisma.deviceLookupSoc.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceLookupSocCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceLookupSocCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceLookupSocPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceLookupSoc.
      * @param {DeviceLookupSocDeleteArgs} args - Arguments to delete one DeviceLookupSoc.
      * @example
@@ -13177,6 +14526,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceLookupSocUpdateManyArgs>(args: SelectSubset<T, DeviceLookupSocUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceLookupSocs and returns the data updated in the database.
+     * @param {DeviceLookupSocUpdateManyAndReturnArgs} args - Arguments to update many DeviceLookupSocs.
+     * @example
+     * // Update many DeviceLookupSocs
+     * const deviceLookupSoc = await prisma.deviceLookupSoc.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceLookupSocs and only return the `id`
+     * const deviceLookupSocWithIdOnly = await prisma.deviceLookupSoc.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceLookupSocUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceLookupSocUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceLookupSocPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceLookupSoc.
@@ -13602,6 +14981,25 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceLookupSoc createManyAndReturn
+   */
+  export type DeviceLookupSocCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupSoc
+     */
+    select?: DeviceLookupSocSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupSoc
+     */
+    omit?: DeviceLookupSocOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceLookupSocs.
+     */
+    data: DeviceLookupSocCreateManyInput | DeviceLookupSocCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
    * DeviceLookupSoc update
    */
   export type DeviceLookupSocUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -13631,6 +15029,32 @@ export namespace Prisma {
    * DeviceLookupSoc updateMany
    */
   export type DeviceLookupSocUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update DeviceLookupSocs.
+     */
+    data: XOR<DeviceLookupSocUpdateManyMutationInput, DeviceLookupSocUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceLookupSocs to update
+     */
+    where?: DeviceLookupSocWhereInput
+    /**
+     * Limit how many DeviceLookupSocs to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * DeviceLookupSoc updateManyAndReturn
+   */
+  export type DeviceLookupSocUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupSoc
+     */
+    select?: DeviceLookupSocSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupSoc
+     */
+    omit?: DeviceLookupSocOmit<ExtArgs> | null
     /**
      * The data used to update DeviceLookupSocs.
      */
@@ -13936,7 +15360,19 @@ export namespace Prisma {
     DeviceLookupArchitecture?: boolean | DeviceLookupArchitectureDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceMapArchitecture"]>
 
+  export type DeviceMapArchitectureSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    architecture_id?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupArchitecture?: boolean | DeviceLookupArchitectureDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapArchitecture"]>
 
+  export type DeviceMapArchitectureSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    architecture_id?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupArchitecture?: boolean | DeviceLookupArchitectureDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapArchitecture"]>
 
   export type DeviceMapArchitectureSelectScalar = {
     device_id?: boolean
@@ -13945,6 +15381,14 @@ export namespace Prisma {
 
   export type DeviceMapArchitectureOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"device_id" | "architecture_id", ExtArgs["result"]["deviceMapArchitecture"]>
   export type DeviceMapArchitectureInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupArchitecture?: boolean | DeviceLookupArchitectureDefaultArgs<ExtArgs>
+  }
+  export type DeviceMapArchitectureIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupArchitecture?: boolean | DeviceLookupArchitectureDefaultArgs<ExtArgs>
+  }
+  export type DeviceMapArchitectureIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
     DeviceLookupArchitecture?: boolean | DeviceLookupArchitectureDefaultArgs<ExtArgs>
   }
@@ -14076,6 +15520,30 @@ export namespace Prisma {
     createMany<T extends DeviceMapArchitectureCreateManyArgs>(args?: SelectSubset<T, DeviceMapArchitectureCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceMapArchitectures and returns the data saved in the database.
+     * @param {DeviceMapArchitectureCreateManyAndReturnArgs} args - Arguments to create many DeviceMapArchitectures.
+     * @example
+     * // Create many DeviceMapArchitectures
+     * const deviceMapArchitecture = await prisma.deviceMapArchitecture.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceMapArchitectures and only return the `device_id`
+     * const deviceMapArchitectureWithDevice_idOnly = await prisma.deviceMapArchitecture.createManyAndReturn({
+     *   select: { device_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceMapArchitectureCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceMapArchitectureCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapArchitecturePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceMapArchitecture.
      * @param {DeviceMapArchitectureDeleteArgs} args - Arguments to delete one DeviceMapArchitecture.
      * @example
@@ -14138,6 +15606,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceMapArchitectureUpdateManyArgs>(args: SelectSubset<T, DeviceMapArchitectureUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceMapArchitectures and returns the data updated in the database.
+     * @param {DeviceMapArchitectureUpdateManyAndReturnArgs} args - Arguments to update many DeviceMapArchitectures.
+     * @example
+     * // Update many DeviceMapArchitectures
+     * const deviceMapArchitecture = await prisma.deviceMapArchitecture.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceMapArchitectures and only return the `device_id`
+     * const deviceMapArchitectureWithDevice_idOnly = await prisma.deviceMapArchitecture.updateManyAndReturn({
+     *   select: { device_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceMapArchitectureUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceMapArchitectureUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapArchitecturePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceMapArchitecture.
@@ -14564,6 +16062,29 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceMapArchitecture createManyAndReturn
+   */
+  export type DeviceMapArchitectureCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapArchitecture
+     */
+    select?: DeviceMapArchitectureSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapArchitecture
+     */
+    omit?: DeviceMapArchitectureOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceMapArchitectures.
+     */
+    data: DeviceMapArchitectureCreateManyInput | DeviceMapArchitectureCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapArchitectureIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * DeviceMapArchitecture update
    */
   export type DeviceMapArchitectureUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -14605,6 +16126,36 @@ export namespace Prisma {
      * Limit how many DeviceMapArchitectures to update.
      */
     limit?: number
+  }
+
+  /**
+   * DeviceMapArchitecture updateManyAndReturn
+   */
+  export type DeviceMapArchitectureUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapArchitecture
+     */
+    select?: DeviceMapArchitectureSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapArchitecture
+     */
+    omit?: DeviceMapArchitectureOmit<ExtArgs> | null
+    /**
+     * The data used to update DeviceMapArchitectures.
+     */
+    data: XOR<DeviceMapArchitectureUpdateManyMutationInput, DeviceMapArchitectureUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceMapArchitectures to update
+     */
+    where?: DeviceMapArchitectureWhereInput
+    /**
+     * Limit how many DeviceMapArchitectures to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapArchitectureIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -14869,7 +16420,17 @@ export namespace Prisma {
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceMapIdentifier"]>
 
+  export type DeviceMapIdentifierSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    identifier?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapIdentifier"]>
 
+  export type DeviceMapIdentifierSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    identifier?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapIdentifier"]>
 
   export type DeviceMapIdentifierSelectScalar = {
     device_id?: boolean
@@ -14878,6 +16439,12 @@ export namespace Prisma {
 
   export type DeviceMapIdentifierOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"device_id" | "identifier", ExtArgs["result"]["deviceMapIdentifier"]>
   export type DeviceMapIdentifierInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }
+  export type DeviceMapIdentifierIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }
+  export type DeviceMapIdentifierIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }
 
@@ -15007,6 +16574,30 @@ export namespace Prisma {
     createMany<T extends DeviceMapIdentifierCreateManyArgs>(args?: SelectSubset<T, DeviceMapIdentifierCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceMapIdentifiers and returns the data saved in the database.
+     * @param {DeviceMapIdentifierCreateManyAndReturnArgs} args - Arguments to create many DeviceMapIdentifiers.
+     * @example
+     * // Create many DeviceMapIdentifiers
+     * const deviceMapIdentifier = await prisma.deviceMapIdentifier.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceMapIdentifiers and only return the `device_id`
+     * const deviceMapIdentifierWithDevice_idOnly = await prisma.deviceMapIdentifier.createManyAndReturn({
+     *   select: { device_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceMapIdentifierCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceMapIdentifierCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapIdentifierPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceMapIdentifier.
      * @param {DeviceMapIdentifierDeleteArgs} args - Arguments to delete one DeviceMapIdentifier.
      * @example
@@ -15069,6 +16660,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceMapIdentifierUpdateManyArgs>(args: SelectSubset<T, DeviceMapIdentifierUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceMapIdentifiers and returns the data updated in the database.
+     * @param {DeviceMapIdentifierUpdateManyAndReturnArgs} args - Arguments to update many DeviceMapIdentifiers.
+     * @example
+     * // Update many DeviceMapIdentifiers
+     * const deviceMapIdentifier = await prisma.deviceMapIdentifier.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceMapIdentifiers and only return the `device_id`
+     * const deviceMapIdentifierWithDevice_idOnly = await prisma.deviceMapIdentifier.updateManyAndReturn({
+     *   select: { device_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceMapIdentifierUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceMapIdentifierUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapIdentifierPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceMapIdentifier.
@@ -15494,6 +17115,29 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceMapIdentifier createManyAndReturn
+   */
+  export type DeviceMapIdentifierCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapIdentifier
+     */
+    select?: DeviceMapIdentifierSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapIdentifier
+     */
+    omit?: DeviceMapIdentifierOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceMapIdentifiers.
+     */
+    data: DeviceMapIdentifierCreateManyInput | DeviceMapIdentifierCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapIdentifierIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * DeviceMapIdentifier update
    */
   export type DeviceMapIdentifierUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -15535,6 +17179,36 @@ export namespace Prisma {
      * Limit how many DeviceMapIdentifiers to update.
      */
     limit?: number
+  }
+
+  /**
+   * DeviceMapIdentifier updateManyAndReturn
+   */
+  export type DeviceMapIdentifierUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapIdentifier
+     */
+    select?: DeviceMapIdentifierSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapIdentifier
+     */
+    omit?: DeviceMapIdentifierOmit<ExtArgs> | null
+    /**
+     * The data used to update DeviceMapIdentifiers.
+     */
+    data: XOR<DeviceMapIdentifierUpdateManyMutationInput, DeviceMapIdentifierUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceMapIdentifiers to update
+     */
+    where?: DeviceMapIdentifierWhereInput
+    /**
+     * Limit how many DeviceMapIdentifiers to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapIdentifierIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -15799,7 +17473,17 @@ export namespace Prisma {
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceMapModel"]>
 
+  export type DeviceMapModelSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    model?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapModel"]>
 
+  export type DeviceMapModelSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    model?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapModel"]>
 
   export type DeviceMapModelSelectScalar = {
     device_id?: boolean
@@ -15808,6 +17492,12 @@ export namespace Prisma {
 
   export type DeviceMapModelOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"device_id" | "model", ExtArgs["result"]["deviceMapModel"]>
   export type DeviceMapModelInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }
+  export type DeviceMapModelIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }
+  export type DeviceMapModelIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }
 
@@ -15937,6 +17627,30 @@ export namespace Prisma {
     createMany<T extends DeviceMapModelCreateManyArgs>(args?: SelectSubset<T, DeviceMapModelCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceMapModels and returns the data saved in the database.
+     * @param {DeviceMapModelCreateManyAndReturnArgs} args - Arguments to create many DeviceMapModels.
+     * @example
+     * // Create many DeviceMapModels
+     * const deviceMapModel = await prisma.deviceMapModel.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceMapModels and only return the `device_id`
+     * const deviceMapModelWithDevice_idOnly = await prisma.deviceMapModel.createManyAndReturn({
+     *   select: { device_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceMapModelCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceMapModelCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapModelPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceMapModel.
      * @param {DeviceMapModelDeleteArgs} args - Arguments to delete one DeviceMapModel.
      * @example
@@ -15999,6 +17713,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceMapModelUpdateManyArgs>(args: SelectSubset<T, DeviceMapModelUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceMapModels and returns the data updated in the database.
+     * @param {DeviceMapModelUpdateManyAndReturnArgs} args - Arguments to update many DeviceMapModels.
+     * @example
+     * // Update many DeviceMapModels
+     * const deviceMapModel = await prisma.deviceMapModel.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceMapModels and only return the `device_id`
+     * const deviceMapModelWithDevice_idOnly = await prisma.deviceMapModel.updateManyAndReturn({
+     *   select: { device_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceMapModelUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceMapModelUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapModelPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceMapModel.
@@ -16424,6 +18168,29 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceMapModel createManyAndReturn
+   */
+  export type DeviceMapModelCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapModel
+     */
+    select?: DeviceMapModelSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapModel
+     */
+    omit?: DeviceMapModelOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceMapModels.
+     */
+    data: DeviceMapModelCreateManyInput | DeviceMapModelCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapModelIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * DeviceMapModel update
    */
   export type DeviceMapModelUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -16465,6 +18232,36 @@ export namespace Prisma {
      * Limit how many DeviceMapModels to update.
      */
     limit?: number
+  }
+
+  /**
+   * DeviceMapModel updateManyAndReturn
+   */
+  export type DeviceMapModelUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapModel
+     */
+    select?: DeviceMapModelSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapModel
+     */
+    omit?: DeviceMapModelOmit<ExtArgs> | null
+    /**
+     * The data used to update DeviceMapModels.
+     */
+    data: XOR<DeviceMapModelUpdateManyMutationInput, DeviceMapModelUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceMapModels to update
+     */
+    where?: DeviceMapModelWhereInput
+    /**
+     * Limit how many DeviceMapModels to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapModelIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -16753,7 +18550,21 @@ export namespace Prisma {
     DeviceEntry?: boolean | DeviceMapRelease$DeviceEntryArgs<ExtArgs>
   }, ExtArgs["result"]["deviceMapRelease"]>
 
+  export type DeviceMapReleaseSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    device_id?: boolean
+    datetime?: boolean
+    depth?: boolean
+    DeviceEntry?: boolean | DeviceMapRelease$DeviceEntryArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapRelease"]>
 
+  export type DeviceMapReleaseSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    device_id?: boolean
+    datetime?: boolean
+    depth?: boolean
+    DeviceEntry?: boolean | DeviceMapRelease$DeviceEntryArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapRelease"]>
 
   export type DeviceMapReleaseSelectScalar = {
     id?: boolean
@@ -16764,6 +18575,12 @@ export namespace Prisma {
 
   export type DeviceMapReleaseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "device_id" | "datetime" | "depth", ExtArgs["result"]["deviceMapRelease"]>
   export type DeviceMapReleaseInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceMapRelease$DeviceEntryArgs<ExtArgs>
+  }
+  export type DeviceMapReleaseIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceMapRelease$DeviceEntryArgs<ExtArgs>
+  }
+  export type DeviceMapReleaseIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceEntry?: boolean | DeviceMapRelease$DeviceEntryArgs<ExtArgs>
   }
 
@@ -16895,6 +18712,30 @@ export namespace Prisma {
     createMany<T extends DeviceMapReleaseCreateManyArgs>(args?: SelectSubset<T, DeviceMapReleaseCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceMapReleases and returns the data saved in the database.
+     * @param {DeviceMapReleaseCreateManyAndReturnArgs} args - Arguments to create many DeviceMapReleases.
+     * @example
+     * // Create many DeviceMapReleases
+     * const deviceMapRelease = await prisma.deviceMapRelease.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceMapReleases and only return the `id`
+     * const deviceMapReleaseWithIdOnly = await prisma.deviceMapRelease.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceMapReleaseCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceMapReleaseCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapReleasePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceMapRelease.
      * @param {DeviceMapReleaseDeleteArgs} args - Arguments to delete one DeviceMapRelease.
      * @example
@@ -16957,6 +18798,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceMapReleaseUpdateManyArgs>(args: SelectSubset<T, DeviceMapReleaseUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceMapReleases and returns the data updated in the database.
+     * @param {DeviceMapReleaseUpdateManyAndReturnArgs} args - Arguments to update many DeviceMapReleases.
+     * @example
+     * // Update many DeviceMapReleases
+     * const deviceMapRelease = await prisma.deviceMapRelease.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceMapReleases and only return the `id`
+     * const deviceMapReleaseWithIdOnly = await prisma.deviceMapRelease.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceMapReleaseUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceMapReleaseUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapReleasePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceMapRelease.
@@ -17384,6 +19255,29 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceMapRelease createManyAndReturn
+   */
+  export type DeviceMapReleaseCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapRelease
+     */
+    select?: DeviceMapReleaseSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapRelease
+     */
+    omit?: DeviceMapReleaseOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceMapReleases.
+     */
+    data: DeviceMapReleaseCreateManyInput | DeviceMapReleaseCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapReleaseIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * DeviceMapRelease update
    */
   export type DeviceMapReleaseUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -17425,6 +19319,36 @@ export namespace Prisma {
      * Limit how many DeviceMapReleases to update.
      */
     limit?: number
+  }
+
+  /**
+   * DeviceMapRelease updateManyAndReturn
+   */
+  export type DeviceMapReleaseUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapRelease
+     */
+    select?: DeviceMapReleaseSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapRelease
+     */
+    omit?: DeviceMapReleaseOmit<ExtArgs> | null
+    /**
+     * The data used to update DeviceMapReleases.
+     */
+    data: XOR<DeviceMapReleaseUpdateManyMutationInput, DeviceMapReleaseUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceMapReleases to update
+     */
+    where?: DeviceMapReleaseWhereInput
+    /**
+     * Limit how many DeviceMapReleases to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapReleaseIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -17713,7 +19637,19 @@ export namespace Prisma {
     DeviceLookupSoc?: boolean | DeviceLookupSocDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceMapSoc"]>
 
+  export type DeviceMapSocSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    soc_id?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupSoc?: boolean | DeviceLookupSocDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapSoc"]>
 
+  export type DeviceMapSocSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    soc_id?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupSoc?: boolean | DeviceLookupSocDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapSoc"]>
 
   export type DeviceMapSocSelectScalar = {
     device_id?: boolean
@@ -17722,6 +19658,14 @@ export namespace Prisma {
 
   export type DeviceMapSocOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"device_id" | "soc_id", ExtArgs["result"]["deviceMapSoc"]>
   export type DeviceMapSocInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupSoc?: boolean | DeviceLookupSocDefaultArgs<ExtArgs>
+  }
+  export type DeviceMapSocIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupSoc?: boolean | DeviceLookupSocDefaultArgs<ExtArgs>
+  }
+  export type DeviceMapSocIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
     DeviceLookupSoc?: boolean | DeviceLookupSocDefaultArgs<ExtArgs>
   }
@@ -17853,6 +19797,30 @@ export namespace Prisma {
     createMany<T extends DeviceMapSocCreateManyArgs>(args?: SelectSubset<T, DeviceMapSocCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many DeviceMapSocs and returns the data saved in the database.
+     * @param {DeviceMapSocCreateManyAndReturnArgs} args - Arguments to create many DeviceMapSocs.
+     * @example
+     * // Create many DeviceMapSocs
+     * const deviceMapSoc = await prisma.deviceMapSoc.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceMapSocs and only return the `device_id`
+     * const deviceMapSocWithDevice_idOnly = await prisma.deviceMapSoc.createManyAndReturn({
+     *   select: { device_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceMapSocCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceMapSocCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapSocPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a DeviceMapSoc.
      * @param {DeviceMapSocDeleteArgs} args - Arguments to delete one DeviceMapSoc.
      * @example
@@ -17915,6 +19883,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends DeviceMapSocUpdateManyArgs>(args: SelectSubset<T, DeviceMapSocUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceMapSocs and returns the data updated in the database.
+     * @param {DeviceMapSocUpdateManyAndReturnArgs} args - Arguments to update many DeviceMapSocs.
+     * @example
+     * // Update many DeviceMapSocs
+     * const deviceMapSoc = await prisma.deviceMapSoc.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceMapSocs and only return the `device_id`
+     * const deviceMapSocWithDevice_idOnly = await prisma.deviceMapSoc.updateManyAndReturn({
+     *   select: { device_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceMapSocUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceMapSocUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapSocPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one DeviceMapSoc.
@@ -18341,6 +20339,29 @@ export namespace Prisma {
   }
 
   /**
+   * DeviceMapSoc createManyAndReturn
+   */
+  export type DeviceMapSocCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapSoc
+     */
+    select?: DeviceMapSocSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapSoc
+     */
+    omit?: DeviceMapSocOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceMapSocs.
+     */
+    data: DeviceMapSocCreateManyInput | DeviceMapSocCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapSocIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * DeviceMapSoc update
    */
   export type DeviceMapSocUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -18382,6 +20403,36 @@ export namespace Prisma {
      * Limit how many DeviceMapSocs to update.
      */
     limit?: number
+  }
+
+  /**
+   * DeviceMapSoc updateManyAndReturn
+   */
+  export type DeviceMapSocUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapSoc
+     */
+    select?: DeviceMapSocSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapSoc
+     */
+    omit?: DeviceMapSocOmit<ExtArgs> | null
+    /**
+     * The data used to update DeviceMapSocs.
+     */
+    data: XOR<DeviceMapSocUpdateManyMutationInput, DeviceMapSocUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceMapSocs to update
+     */
+    where?: DeviceMapSocWhereInput
+    /**
+     * Limit how many DeviceMapSocs to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapSocIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -18651,7 +20702,19 @@ export namespace Prisma {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["mapDeviceOs"]>
 
+  export type MapDeviceOsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    os_id?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["mapDeviceOs"]>
 
+  export type MapDeviceOsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    os_id?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["mapDeviceOs"]>
 
   export type MapDeviceOsSelectScalar = {
     device_id?: boolean
@@ -18660,6 +20723,14 @@ export namespace Prisma {
 
   export type MapDeviceOsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"device_id" | "os_id", ExtArgs["result"]["mapDeviceOs"]>
   export type MapDeviceOsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type MapDeviceOsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type MapDeviceOsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }
@@ -18791,6 +20862,30 @@ export namespace Prisma {
     createMany<T extends MapDeviceOsCreateManyArgs>(args?: SelectSubset<T, MapDeviceOsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many MapDeviceOs and returns the data saved in the database.
+     * @param {MapDeviceOsCreateManyAndReturnArgs} args - Arguments to create many MapDeviceOs.
+     * @example
+     * // Create many MapDeviceOs
+     * const mapDeviceOs = await prisma.mapDeviceOs.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many MapDeviceOs and only return the `device_id`
+     * const mapDeviceOsWithDevice_idOnly = await prisma.mapDeviceOs.createManyAndReturn({
+     *   select: { device_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends MapDeviceOsCreateManyAndReturnArgs>(args?: SelectSubset<T, MapDeviceOsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MapDeviceOsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a MapDeviceOs.
      * @param {MapDeviceOsDeleteArgs} args - Arguments to delete one MapDeviceOs.
      * @example
@@ -18853,6 +20948,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends MapDeviceOsUpdateManyArgs>(args: SelectSubset<T, MapDeviceOsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more MapDeviceOs and returns the data updated in the database.
+     * @param {MapDeviceOsUpdateManyAndReturnArgs} args - Arguments to update many MapDeviceOs.
+     * @example
+     * // Update many MapDeviceOs
+     * const mapDeviceOs = await prisma.mapDeviceOs.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more MapDeviceOs and only return the `device_id`
+     * const mapDeviceOsWithDevice_idOnly = await prisma.mapDeviceOs.updateManyAndReturn({
+     *   select: { device_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends MapDeviceOsUpdateManyAndReturnArgs>(args: SelectSubset<T, MapDeviceOsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MapDeviceOsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one MapDeviceOs.
@@ -19279,6 +21404,29 @@ export namespace Prisma {
   }
 
   /**
+   * MapDeviceOs createManyAndReturn
+   */
+  export type MapDeviceOsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MapDeviceOs
+     */
+    select?: MapDeviceOsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the MapDeviceOs
+     */
+    omit?: MapDeviceOsOmit<ExtArgs> | null
+    /**
+     * The data used to create many MapDeviceOs.
+     */
+    data: MapDeviceOsCreateManyInput | MapDeviceOsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MapDeviceOsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * MapDeviceOs update
    */
   export type MapDeviceOsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -19320,6 +21468,36 @@ export namespace Prisma {
      * Limit how many MapDeviceOs to update.
      */
     limit?: number
+  }
+
+  /**
+   * MapDeviceOs updateManyAndReturn
+   */
+  export type MapDeviceOsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MapDeviceOs
+     */
+    select?: MapDeviceOsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the MapDeviceOs
+     */
+    omit?: MapDeviceOsOmit<ExtArgs> | null
+    /**
+     * The data used to update MapDeviceOs.
+     */
+    data: XOR<MapDeviceOsUpdateManyMutationInput, MapDeviceOsUncheckedUpdateManyInput>
+    /**
+     * Filter which MapDeviceOs to update
+     */
+    where?: MapDeviceOsWhereInput
+    /**
+     * Limit how many MapDeviceOs to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MapDeviceOsIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -19738,7 +21916,51 @@ export namespace Prisma {
     _count?: boolean | OsEntryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["osEntry"]>
 
+  export type OsEntrySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name_id?: boolean
+    version?: boolean
+    build?: boolean
+    release_datetime?: boolean
+    release_datetime_depth?: boolean
+    is_release?: boolean
+    is_beta?: boolean
+    is_rc?: boolean
+    is_internal?: boolean
+    is_rsr?: boolean
+    is_sdk?: boolean
+    is_simulator?: boolean
+    image_id?: boolean
+    embedded_os_build?: boolean
+    bridge_os_build?: boolean
+    notes?: boolean
+    legacy_unique_key?: boolean
+    search?: boolean
+    OsLookupName?: boolean | OsLookupNameDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntry"]>
 
+  export type OsEntrySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name_id?: boolean
+    version?: boolean
+    build?: boolean
+    release_datetime?: boolean
+    release_datetime_depth?: boolean
+    is_release?: boolean
+    is_beta?: boolean
+    is_rc?: boolean
+    is_internal?: boolean
+    is_rsr?: boolean
+    is_sdk?: boolean
+    is_simulator?: boolean
+    image_id?: boolean
+    embedded_os_build?: boolean
+    bridge_os_build?: boolean
+    notes?: boolean
+    legacy_unique_key?: boolean
+    search?: boolean
+    OsLookupName?: boolean | OsLookupNameDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntry"]>
 
   export type OsEntrySelectScalar = {
     id?: boolean
@@ -19775,6 +21997,12 @@ export namespace Prisma {
     OsEntrySecurityNote?: boolean | OsEntry$OsEntrySecurityNoteArgs<ExtArgs>
     SourceEntry?: boolean | OsEntry$SourceEntryArgs<ExtArgs>
     _count?: boolean | OsEntryCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type OsEntryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsLookupName?: boolean | OsLookupNameDefaultArgs<ExtArgs>
+  }
+  export type OsEntryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsLookupName?: boolean | OsLookupNameDefaultArgs<ExtArgs>
   }
 
   export type $OsEntryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -19929,6 +22157,30 @@ export namespace Prisma {
     createMany<T extends OsEntryCreateManyArgs>(args?: SelectSubset<T, OsEntryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many OsEntries and returns the data saved in the database.
+     * @param {OsEntryCreateManyAndReturnArgs} args - Arguments to create many OsEntries.
+     * @example
+     * // Create many OsEntries
+     * const osEntry = await prisma.osEntry.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many OsEntries and only return the `id`
+     * const osEntryWithIdOnly = await prisma.osEntry.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends OsEntryCreateManyAndReturnArgs>(args?: SelectSubset<T, OsEntryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a OsEntry.
      * @param {OsEntryDeleteArgs} args - Arguments to delete one OsEntry.
      * @example
@@ -19991,6 +22243,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends OsEntryUpdateManyArgs>(args: SelectSubset<T, OsEntryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more OsEntries and returns the data updated in the database.
+     * @param {OsEntryUpdateManyAndReturnArgs} args - Arguments to update many OsEntries.
+     * @example
+     * // Update many OsEntries
+     * const osEntry = await prisma.osEntry.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more OsEntries and only return the `id`
+     * const osEntryWithIdOnly = await prisma.osEntry.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends OsEntryUpdateManyAndReturnArgs>(args: SelectSubset<T, OsEntryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one OsEntry.
@@ -20442,6 +22724,29 @@ export namespace Prisma {
   }
 
   /**
+   * OsEntry createManyAndReturn
+   */
+  export type OsEntryCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntry
+     */
+    select?: OsEntrySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntry
+     */
+    omit?: OsEntryOmit<ExtArgs> | null
+    /**
+     * The data used to create many OsEntries.
+     */
+    data: OsEntryCreateManyInput | OsEntryCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * OsEntry update
    */
   export type OsEntryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -20483,6 +22788,36 @@ export namespace Prisma {
      * Limit how many OsEntries to update.
      */
     limit?: number
+  }
+
+  /**
+   * OsEntry updateManyAndReturn
+   */
+  export type OsEntryUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntry
+     */
+    select?: OsEntrySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntry
+     */
+    omit?: OsEntryOmit<ExtArgs> | null
+    /**
+     * The data used to update OsEntries.
+     */
+    data: XOR<OsEntryUpdateManyMutationInput, OsEntryUncheckedUpdateManyInput>
+    /**
+     * Filter which OsEntries to update
+     */
+    where?: OsEntryWhereInput
+    /**
+     * Limit how many OsEntries to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -20963,7 +23298,17 @@ export namespace Prisma {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["osEntryBuildTrain"]>
 
+  export type OsEntryBuildTrainSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    build_train?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntryBuildTrain"]>
 
+  export type OsEntryBuildTrainSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    build_train?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntryBuildTrain"]>
 
   export type OsEntryBuildTrainSelectScalar = {
     os_id?: boolean
@@ -20972,6 +23317,12 @@ export namespace Prisma {
 
   export type OsEntryBuildTrainOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"os_id" | "build_train", ExtArgs["result"]["osEntryBuildTrain"]>
   export type OsEntryBuildTrainInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntryBuildTrainIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntryBuildTrainIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }
 
@@ -21101,6 +23452,30 @@ export namespace Prisma {
     createMany<T extends OsEntryBuildTrainCreateManyArgs>(args?: SelectSubset<T, OsEntryBuildTrainCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many OsEntryBuildTrains and returns the data saved in the database.
+     * @param {OsEntryBuildTrainCreateManyAndReturnArgs} args - Arguments to create many OsEntryBuildTrains.
+     * @example
+     * // Create many OsEntryBuildTrains
+     * const osEntryBuildTrain = await prisma.osEntryBuildTrain.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many OsEntryBuildTrains and only return the `os_id`
+     * const osEntryBuildTrainWithOs_idOnly = await prisma.osEntryBuildTrain.createManyAndReturn({
+     *   select: { os_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends OsEntryBuildTrainCreateManyAndReturnArgs>(args?: SelectSubset<T, OsEntryBuildTrainCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryBuildTrainPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a OsEntryBuildTrain.
      * @param {OsEntryBuildTrainDeleteArgs} args - Arguments to delete one OsEntryBuildTrain.
      * @example
@@ -21163,6 +23538,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends OsEntryBuildTrainUpdateManyArgs>(args: SelectSubset<T, OsEntryBuildTrainUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more OsEntryBuildTrains and returns the data updated in the database.
+     * @param {OsEntryBuildTrainUpdateManyAndReturnArgs} args - Arguments to update many OsEntryBuildTrains.
+     * @example
+     * // Update many OsEntryBuildTrains
+     * const osEntryBuildTrain = await prisma.osEntryBuildTrain.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more OsEntryBuildTrains and only return the `os_id`
+     * const osEntryBuildTrainWithOs_idOnly = await prisma.osEntryBuildTrain.updateManyAndReturn({
+     *   select: { os_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends OsEntryBuildTrainUpdateManyAndReturnArgs>(args: SelectSubset<T, OsEntryBuildTrainUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryBuildTrainPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one OsEntryBuildTrain.
@@ -21588,6 +23993,29 @@ export namespace Prisma {
   }
 
   /**
+   * OsEntryBuildTrain createManyAndReturn
+   */
+  export type OsEntryBuildTrainCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntryBuildTrain
+     */
+    select?: OsEntryBuildTrainSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntryBuildTrain
+     */
+    omit?: OsEntryBuildTrainOmit<ExtArgs> | null
+    /**
+     * The data used to create many OsEntryBuildTrains.
+     */
+    data: OsEntryBuildTrainCreateManyInput | OsEntryBuildTrainCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryBuildTrainIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * OsEntryBuildTrain update
    */
   export type OsEntryBuildTrainUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -21629,6 +24057,36 @@ export namespace Prisma {
      * Limit how many OsEntryBuildTrains to update.
      */
     limit?: number
+  }
+
+  /**
+   * OsEntryBuildTrain updateManyAndReturn
+   */
+  export type OsEntryBuildTrainUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntryBuildTrain
+     */
+    select?: OsEntryBuildTrainSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntryBuildTrain
+     */
+    omit?: OsEntryBuildTrainOmit<ExtArgs> | null
+    /**
+     * The data used to update OsEntryBuildTrains.
+     */
+    data: XOR<OsEntryBuildTrainUpdateManyMutationInput, OsEntryBuildTrainUncheckedUpdateManyInput>
+    /**
+     * Filter which OsEntryBuildTrains to update
+     */
+    where?: OsEntryBuildTrainWhereInput
+    /**
+     * Limit how many OsEntryBuildTrains to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryBuildTrainIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -21909,7 +24367,21 @@ export namespace Prisma {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["osEntryIpd"]>
 
+  export type OsEntryIpdSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    ipd_type?: boolean
+    url?: boolean
+    active?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntryIpd"]>
 
+  export type OsEntryIpdSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    ipd_type?: boolean
+    url?: boolean
+    active?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntryIpd"]>
 
   export type OsEntryIpdSelectScalar = {
     os_id?: boolean
@@ -21920,6 +24392,12 @@ export namespace Prisma {
 
   export type OsEntryIpdOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"os_id" | "ipd_type" | "url" | "active", ExtArgs["result"]["osEntryIpd"]>
   export type OsEntryIpdInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntryIpdIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntryIpdIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }
 
@@ -22051,6 +24529,30 @@ export namespace Prisma {
     createMany<T extends OsEntryIpdCreateManyArgs>(args?: SelectSubset<T, OsEntryIpdCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many OsEntryIpds and returns the data saved in the database.
+     * @param {OsEntryIpdCreateManyAndReturnArgs} args - Arguments to create many OsEntryIpds.
+     * @example
+     * // Create many OsEntryIpds
+     * const osEntryIpd = await prisma.osEntryIpd.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many OsEntryIpds and only return the `os_id`
+     * const osEntryIpdWithOs_idOnly = await prisma.osEntryIpd.createManyAndReturn({
+     *   select: { os_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends OsEntryIpdCreateManyAndReturnArgs>(args?: SelectSubset<T, OsEntryIpdCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryIpdPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a OsEntryIpd.
      * @param {OsEntryIpdDeleteArgs} args - Arguments to delete one OsEntryIpd.
      * @example
@@ -22113,6 +24615,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends OsEntryIpdUpdateManyArgs>(args: SelectSubset<T, OsEntryIpdUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more OsEntryIpds and returns the data updated in the database.
+     * @param {OsEntryIpdUpdateManyAndReturnArgs} args - Arguments to update many OsEntryIpds.
+     * @example
+     * // Update many OsEntryIpds
+     * const osEntryIpd = await prisma.osEntryIpd.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more OsEntryIpds and only return the `os_id`
+     * const osEntryIpdWithOs_idOnly = await prisma.osEntryIpd.updateManyAndReturn({
+     *   select: { os_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends OsEntryIpdUpdateManyAndReturnArgs>(args: SelectSubset<T, OsEntryIpdUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryIpdPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one OsEntryIpd.
@@ -22540,6 +25072,29 @@ export namespace Prisma {
   }
 
   /**
+   * OsEntryIpd createManyAndReturn
+   */
+  export type OsEntryIpdCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntryIpd
+     */
+    select?: OsEntryIpdSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntryIpd
+     */
+    omit?: OsEntryIpdOmit<ExtArgs> | null
+    /**
+     * The data used to create many OsEntryIpds.
+     */
+    data: OsEntryIpdCreateManyInput | OsEntryIpdCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryIpdIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * OsEntryIpd update
    */
   export type OsEntryIpdUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -22581,6 +25136,36 @@ export namespace Prisma {
      * Limit how many OsEntryIpds to update.
      */
     limit?: number
+  }
+
+  /**
+   * OsEntryIpd updateManyAndReturn
+   */
+  export type OsEntryIpdUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntryIpd
+     */
+    select?: OsEntryIpdSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntryIpd
+     */
+    omit?: OsEntryIpdOmit<ExtArgs> | null
+    /**
+     * The data used to update OsEntryIpds.
+     */
+    data: XOR<OsEntryIpdUpdateManyMutationInput, OsEntryIpdUncheckedUpdateManyInput>
+    /**
+     * Filter which OsEntryIpds to update
+     */
+    where?: OsEntryIpdWhereInput
+    /**
+     * Limit how many OsEntryIpds to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryIpdIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -22845,7 +25430,17 @@ export namespace Prisma {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["osEntryOsStringMap"]>
 
+  export type OsEntryOsStringMapSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    os_string?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntryOsStringMap"]>
 
+  export type OsEntryOsStringMapSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    os_string?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntryOsStringMap"]>
 
   export type OsEntryOsStringMapSelectScalar = {
     os_id?: boolean
@@ -22854,6 +25449,12 @@ export namespace Prisma {
 
   export type OsEntryOsStringMapOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"os_id" | "os_string", ExtArgs["result"]["osEntryOsStringMap"]>
   export type OsEntryOsStringMapInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntryOsStringMapIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntryOsStringMapIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }
 
@@ -22983,6 +25584,30 @@ export namespace Prisma {
     createMany<T extends OsEntryOsStringMapCreateManyArgs>(args?: SelectSubset<T, OsEntryOsStringMapCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many OsEntryOsStringMaps and returns the data saved in the database.
+     * @param {OsEntryOsStringMapCreateManyAndReturnArgs} args - Arguments to create many OsEntryOsStringMaps.
+     * @example
+     * // Create many OsEntryOsStringMaps
+     * const osEntryOsStringMap = await prisma.osEntryOsStringMap.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many OsEntryOsStringMaps and only return the `os_id`
+     * const osEntryOsStringMapWithOs_idOnly = await prisma.osEntryOsStringMap.createManyAndReturn({
+     *   select: { os_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends OsEntryOsStringMapCreateManyAndReturnArgs>(args?: SelectSubset<T, OsEntryOsStringMapCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryOsStringMapPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a OsEntryOsStringMap.
      * @param {OsEntryOsStringMapDeleteArgs} args - Arguments to delete one OsEntryOsStringMap.
      * @example
@@ -23045,6 +25670,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends OsEntryOsStringMapUpdateManyArgs>(args: SelectSubset<T, OsEntryOsStringMapUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more OsEntryOsStringMaps and returns the data updated in the database.
+     * @param {OsEntryOsStringMapUpdateManyAndReturnArgs} args - Arguments to update many OsEntryOsStringMaps.
+     * @example
+     * // Update many OsEntryOsStringMaps
+     * const osEntryOsStringMap = await prisma.osEntryOsStringMap.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more OsEntryOsStringMaps and only return the `os_id`
+     * const osEntryOsStringMapWithOs_idOnly = await prisma.osEntryOsStringMap.updateManyAndReturn({
+     *   select: { os_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends OsEntryOsStringMapUpdateManyAndReturnArgs>(args: SelectSubset<T, OsEntryOsStringMapUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryOsStringMapPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one OsEntryOsStringMap.
@@ -23470,6 +26125,29 @@ export namespace Prisma {
   }
 
   /**
+   * OsEntryOsStringMap createManyAndReturn
+   */
+  export type OsEntryOsStringMapCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntryOsStringMap
+     */
+    select?: OsEntryOsStringMapSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntryOsStringMap
+     */
+    omit?: OsEntryOsStringMapOmit<ExtArgs> | null
+    /**
+     * The data used to create many OsEntryOsStringMaps.
+     */
+    data: OsEntryOsStringMapCreateManyInput | OsEntryOsStringMapCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryOsStringMapIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * OsEntryOsStringMap update
    */
   export type OsEntryOsStringMapUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -23511,6 +26189,36 @@ export namespace Prisma {
      * Limit how many OsEntryOsStringMaps to update.
      */
     limit?: number
+  }
+
+  /**
+   * OsEntryOsStringMap updateManyAndReturn
+   */
+  export type OsEntryOsStringMapUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntryOsStringMap
+     */
+    select?: OsEntryOsStringMapSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntryOsStringMap
+     */
+    omit?: OsEntryOsStringMapOmit<ExtArgs> | null
+    /**
+     * The data used to update OsEntryOsStringMaps.
+     */
+    data: XOR<OsEntryOsStringMapUpdateManyMutationInput, OsEntryOsStringMapUncheckedUpdateManyInput>
+    /**
+     * Filter which OsEntryOsStringMaps to update
+     */
+    where?: OsEntryOsStringMapWhereInput
+    /**
+     * Limit how many OsEntryOsStringMaps to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryOsStringMapIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -23780,7 +26488,19 @@ export namespace Prisma {
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["osEntryPreinstalled"]>
 
+  export type OsEntryPreinstalledSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    device_id?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntryPreinstalled"]>
 
+  export type OsEntryPreinstalledSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    device_id?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntryPreinstalled"]>
 
   export type OsEntryPreinstalledSelectScalar = {
     os_id?: boolean
@@ -23789,6 +26509,14 @@ export namespace Prisma {
 
   export type OsEntryPreinstalledOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"os_id" | "device_id", ExtArgs["result"]["osEntryPreinstalled"]>
   export type OsEntryPreinstalledInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntryPreinstalledIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntryPreinstalledIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }
@@ -23920,6 +26648,30 @@ export namespace Prisma {
     createMany<T extends OsEntryPreinstalledCreateManyArgs>(args?: SelectSubset<T, OsEntryPreinstalledCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many OsEntryPreinstalleds and returns the data saved in the database.
+     * @param {OsEntryPreinstalledCreateManyAndReturnArgs} args - Arguments to create many OsEntryPreinstalleds.
+     * @example
+     * // Create many OsEntryPreinstalleds
+     * const osEntryPreinstalled = await prisma.osEntryPreinstalled.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many OsEntryPreinstalleds and only return the `os_id`
+     * const osEntryPreinstalledWithOs_idOnly = await prisma.osEntryPreinstalled.createManyAndReturn({
+     *   select: { os_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends OsEntryPreinstalledCreateManyAndReturnArgs>(args?: SelectSubset<T, OsEntryPreinstalledCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryPreinstalledPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a OsEntryPreinstalled.
      * @param {OsEntryPreinstalledDeleteArgs} args - Arguments to delete one OsEntryPreinstalled.
      * @example
@@ -23982,6 +26734,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends OsEntryPreinstalledUpdateManyArgs>(args: SelectSubset<T, OsEntryPreinstalledUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more OsEntryPreinstalleds and returns the data updated in the database.
+     * @param {OsEntryPreinstalledUpdateManyAndReturnArgs} args - Arguments to update many OsEntryPreinstalleds.
+     * @example
+     * // Update many OsEntryPreinstalleds
+     * const osEntryPreinstalled = await prisma.osEntryPreinstalled.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more OsEntryPreinstalleds and only return the `os_id`
+     * const osEntryPreinstalledWithOs_idOnly = await prisma.osEntryPreinstalled.updateManyAndReturn({
+     *   select: { os_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends OsEntryPreinstalledUpdateManyAndReturnArgs>(args: SelectSubset<T, OsEntryPreinstalledUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryPreinstalledPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one OsEntryPreinstalled.
@@ -24408,6 +27190,29 @@ export namespace Prisma {
   }
 
   /**
+   * OsEntryPreinstalled createManyAndReturn
+   */
+  export type OsEntryPreinstalledCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntryPreinstalled
+     */
+    select?: OsEntryPreinstalledSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntryPreinstalled
+     */
+    omit?: OsEntryPreinstalledOmit<ExtArgs> | null
+    /**
+     * The data used to create many OsEntryPreinstalleds.
+     */
+    data: OsEntryPreinstalledCreateManyInput | OsEntryPreinstalledCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryPreinstalledIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * OsEntryPreinstalled update
    */
   export type OsEntryPreinstalledUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -24449,6 +27254,36 @@ export namespace Prisma {
      * Limit how many OsEntryPreinstalleds to update.
      */
     limit?: number
+  }
+
+  /**
+   * OsEntryPreinstalled updateManyAndReturn
+   */
+  export type OsEntryPreinstalledUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntryPreinstalled
+     */
+    select?: OsEntryPreinstalledSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntryPreinstalled
+     */
+    omit?: OsEntryPreinstalledOmit<ExtArgs> | null
+    /**
+     * The data used to update OsEntryPreinstalleds.
+     */
+    data: XOR<OsEntryPreinstalledUpdateManyMutationInput, OsEntryPreinstalledUncheckedUpdateManyInput>
+    /**
+     * Filter which OsEntryPreinstalleds to update
+     */
+    where?: OsEntryPreinstalledWhereInput
+    /**
+     * Limit how many OsEntryPreinstalleds to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryPreinstalledIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -24721,7 +27556,19 @@ export namespace Prisma {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["osEntryReleaseNote"]>
 
+  export type OsEntryReleaseNoteSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    url?: boolean
+    active?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntryReleaseNote"]>
 
+  export type OsEntryReleaseNoteSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    url?: boolean
+    active?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntryReleaseNote"]>
 
   export type OsEntryReleaseNoteSelectScalar = {
     os_id?: boolean
@@ -24731,6 +27578,12 @@ export namespace Prisma {
 
   export type OsEntryReleaseNoteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"os_id" | "url" | "active", ExtArgs["result"]["osEntryReleaseNote"]>
   export type OsEntryReleaseNoteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntryReleaseNoteIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntryReleaseNoteIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }
 
@@ -24861,6 +27714,30 @@ export namespace Prisma {
     createMany<T extends OsEntryReleaseNoteCreateManyArgs>(args?: SelectSubset<T, OsEntryReleaseNoteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many OsEntryReleaseNotes and returns the data saved in the database.
+     * @param {OsEntryReleaseNoteCreateManyAndReturnArgs} args - Arguments to create many OsEntryReleaseNotes.
+     * @example
+     * // Create many OsEntryReleaseNotes
+     * const osEntryReleaseNote = await prisma.osEntryReleaseNote.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many OsEntryReleaseNotes and only return the `os_id`
+     * const osEntryReleaseNoteWithOs_idOnly = await prisma.osEntryReleaseNote.createManyAndReturn({
+     *   select: { os_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends OsEntryReleaseNoteCreateManyAndReturnArgs>(args?: SelectSubset<T, OsEntryReleaseNoteCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryReleaseNotePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a OsEntryReleaseNote.
      * @param {OsEntryReleaseNoteDeleteArgs} args - Arguments to delete one OsEntryReleaseNote.
      * @example
@@ -24923,6 +27800,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends OsEntryReleaseNoteUpdateManyArgs>(args: SelectSubset<T, OsEntryReleaseNoteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more OsEntryReleaseNotes and returns the data updated in the database.
+     * @param {OsEntryReleaseNoteUpdateManyAndReturnArgs} args - Arguments to update many OsEntryReleaseNotes.
+     * @example
+     * // Update many OsEntryReleaseNotes
+     * const osEntryReleaseNote = await prisma.osEntryReleaseNote.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more OsEntryReleaseNotes and only return the `os_id`
+     * const osEntryReleaseNoteWithOs_idOnly = await prisma.osEntryReleaseNote.updateManyAndReturn({
+     *   select: { os_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends OsEntryReleaseNoteUpdateManyAndReturnArgs>(args: SelectSubset<T, OsEntryReleaseNoteUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryReleaseNotePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one OsEntryReleaseNote.
@@ -25349,6 +28256,29 @@ export namespace Prisma {
   }
 
   /**
+   * OsEntryReleaseNote createManyAndReturn
+   */
+  export type OsEntryReleaseNoteCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntryReleaseNote
+     */
+    select?: OsEntryReleaseNoteSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntryReleaseNote
+     */
+    omit?: OsEntryReleaseNoteOmit<ExtArgs> | null
+    /**
+     * The data used to create many OsEntryReleaseNotes.
+     */
+    data: OsEntryReleaseNoteCreateManyInput | OsEntryReleaseNoteCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryReleaseNoteIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * OsEntryReleaseNote update
    */
   export type OsEntryReleaseNoteUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -25390,6 +28320,36 @@ export namespace Prisma {
      * Limit how many OsEntryReleaseNotes to update.
      */
     limit?: number
+  }
+
+  /**
+   * OsEntryReleaseNote updateManyAndReturn
+   */
+  export type OsEntryReleaseNoteUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntryReleaseNote
+     */
+    select?: OsEntryReleaseNoteSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntryReleaseNote
+     */
+    omit?: OsEntryReleaseNoteOmit<ExtArgs> | null
+    /**
+     * The data used to update OsEntryReleaseNotes.
+     */
+    data: XOR<OsEntryReleaseNoteUpdateManyMutationInput, OsEntryReleaseNoteUncheckedUpdateManyInput>
+    /**
+     * Filter which OsEntryReleaseNotes to update
+     */
+    where?: OsEntryReleaseNoteWhereInput
+    /**
+     * Limit how many OsEntryReleaseNotes to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntryReleaseNoteIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -25654,7 +28614,17 @@ export namespace Prisma {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["osEntrySafariVersion"]>
 
+  export type OsEntrySafariVersionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    version?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntrySafariVersion"]>
 
+  export type OsEntrySafariVersionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    version?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntrySafariVersion"]>
 
   export type OsEntrySafariVersionSelectScalar = {
     os_id?: boolean
@@ -25663,6 +28633,12 @@ export namespace Prisma {
 
   export type OsEntrySafariVersionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"os_id" | "version", ExtArgs["result"]["osEntrySafariVersion"]>
   export type OsEntrySafariVersionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntrySafariVersionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntrySafariVersionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }
 
@@ -25792,6 +28768,30 @@ export namespace Prisma {
     createMany<T extends OsEntrySafariVersionCreateManyArgs>(args?: SelectSubset<T, OsEntrySafariVersionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many OsEntrySafariVersions and returns the data saved in the database.
+     * @param {OsEntrySafariVersionCreateManyAndReturnArgs} args - Arguments to create many OsEntrySafariVersions.
+     * @example
+     * // Create many OsEntrySafariVersions
+     * const osEntrySafariVersion = await prisma.osEntrySafariVersion.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many OsEntrySafariVersions and only return the `os_id`
+     * const osEntrySafariVersionWithOs_idOnly = await prisma.osEntrySafariVersion.createManyAndReturn({
+     *   select: { os_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends OsEntrySafariVersionCreateManyAndReturnArgs>(args?: SelectSubset<T, OsEntrySafariVersionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntrySafariVersionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a OsEntrySafariVersion.
      * @param {OsEntrySafariVersionDeleteArgs} args - Arguments to delete one OsEntrySafariVersion.
      * @example
@@ -25854,6 +28854,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends OsEntrySafariVersionUpdateManyArgs>(args: SelectSubset<T, OsEntrySafariVersionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more OsEntrySafariVersions and returns the data updated in the database.
+     * @param {OsEntrySafariVersionUpdateManyAndReturnArgs} args - Arguments to update many OsEntrySafariVersions.
+     * @example
+     * // Update many OsEntrySafariVersions
+     * const osEntrySafariVersion = await prisma.osEntrySafariVersion.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more OsEntrySafariVersions and only return the `os_id`
+     * const osEntrySafariVersionWithOs_idOnly = await prisma.osEntrySafariVersion.updateManyAndReturn({
+     *   select: { os_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends OsEntrySafariVersionUpdateManyAndReturnArgs>(args: SelectSubset<T, OsEntrySafariVersionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntrySafariVersionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one OsEntrySafariVersion.
@@ -26279,6 +29309,29 @@ export namespace Prisma {
   }
 
   /**
+   * OsEntrySafariVersion createManyAndReturn
+   */
+  export type OsEntrySafariVersionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntrySafariVersion
+     */
+    select?: OsEntrySafariVersionSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntrySafariVersion
+     */
+    omit?: OsEntrySafariVersionOmit<ExtArgs> | null
+    /**
+     * The data used to create many OsEntrySafariVersions.
+     */
+    data: OsEntrySafariVersionCreateManyInput | OsEntrySafariVersionCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntrySafariVersionIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * OsEntrySafariVersion update
    */
   export type OsEntrySafariVersionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -26320,6 +29373,36 @@ export namespace Prisma {
      * Limit how many OsEntrySafariVersions to update.
      */
     limit?: number
+  }
+
+  /**
+   * OsEntrySafariVersion updateManyAndReturn
+   */
+  export type OsEntrySafariVersionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntrySafariVersion
+     */
+    select?: OsEntrySafariVersionSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntrySafariVersion
+     */
+    omit?: OsEntrySafariVersionOmit<ExtArgs> | null
+    /**
+     * The data used to update OsEntrySafariVersions.
+     */
+    data: XOR<OsEntrySafariVersionUpdateManyMutationInput, OsEntrySafariVersionUncheckedUpdateManyInput>
+    /**
+     * Filter which OsEntrySafariVersions to update
+     */
+    where?: OsEntrySafariVersionWhereInput
+    /**
+     * Limit how many OsEntrySafariVersions to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntrySafariVersionIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -26592,7 +29675,19 @@ export namespace Prisma {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["osEntrySecurityNote"]>
 
+  export type OsEntrySecurityNoteSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    url?: boolean
+    active?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntrySecurityNote"]>
 
+  export type OsEntrySecurityNoteSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    os_id?: boolean
+    url?: boolean
+    active?: boolean
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["osEntrySecurityNote"]>
 
   export type OsEntrySecurityNoteSelectScalar = {
     os_id?: boolean
@@ -26602,6 +29697,12 @@ export namespace Prisma {
 
   export type OsEntrySecurityNoteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"os_id" | "url" | "active", ExtArgs["result"]["osEntrySecurityNote"]>
   export type OsEntrySecurityNoteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntrySecurityNoteIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
+  }
+  export type OsEntrySecurityNoteIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     OsEntry?: boolean | OsEntryDefaultArgs<ExtArgs>
   }
 
@@ -26732,6 +29833,30 @@ export namespace Prisma {
     createMany<T extends OsEntrySecurityNoteCreateManyArgs>(args?: SelectSubset<T, OsEntrySecurityNoteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many OsEntrySecurityNotes and returns the data saved in the database.
+     * @param {OsEntrySecurityNoteCreateManyAndReturnArgs} args - Arguments to create many OsEntrySecurityNotes.
+     * @example
+     * // Create many OsEntrySecurityNotes
+     * const osEntrySecurityNote = await prisma.osEntrySecurityNote.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many OsEntrySecurityNotes and only return the `os_id`
+     * const osEntrySecurityNoteWithOs_idOnly = await prisma.osEntrySecurityNote.createManyAndReturn({
+     *   select: { os_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends OsEntrySecurityNoteCreateManyAndReturnArgs>(args?: SelectSubset<T, OsEntrySecurityNoteCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntrySecurityNotePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a OsEntrySecurityNote.
      * @param {OsEntrySecurityNoteDeleteArgs} args - Arguments to delete one OsEntrySecurityNote.
      * @example
@@ -26794,6 +29919,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends OsEntrySecurityNoteUpdateManyArgs>(args: SelectSubset<T, OsEntrySecurityNoteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more OsEntrySecurityNotes and returns the data updated in the database.
+     * @param {OsEntrySecurityNoteUpdateManyAndReturnArgs} args - Arguments to update many OsEntrySecurityNotes.
+     * @example
+     * // Update many OsEntrySecurityNotes
+     * const osEntrySecurityNote = await prisma.osEntrySecurityNote.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more OsEntrySecurityNotes and only return the `os_id`
+     * const osEntrySecurityNoteWithOs_idOnly = await prisma.osEntrySecurityNote.updateManyAndReturn({
+     *   select: { os_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends OsEntrySecurityNoteUpdateManyAndReturnArgs>(args: SelectSubset<T, OsEntrySecurityNoteUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntrySecurityNotePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one OsEntrySecurityNote.
@@ -27220,6 +30375,29 @@ export namespace Prisma {
   }
 
   /**
+   * OsEntrySecurityNote createManyAndReturn
+   */
+  export type OsEntrySecurityNoteCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntrySecurityNote
+     */
+    select?: OsEntrySecurityNoteSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntrySecurityNote
+     */
+    omit?: OsEntrySecurityNoteOmit<ExtArgs> | null
+    /**
+     * The data used to create many OsEntrySecurityNotes.
+     */
+    data: OsEntrySecurityNoteCreateManyInput | OsEntrySecurityNoteCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntrySecurityNoteIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * OsEntrySecurityNote update
    */
   export type OsEntrySecurityNoteUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -27261,6 +30439,36 @@ export namespace Prisma {
      * Limit how many OsEntrySecurityNotes to update.
      */
     limit?: number
+  }
+
+  /**
+   * OsEntrySecurityNote updateManyAndReturn
+   */
+  export type OsEntrySecurityNoteUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsEntrySecurityNote
+     */
+    select?: OsEntrySecurityNoteSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsEntrySecurityNote
+     */
+    omit?: OsEntrySecurityNoteOmit<ExtArgs> | null
+    /**
+     * The data used to update OsEntrySecurityNotes.
+     */
+    data: XOR<OsEntrySecurityNoteUpdateManyMutationInput, OsEntrySecurityNoteUncheckedUpdateManyInput>
+    /**
+     * Filter which OsEntrySecurityNotes to update
+     */
+    where?: OsEntrySecurityNoteWhereInput
+    /**
+     * Limit how many OsEntrySecurityNotes to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OsEntrySecurityNoteIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -27538,7 +30746,17 @@ export namespace Prisma {
     _count?: boolean | OsLookupNameCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["osLookupName"]>
 
+  export type OsLookupNameSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    priority?: boolean
+  }, ExtArgs["result"]["osLookupName"]>
 
+  export type OsLookupNameSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    priority?: boolean
+  }, ExtArgs["result"]["osLookupName"]>
 
   export type OsLookupNameSelectScalar = {
     id?: boolean
@@ -27551,6 +30769,8 @@ export namespace Prisma {
     OsEntry?: boolean | OsLookupName$OsEntryArgs<ExtArgs>
     _count?: boolean | OsLookupNameCountOutputTypeDefaultArgs<ExtArgs>
   }
+  export type OsLookupNameIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type OsLookupNameIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $OsLookupNamePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "OsLookupName"
@@ -27679,6 +30899,30 @@ export namespace Prisma {
     createMany<T extends OsLookupNameCreateManyArgs>(args?: SelectSubset<T, OsLookupNameCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many OsLookupNames and returns the data saved in the database.
+     * @param {OsLookupNameCreateManyAndReturnArgs} args - Arguments to create many OsLookupNames.
+     * @example
+     * // Create many OsLookupNames
+     * const osLookupName = await prisma.osLookupName.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many OsLookupNames and only return the `id`
+     * const osLookupNameWithIdOnly = await prisma.osLookupName.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends OsLookupNameCreateManyAndReturnArgs>(args?: SelectSubset<T, OsLookupNameCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsLookupNamePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a OsLookupName.
      * @param {OsLookupNameDeleteArgs} args - Arguments to delete one OsLookupName.
      * @example
@@ -27741,6 +30985,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends OsLookupNameUpdateManyArgs>(args: SelectSubset<T, OsLookupNameUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more OsLookupNames and returns the data updated in the database.
+     * @param {OsLookupNameUpdateManyAndReturnArgs} args - Arguments to update many OsLookupNames.
+     * @example
+     * // Update many OsLookupNames
+     * const osLookupName = await prisma.osLookupName.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more OsLookupNames and only return the `id`
+     * const osLookupNameWithIdOnly = await prisma.osLookupName.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends OsLookupNameUpdateManyAndReturnArgs>(args: SelectSubset<T, OsLookupNameUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsLookupNamePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one OsLookupName.
@@ -28167,6 +31441,25 @@ export namespace Prisma {
   }
 
   /**
+   * OsLookupName createManyAndReturn
+   */
+  export type OsLookupNameCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsLookupName
+     */
+    select?: OsLookupNameSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsLookupName
+     */
+    omit?: OsLookupNameOmit<ExtArgs> | null
+    /**
+     * The data used to create many OsLookupNames.
+     */
+    data: OsLookupNameCreateManyInput | OsLookupNameCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
    * OsLookupName update
    */
   export type OsLookupNameUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -28196,6 +31489,32 @@ export namespace Prisma {
    * OsLookupName updateMany
    */
   export type OsLookupNameUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update OsLookupNames.
+     */
+    data: XOR<OsLookupNameUpdateManyMutationInput, OsLookupNameUncheckedUpdateManyInput>
+    /**
+     * Filter which OsLookupNames to update
+     */
+    where?: OsLookupNameWhereInput
+    /**
+     * Limit how many OsLookupNames to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * OsLookupName updateManyAndReturn
+   */
+  export type OsLookupNameUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OsLookupName
+     */
+    select?: OsLookupNameSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OsLookupName
+     */
+    omit?: OsLookupNameOmit<ExtArgs> | null
     /**
      * The data used to update OsLookupNames.
      */
@@ -28549,7 +31868,27 @@ export namespace Prisma {
     _count?: boolean | SourceEntryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["sourceEntry"]>
 
+  export type SourceEntrySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    os_id?: boolean
+    source_type?: boolean
+    skip_update_links?: boolean
+    size?: boolean
+    windows_update_id?: boolean
+    windows_revision_id?: boolean
+    OsEntry?: boolean | SourceEntry$OsEntryArgs<ExtArgs>
+  }, ExtArgs["result"]["sourceEntry"]>
 
+  export type SourceEntrySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    os_id?: boolean
+    source_type?: boolean
+    skip_update_links?: boolean
+    size?: boolean
+    windows_update_id?: boolean
+    windows_revision_id?: boolean
+    OsEntry?: boolean | SourceEntry$OsEntryArgs<ExtArgs>
+  }, ExtArgs["result"]["sourceEntry"]>
 
   export type SourceEntrySelectScalar = {
     id?: boolean
@@ -28569,6 +31908,12 @@ export namespace Prisma {
     SourceMapDevice?: boolean | SourceEntry$SourceMapDeviceArgs<ExtArgs>
     SourcePrequisiteBuild?: boolean | SourceEntry$SourcePrequisiteBuildArgs<ExtArgs>
     _count?: boolean | SourceEntryCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type SourceEntryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | SourceEntry$OsEntryArgs<ExtArgs>
+  }
+  export type SourceEntryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    OsEntry?: boolean | SourceEntry$OsEntryArgs<ExtArgs>
   }
 
   export type $SourceEntryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -28706,6 +32051,30 @@ export namespace Prisma {
     createMany<T extends SourceEntryCreateManyArgs>(args?: SelectSubset<T, SourceEntryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many SourceEntries and returns the data saved in the database.
+     * @param {SourceEntryCreateManyAndReturnArgs} args - Arguments to create many SourceEntries.
+     * @example
+     * // Create many SourceEntries
+     * const sourceEntry = await prisma.sourceEntry.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many SourceEntries and only return the `id`
+     * const sourceEntryWithIdOnly = await prisma.sourceEntry.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SourceEntryCreateManyAndReturnArgs>(args?: SelectSubset<T, SourceEntryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourceEntryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a SourceEntry.
      * @param {SourceEntryDeleteArgs} args - Arguments to delete one SourceEntry.
      * @example
@@ -28768,6 +32137,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends SourceEntryUpdateManyArgs>(args: SelectSubset<T, SourceEntryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SourceEntries and returns the data updated in the database.
+     * @param {SourceEntryUpdateManyAndReturnArgs} args - Arguments to update many SourceEntries.
+     * @example
+     * // Update many SourceEntries
+     * const sourceEntry = await prisma.sourceEntry.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more SourceEntries and only return the `id`
+     * const sourceEntryWithIdOnly = await prisma.sourceEntry.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SourceEntryUpdateManyAndReturnArgs>(args: SelectSubset<T, SourceEntryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourceEntryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one SourceEntry.
@@ -29202,6 +32601,29 @@ export namespace Prisma {
   }
 
   /**
+   * SourceEntry createManyAndReturn
+   */
+  export type SourceEntryCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourceEntry
+     */
+    select?: SourceEntrySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourceEntry
+     */
+    omit?: SourceEntryOmit<ExtArgs> | null
+    /**
+     * The data used to create many SourceEntries.
+     */
+    data: SourceEntryCreateManyInput | SourceEntryCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SourceEntryIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * SourceEntry update
    */
   export type SourceEntryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -29243,6 +32665,36 @@ export namespace Prisma {
      * Limit how many SourceEntries to update.
      */
     limit?: number
+  }
+
+  /**
+   * SourceEntry updateManyAndReturn
+   */
+  export type SourceEntryUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourceEntry
+     */
+    select?: SourceEntrySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourceEntry
+     */
+    omit?: SourceEntryOmit<ExtArgs> | null
+    /**
+     * The data used to update SourceEntries.
+     */
+    data: XOR<SourceEntryUpdateManyMutationInput, SourceEntryUncheckedUpdateManyInput>
+    /**
+     * Filter which SourceEntries to update
+     */
+    where?: SourceEntryWhereInput
+    /**
+     * Limit how many SourceEntries to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SourceEntryIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -29630,7 +33082,19 @@ export namespace Prisma {
     SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["sourceHash"]>
 
+  export type SourceHashSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    source_id?: boolean
+    hash_type?: boolean
+    hash_value?: boolean
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sourceHash"]>
 
+  export type SourceHashSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    source_id?: boolean
+    hash_type?: boolean
+    hash_value?: boolean
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sourceHash"]>
 
   export type SourceHashSelectScalar = {
     source_id?: boolean
@@ -29640,6 +33104,12 @@ export namespace Prisma {
 
   export type SourceHashOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"source_id" | "hash_type" | "hash_value", ExtArgs["result"]["sourceHash"]>
   export type SourceHashInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }
+  export type SourceHashIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }
+  export type SourceHashIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
   }
 
@@ -29770,6 +33240,30 @@ export namespace Prisma {
     createMany<T extends SourceHashCreateManyArgs>(args?: SelectSubset<T, SourceHashCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many SourceHashes and returns the data saved in the database.
+     * @param {SourceHashCreateManyAndReturnArgs} args - Arguments to create many SourceHashes.
+     * @example
+     * // Create many SourceHashes
+     * const sourceHash = await prisma.sourceHash.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many SourceHashes and only return the `source_id`
+     * const sourceHashWithSource_idOnly = await prisma.sourceHash.createManyAndReturn({
+     *   select: { source_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SourceHashCreateManyAndReturnArgs>(args?: SelectSubset<T, SourceHashCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourceHashPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a SourceHash.
      * @param {SourceHashDeleteArgs} args - Arguments to delete one SourceHash.
      * @example
@@ -29832,6 +33326,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends SourceHashUpdateManyArgs>(args: SelectSubset<T, SourceHashUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SourceHashes and returns the data updated in the database.
+     * @param {SourceHashUpdateManyAndReturnArgs} args - Arguments to update many SourceHashes.
+     * @example
+     * // Update many SourceHashes
+     * const sourceHash = await prisma.sourceHash.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more SourceHashes and only return the `source_id`
+     * const sourceHashWithSource_idOnly = await prisma.sourceHash.updateManyAndReturn({
+     *   select: { source_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SourceHashUpdateManyAndReturnArgs>(args: SelectSubset<T, SourceHashUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourceHashPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one SourceHash.
@@ -30258,6 +33782,29 @@ export namespace Prisma {
   }
 
   /**
+   * SourceHash createManyAndReturn
+   */
+  export type SourceHashCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourceHash
+     */
+    select?: SourceHashSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourceHash
+     */
+    omit?: SourceHashOmit<ExtArgs> | null
+    /**
+     * The data used to create many SourceHashes.
+     */
+    data: SourceHashCreateManyInput | SourceHashCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SourceHashIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * SourceHash update
    */
   export type SourceHashUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -30299,6 +33846,36 @@ export namespace Prisma {
      * Limit how many SourceHashes to update.
      */
     limit?: number
+  }
+
+  /**
+   * SourceHash updateManyAndReturn
+   */
+  export type SourceHashUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourceHash
+     */
+    select?: SourceHashSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourceHash
+     */
+    omit?: SourceHashOmit<ExtArgs> | null
+    /**
+     * The data used to update SourceHashes.
+     */
+    data: XOR<SourceHashUpdateManyMutationInput, SourceHashUncheckedUpdateManyInput>
+    /**
+     * Filter which SourceHashes to update
+     */
+    where?: SourceHashWhereInput
+    /**
+     * Limit how many SourceHashes to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SourceHashIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -30571,7 +34148,19 @@ export namespace Prisma {
     SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["sourceLink"]>
 
+  export type SourceLinkSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    source_id?: boolean
+    url?: boolean
+    active?: boolean
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sourceLink"]>
 
+  export type SourceLinkSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    source_id?: boolean
+    url?: boolean
+    active?: boolean
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sourceLink"]>
 
   export type SourceLinkSelectScalar = {
     source_id?: boolean
@@ -30581,6 +34170,12 @@ export namespace Prisma {
 
   export type SourceLinkOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"source_id" | "url" | "active", ExtArgs["result"]["sourceLink"]>
   export type SourceLinkInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }
+  export type SourceLinkIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }
+  export type SourceLinkIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
   }
 
@@ -30711,6 +34306,30 @@ export namespace Prisma {
     createMany<T extends SourceLinkCreateManyArgs>(args?: SelectSubset<T, SourceLinkCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many SourceLinks and returns the data saved in the database.
+     * @param {SourceLinkCreateManyAndReturnArgs} args - Arguments to create many SourceLinks.
+     * @example
+     * // Create many SourceLinks
+     * const sourceLink = await prisma.sourceLink.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many SourceLinks and only return the `source_id`
+     * const sourceLinkWithSource_idOnly = await prisma.sourceLink.createManyAndReturn({
+     *   select: { source_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SourceLinkCreateManyAndReturnArgs>(args?: SelectSubset<T, SourceLinkCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourceLinkPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a SourceLink.
      * @param {SourceLinkDeleteArgs} args - Arguments to delete one SourceLink.
      * @example
@@ -30773,6 +34392,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends SourceLinkUpdateManyArgs>(args: SelectSubset<T, SourceLinkUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SourceLinks and returns the data updated in the database.
+     * @param {SourceLinkUpdateManyAndReturnArgs} args - Arguments to update many SourceLinks.
+     * @example
+     * // Update many SourceLinks
+     * const sourceLink = await prisma.sourceLink.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more SourceLinks and only return the `source_id`
+     * const sourceLinkWithSource_idOnly = await prisma.sourceLink.updateManyAndReturn({
+     *   select: { source_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SourceLinkUpdateManyAndReturnArgs>(args: SelectSubset<T, SourceLinkUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourceLinkPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one SourceLink.
@@ -31199,6 +34848,29 @@ export namespace Prisma {
   }
 
   /**
+   * SourceLink createManyAndReturn
+   */
+  export type SourceLinkCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourceLink
+     */
+    select?: SourceLinkSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourceLink
+     */
+    omit?: SourceLinkOmit<ExtArgs> | null
+    /**
+     * The data used to create many SourceLinks.
+     */
+    data: SourceLinkCreateManyInput | SourceLinkCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SourceLinkIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * SourceLink update
    */
   export type SourceLinkUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -31240,6 +34912,36 @@ export namespace Prisma {
      * Limit how many SourceLinks to update.
      */
     limit?: number
+  }
+
+  /**
+   * SourceLink updateManyAndReturn
+   */
+  export type SourceLinkUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourceLink
+     */
+    select?: SourceLinkSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourceLink
+     */
+    omit?: SourceLinkOmit<ExtArgs> | null
+    /**
+     * The data used to update SourceLinks.
+     */
+    data: XOR<SourceLinkUpdateManyMutationInput, SourceLinkUncheckedUpdateManyInput>
+    /**
+     * Filter which SourceLinks to update
+     */
+    where?: SourceLinkWhereInput
+    /**
+     * Limit how many SourceLinks to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SourceLinkIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -31509,7 +35211,19 @@ export namespace Prisma {
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["sourceMapDevice"]>
 
+  export type SourceMapDeviceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    source_id?: boolean
+    device_id?: boolean
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sourceMapDevice"]>
 
+  export type SourceMapDeviceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    source_id?: boolean
+    device_id?: boolean
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sourceMapDevice"]>
 
   export type SourceMapDeviceSelectScalar = {
     source_id?: boolean
@@ -31518,6 +35232,14 @@ export namespace Prisma {
 
   export type SourceMapDeviceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"source_id" | "device_id", ExtArgs["result"]["sourceMapDevice"]>
   export type SourceMapDeviceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }
+  export type SourceMapDeviceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+  }
+  export type SourceMapDeviceIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
     DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }
@@ -31649,6 +35371,30 @@ export namespace Prisma {
     createMany<T extends SourceMapDeviceCreateManyArgs>(args?: SelectSubset<T, SourceMapDeviceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many SourceMapDevices and returns the data saved in the database.
+     * @param {SourceMapDeviceCreateManyAndReturnArgs} args - Arguments to create many SourceMapDevices.
+     * @example
+     * // Create many SourceMapDevices
+     * const sourceMapDevice = await prisma.sourceMapDevice.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many SourceMapDevices and only return the `source_id`
+     * const sourceMapDeviceWithSource_idOnly = await prisma.sourceMapDevice.createManyAndReturn({
+     *   select: { source_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SourceMapDeviceCreateManyAndReturnArgs>(args?: SelectSubset<T, SourceMapDeviceCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourceMapDevicePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a SourceMapDevice.
      * @param {SourceMapDeviceDeleteArgs} args - Arguments to delete one SourceMapDevice.
      * @example
@@ -31711,6 +35457,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends SourceMapDeviceUpdateManyArgs>(args: SelectSubset<T, SourceMapDeviceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SourceMapDevices and returns the data updated in the database.
+     * @param {SourceMapDeviceUpdateManyAndReturnArgs} args - Arguments to update many SourceMapDevices.
+     * @example
+     * // Update many SourceMapDevices
+     * const sourceMapDevice = await prisma.sourceMapDevice.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more SourceMapDevices and only return the `source_id`
+     * const sourceMapDeviceWithSource_idOnly = await prisma.sourceMapDevice.updateManyAndReturn({
+     *   select: { source_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SourceMapDeviceUpdateManyAndReturnArgs>(args: SelectSubset<T, SourceMapDeviceUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourceMapDevicePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one SourceMapDevice.
@@ -32137,6 +35913,29 @@ export namespace Prisma {
   }
 
   /**
+   * SourceMapDevice createManyAndReturn
+   */
+  export type SourceMapDeviceCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourceMapDevice
+     */
+    select?: SourceMapDeviceSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourceMapDevice
+     */
+    omit?: SourceMapDeviceOmit<ExtArgs> | null
+    /**
+     * The data used to create many SourceMapDevices.
+     */
+    data: SourceMapDeviceCreateManyInput | SourceMapDeviceCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SourceMapDeviceIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * SourceMapDevice update
    */
   export type SourceMapDeviceUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -32178,6 +35977,36 @@ export namespace Prisma {
      * Limit how many SourceMapDevices to update.
      */
     limit?: number
+  }
+
+  /**
+   * SourceMapDevice updateManyAndReturn
+   */
+  export type SourceMapDeviceUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourceMapDevice
+     */
+    select?: SourceMapDeviceSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourceMapDevice
+     */
+    omit?: SourceMapDeviceOmit<ExtArgs> | null
+    /**
+     * The data used to update SourceMapDevices.
+     */
+    data: XOR<SourceMapDeviceUpdateManyMutationInput, SourceMapDeviceUncheckedUpdateManyInput>
+    /**
+     * Filter which SourceMapDevices to update
+     */
+    where?: SourceMapDeviceWhereInput
+    /**
+     * Limit how many SourceMapDevices to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SourceMapDeviceIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -32441,7 +36270,15 @@ export namespace Prisma {
     os_string?: boolean
   }, ExtArgs["result"]["sourceMapOsString"]>
 
+  export type SourceMapOsStringSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    source_id?: boolean
+    os_string?: boolean
+  }, ExtArgs["result"]["sourceMapOsString"]>
 
+  export type SourceMapOsStringSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    source_id?: boolean
+    os_string?: boolean
+  }, ExtArgs["result"]["sourceMapOsString"]>
 
   export type SourceMapOsStringSelectScalar = {
     source_id?: boolean
@@ -32574,6 +36411,30 @@ export namespace Prisma {
     createMany<T extends SourceMapOsStringCreateManyArgs>(args?: SelectSubset<T, SourceMapOsStringCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many SourceMapOsStrings and returns the data saved in the database.
+     * @param {SourceMapOsStringCreateManyAndReturnArgs} args - Arguments to create many SourceMapOsStrings.
+     * @example
+     * // Create many SourceMapOsStrings
+     * const sourceMapOsString = await prisma.sourceMapOsString.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many SourceMapOsStrings and only return the `source_id`
+     * const sourceMapOsStringWithSource_idOnly = await prisma.sourceMapOsString.createManyAndReturn({
+     *   select: { source_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SourceMapOsStringCreateManyAndReturnArgs>(args?: SelectSubset<T, SourceMapOsStringCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourceMapOsStringPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a SourceMapOsString.
      * @param {SourceMapOsStringDeleteArgs} args - Arguments to delete one SourceMapOsString.
      * @example
@@ -32636,6 +36497,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends SourceMapOsStringUpdateManyArgs>(args: SelectSubset<T, SourceMapOsStringUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SourceMapOsStrings and returns the data updated in the database.
+     * @param {SourceMapOsStringUpdateManyAndReturnArgs} args - Arguments to update many SourceMapOsStrings.
+     * @example
+     * // Update many SourceMapOsStrings
+     * const sourceMapOsString = await prisma.sourceMapOsString.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more SourceMapOsStrings and only return the `source_id`
+     * const sourceMapOsStringWithSource_idOnly = await prisma.sourceMapOsString.updateManyAndReturn({
+     *   select: { source_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SourceMapOsStringUpdateManyAndReturnArgs>(args: SelectSubset<T, SourceMapOsStringUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourceMapOsStringPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one SourceMapOsString.
@@ -33036,6 +36927,25 @@ export namespace Prisma {
   }
 
   /**
+   * SourceMapOsString createManyAndReturn
+   */
+  export type SourceMapOsStringCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourceMapOsString
+     */
+    select?: SourceMapOsStringSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourceMapOsString
+     */
+    omit?: SourceMapOsStringOmit<ExtArgs> | null
+    /**
+     * The data used to create many SourceMapOsStrings.
+     */
+    data: SourceMapOsStringCreateManyInput | SourceMapOsStringCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
    * SourceMapOsString update
    */
   export type SourceMapOsStringUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -33061,6 +36971,32 @@ export namespace Prisma {
    * SourceMapOsString updateMany
    */
   export type SourceMapOsStringUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update SourceMapOsStrings.
+     */
+    data: XOR<SourceMapOsStringUpdateManyMutationInput, SourceMapOsStringUncheckedUpdateManyInput>
+    /**
+     * Filter which SourceMapOsStrings to update
+     */
+    where?: SourceMapOsStringWhereInput
+    /**
+     * Limit how many SourceMapOsStrings to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * SourceMapOsString updateManyAndReturn
+   */
+  export type SourceMapOsStringUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourceMapOsString
+     */
+    select?: SourceMapOsStringSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourceMapOsString
+     */
+    omit?: SourceMapOsStringOmit<ExtArgs> | null
     /**
      * The data used to update SourceMapOsStrings.
      */
@@ -33325,7 +37261,17 @@ export namespace Prisma {
     SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["sourcePrequisiteBuild"]>
 
+  export type SourcePrequisiteBuildSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    source_id?: boolean
+    build?: boolean
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sourcePrequisiteBuild"]>
 
+  export type SourcePrequisiteBuildSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    source_id?: boolean
+    build?: boolean
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sourcePrequisiteBuild"]>
 
   export type SourcePrequisiteBuildSelectScalar = {
     source_id?: boolean
@@ -33334,6 +37280,12 @@ export namespace Prisma {
 
   export type SourcePrequisiteBuildOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"source_id" | "build", ExtArgs["result"]["sourcePrequisiteBuild"]>
   export type SourcePrequisiteBuildInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }
+  export type SourcePrequisiteBuildIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
+  }
+  export type SourcePrequisiteBuildIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     SourceEntry?: boolean | SourceEntryDefaultArgs<ExtArgs>
   }
 
@@ -33463,6 +37415,30 @@ export namespace Prisma {
     createMany<T extends SourcePrequisiteBuildCreateManyArgs>(args?: SelectSubset<T, SourcePrequisiteBuildCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many SourcePrequisiteBuilds and returns the data saved in the database.
+     * @param {SourcePrequisiteBuildCreateManyAndReturnArgs} args - Arguments to create many SourcePrequisiteBuilds.
+     * @example
+     * // Create many SourcePrequisiteBuilds
+     * const sourcePrequisiteBuild = await prisma.sourcePrequisiteBuild.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many SourcePrequisiteBuilds and only return the `source_id`
+     * const sourcePrequisiteBuildWithSource_idOnly = await prisma.sourcePrequisiteBuild.createManyAndReturn({
+     *   select: { source_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SourcePrequisiteBuildCreateManyAndReturnArgs>(args?: SelectSubset<T, SourcePrequisiteBuildCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourcePrequisiteBuildPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a SourcePrequisiteBuild.
      * @param {SourcePrequisiteBuildDeleteArgs} args - Arguments to delete one SourcePrequisiteBuild.
      * @example
@@ -33525,6 +37501,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends SourcePrequisiteBuildUpdateManyArgs>(args: SelectSubset<T, SourcePrequisiteBuildUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SourcePrequisiteBuilds and returns the data updated in the database.
+     * @param {SourcePrequisiteBuildUpdateManyAndReturnArgs} args - Arguments to update many SourcePrequisiteBuilds.
+     * @example
+     * // Update many SourcePrequisiteBuilds
+     * const sourcePrequisiteBuild = await prisma.sourcePrequisiteBuild.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more SourcePrequisiteBuilds and only return the `source_id`
+     * const sourcePrequisiteBuildWithSource_idOnly = await prisma.sourcePrequisiteBuild.updateManyAndReturn({
+     *   select: { source_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SourcePrequisiteBuildUpdateManyAndReturnArgs>(args: SelectSubset<T, SourcePrequisiteBuildUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourcePrequisiteBuildPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one SourcePrequisiteBuild.
@@ -33950,6 +37956,29 @@ export namespace Prisma {
   }
 
   /**
+   * SourcePrequisiteBuild createManyAndReturn
+   */
+  export type SourcePrequisiteBuildCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourcePrequisiteBuild
+     */
+    select?: SourcePrequisiteBuildSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourcePrequisiteBuild
+     */
+    omit?: SourcePrequisiteBuildOmit<ExtArgs> | null
+    /**
+     * The data used to create many SourcePrequisiteBuilds.
+     */
+    data: SourcePrequisiteBuildCreateManyInput | SourcePrequisiteBuildCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SourcePrequisiteBuildIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * SourcePrequisiteBuild update
    */
   export type SourcePrequisiteBuildUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -33991,6 +38020,36 @@ export namespace Prisma {
      * Limit how many SourcePrequisiteBuilds to update.
      */
     limit?: number
+  }
+
+  /**
+   * SourcePrequisiteBuild updateManyAndReturn
+   */
+  export type SourcePrequisiteBuildUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SourcePrequisiteBuild
+     */
+    select?: SourcePrequisiteBuildSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SourcePrequisiteBuild
+     */
+    omit?: SourcePrequisiteBuildOmit<ExtArgs> | null
+    /**
+     * The data used to update SourcePrequisiteBuilds.
+     */
+    data: XOR<SourcePrequisiteBuildUpdateManyMutationInput, SourcePrequisiteBuildUncheckedUpdateManyInput>
+    /**
+     * Filter which SourcePrequisiteBuilds to update
+     */
+    where?: SourcePrequisiteBuildWhereInput
+    /**
+     * Limit how many SourcePrequisiteBuilds to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SourcePrequisiteBuildIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -34388,6 +38447,14 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+  export const QueryMode: {
+    default: 'default',
+    insensitive: 'insensitive'
+  };
+
+  export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
   export const ColorLookupOrderByRelevanceFieldEnum: {
     name: 'name'
   };
@@ -34576,9 +38643,23 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
    * Reference to a field of type 'String'
    */
   export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+    
+
+
+  /**
+   * Reference to a field of type 'String[]'
+   */
+  export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
     
 
 
@@ -34597,6 +38678,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'DateTime[]'
+   */
+  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+  /**
    * Reference to a field of type 'BigInt'
    */
   export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>
@@ -34604,9 +38692,23 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'BigInt[]'
+   */
+  export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+  /**
+   * Reference to a field of type 'Float[]'
+   */
+  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
   /**
    * Deep Input Types
@@ -37684,8 +41786,8 @@ export namespace Prisma {
 
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -37695,8 +41797,8 @@ export namespace Prisma {
 
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -37705,6 +41807,7 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     search?: string
+    mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
@@ -37749,8 +41852,8 @@ export namespace Prisma {
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -37765,8 +41868,8 @@ export namespace Prisma {
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -37775,6 +41878,7 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     search?: string
+    mode?: QueryMode
     not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
@@ -37783,8 +41887,8 @@ export namespace Prisma {
 
   export type IntNullableFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -37799,8 +41903,8 @@ export namespace Prisma {
 
   export type StringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -37809,6 +41913,7 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     search?: string
+    mode?: QueryMode
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
@@ -37959,8 +42064,8 @@ export namespace Prisma {
 
   export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -37983,8 +42088,8 @@ export namespace Prisma {
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -37993,6 +42098,7 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     search?: string
+    mode?: QueryMode
     not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
@@ -38398,8 +42504,8 @@ export namespace Prisma {
 
   export type DateTimeNullableFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -38447,8 +42553,8 @@ export namespace Prisma {
 
   export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -38980,8 +43086,8 @@ export namespace Prisma {
 
   export type BigIntNullableFilter<$PrismaModel = never> = {
     equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
-    in?: bigint[] | number[] | null
-    notIn?: bigint[] | number[] | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
     lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
     lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
     gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
@@ -39074,8 +43180,8 @@ export namespace Prisma {
 
   export type BigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
-    in?: bigint[] | number[] | null
-    notIn?: bigint[] | number[] | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
     lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
     lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
     gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
@@ -41047,8 +45153,8 @@ export namespace Prisma {
 
   export type NestedIntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -41058,8 +45164,8 @@ export namespace Prisma {
 
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -41073,8 +45179,8 @@ export namespace Prisma {
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -41089,8 +45195,8 @@ export namespace Prisma {
 
   export type NestedFloatFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
@@ -41100,8 +45206,8 @@ export namespace Prisma {
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -41118,8 +45224,8 @@ export namespace Prisma {
 
   export type NestedIntNullableFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -41134,8 +45240,8 @@ export namespace Prisma {
 
   export type NestedStringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -41149,8 +45255,8 @@ export namespace Prisma {
 
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -41165,8 +45271,8 @@ export namespace Prisma {
 
   export type NestedFloatNullableFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
@@ -41184,8 +45290,8 @@ export namespace Prisma {
 
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -41202,8 +45308,8 @@ export namespace Prisma {
 
   export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -41213,8 +45319,8 @@ export namespace Prisma {
 
   export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -41227,8 +45333,8 @@ export namespace Prisma {
 
   export type NestedBigIntNullableFilter<$PrismaModel = never> = {
     equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
-    in?: bigint[] | number[] | null
-    notIn?: bigint[] | number[] | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
     lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
     lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
     gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
@@ -41238,8 +45344,8 @@ export namespace Prisma {
 
   export type NestedBigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
-    in?: bigint[] | number[] | null
-    notIn?: bigint[] | number[] | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
     lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
     lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
     gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
