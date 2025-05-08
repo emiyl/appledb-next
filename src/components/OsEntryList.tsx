@@ -104,7 +104,7 @@ export function OsEntryList() {
                 <OsEntryListRow
                     key={entry.id}
                     entry={entry}
-                    showBuildString={settings.showBuildString}
+                    showBuildString={settings.showBuildString ?? false}
                 />
             ))}
             {hasMore && <div ref={loaderRef}></div>}
