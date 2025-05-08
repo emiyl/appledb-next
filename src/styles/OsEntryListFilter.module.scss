@@ -40,6 +40,10 @@
     align-items: center;
     transition: background $t-hover, color $t-hover;
     border-radius: 100%;
+
+    width: 24px;
+    height: 24px;
+    margin-inline: -6px;
 }
 
 .filterItem {
@@ -56,10 +60,12 @@
     padding-inline: 1em;
 
     height: 42px;
+    min-width: calc(46px - 2em);
 
     span {
         -webkit-user-select: none;
         user-select: none;
+        margin-right: 4px;
     }
 
     &.release {
