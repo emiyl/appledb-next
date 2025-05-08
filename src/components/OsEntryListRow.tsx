@@ -18,7 +18,7 @@ const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry, showBuildString 
             <div className={styles.name}>
                 {`${entry.OsLookupName.name} ${entry.version}`}
             </div>
-            {showBuildString && (
+            {showBuildString && entry.build && (
                 <code className={styles.build}>
                     {entry.build}
                 </code>
@@ -32,7 +32,7 @@ const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry, showBuildString 
             <div className={styles.separator} />
             {entry.release_datetime && (
                 <div className={styles.releaseDate}>
-                    {formatDateToString(entry.release_datetime, 3)}
+                    {formatDateToString(entry.release_datetime, entry.release_datetime_depth)}
                 </div>
             )}
         </div>
