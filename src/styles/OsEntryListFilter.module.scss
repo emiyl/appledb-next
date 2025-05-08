@@ -1,0 +1,141 @@
+@use '@/styles/variables.scss' as *;
+
+.searchRow {
+    display: flex;
+    gap: .75em;
+}
+
+.searchContainer {
+    display: flex;
+    gap: .75em;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: .75em;
+    padding: .7em 1em;
+    border-radius: 8px;
+    background: $c-bg-lighter;
+    flex-grow: 1;
+
+    i {
+        color: $c-text-light;
+    }
+}
+
+.searchBar {
+    flex-grow: 1;
+    border: none;
+    font-size: 1em;
+    background: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.filterIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5em;
+    width: 1.5em;
+    transition: background $t-hover, color $t-hover;
+    border-radius: 100%;
+    margin-right: .5em;
+
+    &.left {
+        margin-right: 0;
+    }
+
+    i.fa-chevron-right {
+        font-size: 0.9em;
+    }
+}
+
+.filterItem {
+    background: $c-bg-lighter;
+    border-radius: 8px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5em;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background $t-hover, color $t-hover, transform $t-hover;
+    padding-left: .5em;
+    height: 2.5em;
+
+    span {
+        padding-left: .5em;;
+        padding-block: .7em;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    &.left span {
+        padding-left: 0;
+        padding-right: 1em;
+        margin-left: -4px;
+    }
+
+    &.release {
+        background: $c-release-lighter;
+        color: $c-release-text;
+    }
+    &.beta {
+        background: $c-beta-lighter;
+        color: $c-beta-text;
+    }
+    &.rc {
+        background: $c-rc-lighter;
+        color: $c-rc-text;
+    }
+    &.internal {
+        background: $c-internal-light;
+        color: $c-internal-text;
+    }
+
+    &:hover {
+        background: $c-border;
+        transform: scale(1.02);
+
+        &.add {
+            background: $c-border-dark;
+        }
+        
+        &.filterSelected .filterIcon {
+            background: $c-border-dark;
+        }
+
+        &.release {
+            background: $c-release-lighter;
+            .filterIcon {
+                background: $c-release-light;
+            }
+        }
+        &.beta {
+            background: $c-beta-lighter;
+            .filterIcon {
+                background: $c-beta-light;
+            }
+        }
+        &.rc {
+            background: $c-rc-lighter;
+            .filterIcon {
+                background: $c-rc-light;
+            }
+        }
+        &.internal {
+            background: $c-internal-lighter;
+            .filterIcon {
+                background: $c-internal-light;
+            }
+        }
+    }
+}
+
+.filterRow {
+    display: flex;
+    gap: .5em;
+    flex-flow: row wrap;
+    margin-bottom: 1em;
+}

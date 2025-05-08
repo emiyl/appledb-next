@@ -1,0 +1,25 @@
+@use '@/styles/variables.scss' as *;
+
+.main {
+    max-width: max($homepage-width, 85vw);
+    padding: $navbar-height 2rem 0;
+    margin-inline: auto;
+    display: block;
+    margin-bottom: $navbar-height;
+  
+    .home {
+        max-width: max($homepage-width, 85vw);
+    }
+  
+    .content {
+        max-width: $content-width;
+        margin-inline: auto;
+        margin-top: 1em;
+    }
+}
+  
+.clickable {
+    cursor: pointer;
+    color: $c-text-accent;
+}
+  

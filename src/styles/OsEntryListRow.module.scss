@@ -1,0 +1,53 @@
+@use '@/styles/variables.scss' as *;
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    gap: .5em;
+
+    padding-block: 1.2em;
+    margin-inline: 0em;
+    cursor: pointer;
+    border-bottom: 1px solid $c-border;
+    transition: background $t-hover, color $t-hover;
+
+    &:hover {
+        border-radius: 12px;
+        background: $c-bg-light;
+        color: $c-text-accent;
+        border-bottom: 1px solid #00000000;
+        padding-inline: 1em;
+        margin-inline: -1em;
+        margin-top: -1px;
+        padding-top: calc(1.2em + 1px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .separator {
+        width: 100%;
+    }
+}
+
+.name {
+    font-weight: 600;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        font-size: .3em;
+        color: $c-text-lightest;
+    }
+}
+
+.separator {
+    flex-grow: 1;
+}
+
+.footer {
+    margin-top: 2em;
+}

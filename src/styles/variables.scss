@@ -1,0 +1,132 @@
+@use "sass:color"; // Import Sass color functions
+
+// Brand Colors
+$c-brand: hsl(189, 80%, 45%);
+$c-brand-light: hsl(189, 80%, 51%);
+
+// Background Colors
+$c-bg: #f6f6f6;
+$c-bg-light: #f3f4f5;
+$c-bg-lighter: #eeeeee;
+$c-bg-navbar: color.adjust($c-bg, $alpha: -0.5); // Replace rgba()
+$c-bg-sidebar: $c-bg;
+$c-bg-arrow: #cccccc;
+
+// Text Colors
+$c-text: #2c3e50;
+$c-text-accent: $c-brand;
+$c-text-light: #3a5169;
+$c-text-lighter: #4e6e8e;
+$c-text-lightest: #6a8bad;
+$c-text-quote: #999999;
+
+// Border Colors
+$c-border: #eaecef;
+$c-border-dark: #dfe2e5;
+
+// Release Colors
+$c-release: #039be5;
+$c-release-light: color.adjust($c-release, $alpha: -0.8);
+$c-release-lighter: color.adjust($c-release, $alpha: -0.9);
+$c-release-dark: color.mix($c-release, $c-text, 80%);
+$c-release-text: color.mix($c-release, $c-text, 40%);
+
+// Beta Colors
+$c-beta: #ab47bc;
+$c-beta-light: color.adjust($c-beta, $alpha: -0.8);
+$c-beta-lighter: color.adjust($c-beta, $alpha: -0.9);
+$c-beta-dark: color.mix($c-beta, $c-text, 80%);
+$c-beta-text: color.mix($c-beta, $c-text, 40%);
+
+// RC Colors (Same as Beta)
+$c-rc: $c-beta;
+$c-rc-light: color.adjust($c-rc, $alpha: -0.8);
+$c-rc-lighter: color.adjust($c-rc, $alpha: -0.9);
+$c-rc-dark: color.mix($c-rc, $c-text, 80%);
+$c-rc-text: color.mix($c-rc, $c-text, 40%);
+
+// Internal Colors
+$c-internal: #fbc02d;
+$c-internal-light: color.adjust($c-internal, $alpha: -0.8);
+$c-internal-lighter: color.adjust($c-internal, $alpha: -0.9);
+$c-internal-dark: color.mix($c-internal, $c-text, 80%);
+$c-internal-text: color.mix($c-internal, $c-text, 40%);
+
+// RSR Colors
+$c-rsr: $c-text;
+$c-rsr-light: color.adjust($c-rsr, $alpha: -0.8);
+$c-rsr-lighter: color.adjust($c-rsr, $alpha: -0.9);
+$c-rsr-dark: color.mix($c-rsr, $c-text, 80%);
+$c-rsr-text: color.mix($c-rsr, $c-text, 40%);
+
+// SDK Colors
+$c-sdk: $c-text;
+$c-sdk-light: color.adjust($c-sdk, $alpha: -0.8);
+$c-sdk-lighter: color.adjust($c-sdk, $alpha: -0.9);
+$c-sdk-dark: color.mix($c-sdk, $c-text, 80%);
+$c-sdk-text: color.mix($c-sdk, $c-text, 40%);
+
+// Simulator Colors
+$c-simulator: $c-text;
+$c-simulator-light: color.adjust($c-simulator, $alpha: -0.8);
+$c-simulator-lighter: color.adjust($c-simulator, $alpha: -0.9);
+$c-simulator-dark: color.mix($c-simulator, $c-text, 80%);
+$c-simulator-text: color.mix($c-simulator, $c-text, 40%);
+
+// Tip Colors
+$c-tip: #42b983;
+$c-tip-bg: $c-bg-light;
+$c-tip-title: $c-text;
+$c-tip-text: $c-text;
+$c-tip-text-accent: $c-text-accent;
+
+// Warning Colors
+$c-warning: #e7c000;
+$c-warning-bg: #fffae3;
+$c-warning-title: #ad9000;
+$c-warning-text: #746000;
+$c-warning-text-accent: $c-text;
+
+// Danger Colors
+$c-danger: #cc0000;
+$c-danger-bg: #ffe0e0;
+$c-danger-title: #990000;
+$c-danger-text: #660000;
+$c-danger-text-accent: $c-text;
+
+// Other Colors
+$c-details-bg: #eeeeee;
+
+// Badge Colors
+$c-badge-tip: $c-tip;
+$c-badge-warning: $c-warning;
+$c-badge-danger: $c-danger;
+
+// Transitions
+$t-color: 0.3s ease;
+$t-transform: 0.3s ease;
+$t-hover: 0.1s ease-in-out;
+
+// Code Block Colors
+$code-bg-color: #282c34;
+$code-hl-bg-color: color.adjust(black, $alpha: -0.34);
+$code-ln-color: #9e9e9e;
+$code-ln-wrapper-width: 3.5rem;
+
+// Fonts
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$font-family-code: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+// Navbar
+$navbar-height: 3.6rem;
+$navbar-padding-v: 0.7rem;
+$navbar-padding-h: 1.5rem;
+$navbar-line-height: calc($navbar-height - 2 * $navbar-padding-v);
+
+// Sidebar
+$sidebar-width: 20rem;
+$sidebar-width-mobile: calc(#{$sidebar-width} * 0.82);
+
+// Content
+$content-width: 740px;
+$homepage-width: 960px;

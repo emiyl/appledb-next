@@ -1,0 +1,323 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model ColorLookup {
+  id                Int                 @id @default(autoincrement()) @db.UnsignedInt
+  name              String              @db.Text
+  DeviceImageColors DeviceImageColors[]
+}
+
+model DeviceEntry {
+  id                    Int                     @id @default(autoincrement()) @db.UnsignedInt
+  name                  String                  @db.VarChar(512)
+  category_id           Int                     @db.UnsignedInt
+  image_id              Int?                    @db.UnsignedInt
+  is_internal           Boolean?                @default(false)
+  legacy_unique_key     String?                 @db.Text
+  DeviceLookupCategory  DeviceLookupCategory    @relation(fields: [category_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "deviceentry_ibfk_1")
+  DeviceGroupMapDevice  DeviceGroupMapDevice[]
+  DeviceMapArchitecture DeviceMapArchitecture[]
+  DeviceMapIdentifier   DeviceMapIdentifier[]
+  DeviceMapModel        DeviceMapModel[]
+  DeviceMapRelease      DeviceMapRelease[]
+  DeviceMapSoc          DeviceMapSoc[]
+  MapDeviceOs           MapDeviceOs[]
+  OsEntryPreinstalled   OsEntryPreinstalled[]
+  SourceMapDevice       SourceMapDevice[]
+
+  @@index([category_id], map: "category_id")
+}
+
+model DeviceGroupEntry {
+  id                                                                                    Int                         @id @default(autoincrement()) @db.UnsignedInt
+  name                                                                                  String                      @db.VarChar(512)
+  category_id                                                                           Int?                        @db.UnsignedInt
+  image_id                                                                              Int?                        @db.UnsignedInt
+  is_internal                                                                           Boolean?                    @default(false)
+  legacy_unique_key                                                                     String?                     @db.Text
+  DeviceGroupMapDevice                                                                  DeviceGroupMapDevice[]
+  DeviceGroupMapDeviceGroup_DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry DeviceGroupMapDeviceGroup[] @relation("DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry")
+  DeviceGroupMapDeviceGroup_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry  DeviceGroupMapDeviceGroup[] @relation("DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry")
+}
+
+model DeviceGroupMapDevice {
+  group_id         Int              @db.UnsignedInt
+  device_id        Int              @db.UnsignedInt
+  DeviceGroupEntry DeviceGroupEntry @relation(fields: [group_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicegroupmapdevice_ibfk_1")
+  DeviceEntry      DeviceEntry      @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicegroupmapdevice_ibfk_2")
+
+  @@id([group_id, device_id])
+  @@index([device_id], map: "device_id")
+}
+
+model DeviceGroupMapDeviceGroup {
+  parent_group_id                                                              Int              @db.UnsignedInt
+  child_group_id                                                               Int              @db.UnsignedInt
+  DeviceGroupEntry_DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry DeviceGroupEntry @relation("DeviceGroupMapDeviceGroup_parent_group_idToDeviceGroupEntry", fields: [parent_group_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicegroupmapdevicegroup_ibfk_1")
+  DeviceGroupEntry_DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry  DeviceGroupEntry @relation("DeviceGroupMapDeviceGroup_child_group_idToDeviceGroupEntry", fields: [child_group_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicegroupmapdevicegroup_ibfk_2")
+
+  @@id([parent_group_id, child_group_id])
+  @@index([child_group_id], map: "child_group_id")
+}
+
+model DeviceImageColors {
+  device_image_id   Int               @db.UnsignedInt
+  color_id          Int               @db.UnsignedInt
+  dark_mode         Boolean?          @default(false)
+  DeviceLookupImage DeviceLookupImage @relation(fields: [device_image_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "deviceimagecolors_ibfk_1")
+  ColorLookup       ColorLookup       @relation(fields: [color_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "deviceimagecolors_ibfk_2")
+
+  @@id([device_image_id, color_id])
+  @@index([color_id], map: "color_id")
+}
+
+model DeviceLookupArchitecture {
+  id                    Int                     @id @default(autoincrement()) @db.UnsignedInt
+  name                  String                  @db.Text
+  DeviceMapArchitecture DeviceMapArchitecture[]
+}
+
+model DeviceLookupCategory {
+  id          Int           @id @default(autoincrement()) @db.UnsignedInt
+  name        String        @db.Text
+  DeviceEntry DeviceEntry[]
+}
+
+model DeviceLookupImage {
+  id                Int                 @id @default(autoincrement()) @db.UnsignedInt
+  name              String              @db.Text
+  DeviceImageColors DeviceImageColors[]
+}
+
+model DeviceLookupSoc {
+  id           Int            @id @default(autoincrement()) @db.UnsignedInt
+  name         String         @db.Text
+  DeviceMapSoc DeviceMapSoc[]
+}
+
+model DeviceMapArchitecture {
+  device_id                Int                      @db.UnsignedInt
+  architecture_id          Int                      @db.UnsignedInt
+  DeviceEntry              DeviceEntry              @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemaparchitecture_ibfk_1")
+  DeviceLookupArchitecture DeviceLookupArchitecture @relation(fields: [architecture_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemaparchitecture_ibfk_2")
+
+  @@id([device_id, architecture_id])
+  @@index([architecture_id], map: "architecture_id")
+}
+
+model DeviceMapIdentifier {
+  device_id   Int         @db.UnsignedInt
+  identifier  String      @db.VarChar(512)
+  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemapidentifier_ibfk_1")
+
+  @@id([device_id, identifier])
+}
+
+model DeviceMapModel {
+  device_id   Int         @db.UnsignedInt
+  model       String      @db.VarChar(512)
+  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemapmodel_ibfk_1")
+
+  @@id([device_id, model])
+}
+
+model DeviceMapRelease {
+  id          Int          @id @default(autoincrement()) @db.UnsignedInt
+  device_id   Int?         @db.UnsignedInt
+  datetime    DateTime?    @db.DateTime(0)
+  depth       Int?         @default(3) @db.UnsignedInt
+  DeviceEntry DeviceEntry? @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemaprelease_ibfk_1")
+
+  @@index([device_id], map: "device_id")
+}
+
+model DeviceMapSoc {
+  device_id       Int             @db.UnsignedInt
+  soc_id          Int             @db.UnsignedInt
+  DeviceEntry     DeviceEntry     @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemapsoc_ibfk_1")
+  DeviceLookupSoc DeviceLookupSoc @relation(fields: [soc_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "devicemapsoc_ibfk_2")
+
+  @@id([device_id, soc_id])
+  @@index([soc_id], map: "soc_id")
+}
+
+model MapDeviceOs {
+  device_id   Int         @db.UnsignedInt
+  os_id       Int         @db.UnsignedInt
+  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "mapdeviceos_ibfk_1")
+  OsEntry     OsEntry     @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "mapdeviceos_ibfk_2")
+
+  @@id([device_id, os_id])
+  @@index([os_id], map: "os_id")
+}
+
+model OsEntry {
+  id                     Int                    @id @default(autoincrement()) @db.UnsignedInt
+  name_id                Int                    @db.UnsignedInt
+  version                String                 @db.Text
+  build                  String?                @db.Text
+  release_datetime       DateTime?              @db.DateTime(0)
+  release_datetime_depth Int?                   @default(3) @db.UnsignedInt
+  is_release             Boolean?               @default(true)
+  is_beta                Boolean?               @default(false)
+  is_rc                  Boolean?               @default(false)
+  is_internal            Boolean?               @default(false)
+  is_rsr                 Boolean?               @default(false)
+  is_sdk                 Boolean?               @default(false)
+  is_simulator           Boolean?               @default(false)
+  image_id               String?                @db.Text
+  embedded_os_build      String?                @db.Text
+  bridge_os_build        String?                @db.Text
+  notes                  String?                @db.Text
+  legacy_unique_key      String?                @db.Text
+  search                 String?                @db.Text
+  MapDeviceOs            MapDeviceOs[]
+  OsLookupName           OsLookupName           @relation(fields: [name_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentry_ibfk_1")
+  OsEntryBuildTrain      OsEntryBuildTrain[]
+  OsEntryIpd             OsEntryIpd[]
+  OsEntryOsStringMap     OsEntryOsStringMap[]
+  OsEntryPreinstalled    OsEntryPreinstalled[]
+  OsEntryReleaseNote     OsEntryReleaseNote[]
+  OsEntrySafariVersion   OsEntrySafariVersion[]
+  OsEntrySecurityNote    OsEntrySecurityNote[]
+  SourceEntry            SourceEntry[]
+
+  @@index([name_id], map: "name_id")
+  @@fulltext([search], map: "search")
+}
+
+model OsEntryBuildTrain {
+  os_id       Int     @db.UnsignedInt
+  build_train String  @db.VarChar(512)
+  OsEntry     OsEntry @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentrybuildtrain_ibfk_1")
+
+  @@id([os_id, build_train])
+}
+
+model OsEntryIpd {
+  os_id    Int      @db.UnsignedInt
+  ipd_type String   @db.VarChar(512)
+  url      String?  @db.Text
+  active   Boolean?
+  OsEntry  OsEntry  @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentryipd_ibfk_1")
+
+  @@id([os_id, ipd_type])
+}
+
+model OsEntryOsStringMap {
+  os_id     Int     @db.UnsignedInt
+  os_string String  @db.VarChar(512)
+  OsEntry   OsEntry @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentryosstringmap_ibfk_1")
+
+  @@id([os_id, os_string])
+}
+
+model OsEntryPreinstalled {
+  os_id       Int         @db.UnsignedInt
+  device_id   Int         @db.UnsignedInt
+  OsEntry     OsEntry     @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentrypreinstalled_ibfk_1")
+  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentrypreinstalled_ibfk_2")
+
+  @@id([os_id, device_id])
+  @@index([device_id], map: "device_id")
+}
+
+model OsEntryReleaseNote {
+  os_id   Int      @db.UnsignedInt
+  url     String   @db.VarChar(512)
+  active  Boolean?
+  OsEntry OsEntry  @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentryreleasenote_ibfk_1")
+
+  @@id([os_id, url])
+}
+
+model OsEntrySafariVersion {
+  os_id   Int     @db.UnsignedInt
+  version String  @db.VarChar(512)
+  OsEntry OsEntry @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentrysafariversion_ibfk_1")
+
+  @@id([os_id, version])
+}
+
+model OsEntrySecurityNote {
+  os_id   Int      @db.UnsignedInt
+  url     String   @db.VarChar(512)
+  active  Boolean?
+  OsEntry OsEntry  @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "osentrysecuritynote_ibfk_1")
+
+  @@id([os_id, url])
+}
+
+model OsLookupName {
+  id       Int       @id @default(autoincrement()) @db.UnsignedInt
+  name     String    @unique(map: "name") @db.VarChar(512)
+  priority Int?      @default(0)
+  OsEntry  OsEntry[]
+}
+
+model SourceEntry {
+  id                    Int                     @id @default(autoincrement()) @db.UnsignedInt
+  os_id                 Int?                    @db.UnsignedInt
+  source_type           String?                 @db.Text
+  skip_update_links     Boolean?
+  size                  BigInt?                 @db.UnsignedBigInt
+  windows_update_id     String?                 @db.Text
+  windows_revision_id   String?                 @db.Text
+  OsEntry               OsEntry?                @relation(fields: [os_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourceentry_ibfk_1")
+  SourceHash            SourceHash[]
+  SourceLink            SourceLink[]
+  SourceMapDevice       SourceMapDevice[]
+  SourcePrequisiteBuild SourcePrequisiteBuild[]
+
+  @@index([os_id], map: "os_id")
+}
+
+model SourceHash {
+  source_id   Int         @db.UnsignedInt
+  hash_type   String      @db.VarChar(512)
+  hash_value  String?     @db.Text
+  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourcehash_ibfk_1")
+
+  @@id([source_id, hash_type])
+}
+
+model SourceLink {
+  source_id   Int         @db.UnsignedInt
+  url         String      @db.VarChar(512)
+  active      Boolean?
+  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourcelink_ibfk_1")
+
+  @@id([source_id, url])
+}
+
+model SourceMapDevice {
+  source_id   Int         @db.UnsignedInt
+  device_id   Int         @db.UnsignedInt
+  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourcemapdevice_ibfk_1")
+  DeviceEntry DeviceEntry @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourcemapdevice_ibfk_2")
+
+  @@id([source_id, device_id])
+  @@index([device_id], map: "device_id")
+}
+
+model SourceMapOsString {
+  source_id Int    @db.UnsignedInt
+  os_string String @db.VarChar(512)
+
+  @@id([source_id, os_string])
+}
+
+model SourcePrequisiteBuild {
+  source_id   Int         @db.UnsignedInt
+  build       String      @db.VarChar(512)
+  SourceEntry SourceEntry @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sourceprequisitebuild_ibfk_1")
+
+  @@id([source_id, build])
+}

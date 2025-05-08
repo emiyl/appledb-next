@@ -1,0 +1,33 @@
+@use '@/styles/variables.scss' as *;
+
+$dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
+
+.dropdown {
+    position: absolute;
+    right: calc(calc(100% - $content-width) / 2);
+    margin-top: .75em;
+    background: $c-bg;
+    border-radius: 8px;
+    
+    padding: 1.5em;
+    box-shadow: 0 12px 32px #00000010,
+                0 2px 6px #0000000f;
+
+    max-width: $dropdown-max-width;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    z-index: 10;
+
+    h3 {
+        margin-block: 0em;
+        width: 100%;
+    }
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    gap: .7em;
+}

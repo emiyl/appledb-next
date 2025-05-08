@@ -1,0 +1,220 @@
+.os-entry-list-header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+
+    h1 {
+        margin-block: 0;
+    }
+
+    margin-block: 2em;
+}
+
+.os-entry-list-header-search-row {
+    display: flex;
+    gap: .75em;
+}
+
+.os-entry-list-header-search-container {
+    display: flex;
+    gap: .75em;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: .75em;
+    padding: .7em 1em;
+    border-radius: 8px;
+    background: $c-bg-lighter;
+    flex-grow: 1;
+
+    i {
+        color: $c-text-light;
+    }
+}
+
+.os-entry-list-header-search {
+    flex-grow: 1;
+    border: none;
+    font-size: 1em;
+    background: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.os-entry-list-header-filter-container {
+    display: flex;
+    gap: .5em;
+    flex-flow: row wrap;
+    margin-bottom: 1em;
+}
+
+.os-entry-list-header-filter-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5em;
+    width: 1.5em;
+    transition: background $t-hover, color $t-hover;
+    border-radius: 100%;
+    margin-right: .5em;
+
+    &.left {
+        margin-right: 0;
+    }
+
+    i.fa-chevron-right {
+        font-size: 0.9em;
+    }
+}
+
+$dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
+
+.os-entry-list-header-filter-add-dropdown {
+    position: absolute;
+    background: $c-bg;
+    box-shadow: 0 12px 32px #00000010,
+                0 2px 6px #00000015;
+    border-radius: 8px;
+    margin-top: 1em;
+    padding: 1.5em;
+
+    right: calc(3em + 4px + calc(100% - $content-width) / 2);
+    max-width: $dropdown-max-width;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    z-index: 10;
+
+    h3 {
+        margin-block: 0em;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .os-entry-list-header-filter-add-dropdown {
+        right: 5em;
+        margin-left: 2em;
+    }
+}
+
+@media screen and (max-width: $content-width) {
+    .os-entry-list-header-filter-add-dropdown {
+        right: 2em;
+    }
+}
+
+.os-entry-list-header-filter-add-dropdown-row {
+    display: flex;
+    flex-flow: row wrap;
+    gap: .7em;
+}
+
+.os-entry-header {
+    display: flex;
+    gap: 1em;
+    margin-block: 2em;
+}
+
+.os-entry-header-icon {
+    margin-top: .2em;
+    img {
+        max-height: 5em;
+        max-width: 5em;
+    }
+}
+
+.os-entry-header-title {
+    h1 {
+        margin-block: 0;
+    }
+
+    p {
+        line-height: 1.5em;
+    }
+}
+.os-entry-list-header-filter-item {
+    background: $c-bg-lighter;
+    border-radius: 8px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5em;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background $t-hover, color $t-hover, transform $t-hover;
+    padding-left: .5em;
+    height: 2.5em;
+
+    span {
+        padding-left: .5em;;
+        padding-block: .7em;
+        -webkit-user-select: none; /* Safari */
+        user-select: none;
+    }
+
+    &.left span {
+        padding-left: 0;
+        padding-right: 1em;
+        margin-left: -4px;
+    }
+
+    &.release {
+        background: $c-release-lighter;
+        color: $c-release-text;
+    }
+    &.beta {
+        background: $c-beta-lighter;
+        color: $c-beta-text;
+    }
+    &.rc {
+        background: $c-rc-lighter;
+        color: $c-rc-text;
+    }
+    &.internal {
+        background: $c-internal-light;
+        color: $c-internal-text;
+    }
+
+    &:hover {
+        background: $c-border;
+        transform: scale(1.02);
+
+        &.add {
+            background: $c-border-dark;
+        }
+        
+        &.filter-selected .os-entry-list-header-filter-icon {
+            background: $c-border-dark;
+        }
+
+        &.release {
+            background: $c-release-lighter;
+            .os-entry-list-header-filter-icon {
+                background: $c-release-light;
+            }
+        }
+        &.beta {
+            background: $c-beta-lighter;
+            .os-entry-list-header-filter-icon {
+                background: $c-beta-light;
+            }
+        }
+        &.rc {
+            background: $c-rc-lighter;
+            .os-entry-list-header-filter-icon {
+                background: $c-rc-light;
+            }
+        }
+        &.internal {
+            background: $c-internal-lighter;
+            .os-entry-list-header-filter-icon {
+                background: $c-internal-light;
+            }
+        }
+    }
+}
