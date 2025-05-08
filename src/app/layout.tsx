@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react"
 import "@/styles/globals.scss";
 import '@/lib/fontawesome';
 import styles from "@/styles/layout.module.scss";
@@ -20,6 +21,7 @@ export default function RootLayout({
         <Navbar />
         <main className={styles.main}>
           {children}
+          <Analytics />
         </main>
       </body>
     </html>
