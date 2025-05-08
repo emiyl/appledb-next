@@ -63,7 +63,9 @@
     cursor: pointer;
     transition: background $t-hover, color $t-hover, transform $t-hover;
     padding-left: .5em;
-    height: 2.5em;
+    height: 42px;
+    min-width: 34px;
+    justify-content: center;
 
     span {
         padding-left: .5em;;
