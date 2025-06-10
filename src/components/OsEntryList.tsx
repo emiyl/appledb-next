@@ -93,11 +93,34 @@ export function OsEntryList() {
         return () => observer.disconnect();
     }, [hasMore]);
 
+    const sentinelRef = useRef(null);
+    const stickyRef = useRef(null);
+    const [isStuck, setIsStuck] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsStuck(entry.boundingClientRect.y < 0);
+            },
+            { threshold: [1] }
+        );
+
+        const sentinel = sentinelRef.current;
+        if (sentinel) observer.observe(sentinel);
+
+        return () => {
+            if (sentinel) observer.unobserve(sentinel);
+        };
+    }, []);
+
     return (
         <div style={{ overflow: 'visible' }}>
+            <div ref={sentinelRef} style={{ height: 1 }}></div>
             <OsEntryListFilter
                 filter={filter} setFilter={setFilter}
                 settings={settings} setSettings={setSettings}
+                ref={stickyRef}
+                isStuck={isStuck}
             />
             {entries.map((entry) => (
                 <OsEntryListRow

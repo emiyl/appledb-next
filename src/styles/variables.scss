@@ -170,3 +170,10 @@ $liquid-glass-shadow-drop:
     inset 0px 8px 8px 0px rgba(255, 255, 255, 0.35),
     0px 8px 24px 0px rgba(0, 0, 0, 0.1)
 ;
+
+$liquid-glass-shadow-intense: 
+    inset 2px 2px 1px -2px rgba(255, 255, 255, 0.35),
+    inset -2px -2px 1px -2px rgba(255, 255, 255, 0.35),
+    inset 0px 8px 8px 0px rgba(255, 255, 255, 0.35),
+    0px 8px 24px 0px rgba(0, 0, 0, 0.2)
+;

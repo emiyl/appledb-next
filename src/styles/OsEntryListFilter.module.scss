@@ -89,7 +89,6 @@ $boundary: 2.5em;
 }
 
 .filterItem {
-    // background: $c-bg-lighter;
     box-shadow: $liquid-glass-shadow;
     background: $liquid-glass-bg;
     backdrop-filter: $liquid-glass-bg-blur;
@@ -167,6 +166,19 @@ $boundary: 2.5em;
                 background: $c-internal-light;
             }
         }
+    }
+}
+
+.filterContainer {
+    .filterItem {
+        transition: box-shadow .5s ease-in-out;
+    }
+}
+
+.filterContainer.stuck {
+    .filterItem {
+        transition: box-shadow .5s ease-in-out;
+        box-shadow: $liquid-glass-shadow-intense !important;
     }
 }
 

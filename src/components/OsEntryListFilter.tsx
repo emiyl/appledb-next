@@ -12,9 +12,11 @@ interface OsEntryListFilterProps {
     setFilter: React.Dispatch<React.SetStateAction<OsEntryFilter>>;
     settings: OsEntryListSettings;
     setSettings: React.Dispatch<React.SetStateAction<OsEntryListSettings>>;
+    ref: React.RefObject<null>;
+    isStuck: boolean;
 }
 
-const OsEntryListFilter: React.FC<OsEntryListFilterProps> = ({ filter, setFilter, settings, setSettings }) => {
+const OsEntryListFilter: React.FC<OsEntryListFilterProps> = ({ filter, setFilter, settings, setSettings, ref, isStuck }) => {
     const [osNames, setOsNames] = React.useState<{ id: number; name: string }[]>([]);
 
     useEffect(() => {
@@ -39,7 +41,10 @@ const OsEntryListFilter: React.FC<OsEntryListFilterProps> = ({ filter, setFilter
     const firmwareNames = osNames.filter(({ id }) => filter.name_id.includes(id));
 
     return (
-        <div className={styles.filterContainer}>
+        <div
+            ref={ref}
+            className={[styles.filterContainer, isStuck ? styles.stuck : ''].join(' ')}
+        >
             <OsEntryListSearchRow
                 filter={filter}
                 setFilter={setFilter}
