@@ -19,7 +19,7 @@ export function DeviceEntryList() {
         const url_base = `/api/device-entries?`;
         const url_params = new URLSearchParams({
             page: page.toString(),
-            limit: '10'
+            limit: '100'
         });
         const res = await fetch(url_base + url_params.toString(), {
             method: 'GET',

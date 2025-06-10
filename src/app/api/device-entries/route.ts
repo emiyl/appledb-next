@@ -23,6 +23,17 @@ export async function GET(req: NextRequest) {
                     name: true,
                 },
             },
+            DeviceImageColors: {
+                select: {
+                    color_id: true,
+                    dark_mode: true,
+                    ColorLookup: {
+                        select: {
+                            name: true,
+                        }
+                    }
+                }
+            }
         },
     });
 

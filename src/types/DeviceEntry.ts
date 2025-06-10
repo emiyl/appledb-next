@@ -1,3 +1,4 @@
+import { ColorLookup } from './../generated/prisma/index.d';
 export type DeviceEntry = {
     id: number;
     name: string;
@@ -8,4 +9,13 @@ export type DeviceEntry = {
         name: string;
     }
     image: string;
+    DeviceImageColors: [
+        {
+            color_id: number;
+            dark_mode: boolean;
+            ColorLookup: {
+                name: string;
+            }
+        }
+    ];
 };

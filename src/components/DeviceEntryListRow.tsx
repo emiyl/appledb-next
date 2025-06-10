@@ -14,9 +14,9 @@ const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry }) => {
                 <h3>{entry.name}</h3>
                 <div className={styles.imageWrapper}>
                     <picture>
-                        <source srcSet={`https://img.appledb.dev/device@main/${entry.image}/0.avif`} type="image/avif" />
-                        <source srcSet={`https://img.appledb.dev/device@main/${entry.image}/0.webp`} type="image/webp" />
-                        <img src={`https://img.appledb.dev/device@main/${entry.image}/0.png`} alt={entry.name} />
+                        <source srcSet={`https://img.appledb.dev/device@main/${entry.image}/${entry.DeviceImageColors[0]?.ColorLookup.name}.avif`} type="image/avif" />
+                        <source srcSet={`https://img.appledb.dev/device@main/${entry.image}/${entry.DeviceImageColors[0]?.ColorLookup.name}.webp`} type="image/webp" />
+                        <img src={`https://img.appledb.dev/device@main/${entry.image}/${entry.DeviceImageColors[0]?.ColorLookup.name}.png`} alt={entry.name} />
                     </picture>
                 </div>
             </div>
