@@ -23,6 +23,9 @@ $dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
     gap: 1em;
     z-index: 10;
 
+    max-height: 50vh;
+    overflow-y: auto;
+
     h3 {
         margin-block: 0em;
         width: 100%;
