@@ -1,5 +1,5 @@
-import { OsEntry } from "@/types";
-import { OsEntryReleaseKind } from "@/types/OsEntryReleaseKind";
+import { OsEntry } from '@/types';
+import { OsEntryReleaseKind } from '@/types/OsEntryReleaseKind';
 import styles from "@/styles/OsEntryListFilter.module.scss";
 
 export function getOsEntryReleaseKinds(entry: OsEntry): OsEntryReleaseKind[] {

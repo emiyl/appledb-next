@@ -6,7 +6,7 @@ import { faPlus, faMagnifyingGlass, faCog } from '@fortawesome/free-solid-svg-ic
 import OsEntryListFilterDropdown from './OsEntryListFilterDropdown';
 import OsEntryListSettingsDropdown from './OsEntryListSettingsDropdown';
 import { OsEntryFilter } from '@/types/OsEntryFilter';
-import { OsEntryListSettings } from '@/types';
+import { OsEntryListSettings } from '@/types/OsEntryListSettings';
 
 interface SearchRowProps {
     filter: OsEntryFilter;

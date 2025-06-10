@@ -2,8 +2,7 @@ import React from 'react';
 import OsEntryReleaseKindFlag from './OsEntryReleaseKindFlag';
 import styles from '@/styles/OsEntryListRow.module.scss';
 import { OsEntry } from '@/types'
-import { formatDateToString } from '@/utils/datetime';
-import { getOsEntryReleaseKinds } from '@/utils';
+import { formatDateToString, getOsEntryReleaseKinds } from '@/utils';
 
 interface OsEntryListRowProps {
     entry: OsEntry;

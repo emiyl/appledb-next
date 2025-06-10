@@ -1,0 +1,51 @@
+@use '@/styles/variables.scss' as *;
+
+$gap: 1.5em;
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: $gap;
+    padding-bottom: $gap;
+    border-bottom: 1px solid $c-border;
+
+    h3 {
+        margin-top: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: .5em;
+    }
+}
+
+.column {
+    width: calc(50% - #{$gap / 2});
+    display: flex;
+    flex-flow: column wrap;
+
+    &:first-of-type {
+        &:hover {
+            cursor: pointer;
+            h3 {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &:last-of-type {
+        justify-content: space-between;
+    }
+}
+
+.imageWrapper {
+    img {
+        max-width: 8em;
+        height: 8em;
+    }
+}

@@ -18,7 +18,7 @@ const getHeroItems = (osEntryCount: number, deviceEntryCount: number): HeroItem[
             title: 'Devices',
             description: `${deviceEntryCountFormatted} products`,
             image: 'https://img.appledb.dev/device@64/iPod classic/0.png',
-            route: '/',
+            route: '/device',
         },
         {
             title: 'Firmware',

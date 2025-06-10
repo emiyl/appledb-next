@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '@/styles/OsEntryListFilterDropdown.module.scss';
-import { OsEntryReleaseKind } from '@/types/OsEntryReleaseKind';
-import { OsEntryFilter } from '@/types';
+import { OsEntryFilter, OsEntryReleaseKind } from '@/types';
 import OsEntryListFilterItem from './OsEntryListFilterItem';
 import { getOsEntryReleaseKindClass, getOsEntryReleaseKindLabel } from '@/utils';
 import { faCaretDown, faPlus } from '@fortawesome/free-solid-svg-icons';

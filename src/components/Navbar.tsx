@@ -8,8 +8,8 @@ interface NavbarItem {
 }
 
 const navbarItems: NavbarItem[] = [
-    // { title: 'Device Entry List', route: '/device-entry-list' },
-    { title: 'Firmware Table', route: '/os-entry-list' },
+    { title: 'Devices', route: '/device' },
+    { title: 'Firmware Table', route: '/firmware' },
 ];
 
 export default function Navbar() {

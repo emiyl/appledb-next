@@ -1,3 +1,4 @@
+import { DeviceImageColors } from './../../../generated/prisma/index.d';
 import { NextRequest } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
@@ -11,10 +12,18 @@ export async function GET(req: NextRequest) {
     const reverse = searchParams.get('reverse') === 'true';
 
     const entries = await prisma.deviceEntry.findMany({
-        where: {},
-        orderBy: {},
+        orderBy: {
+            id: 'asc',
+        },
         skip: offset,
         take: limit,
+        include: {
+            DeviceLookupImage: {
+                select: {
+                    name: true,
+                },
+            },
+        },
     });
 
     return Response.json(entries);

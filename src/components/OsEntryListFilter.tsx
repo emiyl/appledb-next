@@ -2,12 +2,10 @@ import React, { useEffect } from 'react';
 import styles from '@/styles/OsEntryListFilter.module.scss';
 
 import { faXmark, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import { OsEntryReleaseKind } from '@/types/OsEntryReleaseKind';
 import OsEntryListSearchRow from './OsEntryListSearchRow';
 import OsEntryListFilterItem from './OsEntryListFilterItem';
 import { getOsEntryReleaseKindClass, getOsEntryReleaseKindLabel } from '@/utils';
-import { OsEntryFilter } from '@/types/OsEntryFilter';
-import { OsEntryListSettings } from '@/types';
+import { OsEntryFilter, OsEntryListSettings, OsEntryReleaseKind } from '@/types';
 
 interface OsEntryListFilterProps {
     filter: OsEntryFilter;
