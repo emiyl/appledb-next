@@ -94,7 +94,7 @@ export function OsEntryList() {
     }, [hasMore]);
 
     return (
-        <div>
+        <div style={{ overflow: 'visible' }}>
             <OsEntryListFilter
                 filter={filter} setFilter={setFilter}
                 settings={settings} setSettings={setSettings}

@@ -4,23 +4,17 @@ $dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
 
 .dropdown {
     position: absolute;
-    background: $c-bg;
-    border-radius: 8px;
+    border-radius: 24px;
     margin-top: .75em;
     margin-right: 2em;
     padding: 1.5em;
-    box-shadow: 0 12px 32px #00000010,
-                0 2px 6px #0000000f;
 
-    // background: rgba($c-bg, 0.2);
-    // backdrop-filter: blur(3px);
-    // box-shadow:
-    //     inset 2px 2px 1px -2px #ffffffb3,
-    //     inset -2px -2px 1px -2px #ffffffb3,
-    //     inset 0px 8px 8px 0px #ffffff99,
-    //     0px 8px 24px 0px #00000066
-    // ;
-    // border-radius: 3000px;
+    // background: $c-bg;
+    // box-shadow: 0 12px 32px #00000010, 0 2px 6px #0000000f;
+
+    background: $liquid-glass-bg;
+    backdrop-filter: $liquid-glass-bg-blur;
+    box-shadow: $liquid-glass-shadow-drop;
 
     max-width: $dropdown-max-width;
 

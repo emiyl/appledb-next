@@ -1,5 +1,43 @@
 @use '@/styles/variables.scss' as *;
 
+$boundary: 2.5em;
+
+.filterContainer {
+  position: sticky;
+  top: calc($navbar-height);
+  isolation: isolate;
+  background: transparent;
+
+  padding: $boundary;
+  padding-top: 2em;
+  margin: -$boundary;
+  margin-top: -2em;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    backdrop-filter: blur(10px);
+    background: $liquid-glass-bg;
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.8) 60%,
+      rgba(255, 255, 255, 0) 10%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.8) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+
 .searchRow {
     display: flex;
     justify-content: space-between;
@@ -13,9 +51,13 @@
     flex-flow: row nowrap;
     align-items: center;
     padding: 0em 1em;
-    border-radius: 8px;
-    background: $c-bg-lighter;
+    border-radius: 800px;
+    // background: $c-bg-lighter;
     flex-grow: 1;
+
+    box-shadow: $liquid-glass-shadow;
+    background: $liquid-glass-bg;
+    backdrop-filter: $liquid-glass-bg-blur;
 
     i {
         color: $c-text-light;
@@ -47,8 +89,12 @@
 }
 
 .filterItem {
-    background: $c-bg-lighter;
-    border-radius: 8px;
+    // background: $c-bg-lighter;
+    box-shadow: $liquid-glass-shadow;
+    background: $liquid-glass-bg;
+    backdrop-filter: $liquid-glass-bg-blur;
+
+    border-radius: 300px;
     display: flex;
     flex-flow: row nowrap;
     gap: .5em;
@@ -89,13 +135,13 @@
         background: $c-border;
         transform: scale(1.02);
 
-        &.add {
-            background: $c-border-dark;
-        }
+        // &.add {
+        //     background: $c-border-dark;
+        // }
         
-        &.filterSelected .filterIcon {
-            background: $c-border-dark;
-        }
+        // &.filterSelected .filterIcon {
+        //     background: $c-border-dark;
+        // }
 
         &.release {
             background: $c-release-lighter;

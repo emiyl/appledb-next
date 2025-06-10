@@ -39,7 +39,7 @@ const OsEntryListFilter: React.FC<OsEntryListFilterProps> = ({ filter, setFilter
     const firmwareNames = osNames.filter(({ id }) => filter.name_id.includes(id));
 
     return (
-        <div>
+        <div className={styles.filterContainer}>
             <OsEntryListSearchRow
                 filter={filter}
                 setFilter={setFilter}

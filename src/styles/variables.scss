@@ -24,54 +24,59 @@ $c-text-quote: #999999;
 $c-border: #eaecef;
 $c-border-dark: #dfe2e5;
 
+$light-mix: 16%;
+$lighter-mix: 10%;
+$dark-mix: 80%;
+$text-mix: 40%;
+
 // Release Colors
 $c-release: #039be5;
-$c-release-light: color.adjust($c-release, $alpha: -0.8);
-$c-release-lighter: color.adjust($c-release, $alpha: -0.9);
-$c-release-dark: color.mix($c-release, $c-text, 80%);
-$c-release-text: color.mix($c-release, $c-text, 40%);
+$c-release-light: color.mix($c-release, $c-bg, $light-mix);
+$c-release-lighter: color.mix($c-release, $c-bg, $lighter-mix);
+$c-release-dark: color.mix($c-release, $c-text, $dark-mix);
+$c-release-text: color.mix($c-release, $c-text, $text-mix);
 
 // Beta Colors
 $c-beta: #ab47bc;
-$c-beta-light: color.adjust($c-beta, $alpha: -0.8);
-$c-beta-lighter: color.adjust($c-beta, $alpha: -0.9);
-$c-beta-dark: color.mix($c-beta, $c-text, 80%);
-$c-beta-text: color.mix($c-beta, $c-text, 40%);
+$c-beta-light: color.mix($c-beta, $c-bg, $light-mix);
+$c-beta-lighter: color.mix($c-beta, $c-bg, $lighter-mix);
+$c-beta-dark: color.mix($c-beta, $c-text, $dark-mix);
+$c-beta-text: color.mix($c-beta, $c-text, $text-mix);
 
 // RC Colors (Same as Beta)
 $c-rc: $c-beta;
-$c-rc-light: color.adjust($c-rc, $alpha: -0.8);
-$c-rc-lighter: color.adjust($c-rc, $alpha: -0.9);
-$c-rc-dark: color.mix($c-rc, $c-text, 80%);
-$c-rc-text: color.mix($c-rc, $c-text, 40%);
+$c-rc-light: color.mix($c-rc, $c-bg, $light-mix);
+$c-rc-lighter: color.mix($c-rc, $c-bg, $lighter-mix);
+$c-rc-dark: color.mix($c-rc, $c-text, $dark-mix);
+$c-rc-text: color.mix($c-rc, $c-text, $text-mix);
 
 // Internal Colors
 $c-internal: #fbc02d;
-$c-internal-light: color.adjust($c-internal, $alpha: -0.8);
-$c-internal-lighter: color.adjust($c-internal, $alpha: -0.9);
-$c-internal-dark: color.mix($c-internal, $c-text, 80%);
-$c-internal-text: color.mix($c-internal, $c-text, 40%);
+$c-internal-light: color.mix($c-internal, $c-bg, $light-mix);
+$c-internal-lighter: color.mix($c-internal, $c-bg, $lighter-mix);
+$c-internal-dark: color.mix($c-internal, $c-text, $dark-mix);
+$c-internal-text: color.mix($c-internal, $c-text, $text-mix);
 
 // RSR Colors
 $c-rsr: $c-text;
-$c-rsr-light: color.adjust($c-rsr, $alpha: -0.8);
-$c-rsr-lighter: color.adjust($c-rsr, $alpha: -0.9);
-$c-rsr-dark: color.mix($c-rsr, $c-text, 80%);
-$c-rsr-text: color.mix($c-rsr, $c-text, 40%);
+$c-rsr-light: color.mix($c-rsr, $c-bg, $light-mix);
+$c-rsr-lighter: color.mix($c-rsr, $c-bg, $lighter-mix);
+$c-rsr-dark: color.mix($c-rsr, $c-text, $dark-mix);
+$c-rsr-text: color.mix($c-rsr, $c-text, $text-mix);
 
 // SDK Colors
 $c-sdk: $c-text;
-$c-sdk-light: color.adjust($c-sdk, $alpha: -0.8);
-$c-sdk-lighter: color.adjust($c-sdk, $alpha: -0.9);
-$c-sdk-dark: color.mix($c-sdk, $c-text, 80%);
-$c-sdk-text: color.mix($c-sdk, $c-text, 40%);
+$c-sdk-light: color.mix($c-sdk, $c-bg, $light-mix);
+$c-sdk-lighter: color.mix($c-sdk, $c-bg, $lighter-mix);
+$c-sdk-dark: color.mix($c-sdk, $c-text, $dark-mix);
+$c-sdk-text: color.mix($c-sdk, $c-text, $text-mix);
 
 // Simulator Colors
 $c-simulator: $c-text;
-$c-simulator-light: color.adjust($c-simulator, $alpha: -0.8);
-$c-simulator-lighter: color.adjust($c-simulator, $alpha: -0.9);
-$c-simulator-dark: color.mix($c-simulator, $c-text, 80%);
-$c-simulator-text: color.mix($c-simulator, $c-text, 40%);
+$c-simulator-light: color.mix($c-simulator, $c-bg, $light-mix);
+$c-simulator-lighter: color.mix($c-simulator, $c-bg, $lighter-mix);
+$c-simulator-dark: color.mix($c-simulator, $c-text, $dark-mix);
+$c-simulator-text: color.mix($c-simulator, $c-text, $text-mix);
 
 // Tip Colors
 $c-tip: #42b983;
@@ -130,3 +135,38 @@ $sidebar-width-mobile: calc(#{$sidebar-width} * 0.82);
 // Content
 $content-width: 740px;
 $homepage-width: 960px;
+
+// Liquid Glass
+// $liquid-glass-bg: rgba($c-bg, 0.8);
+// $liquid-glass-bg-blur: blur(5px);
+
+// $liquid-glass-shadow:
+//     inset 2px 2px 1px -2px #ffffffb3,
+//     inset -2px -2px 1px -2px #ffffffb3,
+//     inset 0px 4px 4px -2px #ffffff99,
+//     0px 4px 16px 0px #00000019
+// ;
+
+// $liquid-glass-shadow-drop: 
+//     inset 2px 2px 1px -2px #ffffffb3,
+//     inset -2px -2px 1px -2px #ffffffb3,
+//     inset 0px 8px 8px 0px #ffffff99,
+//     0px 8px 24px 0px #00000033
+// ;
+
+$liquid-glass-bg: rgba($c-bg, 0.9);
+$liquid-glass-bg-blur: blur(5px);
+
+$liquid-glass-shadow:
+    inset 2px 2px 1px -2px rgba(255, 255, 255, 0.35),
+    inset -2px -2px 1px -2px rgba(255, 255, 255, 0.35),
+    inset 0px 4px 4px -2px rgba(255, 255, 255, 0.3),
+    0px 4px 12px 0px rgba(0, 0, 0, 0.05)
+;
+
+$liquid-glass-shadow-drop: 
+    inset 2px 2px 1px -2px rgba(255, 255, 255, 0.35),
+    inset -2px -2px 1px -2px rgba(255, 255, 255, 0.35),
+    inset 0px 8px 8px 0px rgba(255, 255, 255, 0.35),
+    0px 8px 24px 0px rgba(0, 0, 0, 0.1)
+;

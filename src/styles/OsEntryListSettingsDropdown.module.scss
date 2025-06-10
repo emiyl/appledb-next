@@ -7,11 +7,10 @@ $dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
     right: calc(calc(100% - $content-width) / 2);
     margin-top: .75em;
     background: $c-bg;
-    border-radius: 8px;
+    border-radius: 24px;
     
     padding: 1.5em;
-    box-shadow: 0 12px 32px #00000010,
-                0 2px 6px #0000000f;
+    box-shadow: $liquid-glass-shadow;
 
     max-width: $dropdown-max-width;
 
