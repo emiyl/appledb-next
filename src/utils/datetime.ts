@@ -1,7 +1,11 @@
 export function formatDateToString(date: Date, depth: number): string | undefined {
     let options: Intl.DateTimeFormatOptions;
 
+
     switch (depth) {
+        case 4:
+            options = { month: 'long', day: 'numeric', year: 'numeric' };
+            break;
         case 3:
             options = { month: 'short', day: 'numeric', year: 'numeric' };
             break;

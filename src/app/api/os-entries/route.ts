@@ -104,7 +104,12 @@ export async function GET(req: NextRequest) {
         },
         orderBy:
             [
-                { release_datetime: reverse ? 'asc' : 'desc' },
+                {
+                    release_datetime: {
+                        sort: reverse ? 'asc' : 'desc',
+                        nulls: 'last',
+                    }
+                },
                 { OsLookupName: { name: reverse ? 'desc' : 'asc' } },
                 { version: reverse ? 'desc' : 'asc' },
                 { build: reverse ? 'desc' : 'asc' },
