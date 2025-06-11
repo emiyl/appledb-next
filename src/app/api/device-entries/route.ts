@@ -18,16 +18,48 @@ export async function GET(req: NextRequest) {
         skip: offset,
         take: limit,
         include: {
+            DeviceLookupCategory: {
+                select: { name: true, }
+            },
             DeviceLookupImage: {
-                include: {
+                select: {
+                    name: true,
                     DeviceImageColors: {
                         select: {
-                            ColorLookup: true
+                            dark_mode: true,
+                            ColorLookup: {
+                                select: { name: true, }
+                            }
                         }
                     }
                 }
             },
-            
+            DeviceMapArchitecture: {
+                select: {
+                    DeviceLookupArchitecture: {
+                        select: { name: true },
+                    },
+                },
+            },
+            DeviceMapIdentifier: {
+                select: { identifier: true, },
+            },
+            DeviceMapModel: {
+                select: { model: true, },
+            },
+            DeviceMapRelease: {
+                select: {
+                    datetime: true,
+                    depth: true
+                }
+            },
+            DeviceMapSoc: {
+                select: {
+                    DeviceLookupSoc: {
+                        select: { name: true, }
+                    }
+                }
+            },
         },
     });
 

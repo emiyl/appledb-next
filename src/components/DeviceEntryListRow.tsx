@@ -20,6 +20,8 @@ const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry }) => {
             : ['0'];
     }
 
+    // console.log(entry);
+
     return (
         <div className={styles.row}>
             <div className={styles.column}>
