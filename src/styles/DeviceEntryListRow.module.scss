@@ -44,8 +44,11 @@ $gap: 1.5em;
 }
 
 .imageWrapper {
+    height: 8em;
+    display: flex;
+    align-items: center;
     img {
         max-width: 8em;
-        height: 8em;
+        max-height: 8em;
     }
 }
