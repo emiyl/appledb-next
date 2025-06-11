@@ -7,15 +7,13 @@ export type DeviceEntry = {
     is_internal: boolean;
     DeviceLookupImage: {
         name: string;
-    }
-    image: string;
-    DeviceImageColors: [
-        {
+        DeviceImageColors: {
             color_id: number;
             dark_mode: boolean;
             ColorLookup: {
                 name: string;
-            }
-        }
-    ];
+            };
+        }[];
+    };
+    image: string;
 };

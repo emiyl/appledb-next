@@ -3630,7 +3630,6 @@ export namespace Prisma {
    */
 
   export type DeviceEntryCountOutputType = {
-    DeviceImageColors: number
     DeviceGroupMapDevice: number
     DeviceMapArchitecture: number
     DeviceMapIdentifier: number
@@ -3643,7 +3642,6 @@ export namespace Prisma {
   }
 
   export type DeviceEntryCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    DeviceImageColors?: boolean | DeviceEntryCountOutputTypeCountDeviceImageColorsArgs
     DeviceGroupMapDevice?: boolean | DeviceEntryCountOutputTypeCountDeviceGroupMapDeviceArgs
     DeviceMapArchitecture?: boolean | DeviceEntryCountOutputTypeCountDeviceMapArchitectureArgs
     DeviceMapIdentifier?: boolean | DeviceEntryCountOutputTypeCountDeviceMapIdentifierArgs
@@ -3664,13 +3662,6 @@ export namespace Prisma {
      * Select specific fields to fetch from the DeviceEntryCountOutputType
      */
     select?: DeviceEntryCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * DeviceEntryCountOutputType without action
-   */
-  export type DeviceEntryCountOutputTypeCountDeviceImageColorsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: DeviceImageColorsWhereInput
   }
 
   /**
@@ -5396,7 +5387,6 @@ export namespace Prisma {
     legacy_unique_key?: boolean
     DeviceLookupCategory?: boolean | DeviceLookupCategoryDefaultArgs<ExtArgs>
     DeviceLookupImage?: boolean | DeviceEntry$DeviceLookupImageArgs<ExtArgs>
-    DeviceImageColors?: boolean | DeviceEntry$DeviceImageColorsArgs<ExtArgs>
     DeviceGroupMapDevice?: boolean | DeviceEntry$DeviceGroupMapDeviceArgs<ExtArgs>
     DeviceMapArchitecture?: boolean | DeviceEntry$DeviceMapArchitectureArgs<ExtArgs>
     DeviceMapIdentifier?: boolean | DeviceEntry$DeviceMapIdentifierArgs<ExtArgs>
@@ -5444,7 +5434,6 @@ export namespace Prisma {
   export type DeviceEntryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceLookupCategory?: boolean | DeviceLookupCategoryDefaultArgs<ExtArgs>
     DeviceLookupImage?: boolean | DeviceEntry$DeviceLookupImageArgs<ExtArgs>
-    DeviceImageColors?: boolean | DeviceEntry$DeviceImageColorsArgs<ExtArgs>
     DeviceGroupMapDevice?: boolean | DeviceEntry$DeviceGroupMapDeviceArgs<ExtArgs>
     DeviceMapArchitecture?: boolean | DeviceEntry$DeviceMapArchitectureArgs<ExtArgs>
     DeviceMapIdentifier?: boolean | DeviceEntry$DeviceMapIdentifierArgs<ExtArgs>
@@ -5470,7 +5459,6 @@ export namespace Prisma {
     objects: {
       DeviceLookupCategory: Prisma.$DeviceLookupCategoryPayload<ExtArgs>
       DeviceLookupImage: Prisma.$DeviceLookupImagePayload<ExtArgs> | null
-      DeviceImageColors: Prisma.$DeviceImageColorsPayload<ExtArgs>[]
       DeviceGroupMapDevice: Prisma.$DeviceGroupMapDevicePayload<ExtArgs>[]
       DeviceMapArchitecture: Prisma.$DeviceMapArchitecturePayload<ExtArgs>[]
       DeviceMapIdentifier: Prisma.$DeviceMapIdentifierPayload<ExtArgs>[]
@@ -5884,7 +5872,6 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     DeviceLookupCategory<T extends DeviceLookupCategoryDefaultArgs<ExtArgs> = {}>(args?: Subset<T, DeviceLookupCategoryDefaultArgs<ExtArgs>>): Prisma__DeviceLookupCategoryClient<$Result.GetResult<Prisma.$DeviceLookupCategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     DeviceLookupImage<T extends DeviceEntry$DeviceLookupImageArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$DeviceLookupImageArgs<ExtArgs>>): Prisma__DeviceLookupImageClient<$Result.GetResult<Prisma.$DeviceLookupImagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    DeviceImageColors<T extends DeviceEntry$DeviceImageColorsArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$DeviceImageColorsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceImageColorsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     DeviceGroupMapDevice<T extends DeviceEntry$DeviceGroupMapDeviceArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$DeviceGroupMapDeviceArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceGroupMapDevicePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     DeviceMapArchitecture<T extends DeviceEntry$DeviceMapArchitectureArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$DeviceMapArchitectureArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapArchitecturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     DeviceMapIdentifier<T extends DeviceEntry$DeviceMapIdentifierArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$DeviceMapIdentifierArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapIdentifierPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -6341,30 +6328,6 @@ export namespace Prisma {
      */
     include?: DeviceLookupImageInclude<ExtArgs> | null
     where?: DeviceLookupImageWhereInput
-  }
-
-  /**
-   * DeviceEntry.DeviceImageColors
-   */
-  export type DeviceEntry$DeviceImageColorsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the DeviceImageColors
-     */
-    select?: DeviceImageColorsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the DeviceImageColors
-     */
-    omit?: DeviceImageColorsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: DeviceImageColorsInclude<ExtArgs> | null
-    where?: DeviceImageColorsWhereInput
-    orderBy?: DeviceImageColorsOrderByWithRelationInput | DeviceImageColorsOrderByWithRelationInput[]
-    cursor?: DeviceImageColorsWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: DeviceImageColorsScalarFieldEnum | DeviceImageColorsScalarFieldEnum[]
   }
 
   /**
@@ -10101,7 +10064,6 @@ export namespace Prisma {
     dark_mode?: boolean
     DeviceLookupImage?: boolean | DeviceLookupImageDefaultArgs<ExtArgs>
     ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
-    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceImageColors"]>
 
   export type DeviceImageColorsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -10110,7 +10072,6 @@ export namespace Prisma {
     dark_mode?: boolean
     DeviceLookupImage?: boolean | DeviceLookupImageDefaultArgs<ExtArgs>
     ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
-    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceImageColors"]>
 
   export type DeviceImageColorsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -10119,7 +10080,6 @@ export namespace Prisma {
     dark_mode?: boolean
     DeviceLookupImage?: boolean | DeviceLookupImageDefaultArgs<ExtArgs>
     ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
-    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceImageColors"]>
 
   export type DeviceImageColorsSelectScalar = {
@@ -10132,17 +10092,14 @@ export namespace Prisma {
   export type DeviceImageColorsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceLookupImage?: boolean | DeviceLookupImageDefaultArgs<ExtArgs>
     ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
-    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }
   export type DeviceImageColorsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceLookupImage?: boolean | DeviceLookupImageDefaultArgs<ExtArgs>
     ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
-    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }
   export type DeviceImageColorsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceLookupImage?: boolean | DeviceLookupImageDefaultArgs<ExtArgs>
     ColorLookup?: boolean | ColorLookupDefaultArgs<ExtArgs>
-    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
   }
 
   export type $DeviceImageColorsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10150,7 +10107,6 @@ export namespace Prisma {
     objects: {
       DeviceLookupImage: Prisma.$DeviceLookupImagePayload<ExtArgs>
       ColorLookup: Prisma.$ColorLookupPayload<ExtArgs>
-      DeviceEntry: Prisma.$DeviceEntryPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       device_image_id: number
@@ -10552,7 +10508,6 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     DeviceLookupImage<T extends DeviceLookupImageDefaultArgs<ExtArgs> = {}>(args?: Subset<T, DeviceLookupImageDefaultArgs<ExtArgs>>): Prisma__DeviceLookupImageClient<$Result.GetResult<Prisma.$DeviceLookupImagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     ColorLookup<T extends ColorLookupDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ColorLookupDefaultArgs<ExtArgs>>): Prisma__ColorLookupClient<$Result.GetResult<Prisma.$ColorLookupPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    DeviceEntry<T extends DeviceEntryDefaultArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntryDefaultArgs<ExtArgs>>): Prisma__DeviceEntryClient<$Result.GetResult<Prisma.$DeviceEntryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -38879,7 +38834,6 @@ export namespace Prisma {
     legacy_unique_key?: StringNullableFilter<"DeviceEntry"> | string | null
     DeviceLookupCategory?: XOR<DeviceLookupCategoryScalarRelationFilter, DeviceLookupCategoryWhereInput>
     DeviceLookupImage?: XOR<DeviceLookupImageNullableScalarRelationFilter, DeviceLookupImageWhereInput> | null
-    DeviceImageColors?: DeviceImageColorsListRelationFilter
     DeviceGroupMapDevice?: DeviceGroupMapDeviceListRelationFilter
     DeviceMapArchitecture?: DeviceMapArchitectureListRelationFilter
     DeviceMapIdentifier?: DeviceMapIdentifierListRelationFilter
@@ -38900,7 +38854,6 @@ export namespace Prisma {
     legacy_unique_key?: SortOrderInput | SortOrder
     DeviceLookupCategory?: DeviceLookupCategoryOrderByWithRelationInput
     DeviceLookupImage?: DeviceLookupImageOrderByWithRelationInput
-    DeviceImageColors?: DeviceImageColorsOrderByRelationAggregateInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceOrderByRelationAggregateInput
     DeviceMapArchitecture?: DeviceMapArchitectureOrderByRelationAggregateInput
     DeviceMapIdentifier?: DeviceMapIdentifierOrderByRelationAggregateInput
@@ -38925,7 +38878,6 @@ export namespace Prisma {
     legacy_unique_key?: StringNullableFilter<"DeviceEntry"> | string | null
     DeviceLookupCategory?: XOR<DeviceLookupCategoryScalarRelationFilter, DeviceLookupCategoryWhereInput>
     DeviceLookupImage?: XOR<DeviceLookupImageNullableScalarRelationFilter, DeviceLookupImageWhereInput> | null
-    DeviceImageColors?: DeviceImageColorsListRelationFilter
     DeviceGroupMapDevice?: DeviceGroupMapDeviceListRelationFilter
     DeviceMapArchitecture?: DeviceMapArchitectureListRelationFilter
     DeviceMapIdentifier?: DeviceMapIdentifierListRelationFilter
@@ -39133,7 +39085,6 @@ export namespace Prisma {
     dark_mode?: BoolNullableFilter<"DeviceImageColors"> | boolean | null
     DeviceLookupImage?: XOR<DeviceLookupImageScalarRelationFilter, DeviceLookupImageWhereInput>
     ColorLookup?: XOR<ColorLookupScalarRelationFilter, ColorLookupWhereInput>
-    DeviceEntry?: XOR<DeviceEntryScalarRelationFilter, DeviceEntryWhereInput>
   }
 
   export type DeviceImageColorsOrderByWithRelationInput = {
@@ -39142,7 +39093,6 @@ export namespace Prisma {
     dark_mode?: SortOrderInput | SortOrder
     DeviceLookupImage?: DeviceLookupImageOrderByWithRelationInput
     ColorLookup?: ColorLookupOrderByWithRelationInput
-    DeviceEntry?: DeviceEntryOrderByWithRelationInput
   }
 
   export type DeviceImageColorsWhereUniqueInput = Prisma.AtLeast<{
@@ -39155,7 +39105,6 @@ export namespace Prisma {
     dark_mode?: BoolNullableFilter<"DeviceImageColors"> | boolean | null
     DeviceLookupImage?: XOR<DeviceLookupImageScalarRelationFilter, DeviceLookupImageWhereInput>
     ColorLookup?: XOR<ColorLookupScalarRelationFilter, ColorLookupWhereInput>
-    DeviceEntry?: XOR<DeviceEntryScalarRelationFilter, DeviceEntryWhereInput>
   }, "device_image_id_color_id">
 
   export type DeviceImageColorsOrderByWithAggregationInput = {
@@ -40515,7 +40464,6 @@ export namespace Prisma {
     legacy_unique_key?: string | null
     DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
     DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
@@ -40534,7 +40482,6 @@ export namespace Prisma {
     image_id?: number | null
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -40552,7 +40499,6 @@ export namespace Prisma {
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
     DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
@@ -40571,7 +40517,6 @@ export namespace Prisma {
     image_id?: NullableIntFieldUpdateOperationsInput | number | null
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -40751,7 +40696,6 @@ export namespace Prisma {
     dark_mode?: boolean | null
     DeviceLookupImage: DeviceLookupImageCreateNestedOneWithoutDeviceImageColorsInput
     ColorLookup: ColorLookupCreateNestedOneWithoutDeviceImageColorsInput
-    DeviceEntry: DeviceEntryCreateNestedOneWithoutDeviceImageColorsInput
   }
 
   export type DeviceImageColorsUncheckedCreateInput = {
@@ -40764,7 +40708,6 @@ export namespace Prisma {
     dark_mode?: NullableBoolFieldUpdateOperationsInput | boolean | null
     DeviceLookupImage?: DeviceLookupImageUpdateOneRequiredWithoutDeviceImageColorsNestedInput
     ColorLookup?: ColorLookupUpdateOneRequiredWithoutDeviceImageColorsNestedInput
-    DeviceEntry?: DeviceEntryUpdateOneRequiredWithoutDeviceImageColorsNestedInput
   }
 
   export type DeviceImageColorsUncheckedUpdateInput = {
@@ -43572,13 +43515,6 @@ export namespace Prisma {
     connect?: DeviceLookupImageWhereUniqueInput
   }
 
-  export type DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput = {
-    create?: XOR<DeviceImageColorsCreateWithoutDeviceEntryInput, DeviceImageColorsUncheckedCreateWithoutDeviceEntryInput> | DeviceImageColorsCreateWithoutDeviceEntryInput[] | DeviceImageColorsUncheckedCreateWithoutDeviceEntryInput[]
-    connectOrCreate?: DeviceImageColorsCreateOrConnectWithoutDeviceEntryInput | DeviceImageColorsCreateOrConnectWithoutDeviceEntryInput[]
-    createMany?: DeviceImageColorsCreateManyDeviceEntryInputEnvelope
-    connect?: DeviceImageColorsWhereUniqueInput | DeviceImageColorsWhereUniqueInput[]
-  }
-
   export type DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput = {
     create?: XOR<DeviceGroupMapDeviceCreateWithoutDeviceEntryInput, DeviceGroupMapDeviceUncheckedCreateWithoutDeviceEntryInput> | DeviceGroupMapDeviceCreateWithoutDeviceEntryInput[] | DeviceGroupMapDeviceUncheckedCreateWithoutDeviceEntryInput[]
     connectOrCreate?: DeviceGroupMapDeviceCreateOrConnectWithoutDeviceEntryInput | DeviceGroupMapDeviceCreateOrConnectWithoutDeviceEntryInput[]
@@ -43640,13 +43576,6 @@ export namespace Prisma {
     connectOrCreate?: SourceMapDeviceCreateOrConnectWithoutDeviceEntryInput | SourceMapDeviceCreateOrConnectWithoutDeviceEntryInput[]
     createMany?: SourceMapDeviceCreateManyDeviceEntryInputEnvelope
     connect?: SourceMapDeviceWhereUniqueInput | SourceMapDeviceWhereUniqueInput[]
-  }
-
-  export type DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput = {
-    create?: XOR<DeviceImageColorsCreateWithoutDeviceEntryInput, DeviceImageColorsUncheckedCreateWithoutDeviceEntryInput> | DeviceImageColorsCreateWithoutDeviceEntryInput[] | DeviceImageColorsUncheckedCreateWithoutDeviceEntryInput[]
-    connectOrCreate?: DeviceImageColorsCreateOrConnectWithoutDeviceEntryInput | DeviceImageColorsCreateOrConnectWithoutDeviceEntryInput[]
-    createMany?: DeviceImageColorsCreateManyDeviceEntryInputEnvelope
-    connect?: DeviceImageColorsWhereUniqueInput | DeviceImageColorsWhereUniqueInput[]
   }
 
   export type DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput = {
@@ -43736,20 +43665,6 @@ export namespace Prisma {
     delete?: DeviceLookupImageWhereInput | boolean
     connect?: DeviceLookupImageWhereUniqueInput
     update?: XOR<XOR<DeviceLookupImageUpdateToOneWithWhereWithoutDeviceEntryInput, DeviceLookupImageUpdateWithoutDeviceEntryInput>, DeviceLookupImageUncheckedUpdateWithoutDeviceEntryInput>
-  }
-
-  export type DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput = {
-    create?: XOR<DeviceImageColorsCreateWithoutDeviceEntryInput, DeviceImageColorsUncheckedCreateWithoutDeviceEntryInput> | DeviceImageColorsCreateWithoutDeviceEntryInput[] | DeviceImageColorsUncheckedCreateWithoutDeviceEntryInput[]
-    connectOrCreate?: DeviceImageColorsCreateOrConnectWithoutDeviceEntryInput | DeviceImageColorsCreateOrConnectWithoutDeviceEntryInput[]
-    upsert?: DeviceImageColorsUpsertWithWhereUniqueWithoutDeviceEntryInput | DeviceImageColorsUpsertWithWhereUniqueWithoutDeviceEntryInput[]
-    createMany?: DeviceImageColorsCreateManyDeviceEntryInputEnvelope
-    set?: DeviceImageColorsWhereUniqueInput | DeviceImageColorsWhereUniqueInput[]
-    disconnect?: DeviceImageColorsWhereUniqueInput | DeviceImageColorsWhereUniqueInput[]
-    delete?: DeviceImageColorsWhereUniqueInput | DeviceImageColorsWhereUniqueInput[]
-    connect?: DeviceImageColorsWhereUniqueInput | DeviceImageColorsWhereUniqueInput[]
-    update?: DeviceImageColorsUpdateWithWhereUniqueWithoutDeviceEntryInput | DeviceImageColorsUpdateWithWhereUniqueWithoutDeviceEntryInput[]
-    updateMany?: DeviceImageColorsUpdateManyWithWhereWithoutDeviceEntryInput | DeviceImageColorsUpdateManyWithWhereWithoutDeviceEntryInput[]
-    deleteMany?: DeviceImageColorsScalarWhereInput | DeviceImageColorsScalarWhereInput[]
   }
 
   export type DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput = {
@@ -43884,20 +43799,6 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
-  }
-
-  export type DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput = {
-    create?: XOR<DeviceImageColorsCreateWithoutDeviceEntryInput, DeviceImageColorsUncheckedCreateWithoutDeviceEntryInput> | DeviceImageColorsCreateWithoutDeviceEntryInput[] | DeviceImageColorsUncheckedCreateWithoutDeviceEntryInput[]
-    connectOrCreate?: DeviceImageColorsCreateOrConnectWithoutDeviceEntryInput | DeviceImageColorsCreateOrConnectWithoutDeviceEntryInput[]
-    upsert?: DeviceImageColorsUpsertWithWhereUniqueWithoutDeviceEntryInput | DeviceImageColorsUpsertWithWhereUniqueWithoutDeviceEntryInput[]
-    createMany?: DeviceImageColorsCreateManyDeviceEntryInputEnvelope
-    set?: DeviceImageColorsWhereUniqueInput | DeviceImageColorsWhereUniqueInput[]
-    disconnect?: DeviceImageColorsWhereUniqueInput | DeviceImageColorsWhereUniqueInput[]
-    delete?: DeviceImageColorsWhereUniqueInput | DeviceImageColorsWhereUniqueInput[]
-    connect?: DeviceImageColorsWhereUniqueInput | DeviceImageColorsWhereUniqueInput[]
-    update?: DeviceImageColorsUpdateWithWhereUniqueWithoutDeviceEntryInput | DeviceImageColorsUpdateWithWhereUniqueWithoutDeviceEntryInput[]
-    updateMany?: DeviceImageColorsUpdateManyWithWhereWithoutDeviceEntryInput | DeviceImageColorsUpdateManyWithWhereWithoutDeviceEntryInput[]
-    deleteMany?: DeviceImageColorsScalarWhereInput | DeviceImageColorsScalarWhereInput[]
   }
 
   export type DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput = {
@@ -44220,12 +44121,6 @@ export namespace Prisma {
     connect?: ColorLookupWhereUniqueInput
   }
 
-  export type DeviceEntryCreateNestedOneWithoutDeviceImageColorsInput = {
-    create?: XOR<DeviceEntryCreateWithoutDeviceImageColorsInput, DeviceEntryUncheckedCreateWithoutDeviceImageColorsInput>
-    connectOrCreate?: DeviceEntryCreateOrConnectWithoutDeviceImageColorsInput
-    connect?: DeviceEntryWhereUniqueInput
-  }
-
   export type DeviceLookupImageUpdateOneRequiredWithoutDeviceImageColorsNestedInput = {
     create?: XOR<DeviceLookupImageCreateWithoutDeviceImageColorsInput, DeviceLookupImageUncheckedCreateWithoutDeviceImageColorsInput>
     connectOrCreate?: DeviceLookupImageCreateOrConnectWithoutDeviceImageColorsInput
@@ -44240,14 +44135,6 @@ export namespace Prisma {
     upsert?: ColorLookupUpsertWithoutDeviceImageColorsInput
     connect?: ColorLookupWhereUniqueInput
     update?: XOR<XOR<ColorLookupUpdateToOneWithWhereWithoutDeviceImageColorsInput, ColorLookupUpdateWithoutDeviceImageColorsInput>, ColorLookupUncheckedUpdateWithoutDeviceImageColorsInput>
-  }
-
-  export type DeviceEntryUpdateOneRequiredWithoutDeviceImageColorsNestedInput = {
-    create?: XOR<DeviceEntryCreateWithoutDeviceImageColorsInput, DeviceEntryUncheckedCreateWithoutDeviceImageColorsInput>
-    connectOrCreate?: DeviceEntryCreateOrConnectWithoutDeviceImageColorsInput
-    upsert?: DeviceEntryUpsertWithoutDeviceImageColorsInput
-    connect?: DeviceEntryWhereUniqueInput
-    update?: XOR<XOR<DeviceEntryUpdateToOneWithWhereWithoutDeviceImageColorsInput, DeviceEntryUpdateWithoutDeviceImageColorsInput>, DeviceEntryUncheckedUpdateWithoutDeviceImageColorsInput>
   }
 
   export type DeviceMapArchitectureCreateNestedManyWithoutDeviceLookupArchitectureInput = {
@@ -45610,7 +45497,6 @@ export namespace Prisma {
   export type DeviceImageColorsCreateWithoutColorLookupInput = {
     dark_mode?: boolean | null
     DeviceLookupImage: DeviceLookupImageCreateNestedOneWithoutDeviceImageColorsInput
-    DeviceEntry: DeviceEntryCreateNestedOneWithoutDeviceImageColorsInput
   }
 
   export type DeviceImageColorsUncheckedCreateWithoutColorLookupInput = {
@@ -45681,27 +45567,6 @@ export namespace Prisma {
   export type DeviceLookupImageCreateOrConnectWithoutDeviceEntryInput = {
     where: DeviceLookupImageWhereUniqueInput
     create: XOR<DeviceLookupImageCreateWithoutDeviceEntryInput, DeviceLookupImageUncheckedCreateWithoutDeviceEntryInput>
-  }
-
-  export type DeviceImageColorsCreateWithoutDeviceEntryInput = {
-    dark_mode?: boolean | null
-    DeviceLookupImage: DeviceLookupImageCreateNestedOneWithoutDeviceImageColorsInput
-    ColorLookup: ColorLookupCreateNestedOneWithoutDeviceImageColorsInput
-  }
-
-  export type DeviceImageColorsUncheckedCreateWithoutDeviceEntryInput = {
-    color_id: number
-    dark_mode?: boolean | null
-  }
-
-  export type DeviceImageColorsCreateOrConnectWithoutDeviceEntryInput = {
-    where: DeviceImageColorsWhereUniqueInput
-    create: XOR<DeviceImageColorsCreateWithoutDeviceEntryInput, DeviceImageColorsUncheckedCreateWithoutDeviceEntryInput>
-  }
-
-  export type DeviceImageColorsCreateManyDeviceEntryInputEnvelope = {
-    data: DeviceImageColorsCreateManyDeviceEntryInput | DeviceImageColorsCreateManyDeviceEntryInput[]
-    skipDuplicates?: boolean
   }
 
   export type DeviceGroupMapDeviceCreateWithoutDeviceEntryInput = {
@@ -45909,22 +45774,6 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceLookupImageNestedInput
-  }
-
-  export type DeviceImageColorsUpsertWithWhereUniqueWithoutDeviceEntryInput = {
-    where: DeviceImageColorsWhereUniqueInput
-    update: XOR<DeviceImageColorsUpdateWithoutDeviceEntryInput, DeviceImageColorsUncheckedUpdateWithoutDeviceEntryInput>
-    create: XOR<DeviceImageColorsCreateWithoutDeviceEntryInput, DeviceImageColorsUncheckedCreateWithoutDeviceEntryInput>
-  }
-
-  export type DeviceImageColorsUpdateWithWhereUniqueWithoutDeviceEntryInput = {
-    where: DeviceImageColorsWhereUniqueInput
-    data: XOR<DeviceImageColorsUpdateWithoutDeviceEntryInput, DeviceImageColorsUncheckedUpdateWithoutDeviceEntryInput>
-  }
-
-  export type DeviceImageColorsUpdateManyWithWhereWithoutDeviceEntryInput = {
-    where: DeviceImageColorsScalarWhereInput
-    data: XOR<DeviceImageColorsUpdateManyMutationInput, DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryInput>
   }
 
   export type DeviceGroupMapDeviceUpsertWithWhereUniqueWithoutDeviceEntryInput = {
@@ -46287,7 +46136,6 @@ export namespace Prisma {
     legacy_unique_key?: string | null
     DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
     DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
@@ -46305,7 +46153,6 @@ export namespace Prisma {
     image_id?: number | null
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -46370,7 +46217,6 @@ export namespace Prisma {
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
     DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
@@ -46388,7 +46234,6 @@ export namespace Prisma {
     image_id?: NullableIntFieldUpdateOperationsInput | number | null
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -46545,46 +46390,6 @@ export namespace Prisma {
     create: XOR<ColorLookupCreateWithoutDeviceImageColorsInput, ColorLookupUncheckedCreateWithoutDeviceImageColorsInput>
   }
 
-  export type DeviceEntryCreateWithoutDeviceImageColorsInput = {
-    name: string
-    is_internal?: boolean | null
-    legacy_unique_key?: string | null
-    DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
-    DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
-    DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
-    DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
-    DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
-    DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
-    DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
-    MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
-    OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
-    SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
-  }
-
-  export type DeviceEntryUncheckedCreateWithoutDeviceImageColorsInput = {
-    id?: number
-    name: string
-    category_id: number
-    image_id?: number | null
-    is_internal?: boolean | null
-    legacy_unique_key?: string | null
-    DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
-    DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
-    DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
-    DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
-    DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
-    DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
-    MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
-    OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
-    SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
-  }
-
-  export type DeviceEntryCreateOrConnectWithoutDeviceImageColorsInput = {
-    where: DeviceEntryWhereUniqueInput
-    create: XOR<DeviceEntryCreateWithoutDeviceImageColorsInput, DeviceEntryUncheckedCreateWithoutDeviceImageColorsInput>
-  }
-
   export type DeviceLookupImageUpsertWithoutDeviceImageColorsInput = {
     update: XOR<DeviceLookupImageUpdateWithoutDeviceImageColorsInput, DeviceLookupImageUncheckedUpdateWithoutDeviceImageColorsInput>
     create: XOR<DeviceLookupImageCreateWithoutDeviceImageColorsInput, DeviceLookupImageUncheckedCreateWithoutDeviceImageColorsInput>
@@ -46627,52 +46432,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type DeviceEntryUpsertWithoutDeviceImageColorsInput = {
-    update: XOR<DeviceEntryUpdateWithoutDeviceImageColorsInput, DeviceEntryUncheckedUpdateWithoutDeviceImageColorsInput>
-    create: XOR<DeviceEntryCreateWithoutDeviceImageColorsInput, DeviceEntryUncheckedCreateWithoutDeviceImageColorsInput>
-    where?: DeviceEntryWhereInput
-  }
-
-  export type DeviceEntryUpdateToOneWithWhereWithoutDeviceImageColorsInput = {
-    where?: DeviceEntryWhereInput
-    data: XOR<DeviceEntryUpdateWithoutDeviceImageColorsInput, DeviceEntryUncheckedUpdateWithoutDeviceImageColorsInput>
-  }
-
-  export type DeviceEntryUpdateWithoutDeviceImageColorsInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
-    DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
-    DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
-    DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
-    DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
-    DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
-    DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
-    MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
-    OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
-    SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
-  }
-
-  export type DeviceEntryUncheckedUpdateWithoutDeviceImageColorsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    category_id?: IntFieldUpdateOperationsInput | number
-    image_id?: NullableIntFieldUpdateOperationsInput | number | null
-    is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
-    DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
-    DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
-    DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
-    DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
-    DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
-    MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
-    OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
-    SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
-  }
-
   export type DeviceMapArchitectureCreateWithoutDeviceLookupArchitectureInput = {
     DeviceEntry: DeviceEntryCreateNestedOneWithoutDeviceMapArchitectureInput
   }
@@ -46712,7 +46471,6 @@ export namespace Prisma {
     is_internal?: boolean | null
     legacy_unique_key?: string | null
     DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
@@ -46730,7 +46488,6 @@ export namespace Prisma {
     image_id?: number | null
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -46785,7 +46542,6 @@ export namespace Prisma {
     is_internal?: boolean | null
     legacy_unique_key?: string | null
     DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
@@ -46803,7 +46559,6 @@ export namespace Prisma {
     category_id: number
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -46828,7 +46583,6 @@ export namespace Prisma {
   export type DeviceImageColorsCreateWithoutDeviceLookupImageInput = {
     dark_mode?: boolean | null
     ColorLookup: ColorLookupCreateNestedOneWithoutDeviceImageColorsInput
-    DeviceEntry: DeviceEntryCreateNestedOneWithoutDeviceImageColorsInput
   }
 
   export type DeviceImageColorsUncheckedCreateWithoutDeviceLookupImageInput = {
@@ -46918,7 +46672,6 @@ export namespace Prisma {
     legacy_unique_key?: string | null
     DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
     DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
@@ -46936,7 +46689,6 @@ export namespace Prisma {
     image_id?: number | null
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -46983,7 +46735,6 @@ export namespace Prisma {
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
     DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
@@ -47001,7 +46752,6 @@ export namespace Prisma {
     image_id?: NullableIntFieldUpdateOperationsInput | number | null
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -47038,7 +46788,6 @@ export namespace Prisma {
     legacy_unique_key?: string | null
     DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
     DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
@@ -47056,7 +46805,6 @@ export namespace Prisma {
     image_id?: number | null
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -47089,7 +46837,6 @@ export namespace Prisma {
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
     DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
@@ -47107,7 +46854,6 @@ export namespace Prisma {
     image_id?: NullableIntFieldUpdateOperationsInput | number | null
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -47124,7 +46870,6 @@ export namespace Prisma {
     legacy_unique_key?: string | null
     DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
     DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
@@ -47142,7 +46887,6 @@ export namespace Prisma {
     image_id?: number | null
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -47175,7 +46919,6 @@ export namespace Prisma {
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
     DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
@@ -47193,7 +46936,6 @@ export namespace Prisma {
     image_id?: NullableIntFieldUpdateOperationsInput | number | null
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -47210,7 +46952,6 @@ export namespace Prisma {
     legacy_unique_key?: string | null
     DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
     DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
@@ -47228,7 +46969,6 @@ export namespace Prisma {
     image_id?: number | null
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -47261,7 +47001,6 @@ export namespace Prisma {
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
     DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
@@ -47279,7 +47018,6 @@ export namespace Prisma {
     image_id?: NullableIntFieldUpdateOperationsInput | number | null
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -47296,7 +47034,6 @@ export namespace Prisma {
     legacy_unique_key?: string | null
     DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
     DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
@@ -47314,7 +47051,6 @@ export namespace Prisma {
     image_id?: number | null
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -47361,7 +47097,6 @@ export namespace Prisma {
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
     DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
@@ -47379,7 +47114,6 @@ export namespace Prisma {
     image_id?: NullableIntFieldUpdateOperationsInput | number | null
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -47416,7 +47150,6 @@ export namespace Prisma {
     legacy_unique_key?: string | null
     DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
     DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
@@ -47434,7 +47167,6 @@ export namespace Prisma {
     image_id?: number | null
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -47531,7 +47263,6 @@ export namespace Prisma {
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
     DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
@@ -47549,7 +47280,6 @@ export namespace Prisma {
     image_id?: NullableIntFieldUpdateOperationsInput | number | null
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -48536,7 +48266,6 @@ export namespace Prisma {
     legacy_unique_key?: string | null
     DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
     DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
@@ -48554,7 +48283,6 @@ export namespace Prisma {
     image_id?: number | null
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -48657,7 +48385,6 @@ export namespace Prisma {
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
     DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
@@ -48675,7 +48402,6 @@ export namespace Prisma {
     image_id?: NullableIntFieldUpdateOperationsInput | number | null
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -49666,7 +49392,6 @@ export namespace Prisma {
     legacy_unique_key?: string | null
     DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
     DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
-    DeviceImageColors?: DeviceImageColorsCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
@@ -49684,7 +49409,6 @@ export namespace Prisma {
     image_id?: number | null
     is_internal?: boolean | null
     legacy_unique_key?: string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -49753,7 +49477,6 @@ export namespace Prisma {
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
     DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
@@ -49771,7 +49494,6 @@ export namespace Prisma {
     image_id?: NullableIntFieldUpdateOperationsInput | number | null
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -49856,7 +49578,6 @@ export namespace Prisma {
   export type DeviceImageColorsUpdateWithoutColorLookupInput = {
     dark_mode?: NullableBoolFieldUpdateOperationsInput | boolean | null
     DeviceLookupImage?: DeviceLookupImageUpdateOneRequiredWithoutDeviceImageColorsNestedInput
-    DeviceEntry?: DeviceEntryUpdateOneRequiredWithoutDeviceImageColorsNestedInput
   }
 
   export type DeviceImageColorsUncheckedUpdateWithoutColorLookupInput = {
@@ -49867,11 +49588,6 @@ export namespace Prisma {
   export type DeviceImageColorsUncheckedUpdateManyWithoutColorLookupInput = {
     device_image_id?: IntFieldUpdateOperationsInput | number
     dark_mode?: NullableBoolFieldUpdateOperationsInput | boolean | null
-  }
-
-  export type DeviceImageColorsCreateManyDeviceEntryInput = {
-    color_id: number
-    dark_mode?: boolean | null
   }
 
   export type DeviceGroupMapDeviceCreateManyDeviceEntryInput = {
@@ -49910,22 +49626,6 @@ export namespace Prisma {
 
   export type SourceMapDeviceCreateManyDeviceEntryInput = {
     source_id: number
-  }
-
-  export type DeviceImageColorsUpdateWithoutDeviceEntryInput = {
-    dark_mode?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    DeviceLookupImage?: DeviceLookupImageUpdateOneRequiredWithoutDeviceImageColorsNestedInput
-    ColorLookup?: ColorLookupUpdateOneRequiredWithoutDeviceImageColorsNestedInput
-  }
-
-  export type DeviceImageColorsUncheckedUpdateWithoutDeviceEntryInput = {
-    color_id?: IntFieldUpdateOperationsInput | number
-    dark_mode?: NullableBoolFieldUpdateOperationsInput | boolean | null
-  }
-
-  export type DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryInput = {
-    color_id?: IntFieldUpdateOperationsInput | number
-    dark_mode?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type DeviceGroupMapDeviceUpdateWithoutDeviceEntryInput = {
@@ -50118,7 +49818,6 @@ export namespace Prisma {
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
@@ -50136,7 +49835,6 @@ export namespace Prisma {
     image_id?: NullableIntFieldUpdateOperationsInput | number | null
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -50174,7 +49872,6 @@ export namespace Prisma {
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
     DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
-    DeviceImageColors?: DeviceImageColorsUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
@@ -50192,7 +49889,6 @@ export namespace Prisma {
     category_id?: IntFieldUpdateOperationsInput | number
     is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
-    DeviceImageColors?: DeviceImageColorsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -50215,7 +49911,6 @@ export namespace Prisma {
   export type DeviceImageColorsUpdateWithoutDeviceLookupImageInput = {
     dark_mode?: NullableBoolFieldUpdateOperationsInput | boolean | null
     ColorLookup?: ColorLookupUpdateOneRequiredWithoutDeviceImageColorsNestedInput
-    DeviceEntry?: DeviceEntryUpdateOneRequiredWithoutDeviceImageColorsNestedInput
   }
 
   export type DeviceImageColorsUncheckedUpdateWithoutDeviceLookupImageInput = {

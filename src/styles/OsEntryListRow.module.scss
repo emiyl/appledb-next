@@ -20,6 +20,11 @@
         margin-inline: -1em;
         margin-top: -1px;
         padding-top: calc(1.2em + 1px);
+
+        &:first-of-type {
+            margin-top: 0;
+            padding-top: 1.2em;
+        }
     }
 }
 

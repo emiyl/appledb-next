@@ -122,13 +122,15 @@ export function OsEntryList() {
                 ref={stickyRef}
                 isStuck={isStuck}
             />
-            {entries.map((entry) => (
-                <OsEntryListRow
-                    key={entry.id}
-                    entry={entry}
-                    showBuildString={settings.showBuildString ?? false}
-                />
-            ))}
+            <div>
+                {entries.map((entry) => (
+                    <OsEntryListRow
+                        key={entry.id}
+                        entry={entry}
+                        showBuildString={settings.showBuildString ?? false}
+                    />
+                ))}
+            </div>
             {hasMore && <div ref={loaderRef}></div>}
         </div>
     );

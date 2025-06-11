@@ -19,21 +19,15 @@ export async function GET(req: NextRequest) {
         take: limit,
         include: {
             DeviceLookupImage: {
-                select: {
-                    name: true,
-                },
-            },
-            DeviceImageColors: {
-                select: {
-                    color_id: true,
-                    dark_mode: true,
-                    ColorLookup: {
+                include: {
+                    DeviceImageColors: {
                         select: {
-                            name: true,
+                            ColorLookup: true
                         }
                     }
                 }
-            }
+            },
+            
         },
     });
 

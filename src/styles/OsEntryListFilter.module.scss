@@ -8,6 +8,12 @@ $boundary: 2.5em;
   isolation: isolate;
   background: transparent;
 
+  pointer-events: none;
+
+  div {
+    pointer-events: auto;
+  }
+
   padding: $boundary;
   padding-top: 2em;
   margin: -$boundary;

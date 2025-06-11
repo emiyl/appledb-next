@@ -31,7 +31,6 @@ export function DeviceEntryList() {
         const data: DeviceEntry[] = (await res.json()).map((entry: DeviceEntry) => {
             return {
                 ...entry,
-                image: entry.DeviceLookupImage ? entry.DeviceLookupImage.name : 'logo',
                 // release_datetime: new Date(entry.release_datetime)
             };
         });
@@ -72,10 +71,12 @@ export function DeviceEntryList() {
 
     return (
         <div className={styles.container}>
-            {entries.map((entry) => (
+            {entries
+            // .filter((entry) => entry.image != 'logo')
+            .map((entry) => (
                 <DeviceEntryListRow
-                    key={entry.id}
-                    entry={entry}
+                key={entry.id}
+                entry={entry}
                 />
             ))}
             {hasMore && <div ref={loaderRef}></div>}
