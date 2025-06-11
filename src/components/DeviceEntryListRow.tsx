@@ -10,21 +10,19 @@ interface OsEntryListRowProps {
 const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry }) => {
 
     let device_image = entry.DeviceLookupImage
-    let image = 'logo';
-    let colors = ['0'];
 
-    if (device_image) {
-        image = device_image.name;
-        colors = device_image.DeviceImageColors && device_image.DeviceImageColors.length > 0 
-            ? device_image.DeviceImageColors.map(color => color.ColorLookup.name) 
-            : ['0'];
-    }
+    let image = device_image.name || 'logo';
+    let colors = device_image.DeviceImageColors && device_image.DeviceImageColors.length > 0 
+        ? device_image.DeviceImageColors.map(color => color.ColorLookup.name) 
+        : ['0'];
 
     let architectures = entry.DeviceMapArchitecture.map(arch => arch.DeviceLookupArchitecture.name);
     let identifiers = entry.DeviceMapIdentifier.map(id => id.identifier);
     let models = entry.DeviceMapModel.map(model => model.model);
     let socs = entry.DeviceMapSoc.map(soc => soc.DeviceLookupSoc.name);
     let releaseDate = entry.DeviceMapRelease.map(release => formatDateToString(new Date(release.datetime), release.depth));
+
+    console.log(entry)
 
     return (
         <div className={styles.row}>
