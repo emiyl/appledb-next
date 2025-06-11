@@ -22,8 +22,6 @@ const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry }) => {
     let socs = entry.DeviceMapSoc.map(soc => soc.DeviceLookupSoc.name);
     let releaseDate = entry.DeviceMapRelease.map(release => formatDateToString(new Date(release.datetime), release.depth));
 
-    console.log(entry)
-
     return (
         <div className={styles.row}>
             <div className={styles.column}>
