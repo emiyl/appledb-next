@@ -20,6 +20,11 @@ const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry }) => {
             : ['0'];
     }
 
+    let architectures = entry.DeviceMapArchitecture.map(arch => arch.DeviceLookupArchitecture.name);
+    let identifiers = entry.DeviceMapIdentifier.map(id => id.identifier);
+    let models = entry.DeviceMapModel.map(model => model.model);
+    let socs = entry.DeviceMapSoc.map(soc => soc.DeviceLookupSoc.name);
+
     // console.log(entry);
 
     return (
@@ -36,9 +41,9 @@ const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry }) => {
             </div>
             <div className={styles.column}>
                 <ul>
-                    <li>Identifier: iPhone1,1</li>
-                    <li>SoC: APL0098</li>
-                    <li>Model: A1203</li>
+                    {identifiers.length > 0 && <li>Identifier{identifiers.length > 1 ? 's' : ''}: {identifiers.join(', ')}</li>}
+                    {socs.length > 0 && <li>SoC{socs.length > 1 ? 's' : ''}: {socs.join(', ')}</li>}
+                    {models.length > 0 && <li>Model{models.length > 1 ? 's' : ''}: {models.join(', ')}</li>}
                     <li><a href="#">View more</a></li>
                 </ul>
                 <div className={styles.releaseDate}>Released on June 29, 2007</div>
