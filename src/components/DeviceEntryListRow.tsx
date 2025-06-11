@@ -24,8 +24,7 @@ const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry }) => {
     let identifiers = entry.DeviceMapIdentifier.map(id => id.identifier);
     let models = entry.DeviceMapModel.map(model => model.model);
     let socs = entry.DeviceMapSoc.map(soc => soc.DeviceLookupSoc.name);
-
-    // console.log(entry);
+    let releaseDate = entry.DeviceMapRelease.map(release => formatDateToString(new Date(release.datetime), release.depth));
 
     return (
         <div className={styles.row}>
@@ -46,7 +45,7 @@ const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry }) => {
                     {models.length > 0 && <li>Model{models.length > 1 ? 's' : ''}: {models.join(', ')}</li>}
                     <li><a href="#">View more</a></li>
                 </ul>
-                <div className={styles.releaseDate}>Released on June 29, 2007</div>
+                {releaseDate.length > 0 && <div className={styles.releaseDate}>Released on {releaseDate[0]}</div>}
             </div>
         </div>
     );

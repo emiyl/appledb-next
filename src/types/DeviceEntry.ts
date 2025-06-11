@@ -31,7 +31,7 @@ export type DeviceEntry = {
     DeviceMapRelease: {
         datetime: Date;
         depth: number;
-    };
+    }[];
     DeviceMapSoc: {
         DeviceLookupSoc: {
             name: string;
