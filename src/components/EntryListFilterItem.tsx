@@ -3,14 +3,14 @@ import styles from '@/styles/OsEntryListFilter.module.scss';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-interface OsEntryListFilterItemProps {
+interface EntryListFilterItemProps {
     label: string;
     icon: IconDefinition;
     classes: string[];
-    onClick: () => void;
+    onClick: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const OsEntryListFilterItem: React.FC<OsEntryListFilterItemProps> = ({ label, icon, classes, onClick }) => {
+const EntryListFilterItem: React.FC<EntryListFilterItemProps> = ({ label, icon, classes, onClick }) => {
     return (
         <div
             className={`${styles.filterItem} ${styles.filterSelected} ${classes.join(' ')}`}
@@ -24,4 +24,4 @@ const OsEntryListFilterItem: React.FC<OsEntryListFilterItemProps> = ({ label, ic
     );
 };
 
-export default OsEntryListFilterItem;
+export default EntryListFilterItem;

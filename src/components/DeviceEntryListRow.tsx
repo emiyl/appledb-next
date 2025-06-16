@@ -8,7 +8,6 @@ interface OsEntryListRowProps {
 }
 
 const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry }) => {
-
     let device_image = entry.DeviceLookupImage
 
     let image = device_image.name || 'logo';

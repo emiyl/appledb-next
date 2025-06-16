@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { OsEntry } from '@/types/OsEntry'
-import { defaultOsEntryFilter, defaultOsEntryListSettings } from '@/utils';
+import { OsEntry, OsEntryListFilter, OsEntryListSettings } from '@/types'
+import { defaultOsEntryListFilter, defaultOsEntryListSettings } from '@/utils';
 import OsEntryListRow from './OsEntryListRow';
-import OsEntryListFilter from './OsEntryListFilter';
+import OsEntryListFilterRow from './OsEntryListFilterRow';
 
 export function OsEntryList() {
     const [entries, setEntries] = useState<OsEntry[]>([]);
@@ -12,9 +12,9 @@ export function OsEntryList() {
     const [hasMore, setHasMore] = useState(true);
     const loaderRef = useRef<HTMLDivElement | null>(null);
     const hasMounted = useRef(false);
-    const isFilterChanging = useRef(false);
+    const areParamsChanging = useRef(false);
 
-    const [filter, setFilter] = useState(() => defaultOsEntryFilter);
+    const [filter, setFilter] = useState(() => defaultOsEntryListFilter);
     const [settings, setSettings] = useState(() => defaultOsEntryListSettings);
 
     const loadEntries = useCallback(async (append: boolean, page: number = 1) => {
@@ -27,6 +27,7 @@ export function OsEntryList() {
             simulator: filter.releaseKinds.simulator.toString(),
             search: filter.search,
             name_id: filter.name_id.join(','),
+            reverse: settings.reverseOrder ? 'true' : 'false',
             page: page.toString(),
             limit: '100'
         });
@@ -56,11 +57,11 @@ export function OsEntryList() {
         }
 
         setHasMore(data.length > 0);
-    }, [filter]);
+    }, [filter, settings]);
 
     useEffect(() => {
-        if (isFilterChanging.current) {
-            isFilterChanging.current = false;
+        if (areParamsChanging.current) {
+            areParamsChanging.current = false;
         } else {
             loadEntries(true, page);
         }
@@ -68,14 +69,14 @@ export function OsEntryList() {
 
     useEffect(() => {
         if (hasMounted.current) {
-            isFilterChanging.current = true;
+            areParamsChanging.current = true;
             setPage(1);
-            isFilterChanging.current = false;
+            areParamsChanging.current = false;
             loadEntries(false, 1);
         } else {
             hasMounted.current = true;
         }
-    }, [filter]);
+    }, [filter, settings]);
 
     useEffect(() => {
         if (!loaderRef.current || !hasMore) return;
@@ -116,7 +117,7 @@ export function OsEntryList() {
     return (
         <div style={{ overflow: 'visible' }}>
             <div ref={sentinelRef} style={{ height: 1 }}></div>
-            <OsEntryListFilter
+            <OsEntryListFilterRow
                 filter={filter} setFilter={setFilter}
                 settings={settings} setSettings={setSettings}
                 ref={stickyRef}
@@ -127,7 +128,7 @@ export function OsEntryList() {
                     <OsEntryListRow
                         key={entry.id}
                         entry={entry}
-                        showBuildString={settings.showBuildString ?? false}
+                        showBuildString={settings.showBuildString}
                     />
                 ))}
             </div>

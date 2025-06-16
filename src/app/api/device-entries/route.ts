@@ -8,12 +8,41 @@ export async function GET(req: NextRequest) {
     const limit = parseInt(searchParams.get('limit') || '20');
     const offset = (page - 1) * limit;
 
+    const categoryIdFilter = searchParams.get('category_id')
+        ?.split(',')
+        .map(id => parseInt(id))
+        .filter(id => !isNaN(id));
+
+    const rawSearch = searchParams.get("search");
+    const searchString = rawSearch
+        ? decodeURIComponent(rawSearch).replace(/[%_]/g, '\\$&').trim()
+        : undefined;
+
     const reverse = searchParams.get('reverse') === 'true';
 
+    const whereClauses: string[] = [];
+    const params: any[] = [offset, limit];
+
+    if (searchString) {
+        whereClauses.push(`d.name ILIKE $${params.length + 1} ESCAPE '\\'`);
+        params.push(`%${searchString}%`);
+    }
+
+    if (categoryIdFilter && categoryIdFilter.length > 0) {
+        whereClauses.push(`d.category_id IN (${categoryIdFilter.map((_, i) => `$${params.length + i + 1}`).join(', ')})`);
+        params.push(...categoryIdFilter);
+    }
+
+    const whereSQL = whereClauses.length > 0 ? `WHERE ${whereClauses.join(' AND ')}` : '';
+
+    const orderDirection = reverse ? 'ASC' : 'DESC';
     const entries = await prisma.$queryRawUnsafe(`
         SELECT
             d.id,
             d.name,
+            d.category_id,
+            d.image_id,
+            d.is_internal,
 
             json_build_object(
                 'name', c.name
@@ -75,12 +104,14 @@ export async function GET(req: NextRequest) {
         LEFT JOIN "DeviceMapSoc" ds ON ds.device_id = d.id
         LEFT JOIN "DeviceLookupSoc" soc ON soc.id = ds.soc_id
 
+        ${whereSQL}
+
         GROUP BY d.id, c.name, i.name
 
-        ORDER BY MIN(r.datetime) DESC NULLS LAST
+        ORDER BY MIN(r.datetime) ${orderDirection} NULLS LAST
         OFFSET $1
         LIMIT $2;
-    `, offset, limit);
+    `, ...params);
 
     // const entries = await prisma.deviceEntry.findMany({
     //     orderBy: {

@@ -3,20 +3,20 @@ import styles from '@/styles/OsEntryListFilter.module.scss';
 
 import { faXmark, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import OsEntryListSearchRow from './OsEntryListSearchRow';
-import OsEntryListFilterItem from './OsEntryListFilterItem';
+import EntryListFilterItem from './EntryListFilterItem';
 import { getOsEntryReleaseKindClass, getOsEntryReleaseKindLabel } from '@/utils';
-import { OsEntryFilter, OsEntryListSettings, OsEntryReleaseKind } from '@/types';
+import { OsEntryReleaseKind, OsEntryListFilter, OsEntryListSettings } from '@/types';
 
 interface OsEntryListFilterProps {
-    filter: OsEntryFilter;
-    setFilter: React.Dispatch<React.SetStateAction<OsEntryFilter>>;
+    filter: OsEntryListFilter;
+    setFilter: React.Dispatch<React.SetStateAction<OsEntryListFilter>>;
     settings: OsEntryListSettings;
     setSettings: React.Dispatch<React.SetStateAction<OsEntryListSettings>>;
     ref: React.RefObject<null>;
     isStuck: boolean;
 }
 
-const OsEntryListFilter: React.FC<OsEntryListFilterProps> = ({ filter, setFilter, settings, setSettings, ref, isStuck }) => {
+const OsEntryListFilterRow: React.FC<OsEntryListFilterProps> = ({ filter, setFilter, settings, setSettings, ref, isStuck }) => {
     const [osNames, setOsNames] = React.useState<{ id: number; name: string }[]>([]);
 
     useEffect(() => {
@@ -57,7 +57,7 @@ const OsEntryListFilter: React.FC<OsEntryListFilterProps> = ({ filter, setFilter
                     Object.values(OsEntryReleaseKind)
                     .filter(kind => filter.releaseKinds[kind])
                     .map((kind) => (
-                        <OsEntryListFilterItem
+                        <EntryListFilterItem
                             key={kind}
                             label={getOsEntryReleaseKindLabel(kind)}
                             icon={faXmark}
@@ -74,7 +74,7 @@ const OsEntryListFilter: React.FC<OsEntryListFilterProps> = ({ filter, setFilter
                 }
                 {
                     (firmwareNames.length >= collapseFirmwareNamesThreshold) &&
-                    <OsEntryListFilterItem
+                    <EntryListFilterItem
                         label="Firmware names"
                         icon={collapseFirmwareNames ? faCaretDown : faCaretRight}
                         classes={[]}
@@ -87,7 +87,7 @@ const OsEntryListFilter: React.FC<OsEntryListFilterProps> = ({ filter, setFilter
                     (!collapseFirmwareNames || firmwareNames.length < collapseFirmwareNamesThreshold) &&
                     firmwareNames
                         .map(({ id, name }) => (
-                            <OsEntryListFilterItem
+                            <EntryListFilterItem
                                 key={id}
                                 label={name}
                                 icon={faXmark}
@@ -104,4 +104,4 @@ const OsEntryListFilter: React.FC<OsEntryListFilterProps> = ({ filter, setFilter
     );
 };
 
-export default OsEntryListFilter;
+export default OsEntryListFilterRow;

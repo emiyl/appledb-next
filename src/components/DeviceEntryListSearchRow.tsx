@@ -5,17 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMagnifyingGlass, faCog } from '@fortawesome/free-solid-svg-icons';
 import EntryListFilterDropdown from './EntryListFilterDropdown';
 import EntryListSettingsDropdown from './EntryListSettingsDropdown';
-import { EntryType, OsEntryListFilter, OsEntryListSettings } from '@/types';
+import { EntryType, DeviceEntryListFilter, DeviceEntryListSettings } from '@/types';
 
 interface SearchRowProps {
-    filter: OsEntryListFilter;
-    setFilter: React.Dispatch<React.SetStateAction<OsEntryListFilter>>;
-    settings: OsEntryListSettings;
-    setSettings: React.Dispatch<React.SetStateAction<OsEntryListSettings>>;
-    osNames: { id: number; name: string }[];
+    filter: DeviceEntryListFilter;
+    setFilter: React.Dispatch<React.SetStateAction<DeviceEntryListFilter>>;
+    settings: DeviceEntryListSettings;
+    setSettings: React.Dispatch<React.SetStateAction<DeviceEntryListSettings>>;
+    deviceCategories: { id: number; name: string }[];
 }
 
-const SearchRow: React.FC<SearchRowProps> = ({ filter, setFilter, settings, setSettings, osNames }) => {
+const SearchRow: React.FC<SearchRowProps> = ({ filter, setFilter, settings, setSettings, deviceCategories }) => {
     const [showFilterDropdown, setShowFilterDropdown] = useState(false);
     const [showSettingsDropdown, setShowSettingsDropdown] = useState(false);
 
@@ -50,10 +50,9 @@ const SearchRow: React.FC<SearchRowProps> = ({ filter, setFilter, settings, setS
 
                 {showFilterDropdown && (
                     <EntryListFilterDropdown
-                        entryType={EntryType.Os}
                         filter={filter}
                         setFilter={setFilter}
-                        filterItems={osNames}
+                        filterItems={deviceCategories}
                     />
                 )}
             </div>
@@ -79,7 +78,7 @@ const SearchRow: React.FC<SearchRowProps> = ({ filter, setFilter, settings, setS
 
                 {showSettingsDropdown && (
                     <EntryListSettingsDropdown
-                        entryType={EntryType.Os}
+                        entryType={EntryType.Device}
                         settings={settings}
                         setSettings={setSettings}
                     />

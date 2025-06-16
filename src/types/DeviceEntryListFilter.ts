@@ -1,4 +1,4 @@
-export type DeviceEntryFilter = {
+export type DeviceEntryListFilter = {
     search: string;
     category_id: number[];
 }

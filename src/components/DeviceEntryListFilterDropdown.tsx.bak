@@ -1,0 +1,58 @@
+import React from 'react';
+import styles from '@/styles/OsEntryListFilterDropdown.module.scss';
+import { DeviceEntryListFilter } from '@/types';
+import EntryListFilterItem from './EntryListFilterItem';
+import { faCaretDown, faPlus } from '@fortawesome/free-solid-svg-icons';
+
+interface DeviceEntryListFilterDropdownProps {
+    filter: DeviceEntryListFilter;
+    setFilter: React.Dispatch<React.SetStateAction<DeviceEntryListFilter>>;
+    deviceCategories: { id: number; name: string }[];
+}
+
+const DeviceEntryListFilterDropdown: React.FC<DeviceEntryListFilterDropdownProps> = ({ filter, setFilter, deviceCategories }) => {
+    const [deviceCategoriesTruncateCount, setDeviceCategoriesTruncateCount] = React.useState(5);
+    const [deviceCategoriesIncrement, setDeviceCategoriesIncrement] = React.useState(10);
+
+    return (
+        <div className={styles.dropdown}>
+            <div className={styles.row}>
+                <h3>Device categories</h3>
+            </div>
+            <div className={styles.row}>
+                {
+                    deviceCategories
+                        .filter(({ id }) => !filter.category_id.includes(id))
+                        .slice(0, deviceCategoriesTruncateCount)
+                        .map(({ id, name }) => (
+                            <EntryListFilterItem
+                                key={id}
+                                label={name}
+                                icon={faPlus}
+                                classes={[styles.filterItem]}
+                                onClick={() => setFilter(prev => ({
+                                    ...prev,
+                                    category_id: [...prev.category_id, id]
+                                }))}
+                            />
+                        ))
+                }
+                {
+                    deviceCategoriesTruncateCount < deviceCategories.filter(({ id }) => !filter.category_id.includes(id)).length && (
+                        <EntryListFilterItem
+                            label="Show more"
+                            icon={faCaretDown}
+                            classes={[styles.filterItem]}
+                            onClick={() => {
+                                setDeviceCategoriesTruncateCount(prev => prev + deviceCategoriesIncrement)
+                                setDeviceCategoriesIncrement(prev => prev + 5)
+                            }}
+                        />
+                    )
+                }
+            </div>
+        </div>
+    );
+};
+
+export default DeviceEntryListFilterDropdown;

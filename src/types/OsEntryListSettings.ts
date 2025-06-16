@@ -1,4 +1,4 @@
 export interface OsEntryListSettings {
-    reverseOrder?: boolean;
-    showBuildString?: boolean;
+    reverseOrder: boolean;
+    showBuildString: boolean;
 }

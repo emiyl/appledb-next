@@ -1,6 +1,6 @@
 import { OsEntryReleaseKind } from './OsEntryReleaseKind';
 
-export type OsEntryFilter = {
+export type OsEntryListFilter = {
     releaseKinds: {
         [key in OsEntryReleaseKind]: boolean;
     },

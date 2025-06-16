@@ -1,7 +1,7 @@
-import { OsEntryFilter } from '@/types';
+import { OsEntryListFilter } from '@/types';
 import { OsEntryReleaseKind } from '@/types/OsEntryReleaseKind';
 
-export const defaultOsEntryFilter: OsEntryFilter = {
+export const defaultOsEntryListFilter: OsEntryListFilter = {
     releaseKinds: {
         [OsEntryReleaseKind.Release]: true,
         [OsEntryReleaseKind.Beta]: true,
