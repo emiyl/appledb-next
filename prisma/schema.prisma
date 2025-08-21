@@ -90,6 +90,7 @@ model DeviceLookupArchitecture {
 model DeviceLookupCategory {
   id          Int           @id @default(autoincrement())
   name        String
+  priority    Int?          @default(0)
   DeviceEntry DeviceEntry[]
 }
 

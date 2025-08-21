@@ -2,10 +2,10 @@ import React from 'react';
 import styles from '@/styles/OsEntryListSettingsDropdown.module.scss';
 import { EntryType, DeviceEntryListSettings, OsEntryListSettings } from '@/types';
 
-const settingsType = {
-    [EntryType.Device]: 'DeviceEntryListSettings',
-    [EntryType.Os]: 'OsEntryListSettings',
-}
+const rowStrings: Record<string, string> = {
+    'reverseOrder': 'Reverse order',
+    'showBuildString': 'Show build strings',
+};
 
 type EntryListSettingsDropdownProps =
   | {
@@ -32,7 +32,7 @@ const EntryListSettingsDropdown: React.FC<EntryListSettingsDropdownProps> = ({ s
             <h3>Settings</h3>
             {Object.entries(settings).map(([key, value]) => (
                 <div className={styles.row} key={key}>
-                    <span>{key}</span>
+                    <span>{rowStrings[key]}</span>
                     <input
                     type="checkbox"
                     checked={!!value}

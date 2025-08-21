@@ -12033,50 +12033,60 @@ export namespace Prisma {
 
   export type DeviceLookupCategoryAvgAggregateOutputType = {
     id: number | null
+    priority: number | null
   }
 
   export type DeviceLookupCategorySumAggregateOutputType = {
     id: number | null
+    priority: number | null
   }
 
   export type DeviceLookupCategoryMinAggregateOutputType = {
     id: number | null
     name: string | null
+    priority: number | null
   }
 
   export type DeviceLookupCategoryMaxAggregateOutputType = {
     id: number | null
     name: string | null
+    priority: number | null
   }
 
   export type DeviceLookupCategoryCountAggregateOutputType = {
     id: number
     name: number
+    priority: number
     _all: number
   }
 
 
   export type DeviceLookupCategoryAvgAggregateInputType = {
     id?: true
+    priority?: true
   }
 
   export type DeviceLookupCategorySumAggregateInputType = {
     id?: true
+    priority?: true
   }
 
   export type DeviceLookupCategoryMinAggregateInputType = {
     id?: true
     name?: true
+    priority?: true
   }
 
   export type DeviceLookupCategoryMaxAggregateInputType = {
     id?: true
     name?: true
+    priority?: true
   }
 
   export type DeviceLookupCategoryCountAggregateInputType = {
     id?: true
     name?: true
+    priority?: true
     _all?: true
   }
 
@@ -12169,6 +12179,7 @@ export namespace Prisma {
   export type DeviceLookupCategoryGroupByOutputType = {
     id: number
     name: string
+    priority: number | null
     _count: DeviceLookupCategoryCountAggregateOutputType | null
     _avg: DeviceLookupCategoryAvgAggregateOutputType | null
     _sum: DeviceLookupCategorySumAggregateOutputType | null
@@ -12193,6 +12204,7 @@ export namespace Prisma {
   export type DeviceLookupCategorySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    priority?: boolean
     DeviceEntry?: boolean | DeviceLookupCategory$DeviceEntryArgs<ExtArgs>
     _count?: boolean | DeviceLookupCategoryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["deviceLookupCategory"]>
@@ -12200,19 +12212,22 @@ export namespace Prisma {
   export type DeviceLookupCategorySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    priority?: boolean
   }, ExtArgs["result"]["deviceLookupCategory"]>
 
   export type DeviceLookupCategorySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    priority?: boolean
   }, ExtArgs["result"]["deviceLookupCategory"]>
 
   export type DeviceLookupCategorySelectScalar = {
     id?: boolean
     name?: boolean
+    priority?: boolean
   }
 
-  export type DeviceLookupCategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name", ExtArgs["result"]["deviceLookupCategory"]>
+  export type DeviceLookupCategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "priority", ExtArgs["result"]["deviceLookupCategory"]>
   export type DeviceLookupCategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     DeviceEntry?: boolean | DeviceLookupCategory$DeviceEntryArgs<ExtArgs>
     _count?: boolean | DeviceLookupCategoryCountOutputTypeDefaultArgs<ExtArgs>
@@ -12228,6 +12243,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       name: string
+      priority: number | null
     }, ExtArgs["result"]["deviceLookupCategory"]>
     composites: {}
   }
@@ -12654,6 +12670,7 @@ export namespace Prisma {
   interface DeviceLookupCategoryFieldRefs {
     readonly id: FieldRef<"DeviceLookupCategory", 'Int'>
     readonly name: FieldRef<"DeviceLookupCategory", 'String'>
+    readonly priority: FieldRef<"DeviceLookupCategory", 'Int'>
   }
     
 
@@ -38282,7 +38299,8 @@ export namespace Prisma {
 
   export const DeviceLookupCategoryScalarFieldEnum: {
     id: 'id',
-    name: 'name'
+    name: 'name',
+    priority: 'priority'
   };
 
   export type DeviceLookupCategoryScalarFieldEnum = (typeof DeviceLookupCategoryScalarFieldEnum)[keyof typeof DeviceLookupCategoryScalarFieldEnum]
@@ -39176,12 +39194,14 @@ export namespace Prisma {
     NOT?: DeviceLookupCategoryWhereInput | DeviceLookupCategoryWhereInput[]
     id?: IntFilter<"DeviceLookupCategory"> | number
     name?: StringFilter<"DeviceLookupCategory"> | string
+    priority?: IntNullableFilter<"DeviceLookupCategory"> | number | null
     DeviceEntry?: DeviceEntryListRelationFilter
   }
 
   export type DeviceLookupCategoryOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
+    priority?: SortOrderInput | SortOrder
     DeviceEntry?: DeviceEntryOrderByRelationAggregateInput
     _relevance?: DeviceLookupCategoryOrderByRelevanceInput
   }
@@ -39192,12 +39212,14 @@ export namespace Prisma {
     OR?: DeviceLookupCategoryWhereInput[]
     NOT?: DeviceLookupCategoryWhereInput | DeviceLookupCategoryWhereInput[]
     name?: StringFilter<"DeviceLookupCategory"> | string
+    priority?: IntNullableFilter<"DeviceLookupCategory"> | number | null
     DeviceEntry?: DeviceEntryListRelationFilter
   }, "id">
 
   export type DeviceLookupCategoryOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
+    priority?: SortOrderInput | SortOrder
     _count?: DeviceLookupCategoryCountOrderByAggregateInput
     _avg?: DeviceLookupCategoryAvgOrderByAggregateInput
     _max?: DeviceLookupCategoryMaxOrderByAggregateInput
@@ -39211,6 +39233,7 @@ export namespace Prisma {
     NOT?: DeviceLookupCategoryScalarWhereWithAggregatesInput | DeviceLookupCategoryScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"DeviceLookupCategory"> | number
     name?: StringWithAggregatesFilter<"DeviceLookupCategory"> | string
+    priority?: IntNullableWithAggregatesFilter<"DeviceLookupCategory"> | number | null
   }
 
   export type DeviceLookupImageWhereInput = {
@@ -40770,38 +40793,45 @@ export namespace Prisma {
 
   export type DeviceLookupCategoryCreateInput = {
     name: string
+    priority?: number | null
     DeviceEntry?: DeviceEntryCreateNestedManyWithoutDeviceLookupCategoryInput
   }
 
   export type DeviceLookupCategoryUncheckedCreateInput = {
     id?: number
     name: string
+    priority?: number | null
     DeviceEntry?: DeviceEntryUncheckedCreateNestedManyWithoutDeviceLookupCategoryInput
   }
 
   export type DeviceLookupCategoryUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
     DeviceEntry?: DeviceEntryUpdateManyWithoutDeviceLookupCategoryNestedInput
   }
 
   export type DeviceLookupCategoryUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
     DeviceEntry?: DeviceEntryUncheckedUpdateManyWithoutDeviceLookupCategoryNestedInput
   }
 
   export type DeviceLookupCategoryCreateManyInput = {
     id?: number
     name: string
+    priority?: number | null
   }
 
   export type DeviceLookupCategoryUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type DeviceLookupCategoryUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type DeviceLookupImageCreateInput = {
@@ -42399,24 +42429,29 @@ export namespace Prisma {
   export type DeviceLookupCategoryCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    priority?: SortOrder
   }
 
   export type DeviceLookupCategoryAvgOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
   }
 
   export type DeviceLookupCategoryMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    priority?: SortOrder
   }
 
   export type DeviceLookupCategoryMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    priority?: SortOrder
   }
 
   export type DeviceLookupCategorySumOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
   }
 
   export type DeviceLookupImageOrderByRelevanceInput = {
@@ -45541,11 +45576,13 @@ export namespace Prisma {
 
   export type DeviceLookupCategoryCreateWithoutDeviceEntryInput = {
     name: string
+    priority?: number | null
   }
 
   export type DeviceLookupCategoryUncheckedCreateWithoutDeviceEntryInput = {
     id?: number
     name: string
+    priority?: number | null
   }
 
   export type DeviceLookupCategoryCreateOrConnectWithoutDeviceEntryInput = {
@@ -45747,11 +45784,13 @@ export namespace Prisma {
 
   export type DeviceLookupCategoryUpdateWithoutDeviceEntryInput = {
     name?: StringFieldUpdateOperationsInput | string
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type DeviceLookupCategoryUncheckedUpdateWithoutDeviceEntryInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type DeviceLookupImageUpsertWithoutDeviceEntryInput = {

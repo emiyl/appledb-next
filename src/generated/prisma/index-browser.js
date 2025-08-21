@@ -166,7 +166,8 @@ exports.Prisma.DeviceLookupArchitectureScalarFieldEnum = {
 
 exports.Prisma.DeviceLookupCategoryScalarFieldEnum = {
   id: 'id',
-  name: 'name'
+  name: 'name',
+  priority: 'priority'
 };
 
 exports.Prisma.DeviceLookupImageScalarFieldEnum = {
