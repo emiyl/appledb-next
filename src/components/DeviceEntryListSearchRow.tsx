@@ -50,6 +50,7 @@ const SearchRow: React.FC<SearchRowProps> = ({ filter, setFilter, settings, setS
 
                 {showFilterDropdown && (
                     <EntryListFilterDropdown
+                        entryType={EntryType.Device}
                         filter={filter}
                         setFilter={setFilter}
                         filterItems={deviceCategories}

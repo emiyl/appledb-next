@@ -44,7 +44,7 @@ const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entry
                 <div className={styles.row} key={rowKey as string}>
                     <h3>{rowStrings[rowKey]}</h3>
                     {filterItems
-                        .filter(({ id }) => !filter[rowKey].includes(id))
+                        .filter(({ id }) => !filter[rowKey as keyof typeof filter].includes(id.toString()))
                         .slice(0, filterItemsTruncateCount)
                         .map(({ id, name }) => (
                             <EntryListFilterItem
@@ -52,14 +52,14 @@ const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entry
                                 label={name}
                                 icon={faPlus}
                                 classes={[styles.filterItem]}
-                                onClick={() => setFilter(prev => ({
-                                    ...prev,
-                                    [rowKey]: [...prev[rowKey], id]
+                                onClick={() => setFilter((prevFilter: any) => ({
+                                    ...prevFilter,
+                                    [rowKey]: [...(prevFilter as any)[rowKey], id]
                                 }))}
                             />
                         ))
                     }
-                    {filterItemsTruncateCount < filterItems.filter(({ id }) => !filter[rowKey].includes(id)).length && (
+                    {filterItemsTruncateCount < filterItems.filter(({ id }) => !filter[rowKey as keyof typeof filter].includes(id.toString())).length && (
                         <EntryListFilterItem
                             label="Show more"
                             icon={faCaretDown}
