@@ -13,6 +13,11 @@ export async function GET(req: NextRequest) {
         .map(id => parseInt(id))
         .filter(id => !isNaN(id));
 
+    const deviceIdFilter = searchParams.get('device_id')
+        ?.split(',')
+        .map(id => parseInt(id))
+        .filter(id => !isNaN(id));
+
     const rawSearch = searchParams.get("search");
     const searchString = rawSearch
         ? decodeURIComponent(rawSearch).replace(/[%_]/g, '\\$&').trim()
@@ -31,6 +36,11 @@ export async function GET(req: NextRequest) {
     if (categoryIdFilter && categoryIdFilter.length > 0) {
         whereClauses.push(`d.category_id IN (${categoryIdFilter.map((_, i) => `$${params.length + i + 1}`).join(', ')})`);
         params.push(...categoryIdFilter);
+    }
+
+    if (deviceIdFilter && deviceIdFilter.length > 0) {
+        whereClauses.push(`d.id IN (${deviceIdFilter.map((_, i) => `$${params.length + i + 1}`).join(', ')})`);
+        params.push(...deviceIdFilter);
     }
 
     const whereSQL = whereClauses.length > 0 ? `WHERE ${whereClauses.join(' AND ')}` : '';

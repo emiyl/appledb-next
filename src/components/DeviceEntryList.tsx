@@ -19,7 +19,7 @@ export function DeviceEntryList() {
     const [settings, setSettings] = useState(() => defaultDeviceEntryListSettings);
 
     const loadEntries = useCallback(async (append: boolean, page: number = 1) => {
-        const url_base = `/api/device-entries?`;
+        const url_base = `/api/device?`;
         const url_params = new URLSearchParams({
             search: filter.search,
             category_id: filter.category_id.join(','),
