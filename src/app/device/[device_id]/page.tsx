@@ -1,18 +1,12 @@
 import styles from '@/styles/layout.module.scss';
 import DeviceEntry from '@/components/DeviceEntry';
 
-interface DeviceEntryPageProps {
-    params: {
-        device_id: string;
-    };
-}
+export default function DeviceEntryPage({ params }: { params: any }) {
+  const deviceIds = params.device_id.split(',').map((id: any) => id.trim()).filter(Boolean);
 
-export default function DeviceEntryPage({ params }: DeviceEntryPageProps) {
-    const { device_id } = params;
-    const deviceIds = device_id.split(',').map(id => id.trim()).filter(Boolean);
-    return (
-        <main className={styles.content}>
-            <DeviceEntry deviceIds={deviceIds} />
-        </main>
-    );
+  return (
+    <main className={styles.content}>
+      <DeviceEntry deviceIds={deviceIds} />
+    </main>
+  );
 }
