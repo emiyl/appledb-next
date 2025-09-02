@@ -101,7 +101,13 @@ export async function GET(req: NextRequest) {
                 jsonb_build_object(
                 'DeviceLookupSoc', jsonb_build_object('name', soc.name)
                 )
-            ) FILTER (WHERE ds.device_id IS NOT NULL), '[]') AS "DeviceMapSoc"
+            ) FILTER (WHERE ds.device_id IS NOT NULL), '[]') AS "DeviceMapSoc",
+
+            COALESCE(json_agg(DISTINCT
+                jsonb_build_object(
+                    'DeviceLookupBoard', jsonb_build_object('name', board.name)
+                )
+            ) FILTER (WHERE db.device_id IS NOT NULL), '[]') AS "DeviceMapBoard"
 
         FROM "DeviceEntry" d
 
@@ -120,6 +126,9 @@ export async function GET(req: NextRequest) {
         LEFT JOIN "DeviceMapRelease" r ON r.device_id = d.id
 
         LEFT JOIN "DeviceMapSoc" ds ON ds.device_id = d.id
+        LEFT JOIN "DeviceMapBoard" db ON db.device_id = d.id
+
+        LEFT JOIN "DeviceLookupBoard" board ON board.id = db.board_id
         LEFT JOIN "DeviceLookupSoc" soc ON soc.id = ds.soc_id
 
         ${whereSQL}

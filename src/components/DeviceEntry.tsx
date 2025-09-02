@@ -20,6 +20,7 @@ type Device = {
     models: string[];
     socs: string[];
     archs: string[];
+    boards: string[];
     deviceImageKey: string;
     deviceImageColors: { name: string; dark_mode: boolean }[];
 };
@@ -46,6 +47,11 @@ function formatReleaseDates(deviceMapRelease: DeviceMapRelease[] = []) {
                 });
             }
         })
+        .map((el, idx, arr) => {
+            // Only include unique formatted dates
+            return arr.indexOf(el) === idx ? el : null;
+        })
+        .filter(Boolean)
         .join(", ");
 }
 
@@ -61,6 +67,7 @@ function normalizeDevices(devices: any[]): Device {
         models: [],
         socs: [],
         archs: [],
+        boards: [],
         deviceImageKey: "",
         deviceImageColors: []
     }
@@ -85,6 +92,7 @@ function normalizeDevices(devices: any[]): Device {
     let models = new Set<string>();
     let socs = new Set<string>();
     let archs = new Set<string>();
+    let boards = new Set<string>();
 
     for (const dev of devices) {
         if (dev.DeviceMapRelease) {
@@ -118,6 +126,11 @@ function normalizeDevices(devices: any[]): Device {
                 archs.add(archItem.DeviceLookupArchitecture.name);
             }
         }
+        if (dev.DeviceMapBoard) {
+            for (const boardItem of dev.DeviceMapBoard) {
+                boards.add(boardItem.DeviceLookupBoard.name);
+            }
+        }
     }
 
     device.releaseDateString = formatReleaseDates(release_dates);
@@ -126,6 +139,7 @@ function normalizeDevices(devices: any[]): Device {
     device.models = Array.from(models).sort();
     device.socs = Array.from(socs).sort();
     device.archs = Array.from(archs).sort();
+    device.boards = Array.from(boards).sort();
 
     return device
 }
@@ -178,12 +192,12 @@ const DeviceEntry: React.FC<DeviceEntryProps> = ({ deviceIds }) => {
         <div>
             <DeviceHeader device={device} />
             <DeviceInfoTable device={device} />
-            <h2>Device Data (JSON)</h2>
+            {/* <h2>Device Data (JSON)</h2>
             <pre>
                 <pre>
                     {JSON.stringify(device, null, 4)}
                 </pre>
-            </pre>
+            </pre> */}
         </div>
     );
 };
@@ -272,6 +286,8 @@ const DeviceInfoTable: React.FC<DeviceInfoTableProps> = ({ device }) => {
             <p>{device.socs.join(", ")}</p>
             <h5>Architecture</h5>
             <p>{device.archs.join(", ")}</p>
+            <h5>Board</h5>
+            <p>{device.boards.join(", ")}</p>
         </div>
     );
 };
