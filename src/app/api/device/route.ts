@@ -23,6 +23,9 @@ export async function GET(req: NextRequest) {
         ? decodeURIComponent(rawSearch).replace(/[%_]/g, '\\$&').trim()
         : undefined;
 
+    const legacyUniqueKey = searchParams.get("legacyKey")
+        ?.split(',');
+
     const reverse = searchParams.get('reverse') === 'true';
 
     const whereClauses: string[] = [];
@@ -41,6 +44,11 @@ export async function GET(req: NextRequest) {
     if (deviceIdFilter && deviceIdFilter.length > 0) {
         whereClauses.push(`d.id IN (${deviceIdFilter.map((_, i) => `$${params.length + i + 1}`).join(', ')})`);
         params.push(...deviceIdFilter);
+    }
+
+    if (legacyUniqueKey) {
+        whereClauses.push(`d.legacy_unique_key ILIKE $${params.length + 1} ESCAPE '\\'`);
+        params.push(`${legacyUniqueKey}`);
     }
 
     const whereSQL = whereClauses.length > 0 ? `WHERE ${whereClauses.join(' AND ')}` : '';
