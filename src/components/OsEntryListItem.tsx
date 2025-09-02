@@ -1,15 +1,23 @@
 import React from 'react';
-import OsEntryReleaseKindFlag from './OsEntryReleaseKindFlag';
 import styles from '@/styles/OsEntryListRow.module.scss';
+import OsEntryReleaseKindStyles from '@/styles/OsEntryReleaseKind.module.scss'
 import { OsEntry } from '@/types'
 import { formatDateToString, getOsEntryReleaseKinds } from '@/utils';
 
-interface OsEntryListRowProps {
+const OsEntryReleaseKindFlag: React.FC<{ osEntryReleaseKind: string }> = ({ osEntryReleaseKind }) => {
+    return (
+        <div
+            className={`${OsEntryReleaseKindStyles.releaseKind} ${OsEntryReleaseKindStyles[osEntryReleaseKind] || ''}`}
+        >
+            {osEntryReleaseKind}
+        </div>
+    );
+};
+
+const OsEntryListItem: React.FC<{
     entry: OsEntry;
     showBuildString: boolean;
-}
-
-const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry, showBuildString }) => {
+}> = ({ entry, showBuildString }) => {
     const osEntryReleaseKinds = getOsEntryReleaseKinds(entry);
 
     return (
@@ -38,4 +46,4 @@ const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry, showBuildString 
     );
 };
 
-export default OsEntryListRow;
+export default OsEntryListItem;

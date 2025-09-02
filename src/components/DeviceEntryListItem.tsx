@@ -7,7 +7,7 @@ interface OsEntryListRowProps {
     entry: DeviceEntry;
 }
 
-const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry }) => {
+const OsEntryListItem: React.FC<OsEntryListRowProps> = ({ entry }) => {
     let device_image = entry.DeviceLookupImage
 
     let image = device_image.name || 'logo';
@@ -46,4 +46,4 @@ const OsEntryListRow: React.FC<OsEntryListRowProps> = ({ entry }) => {
     );
 };
 
-export default OsEntryListRow;
+export default OsEntryListItem;

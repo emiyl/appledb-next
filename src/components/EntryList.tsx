@@ -6,10 +6,10 @@ import deviceStyles from '@/styles/DeviceEntryList.module.scss';
 import EntryListFilterRow from './EntryListFilterRow';
 
 import { defaultOsEntryListFilter, defaultOsEntryListSettings } from '@/utils';
-import OsEntryListRow from './OsEntryListRow';
+import OsEntryListItem from './OsEntryListItem';
 
 import { defaultDeviceEntryListFilter, defaultDeviceEntryListSettings } from '@/utils';
-import DeviceEntryListRow from './DeviceEntryListRow';
+import DeviceEntryListItem from './DeviceEntryListItem';
 
 type EntryTypeConfig<F, S, R, FR, D> = {
     filter: F,
@@ -25,7 +25,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
     [EntryType.Os]: {
         filter: defaultOsEntryListFilter,
         settings: defaultOsEntryListSettings,
-        row: OsEntryListRow,
+        row: OsEntryListItem,
         styles: undefined,
         apiEndpoint: '/api/os-entries',
         getApiParams: (filter, settings, page) => ({
@@ -50,7 +50,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
     [EntryType.Device]: {
         filter: defaultDeviceEntryListFilter,
         settings: defaultDeviceEntryListSettings,
-        row: DeviceEntryListRow,
+        row: DeviceEntryListItem,
         styles: deviceStyles,
         apiEndpoint: '/api/device',
         getApiParams: (filter, settings, page) => ({
