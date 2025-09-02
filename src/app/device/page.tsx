@@ -1,11 +1,12 @@
 import styles from '@/styles/layout.module.scss';
-import { DeviceEntryList } from '@/components/DeviceEntryList';
+import { EntryList } from '@/components/EntryList';
+import { EntryType } from '@/types';
 
 export default function DeviceEntryListPage() {
   return (
     <main className={styles.content}>
       <h1>Device List</h1>
-      <DeviceEntryList />
+      <EntryList entryType={EntryType.Device} />
     </main>
   );
 }
