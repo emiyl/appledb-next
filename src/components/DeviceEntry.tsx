@@ -277,18 +277,32 @@ type DeviceInfoTableProps = {
 
 const DeviceInfoTable: React.FC<DeviceInfoTableProps> = ({ device }) => {
     return (
-        <div className={styles.infoTable}>
-            <h5>Identifier</h5>
-            <p>{device.identifiers.join(", ")}</p>
-            <h5>Model</h5>
-            <p>{device.models.join(", ")}</p>
-            <h5>System on Chip (SoC)</h5>
-            <p>{device.socs.join(", ")}</p>
-            <h5>Architecture</h5>
-            <p>{device.archs.join(", ")}</p>
-            <h5>Board</h5>
-            <p>{device.boards.join(", ")}</p>
-        </div>
+        (
+            [
+                { label: "Identifier", values: device.identifiers },
+                { label: "Model", values: device.models },
+                { label: "System on Chip (SoC)", values: device.socs },
+                { label: "Architecture", values: device.archs },
+                { label: "Board", values: device.boards }
+            ].some(({ values }) => values.length > 0) && (
+                <div className={styles.infoTable}>
+                    {[
+                        { label: "Identifier", values: device.identifiers },
+                        { label: "Model", values: device.models },
+                        { label: "System on Chip (SoC)", values: device.socs },
+                        { label: "Architecture", values: device.archs },
+                        { label: "Board", values: device.boards }
+                    ].map(({ label, values }) =>
+                        values.length > 0 && (
+                            <React.Fragment key={label}>
+                                <h5>{label}</h5>
+                                <p>{values.join(", ")}</p>
+                            </React.Fragment>
+                        )
+                    )}
+                </div>
+            )
+        )
     );
 };
 
