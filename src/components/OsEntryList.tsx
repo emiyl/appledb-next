@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { OsEntry, OsEntryListFilter, OsEntryListSettings } from '@/types'
+import { OsEntry } from '@/types'
 import { defaultOsEntryListFilter, defaultOsEntryListSettings } from '@/utils';
 import OsEntryListRow from './OsEntryListRow';
 import OsEntryListFilterRow from './OsEntryListFilterRow';

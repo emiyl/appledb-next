@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import styles from '@/styles/OsEntryListFilter.module.scss';
 
 import { faXmark, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import OsEntryListSearchRow from './OsEntryListSearchRow';
+import EntryListSearchRow from './EntryListSearchRow';
 import EntryListFilterItem from './EntryListFilterItem';
 import { getOsEntryReleaseKindClass, getOsEntryReleaseKindLabel } from '@/utils';
-import { OsEntryReleaseKind, OsEntryListFilter, OsEntryListSettings } from '@/types';
+import { OsEntryReleaseKind, OsEntryListFilter, OsEntryListSettings, EntryType, EntryListFilter, EntryListSettings } from '@/types';
 
 interface OsEntryListFilterProps {
     filter: OsEntryListFilter;
@@ -45,12 +45,13 @@ const OsEntryListFilterRow: React.FC<OsEntryListFilterProps> = ({ filter, setFil
             ref={ref}
             className={[styles.filterContainer, isStuck ? styles.stuck : ''].join(' ')}
         >
-            <OsEntryListSearchRow
+            <EntryListSearchRow
+                entryType={EntryType.Os}
                 filter={filter}
-                setFilter={setFilter}
+                setFilter={setFilter as React.Dispatch<React.SetStateAction<EntryListFilter>>}
                 settings={settings}
-                setSettings={setSettings}
-                osNames={osNames}
+                setSettings={setSettings as React.Dispatch<React.SetStateAction<EntryListSettings>>}
+                names={osNames}
             />
             <div className={styles.filterRow}>
                 {

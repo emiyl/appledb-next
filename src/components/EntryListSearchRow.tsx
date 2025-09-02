@@ -5,17 +5,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMagnifyingGlass, faCog } from '@fortawesome/free-solid-svg-icons';
 import EntryListFilterDropdown from './EntryListFilterDropdown';
 import EntryListSettingsDropdown from './EntryListSettingsDropdown';
-import { EntryType, OsEntryListFilter, OsEntryListSettings } from '@/types';
+import { EntryType, EntryListFilter, EntryListSettings, OsEntryListSettings } from '@/types';
 
-interface SearchRowProps {
-    filter: OsEntryListFilter;
-    setFilter: React.Dispatch<React.SetStateAction<OsEntryListFilter>>;
-    settings: OsEntryListSettings;
-    setSettings: React.Dispatch<React.SetStateAction<OsEntryListSettings>>;
-    osNames: { id: number; name: string }[];
-}
+type SearchRowProps = {
+    entryType: EntryType;
+    filter: EntryListFilter;
+    setFilter: React.Dispatch<React.SetStateAction<EntryListFilter>>;
+    settings: EntryListSettings;
+    setSettings: React.Dispatch<React.SetStateAction<EntryListSettings>>;
+    names: { id: number; name: string }[];
+};
 
-const SearchRow: React.FC<SearchRowProps> = ({ filter, setFilter, settings, setSettings, osNames }) => {
+const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, settings, setSettings, names }) => {
     const [showFilterDropdown, setShowFilterDropdown] = useState(false);
     const [showSettingsDropdown, setShowSettingsDropdown] = useState(false);
 
@@ -50,10 +51,10 @@ const SearchRow: React.FC<SearchRowProps> = ({ filter, setFilter, settings, setS
 
                 {showFilterDropdown && (
                     <EntryListFilterDropdown
-                        entryType={EntryType.Os}
+                        entryType={entryType}
                         filter={filter}
                         setFilter={setFilter}
-                        filterItems={osNames}
+                        filterItems={names}
                     />
                 )}
             </div>
@@ -63,7 +64,7 @@ const SearchRow: React.FC<SearchRowProps> = ({ filter, setFilter, settings, setS
                     type="text"
                     placeholder="Search..."
                     className={styles.searchBar}
-                    onChange={(e) => setFilter(prev => ({
+                    onChange={(e) => setFilter((prev) => ({
                         ...prev,
                         search: e.target.value
                     }))}
@@ -79,7 +80,7 @@ const SearchRow: React.FC<SearchRowProps> = ({ filter, setFilter, settings, setS
 
                 {showSettingsDropdown && (
                     <EntryListSettingsDropdown
-                        entryType={EntryType.Os}
+                        entryType={entryType}
                         settings={settings}
                         setSettings={setSettings}
                     />

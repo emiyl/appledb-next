@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import styles from '@/styles/OsEntryListFilter.module.scss';
 
 import { faXmark, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import DeviceEntryListSearchRow from './DeviceEntryListSearchRow';
+import EntryListSearchRow from './EntryListSearchRow';
 import EntryListFilterItem from './EntryListFilterItem';
-import { DeviceEntryListFilter, DeviceEntryListSettings } from '@/types';
+import { DeviceEntryListFilter, DeviceEntryListSettings, EntryListFilter, EntryType } from '@/types';
 
 interface DeviceEntryListFilterProps {
     filter: DeviceEntryListFilter;
@@ -45,12 +45,13 @@ const DeviceEntryListFilterRow: React.FC<DeviceEntryListFilterProps> = ({ filter
             ref={ref}
             className={[styles.filterContainer, isStuck ? styles.stuck : ''].join(' ')}
         >
-            <DeviceEntryListSearchRow
+            <EntryListSearchRow
+                entryType={EntryType.Device}
                 filter={filter}
-                setFilter={setFilter}
+                setFilter={setFilter as React.Dispatch<React.SetStateAction<EntryListFilter>>}
                 settings={settings}
                 setSettings={setSettings}
-                deviceCategories={deviceCategories}
+                names={deviceCategories}
             />
             <div className={styles.filterRow}>
                 {

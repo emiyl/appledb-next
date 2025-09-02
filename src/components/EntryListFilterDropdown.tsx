@@ -1,24 +1,17 @@
 import React from 'react';
 import styles from '@/styles/OsEntryListFilterDropdown.module.scss';
-import { EntryType, OsEntryListFilter, DeviceEntryListFilter } from '@/types';
+import { EntryType, EntryListFilter, OsEntryListFilter } from '@/types';
 import { faCaretDown, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import EntryListFilterItem from './EntryListFilterItem';
 import OsEntryListFilterDropdownReleaseKind from './OsEntryListFilterDropdownReleaseKind';
 
-type EntryListFilterDropdownProps =
-  | {
-        entryType: EntryType.Device;
-        filter: DeviceEntryListFilter;
-        setFilter: React.Dispatch<React.SetStateAction<DeviceEntryListFilter>>;
-        filterItems: { id: number; name: string }[];
-    }
-  | {
-        entryType: EntryType.Os;
-        filter: OsEntryListFilter;
-        setFilter: React.Dispatch<React.SetStateAction<OsEntryListFilter>>;
-        filterItems: { id: number; name: string }[];
-    };
+type EntryListFilterDropdownProps = {
+    entryType: EntryType;
+    filter: EntryListFilter;
+    setFilter: React.Dispatch<React.SetStateAction<EntryListFilter>>;
+    filterItems: { id: number; name: string }[];
+};
 
 const rowStrings: Record<string, string> = {
     'name_id': 'Firmware name',
@@ -36,8 +29,8 @@ const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entry
         <div className={styles.dropdown}>
             {entryType === EntryType.Os && (
                 <OsEntryListFilterDropdownReleaseKind
-                    filter={filter}
-                    setFilter={setFilter}
+                    filter={filter as OsEntryListFilter}
+                    setFilter={setFilter as React.Dispatch<React.SetStateAction<OsEntryListFilter>>}
                 />
             )}
             {filterRows.map((rowKey) => (

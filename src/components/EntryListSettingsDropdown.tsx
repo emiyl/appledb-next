@@ -1,27 +1,21 @@
 import React from 'react';
 import styles from '@/styles/OsEntryListSettingsDropdown.module.scss';
-import { EntryType, DeviceEntryListSettings, OsEntryListSettings } from '@/types';
+import { EntryType, EntryListSettings } from '@/types';
 
 const rowStrings: Record<string, string> = {
     'reverseOrder': 'Reverse order',
     'showBuildString': 'Show build strings',
 };
 
-type EntryListSettingsDropdownProps =
-  | {
-      entryType: EntryType.Device;
-      settings: DeviceEntryListSettings;
-      setSettings: React.Dispatch<React.SetStateAction<DeviceEntryListSettings>>;
-    }
-  | {
-      entryType: EntryType.Os;
-      settings: OsEntryListSettings;
-      setSettings: React.Dispatch<React.SetStateAction<OsEntryListSettings>>;
-    };
+type EntryListSettingsDropdownProps = {
+    entryType: EntryType;
+    settings: EntryListSettings;
+    setSettings: React.Dispatch<React.SetStateAction<EntryListSettings>>;
+};
 
 const EntryListSettingsDropdown: React.FC<EntryListSettingsDropdownProps> = ({ settings, setSettings }) => {
     const handleCheckboxChange = (key: keyof typeof settings) => {
-        setSettings((prevSettings: any) => ({
+        setSettings((prevSettings) => ({
             ...prevSettings,
             [key]: !prevSettings[key],
         }));
