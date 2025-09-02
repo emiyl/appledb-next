@@ -61,14 +61,16 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
 
         if (filter.filter_id.length === 0) {
             params.delete(paramName);
+            window.history.replaceState({}, '', `${window.location.pathname}`);
         } else {
             params.set(
-            paramName,
-            filter.filter_id.map(num => obfuscateNumber(num)).join(',')
+                paramName,
+                filter.filter_id.map(num => obfuscateNumber(num)).join(',')
             );
+            window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
         }
 
-        window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+        
     }, [filter, entryType]);
 
     return (

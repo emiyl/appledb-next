@@ -1,6 +1,6 @@
 import styles from '@/styles/layout.module.scss';
 import DeviceEntry from '@/components/DeviceEntry';
-import { obfuscateNumber, deobfuscateNumber } from '@/utils/obfuscate';
+import { deobfuscateNumber } from '@/utils/obfuscate';
 
 async function findDeviceId(name: string) {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
@@ -13,15 +13,16 @@ async function findDeviceId(name: string) {
     return data;
 }
 
-export default async function DeviceEntryPage({ params }: { params: { slug: string } }) {
-    const { slug } = await Promise.resolve(params);
-    const ids = slug.split(".").pop();
+export default async function DeviceEntryPage({ params }: { params: any }) {
+    const { slug } = params;
+    const devices = slug.split(',');
+    const ids = devices.map((d: string) => d.split('.').pop());
 
     if (!ids) {
         return <div>No device found</div>;
     }
 
-    const obfuscatedDeviceIds = ids.split(',').map((id: string) => id);
+    const obfuscatedDeviceIds = ids.map((id: string) => id);
     let deviceIds: string[] = [];
     try {
         deviceIds = obfuscatedDeviceIds.map((id: string) => deobfuscateNumber(Number(id)).toString());

@@ -10,6 +10,8 @@ import OsEntryListItem from './OsEntryListItem';
 
 import { defaultDeviceEntryListFilter, defaultDeviceEntryListSettings } from '@/utils';
 import DeviceEntryListItem from './DeviceEntryListItem';
+import { useSearchParams } from 'next/navigation';
+import { deobfuscateNumber } from '@/utils/obfuscate';
 
 type EntryTypeConfig<F, S, R, FR, D> = {
     filter: F,
@@ -21,13 +23,24 @@ type EntryTypeConfig<F, S, R, FR, D> = {
     processApiData?: (data: D[]) => D[]
 };
 
+function handleIdCsv(ids: string) {
+    if (!ids) return [];
+    return ids.split(',').map((id: string) => deobfuscateNumber(Number(id.trim()))) || [];
+}
+
 const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any>> = {
     [EntryType.Os]: {
-        filter: defaultOsEntryListFilter,
+        filter: (searchParams: any) => {
+            return {
+                ...defaultOsEntryListFilter,
+                search: searchParams.get('search') || '',
+                filter_id: handleIdCsv(searchParams.get('os_name') || '')
+            };
+        },
         settings: defaultOsEntryListSettings,
         row: OsEntryListItem,
         styles: undefined,
-        apiEndpoint: '/api/os-entries',
+        apiEndpoint: 'os-entries',
         getApiParams: (filter, settings, page) => ({
             release: filter.releaseKinds.release.toString(),
             beta: filter.releaseKinds.beta.toString(),
@@ -48,11 +61,17 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
         },
     },
     [EntryType.Device]: {
-        filter: defaultDeviceEntryListFilter,
+        filter: (searchParams: any) => {
+            return {
+                ...defaultDeviceEntryListFilter,
+                search: searchParams.get('search') || '',
+                filter_id: handleIdCsv(searchParams.get('category') || '')
+            };
+        },
         settings: defaultDeviceEntryListSettings,
         row: DeviceEntryListItem,
         styles: deviceStyles,
-        apiEndpoint: '/api/device',
+        apiEndpoint: 'device',
         getApiParams: (filter, settings, page) => ({
             search: filter.search,
             category_id: filter.filter_id.join(','),
@@ -64,13 +83,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
     }
 };
 
-export function EntryList({
-    entryType,
-    defaultFilter
-}: {
-    entryType: EntryType,
-    defaultFilter?: EntryListFilter
-}) {
+export function EntryList({ entryType }: { entryType: EntryType }) {
     const [entries, setEntries] = useState<Entry[]>([]);
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
@@ -78,11 +91,14 @@ export function EntryList({
     const hasMounted = useRef(false);
     const areParamsChanging = useRef(false);
 
-    const [filter, setFilter] = useState(() => defaultFilter || entryTypeConfig[entryType].filter);
+    const searchParams = useSearchParams();
+    const getFilter = entryTypeConfig[entryType].filter(searchParams);
+
+    const [filter, setFilter] = useState(() => getFilter);
     const [settings, setSettings] = useState(() => entryTypeConfig[entryType].settings);
 
     const loadEntries = useCallback(async (append: boolean, page: number = 1) => {
-        const url_base = `${entryTypeConfig[entryType].apiEndpoint}?`;
+        const url_base = `/api/${entryTypeConfig[entryType].apiEndpoint}?`;
         const url_params = new URLSearchParams(
             entryTypeConfig[entryType].getApiParams(filter, settings, page)
         );
