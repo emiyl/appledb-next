@@ -15,7 +15,7 @@ async function findDeviceId(name: string) {
 
 export default async function DeviceEntryPage({ params }: { params: any }) {
     const { slug } = params;
-    const devices = slug.split(',');
+    const devices = slug.split('+');
     const ids = devices.map((d: string) => d.split('.').pop());
 
     if (!ids) {
