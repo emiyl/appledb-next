@@ -1,0 +1,39 @@
+@use '@/styles/variables.scss' as *;
+
+$dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
+
+.dropdown {
+    position: absolute;
+    border-radius: 24px;
+    margin-top: .75em;
+    margin-right: 2em;
+    padding: 1.5em;
+
+    // background: $c-bg;
+    // box-shadow: 0 12px 32px #00000010, 0 2px 6px #0000000f;
+
+    background: $liquid-glass-bg;
+    backdrop-filter: $liquid-glass-bg-blur;
+    box-shadow: $liquid-glass-shadow-drop;
+
+    max-width: $dropdown-max-width;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    z-index: 10;
+
+    max-height: 50vh;
+    overflow-y: auto;
+
+    h3 {
+        margin-block: 0em;
+        width: 100%;
+    }
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    gap: .7em;
+}

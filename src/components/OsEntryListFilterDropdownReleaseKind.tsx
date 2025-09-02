@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/OsEntryListFilterDropdown.module.scss';
+import styles from '@/styles/EntryListFilterDropdown.module.scss';
 import { OsEntryReleaseKind, OsEntryListFilter } from '@/types';
 import EntryListFilterItem from './EntryListFilterItem';
 import { getOsEntryReleaseKindClass, getOsEntryReleaseKindLabel } from '@/utils';

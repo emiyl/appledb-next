@@ -1,6 +1,6 @@
 import { OsEntry } from '@/types';
 import { OsEntryReleaseKind } from '@/types/OsEntryReleaseKind';
-import styles from "@/styles/OsEntryListFilter.module.scss";
+import styles from "@/styles/EntryListFilter.module.scss";
 
 export function getOsEntryReleaseKinds(entry: OsEntry): OsEntryReleaseKind[] {
     const kinds: OsEntryReleaseKind[] = [];

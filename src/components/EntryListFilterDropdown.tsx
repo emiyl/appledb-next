@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/OsEntryListFilterDropdown.module.scss';
+import styles from '@/styles/EntryListFilterDropdown.module.scss';
 import { EntryType, EntryListFilter, OsEntryListFilter } from '@/types';
 import { faCaretDown, faPlus } from '@fortawesome/free-solid-svg-icons';
 

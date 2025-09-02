@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import styles from '@/styles/OsEntryListFilter.module.scss';
+import styles from '@/styles/EntryListFilter.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMagnifyingGlass, faCog } from '@fortawesome/free-solid-svg-icons';

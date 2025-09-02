@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/OsEntryListFilter.module.scss';
+import styles from '@/styles/EntryListFilter.module.scss';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

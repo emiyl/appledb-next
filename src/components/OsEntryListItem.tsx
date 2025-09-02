@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/OsEntryListRow.module.scss';
+import styles from '@/styles/OsEntryListItem.module.scss';
 import OsEntryReleaseKindStyles from '@/styles/OsEntryReleaseKind.module.scss'
 import { OsEntry } from '@/types'
 import { formatDateToString, getOsEntryReleaseKinds } from '@/utils';

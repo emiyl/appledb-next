@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/OsEntryListSettingsDropdown.module.scss';
+import styles from '@/styles/EntryListSettingsDropdown.module.scss';
 import { EntryType, EntryListSettings } from '@/types';
 
 const rowStrings: Record<string, string> = {
