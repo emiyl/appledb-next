@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import styles from '@/styles/OsEntryListFilter.module.scss';
+import styles from '@/styles/EntryListFilter.module.scss';
 
 import { faXmark, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import EntryListSearchRow from './EntryListSearchRow';
 import EntryListFilterItem from './EntryListFilterItem';
-import { DeviceEntryListFilter, DeviceEntryListSettings, EntryListFilter, EntryListSettings, EntryType, OsEntryListFilter } from '@/types';
+import { EntryListFilter, EntryListSettings, EntryType } from '@/types';
+import { obfuscateNumber } from '@/utils/obfuscate';
 
 interface EntryListFilterProps {
     entryType: EntryType;
@@ -19,11 +20,13 @@ interface EntryListFilterProps {
 const entryTypeConfig = {
     [EntryType.Os]: {
         apiRoute: '/api/os-names',
-        label: 'Firmware names'
+        label: 'Firmware names',
+        param: 'os_name'
     },
     [EntryType.Device]: {
         apiRoute: '/api/device-categories',
-        label: 'Device categories'
+        label: 'Device categories',
+        param: 'category'
     },
 };
 
@@ -51,6 +54,22 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
     const [collapseNamesThreshold] = React.useState(5);
 
     const filteredNames = names.filter(({ id }) => filter.filter_id.includes(id));
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        const paramName = entryTypeConfig[entryType].param;
+
+        if (filter.filter_id.length === 0) {
+            params.delete(paramName);
+        } else {
+            params.set(
+            paramName,
+            filter.filter_id.map(num => obfuscateNumber(num)).join(',')
+            );
+        }
+
+        window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+    }, [filter, entryType]);
 
     return (
         <div
