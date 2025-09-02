@@ -1,5 +1,7 @@
 'use client';
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { obfuscateNumber } from "@/utils/obfuscate";
 
 type DeviceMapRelease = {
     datetime: string;
@@ -10,6 +12,8 @@ type Device = {
     id: string;
     name: string;
     releaseDateString: string;
+    categoryId: number;
+    category: string;
 };
 
 type DeviceEntryProps = {
@@ -62,7 +66,11 @@ const DeviceEntry: React.FC<DeviceEntryProps> = ({ deviceIds }) => {
                 const normalizeDevice = (device: any): Device => ({
                     id: device.id,
                     name: device.name,
-                    releaseDateString: formatReleaseDates(device.DeviceMapRelease)
+                    releaseDateString: formatReleaseDates(device.DeviceMapRelease),
+                    category: device.DeviceLookupCategory?.name,
+                    categoryId: device.category_id,
+                    separator: "---------------",
+                    ...device
                 });
 
                 if (Array.isArray(data)) {
@@ -87,11 +95,18 @@ const DeviceEntry: React.FC<DeviceEntryProps> = ({ deviceIds }) => {
         <p>No devices found.</p>
     </div>;
 
+    const deviceName = devices.find(d => d.name)?.name || "Unknown Device";
+    const deviceReleaseDate = devices.find(d => d.releaseDateString)?.releaseDateString || "Unknown release date";
+    const deviceCategory = devices.find(d => d.category)?.category || "Unknown category";
+    const deviceCategoryId = obfuscateNumber(devices.find(d => d.categoryId)?.categoryId || 0);
+
     return (
         <div>
-            <h1>{ devices.find(d => d.name)?.name || "Unknown Device" }</h1>
-            <p>{ devices.find(d => d.releaseDateString)?.releaseDateString || "Unknown release date" } — iPhone</p>
-            { JSON.stringify(devices) }
+            <div>
+                <h1>{deviceName}</h1>
+                <p>{deviceReleaseDate} — <Link href={`/device?category=${deviceCategoryId}`}>{deviceCategory}</Link></p>
+                <pre>{ JSON.stringify(devices, null, 4) }</pre>
+            </div>
         </div>
     );
 };
