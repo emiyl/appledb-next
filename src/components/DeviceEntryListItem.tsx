@@ -1,7 +1,9 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from '@/styles/DeviceEntryListRow.module.scss';
 import { DeviceEntry } from '@/types'
 import { formatDateToString } from '@/utils';
+import { obfuscateNumber } from '@/utils/obfuscate';
 
 interface OsEntryListRowProps {
     entry: DeviceEntry;
@@ -38,9 +40,11 @@ const OsEntryListItem: React.FC<OsEntryListRowProps> = ({ entry }) => {
                     {identifiers.length > 0 && <li>Identifier{identifiers.length > 1 ? 's' : ''}: {identifiers.join(', ')}</li>}
                     {socs.length > 0 && <li>SoC{socs.length > 1 ? 's' : ''}: {socs.join(', ')}</li>}
                     {models.length > 0 && <li>Model{models.length > 1 ? 's' : ''}: {models.join(', ')}</li>}
-                    <li><a href="#">View more</a></li>
+                    {releaseDate.length > 0 ? <li>Released on {releaseDate[0]}</li> : <li>Unknown release date</li>}
                 </ul>
-                {releaseDate.length > 0 && <div className={styles.releaseDate}>Released on {releaseDate[0]}</div>}
+                <div>
+                    <Link href={`/device/${entry.name.replace(/\s+/g, '-')}.${obfuscateNumber(entry.id)}`}>View device page</Link>
+                </div>
             </div>
         </div>
     );
