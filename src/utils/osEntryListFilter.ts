@@ -10,5 +10,5 @@ export const defaultOsEntryListFilter: OsEntryListFilter = {
         [OsEntryReleaseKind.Simulator]: false
     },
 	search: '',
-	name_id: []
+	filter_id: []
 };

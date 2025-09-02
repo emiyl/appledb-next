@@ -54,7 +54,7 @@ const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entry
                             />
                         ))
                     }
-                    {filterItemsTruncateCount < filterItems.filter(({ id }) => !filter[rowKey as keyof typeof filter].includes(id.toString())).length && (
+                    {filterItemsTruncateCount < filterItems.filter(({ id }) => !((filter[rowKey as keyof typeof filter] as number[]).includes(id))).length && (
                         <EntryListFilterItem
                             label="Show more"
                             icon={faCaretDown}

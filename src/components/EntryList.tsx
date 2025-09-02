@@ -3,20 +3,18 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Entry, EntryType, OsEntry, DeviceEntry } from '@/types'
 import deviceStyles from '@/styles/DeviceEntryList.module.scss';
+import EntryListFilterRow from './EntryListFilterRow';
 
 import { defaultOsEntryListFilter, defaultOsEntryListSettings } from '@/utils';
 import OsEntryListRow from './OsEntryListRow';
-import OsEntryListFilterRow from './OsEntryListFilterRow';
 
 import { defaultDeviceEntryListFilter, defaultDeviceEntryListSettings } from '@/utils';
 import DeviceEntryListRow from './DeviceEntryListRow';
-import DeviceEntryListFilterRow from './DeviceEntryListFilterRow';
 
 type EntryTypeConfig<F, S, R, FR, D> = {
     filter: F,
     settings: S,
     row: R,
-    filterRow: FR,
     styles?: Record<string, string>,
     apiEndpoint: string,
     getApiParams: (filter: F, settings: S, page: number) => Record<string, string>,
@@ -24,11 +22,10 @@ type EntryTypeConfig<F, S, R, FR, D> = {
 };
 
 const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any>> = {
-    os: {
+    [EntryType.Os]: {
         filter: defaultOsEntryListFilter,
         settings: defaultOsEntryListSettings,
         row: OsEntryListRow,
-        filterRow: OsEntryListFilterRow,
         styles: undefined,
         apiEndpoint: '/api/os-entries',
         getApiParams: (filter, settings, page) => ({
@@ -38,7 +35,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
             sdk: filter.releaseKinds.sdk.toString(),
             simulator: filter.releaseKinds.simulator.toString(),
             search: filter.search,
-            name_id: filter.name_id.join(','),
+            name_id: filter.filter_id.join(','),
             reverse: settings.reverseOrder ? 'true' : 'false',
             page: page.toString(),
             limit: '100'
@@ -50,16 +47,15 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
             }));
         },
     },
-    device: {
+    [EntryType.Device]: {
         filter: defaultDeviceEntryListFilter,
         settings: defaultDeviceEntryListSettings,
         row: DeviceEntryListRow,
-        filterRow: DeviceEntryListFilterRow,
         styles: deviceStyles,
         apiEndpoint: '/api/device',
         getApiParams: (filter, settings, page) => ({
             search: filter.search,
-            category_id: filter.category_id.join(','),
+            category_id: filter.filter_id.join(','),
             reverse: settings.reverseOrder ? 'true' : 'false',
             page: page.toString(),
             limit: '100'
@@ -168,17 +164,15 @@ export function EntryList({ entryType }: { entryType: EntryType }) {
     return (
         <div style={{ overflow: 'visible' }}>
             <div ref={sentinelRef} style={{ height: 1 }}></div>
-            {React.createElement(
-                entryTypeConfig[entryType].filterRow,
-                {
-                    filter,
-                    setFilter,
-                    settings,
-                    setSettings,
-                    ref: stickyRef,
-                    isStuck
-                }
-            )}
+            <EntryListFilterRow
+                entryType={entryType}
+                filter={filter}
+                setFilter={setFilter}
+                settings={settings}
+                setSettings={setSettings}
+                ref={stickyRef}
+                isStuck={isStuck}
+            />
             <div className={entryTypeConfig[entryType].styles?.container}>
                 {entries.map((entry) => {
                     const RowComponent = entryTypeConfig[entryType].row;

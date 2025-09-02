@@ -5,12 +5,12 @@ export type OsEntryListFilter = {
         [key in OsEntryReleaseKind]: boolean;
     },
     search: string;
-    name_id: number[];
+    filter_id: number[];
 }
 
 export type DeviceEntryListFilter = {
     search: string;
-    category_id: number[];
+    filter_id: number[];
 }
 
 export type EntryListFilter = OsEntryListFilter | DeviceEntryListFilter;
