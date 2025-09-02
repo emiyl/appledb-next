@@ -65,7 +65,7 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
         } else {
             params.set(
                 paramName,
-                filter.filter_id.map(num => obfuscateNumber(num)).join('+')
+                filter.filter_id.map(num => obfuscateNumber(num)).join(',')
             );
             window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
         }

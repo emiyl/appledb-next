@@ -67,7 +67,7 @@ export async function GET(req: NextRequest) {
     if (internal) kindFilters.push({ is_internal: true });
 
     const nameIdFilter = searchParams.get('name_id')
-        ?.split('+')
+        ?.split(',')
         .map((id) => parseInt(id))
         .filter((id) => !isNaN(id));
 

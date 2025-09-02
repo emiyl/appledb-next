@@ -1,1 +1,35 @@
 @use '@/styles/variables.scss' as *;
+
+.title {
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.deviceImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        max-width: 6em;
+        max-height: 8em;
+    }
+}
+
+.deviceHeader {
+    display: flex;
+    gap: 2em;
+    padding-top: 1em;
+}
+
+.infoTable {
+    margin-block: 2em;
+    
+    h5 {
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+    }
+}

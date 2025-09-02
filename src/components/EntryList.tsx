@@ -25,7 +25,7 @@ type EntryTypeConfig<F, S, R, FR, D> = {
 
 function handleIdCsv(ids: string) {
     if (!ids) return [];
-    return ids.split('+').map((id: string) => deobfuscateNumber(Number(id.trim()))) || [];
+    return ids.split(',').map((id: string) => deobfuscateNumber(Number(id.trim()))) || [];
 }
 
 const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any>> = {
@@ -48,7 +48,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
             sdk: filter.releaseKinds.sdk.toString(),
             simulator: filter.releaseKinds.simulator.toString(),
             search: filter.search,
-            name_id: filter.filter_id.join('+'),
+            name_id: filter.filter_id.join(','),
             reverse: settings.reverseOrder ? 'true' : 'false',
             page: page.toString(),
             limit: '100'
@@ -74,7 +74,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
         apiEndpoint: 'device',
         getApiParams: (filter, settings, page) => ({
             search: filter.search,
-            category_id: filter.filter_id.join('+'),
+            category_id: filter.filter_id.join(','),
             reverse: settings.reverseOrder ? 'true' : 'false',
             page: page.toString(),
             limit: '100'
