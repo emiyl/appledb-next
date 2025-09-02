@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Entry, EntryType, OsEntry, DeviceEntry } from '@/types'
+import { Entry, EntryType, OsEntry, DeviceEntry, EntryListFilter } from '@/types'
 import deviceStyles from '@/styles/DeviceEntryList.module.scss';
 import EntryListFilterRow from './EntryListFilterRow';
 
@@ -64,7 +64,13 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
     }
 };
 
-export function EntryList({ entryType }: { entryType: EntryType }) {
+export function EntryList({
+    entryType,
+    defaultFilter
+}: {
+    entryType: EntryType,
+    defaultFilter?: EntryListFilter
+}) {
     const [entries, setEntries] = useState<Entry[]>([]);
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
@@ -72,7 +78,7 @@ export function EntryList({ entryType }: { entryType: EntryType }) {
     const hasMounted = useRef(false);
     const areParamsChanging = useRef(false);
 
-    const [filter, setFilter] = useState(() => entryTypeConfig[entryType].filter);
+    const [filter, setFilter] = useState(() => defaultFilter || entryTypeConfig[entryType].filter);
     const [settings, setSettings] = useState(() => entryTypeConfig[entryType].settings);
 
     const loadEntries = useCallback(async (append: boolean, page: number = 1) => {
