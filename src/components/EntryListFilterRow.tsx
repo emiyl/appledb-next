@@ -4,8 +4,9 @@ import styles from '@/styles/EntryListFilter.module.scss';
 import { faXmark, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import EntryListSearchRow from './EntryListSearchRow';
 import EntryListFilterItem from './EntryListFilterItem';
-import { EntryListFilter, EntryListSettings, EntryType } from '@/types';
+import { EntryListFilter, EntryListSettings, EntryType, OsEntryListFilter, OsEntryReleaseKind } from '@/types';
 import { obfuscateNumber } from '@/utils/obfuscate';
+import { getOsEntryReleaseKindClass, getOsEntryReleaseKindLabel } from '@/utils';
 
 interface EntryListFilterProps {
     entryType: EntryType;
@@ -79,7 +80,7 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
             className={[styles.filterContainer, isStuck ? styles.stuck : ''].join(' ')}
         >
             <EntryListSearchRow
-                entryType={EntryType.Device}
+                entryType={entryType}
                 filter={filter}
                 setFilter={setFilter as React.Dispatch<React.SetStateAction<EntryListFilter>>}
                 settings={settings}
@@ -87,6 +88,26 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
                 names={names}
             />
             <div className={styles.filterRow}>
+                {
+                    entryType === EntryType.Os &&
+                    Object.values(OsEntryReleaseKind)
+                        .filter(kind => (filter as OsEntryListFilter).releaseKinds[kind])
+                        .map((kind) => (
+                            <EntryListFilterItem
+                                key={kind}
+                                label={getOsEntryReleaseKindLabel(kind)}
+                                icon={faXmark}
+                                classes={[getOsEntryReleaseKindClass(kind)]}
+                                onClick={() => setFilter(prev => ({
+                                    ...prev,
+                                    releaseKinds: {
+                                        ...(prev as OsEntryListFilter).releaseKinds,
+                                        [kind]: !(prev as OsEntryListFilter).releaseKinds[kind]
+                                    }
+                                }))}
+                            />
+                        ))
+                }
                 {
                     (filteredNames.length >= collapseNamesThreshold) &&
                     <EntryListFilterItem

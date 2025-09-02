@@ -3,6 +3,8 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { obfuscateNumber } from "@/utils/obfuscate";
 import styles from '@/styles/DeviceEntry.module.scss';
+import { EntryList } from "./EntryList";
+import { EntryType } from "@/types/EntryType";
 
 type DeviceMapRelease = {
     datetime: string;
@@ -198,6 +200,7 @@ const DeviceEntry: React.FC<DeviceEntryProps> = ({ deviceIds }) => {
                     {JSON.stringify(device, null, 4)}
                 </pre>
             </pre> */}
+            <EntryList entryType={EntryType.Os} />
         </div>
     );
 };

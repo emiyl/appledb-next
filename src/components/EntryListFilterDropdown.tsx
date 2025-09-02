@@ -13,9 +13,9 @@ type EntryListFilterDropdownProps = {
     filterItems: { id: number; name: string }[];
 };
 
-const rowStrings: Record<string, string> = {
-    'name_id': 'Firmware name',
-    'category_id': 'Device category',
+const rowStrings: Record<string, Record<string, string>> = {
+    [EntryType.Os]: { filter_id: 'Firmware name' },
+    [EntryType.Device]: { category_id: 'Device category' },
 };
 
 const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entryType, filter, setFilter, filterItems }) => {
@@ -35,7 +35,7 @@ const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entry
             )}
             {filterRows.map((rowKey) => (
                 <div className={styles.row} key={rowKey as string}>
-                    <h3>{rowStrings[rowKey]}</h3>
+                    <h3>{rowStrings[entryType][rowKey]}</h3>
                     {filterItems
                         .filter(({ id }) =>
                             !(filter[rowKey as keyof typeof filter] as unknown as any[]).includes(id)

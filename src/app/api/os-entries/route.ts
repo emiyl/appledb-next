@@ -1,3 +1,4 @@
+import { MapDeviceOs } from './../../../generated/prisma/index.d';
 import { OsEntry } from '@/types';
 import { NextRequest } from 'next/server';
 import { prisma } from '@/lib/prisma';
@@ -81,19 +82,36 @@ export async function GET(req: NextRequest) {
         }
         : undefined;
 
+    const deviceIdFilter = searchParams.get('device_id')
+        ?.split(',')
+        .map((id) => parseInt(id))
+        .filter((id) => !isNaN(id));
+
+    const deviceIdCondition = deviceIdFilter && deviceIdFilter.length > 0
+        ? {
+            MapDeviceOs: {
+                some: {
+                    device_id: {
+                        in: deviceIdFilter,
+                    }
+                }
+            }
+        }
+        : undefined;
 
     const rawSearch = searchParams.get("search");
     const searchString = rawSearch ? decodeURIComponent(rawSearch).trim() : undefined;
 
     const reverse = searchParams.get('reverse') === 'true';
 
-    const entries = await prisma.osEntry.findMany({
+    const entriesRaw = await prisma.osEntry.findMany({
         where: {
             AND: [
                 ...(kindFilters.length > 0 ? [{ OR: kindFilters }] : []),
                 ...(filtersEnabled && !sdk ? [{ is_sdk: false }] : []),
                 ...(filtersEnabled && !simulator ? [{ is_simulator: false }] : []),
                 ...(nameIdCondition ? [nameIdCondition] : []),
+                ...(deviceIdCondition ? [deviceIdCondition] : []),
                 {
                     search: {
                         contains: searchString,
@@ -123,8 +141,20 @@ export async function GET(req: NextRequest) {
                     name: true,
                 },
             },
+            MapDeviceOs: {
+                select: {
+                    device_id: true,
+                },
+            },
         },
     });
+
+    // Map device_id to array
+    const entries = entriesRaw.map(entry => ({
+        ...entry,
+        MapDeviceOs: undefined,
+        DeviceMap: Array.isArray(entry.MapDeviceOs) ? entry.MapDeviceOs.map((d: any) => d.device_id) : [],
+    }));
 
     if (!searchString) {
         setCache(cacheKey, entries);

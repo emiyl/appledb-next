@@ -10,5 +10,6 @@ export const defaultOsEntryListFilter: OsEntryListFilter = {
         [OsEntryReleaseKind.Simulator]: false
     },
 	search: '',
-	filter_id: []
+	filter_id: [],
+	device_id: []
 };

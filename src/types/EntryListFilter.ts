@@ -6,6 +6,7 @@ export type OsEntryListFilter = {
     },
     search: string;
     filter_id: number[];
+    device_id: number[];
 }
 
 export type DeviceEntryListFilter = {
