@@ -11,7 +11,7 @@ datasource db {
 
 model ColorLookup {
   id                Int                 @id @default(autoincrement())
-  name              String
+  name              String              @unique
   DeviceImageColors DeviceImageColors[]
 }
 
@@ -30,6 +30,7 @@ model DeviceEntry {
   DeviceMapModel        DeviceMapModel[]
   DeviceMapRelease      DeviceMapRelease[]
   DeviceMapSoc          DeviceMapSoc[]
+  DeviceMapBoard        DeviceMapBoard[]
   MapDeviceOs           MapDeviceOs[]
   OsEntryPreinstalled   OsEntryPreinstalled[]
   SourceMapDevice       SourceMapDevice[]
@@ -107,6 +108,12 @@ model DeviceLookupSoc {
   DeviceMapSoc DeviceMapSoc[]
 }
 
+model DeviceLookupBoard {
+  id             Int              @id @default(autoincrement())
+  name           String
+  DeviceMapBoard DeviceMapBoard[]
+}
+
 model DeviceMapArchitecture {
   device_id                Int
   architecture_id          Int
@@ -151,6 +158,16 @@ model DeviceMapSoc {
 
   @@id([device_id, soc_id])
   @@index([soc_id])
+}
+
+model DeviceMapBoard {
+  device_id         Int
+  board_id          Int
+  DeviceEntry       DeviceEntry       @relation(fields: [device_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  DeviceLookupBoard DeviceLookupBoard @relation(fields: [board_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([device_id, board_id])
+  @@index([board_id])
 }
 
 model MapDeviceOs {

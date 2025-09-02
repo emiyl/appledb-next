@@ -64,6 +64,11 @@ export type DeviceLookupImage = $Result.DefaultSelection<Prisma.$DeviceLookupIma
  */
 export type DeviceLookupSoc = $Result.DefaultSelection<Prisma.$DeviceLookupSocPayload>
 /**
+ * Model DeviceLookupBoard
+ * 
+ */
+export type DeviceLookupBoard = $Result.DefaultSelection<Prisma.$DeviceLookupBoardPayload>
+/**
  * Model DeviceMapArchitecture
  * 
  */
@@ -88,6 +93,11 @@ export type DeviceMapRelease = $Result.DefaultSelection<Prisma.$DeviceMapRelease
  * 
  */
 export type DeviceMapSoc = $Result.DefaultSelection<Prisma.$DeviceMapSocPayload>
+/**
+ * Model DeviceMapBoard
+ * 
+ */
+export type DeviceMapBoard = $Result.DefaultSelection<Prisma.$DeviceMapBoardPayload>
 /**
  * Model MapDeviceOs
  * 
@@ -395,6 +405,16 @@ export class PrismaClient<
   get deviceLookupSoc(): Prisma.DeviceLookupSocDelegate<ExtArgs, ClientOptions>;
 
   /**
+   * `prisma.deviceLookupBoard`: Exposes CRUD operations for the **DeviceLookupBoard** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more DeviceLookupBoards
+    * const deviceLookupBoards = await prisma.deviceLookupBoard.findMany()
+    * ```
+    */
+  get deviceLookupBoard(): Prisma.DeviceLookupBoardDelegate<ExtArgs, ClientOptions>;
+
+  /**
    * `prisma.deviceMapArchitecture`: Exposes CRUD operations for the **DeviceMapArchitecture** model.
     * Example usage:
     * ```ts
@@ -443,6 +463,16 @@ export class PrismaClient<
     * ```
     */
   get deviceMapSoc(): Prisma.DeviceMapSocDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.deviceMapBoard`: Exposes CRUD operations for the **DeviceMapBoard** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more DeviceMapBoards
+    * const deviceMapBoards = await prisma.deviceMapBoard.findMany()
+    * ```
+    */
+  get deviceMapBoard(): Prisma.DeviceMapBoardDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.mapDeviceOs`: Exposes CRUD operations for the **MapDeviceOs** model.
@@ -1053,11 +1083,13 @@ export namespace Prisma {
     DeviceLookupCategory: 'DeviceLookupCategory',
     DeviceLookupImage: 'DeviceLookupImage',
     DeviceLookupSoc: 'DeviceLookupSoc',
+    DeviceLookupBoard: 'DeviceLookupBoard',
     DeviceMapArchitecture: 'DeviceMapArchitecture',
     DeviceMapIdentifier: 'DeviceMapIdentifier',
     DeviceMapModel: 'DeviceMapModel',
     DeviceMapRelease: 'DeviceMapRelease',
     DeviceMapSoc: 'DeviceMapSoc',
+    DeviceMapBoard: 'DeviceMapBoard',
     MapDeviceOs: 'MapDeviceOs',
     OsEntry: 'OsEntry',
     OsEntryBuildTrain: 'OsEntryBuildTrain',
@@ -1092,7 +1124,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "colorLookup" | "deviceEntry" | "deviceGroupEntry" | "deviceGroupMapDevice" | "deviceGroupMapDeviceGroup" | "deviceImageColors" | "deviceLookupArchitecture" | "deviceLookupCategory" | "deviceLookupImage" | "deviceLookupSoc" | "deviceMapArchitecture" | "deviceMapIdentifier" | "deviceMapModel" | "deviceMapRelease" | "deviceMapSoc" | "mapDeviceOs" | "osEntry" | "osEntryBuildTrain" | "osEntryIpd" | "osEntryOsStringMap" | "osEntryPreinstalled" | "osEntryReleaseNote" | "osEntrySafariVersion" | "osEntrySecurityNote" | "osLookupName" | "sourceEntry" | "sourceHash" | "sourceLink" | "sourceMapDevice" | "sourceMapOsString" | "sourcePrequisiteBuild"
+      modelProps: "colorLookup" | "deviceEntry" | "deviceGroupEntry" | "deviceGroupMapDevice" | "deviceGroupMapDeviceGroup" | "deviceImageColors" | "deviceLookupArchitecture" | "deviceLookupCategory" | "deviceLookupImage" | "deviceLookupSoc" | "deviceLookupBoard" | "deviceMapArchitecture" | "deviceMapIdentifier" | "deviceMapModel" | "deviceMapRelease" | "deviceMapSoc" | "deviceMapBoard" | "mapDeviceOs" | "osEntry" | "osEntryBuildTrain" | "osEntryIpd" | "osEntryOsStringMap" | "osEntryPreinstalled" | "osEntryReleaseNote" | "osEntrySafariVersion" | "osEntrySecurityNote" | "osLookupName" | "sourceEntry" | "sourceHash" | "sourceLink" | "sourceMapDevice" | "sourceMapOsString" | "sourcePrequisiteBuild"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1836,6 +1868,80 @@ export namespace Prisma {
           }
         }
       }
+      DeviceLookupBoard: {
+        payload: Prisma.$DeviceLookupBoardPayload<ExtArgs>
+        fields: Prisma.DeviceLookupBoardFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.DeviceLookupBoardFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupBoardPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.DeviceLookupBoardFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupBoardPayload>
+          }
+          findFirst: {
+            args: Prisma.DeviceLookupBoardFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupBoardPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.DeviceLookupBoardFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupBoardPayload>
+          }
+          findMany: {
+            args: Prisma.DeviceLookupBoardFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupBoardPayload>[]
+          }
+          create: {
+            args: Prisma.DeviceLookupBoardCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupBoardPayload>
+          }
+          createMany: {
+            args: Prisma.DeviceLookupBoardCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.DeviceLookupBoardCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupBoardPayload>[]
+          }
+          delete: {
+            args: Prisma.DeviceLookupBoardDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupBoardPayload>
+          }
+          update: {
+            args: Prisma.DeviceLookupBoardUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupBoardPayload>
+          }
+          deleteMany: {
+            args: Prisma.DeviceLookupBoardDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.DeviceLookupBoardUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceLookupBoardUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupBoardPayload>[]
+          }
+          upsert: {
+            args: Prisma.DeviceLookupBoardUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceLookupBoardPayload>
+          }
+          aggregate: {
+            args: Prisma.DeviceLookupBoardAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateDeviceLookupBoard>
+          }
+          groupBy: {
+            args: Prisma.DeviceLookupBoardGroupByArgs<ExtArgs>
+            result: $Utils.Optional<DeviceLookupBoardGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.DeviceLookupBoardCountArgs<ExtArgs>
+            result: $Utils.Optional<DeviceLookupBoardCountAggregateOutputType> | number
+          }
+        }
+      }
       DeviceMapArchitecture: {
         payload: Prisma.$DeviceMapArchitecturePayload<ExtArgs>
         fields: Prisma.DeviceMapArchitectureFieldRefs
@@ -2203,6 +2309,80 @@ export namespace Prisma {
           count: {
             args: Prisma.DeviceMapSocCountArgs<ExtArgs>
             result: $Utils.Optional<DeviceMapSocCountAggregateOutputType> | number
+          }
+        }
+      }
+      DeviceMapBoard: {
+        payload: Prisma.$DeviceMapBoardPayload<ExtArgs>
+        fields: Prisma.DeviceMapBoardFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.DeviceMapBoardFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapBoardPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.DeviceMapBoardFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapBoardPayload>
+          }
+          findFirst: {
+            args: Prisma.DeviceMapBoardFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapBoardPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.DeviceMapBoardFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapBoardPayload>
+          }
+          findMany: {
+            args: Prisma.DeviceMapBoardFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapBoardPayload>[]
+          }
+          create: {
+            args: Prisma.DeviceMapBoardCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapBoardPayload>
+          }
+          createMany: {
+            args: Prisma.DeviceMapBoardCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.DeviceMapBoardCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapBoardPayload>[]
+          }
+          delete: {
+            args: Prisma.DeviceMapBoardDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapBoardPayload>
+          }
+          update: {
+            args: Prisma.DeviceMapBoardUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapBoardPayload>
+          }
+          deleteMany: {
+            args: Prisma.DeviceMapBoardDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.DeviceMapBoardUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.DeviceMapBoardUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapBoardPayload>[]
+          }
+          upsert: {
+            args: Prisma.DeviceMapBoardUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DeviceMapBoardPayload>
+          }
+          aggregate: {
+            args: Prisma.DeviceMapBoardAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateDeviceMapBoard>
+          }
+          groupBy: {
+            args: Prisma.DeviceMapBoardGroupByArgs<ExtArgs>
+            result: $Utils.Optional<DeviceMapBoardGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.DeviceMapBoardCountArgs<ExtArgs>
+            result: $Utils.Optional<DeviceMapBoardCountAggregateOutputType> | number
           }
         }
       }
@@ -3484,11 +3664,13 @@ export namespace Prisma {
     deviceLookupCategory?: DeviceLookupCategoryOmit
     deviceLookupImage?: DeviceLookupImageOmit
     deviceLookupSoc?: DeviceLookupSocOmit
+    deviceLookupBoard?: DeviceLookupBoardOmit
     deviceMapArchitecture?: DeviceMapArchitectureOmit
     deviceMapIdentifier?: DeviceMapIdentifierOmit
     deviceMapModel?: DeviceMapModelOmit
     deviceMapRelease?: DeviceMapReleaseOmit
     deviceMapSoc?: DeviceMapSocOmit
+    deviceMapBoard?: DeviceMapBoardOmit
     mapDeviceOs?: MapDeviceOsOmit
     osEntry?: OsEntryOmit
     osEntryBuildTrain?: OsEntryBuildTrainOmit
@@ -3636,6 +3818,7 @@ export namespace Prisma {
     DeviceMapModel: number
     DeviceMapRelease: number
     DeviceMapSoc: number
+    DeviceMapBoard: number
     MapDeviceOs: number
     OsEntryPreinstalled: number
     SourceMapDevice: number
@@ -3648,6 +3831,7 @@ export namespace Prisma {
     DeviceMapModel?: boolean | DeviceEntryCountOutputTypeCountDeviceMapModelArgs
     DeviceMapRelease?: boolean | DeviceEntryCountOutputTypeCountDeviceMapReleaseArgs
     DeviceMapSoc?: boolean | DeviceEntryCountOutputTypeCountDeviceMapSocArgs
+    DeviceMapBoard?: boolean | DeviceEntryCountOutputTypeCountDeviceMapBoardArgs
     MapDeviceOs?: boolean | DeviceEntryCountOutputTypeCountMapDeviceOsArgs
     OsEntryPreinstalled?: boolean | DeviceEntryCountOutputTypeCountOsEntryPreinstalledArgs
     SourceMapDevice?: boolean | DeviceEntryCountOutputTypeCountSourceMapDeviceArgs
@@ -3704,6 +3888,13 @@ export namespace Prisma {
    */
   export type DeviceEntryCountOutputTypeCountDeviceMapSocArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: DeviceMapSocWhereInput
+  }
+
+  /**
+   * DeviceEntryCountOutputType without action
+   */
+  export type DeviceEntryCountOutputTypeCountDeviceMapBoardArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: DeviceMapBoardWhereInput
   }
 
   /**
@@ -3907,6 +4098,37 @@ export namespace Prisma {
    */
   export type DeviceLookupSocCountOutputTypeCountDeviceMapSocArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: DeviceMapSocWhereInput
+  }
+
+
+  /**
+   * Count Type DeviceLookupBoardCountOutputType
+   */
+
+  export type DeviceLookupBoardCountOutputType = {
+    DeviceMapBoard: number
+  }
+
+  export type DeviceLookupBoardCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceMapBoard?: boolean | DeviceLookupBoardCountOutputTypeCountDeviceMapBoardArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * DeviceLookupBoardCountOutputType without action
+   */
+  export type DeviceLookupBoardCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoardCountOutputType
+     */
+    select?: DeviceLookupBoardCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * DeviceLookupBoardCountOutputType without action
+   */
+  export type DeviceLookupBoardCountOutputTypeCountDeviceMapBoardArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: DeviceMapBoardWhereInput
   }
 
 
@@ -5393,6 +5615,7 @@ export namespace Prisma {
     DeviceMapModel?: boolean | DeviceEntry$DeviceMapModelArgs<ExtArgs>
     DeviceMapRelease?: boolean | DeviceEntry$DeviceMapReleaseArgs<ExtArgs>
     DeviceMapSoc?: boolean | DeviceEntry$DeviceMapSocArgs<ExtArgs>
+    DeviceMapBoard?: boolean | DeviceEntry$DeviceMapBoardArgs<ExtArgs>
     MapDeviceOs?: boolean | DeviceEntry$MapDeviceOsArgs<ExtArgs>
     OsEntryPreinstalled?: boolean | DeviceEntry$OsEntryPreinstalledArgs<ExtArgs>
     SourceMapDevice?: boolean | DeviceEntry$SourceMapDeviceArgs<ExtArgs>
@@ -5440,6 +5663,7 @@ export namespace Prisma {
     DeviceMapModel?: boolean | DeviceEntry$DeviceMapModelArgs<ExtArgs>
     DeviceMapRelease?: boolean | DeviceEntry$DeviceMapReleaseArgs<ExtArgs>
     DeviceMapSoc?: boolean | DeviceEntry$DeviceMapSocArgs<ExtArgs>
+    DeviceMapBoard?: boolean | DeviceEntry$DeviceMapBoardArgs<ExtArgs>
     MapDeviceOs?: boolean | DeviceEntry$MapDeviceOsArgs<ExtArgs>
     OsEntryPreinstalled?: boolean | DeviceEntry$OsEntryPreinstalledArgs<ExtArgs>
     SourceMapDevice?: boolean | DeviceEntry$SourceMapDeviceArgs<ExtArgs>
@@ -5465,6 +5689,7 @@ export namespace Prisma {
       DeviceMapModel: Prisma.$DeviceMapModelPayload<ExtArgs>[]
       DeviceMapRelease: Prisma.$DeviceMapReleasePayload<ExtArgs>[]
       DeviceMapSoc: Prisma.$DeviceMapSocPayload<ExtArgs>[]
+      DeviceMapBoard: Prisma.$DeviceMapBoardPayload<ExtArgs>[]
       MapDeviceOs: Prisma.$MapDeviceOsPayload<ExtArgs>[]
       OsEntryPreinstalled: Prisma.$OsEntryPreinstalledPayload<ExtArgs>[]
       SourceMapDevice: Prisma.$SourceMapDevicePayload<ExtArgs>[]
@@ -5878,6 +6103,7 @@ export namespace Prisma {
     DeviceMapModel<T extends DeviceEntry$DeviceMapModelArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$DeviceMapModelArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapModelPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     DeviceMapRelease<T extends DeviceEntry$DeviceMapReleaseArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$DeviceMapReleaseArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapReleasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     DeviceMapSoc<T extends DeviceEntry$DeviceMapSocArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$DeviceMapSocArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapSocPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    DeviceMapBoard<T extends DeviceEntry$DeviceMapBoardArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$DeviceMapBoardArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     MapDeviceOs<T extends DeviceEntry$MapDeviceOsArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$MapDeviceOsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MapDeviceOsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     OsEntryPreinstalled<T extends DeviceEntry$OsEntryPreinstalledArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$OsEntryPreinstalledArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OsEntryPreinstalledPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     SourceMapDevice<T extends DeviceEntry$SourceMapDeviceArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntry$SourceMapDeviceArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SourceMapDevicePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -6472,6 +6698,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: DeviceMapSocScalarFieldEnum | DeviceMapSocScalarFieldEnum[]
+  }
+
+  /**
+   * DeviceEntry.DeviceMapBoard
+   */
+  export type DeviceEntry$DeviceMapBoardArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
+    where?: DeviceMapBoardWhereInput
+    orderBy?: DeviceMapBoardOrderByWithRelationInput | DeviceMapBoardOrderByWithRelationInput[]
+    cursor?: DeviceMapBoardWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: DeviceMapBoardScalarFieldEnum | DeviceMapBoardScalarFieldEnum[]
   }
 
   /**
@@ -15260,6 +15510,1071 @@ export namespace Prisma {
 
 
   /**
+   * Model DeviceLookupBoard
+   */
+
+  export type AggregateDeviceLookupBoard = {
+    _count: DeviceLookupBoardCountAggregateOutputType | null
+    _avg: DeviceLookupBoardAvgAggregateOutputType | null
+    _sum: DeviceLookupBoardSumAggregateOutputType | null
+    _min: DeviceLookupBoardMinAggregateOutputType | null
+    _max: DeviceLookupBoardMaxAggregateOutputType | null
+  }
+
+  export type DeviceLookupBoardAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type DeviceLookupBoardSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type DeviceLookupBoardMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+  }
+
+  export type DeviceLookupBoardMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+  }
+
+  export type DeviceLookupBoardCountAggregateOutputType = {
+    id: number
+    name: number
+    _all: number
+  }
+
+
+  export type DeviceLookupBoardAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type DeviceLookupBoardSumAggregateInputType = {
+    id?: true
+  }
+
+  export type DeviceLookupBoardMinAggregateInputType = {
+    id?: true
+    name?: true
+  }
+
+  export type DeviceLookupBoardMaxAggregateInputType = {
+    id?: true
+    name?: true
+  }
+
+  export type DeviceLookupBoardCountAggregateInputType = {
+    id?: true
+    name?: true
+    _all?: true
+  }
+
+  export type DeviceLookupBoardAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which DeviceLookupBoard to aggregate.
+     */
+    where?: DeviceLookupBoardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of DeviceLookupBoards to fetch.
+     */
+    orderBy?: DeviceLookupBoardOrderByWithRelationInput | DeviceLookupBoardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: DeviceLookupBoardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` DeviceLookupBoards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` DeviceLookupBoards.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned DeviceLookupBoards
+    **/
+    _count?: true | DeviceLookupBoardCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: DeviceLookupBoardAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: DeviceLookupBoardSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: DeviceLookupBoardMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: DeviceLookupBoardMaxAggregateInputType
+  }
+
+  export type GetDeviceLookupBoardAggregateType<T extends DeviceLookupBoardAggregateArgs> = {
+        [P in keyof T & keyof AggregateDeviceLookupBoard]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDeviceLookupBoard[P]>
+      : GetScalarType<T[P], AggregateDeviceLookupBoard[P]>
+  }
+
+
+
+
+  export type DeviceLookupBoardGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: DeviceLookupBoardWhereInput
+    orderBy?: DeviceLookupBoardOrderByWithAggregationInput | DeviceLookupBoardOrderByWithAggregationInput[]
+    by: DeviceLookupBoardScalarFieldEnum[] | DeviceLookupBoardScalarFieldEnum
+    having?: DeviceLookupBoardScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: DeviceLookupBoardCountAggregateInputType | true
+    _avg?: DeviceLookupBoardAvgAggregateInputType
+    _sum?: DeviceLookupBoardSumAggregateInputType
+    _min?: DeviceLookupBoardMinAggregateInputType
+    _max?: DeviceLookupBoardMaxAggregateInputType
+  }
+
+  export type DeviceLookupBoardGroupByOutputType = {
+    id: number
+    name: string
+    _count: DeviceLookupBoardCountAggregateOutputType | null
+    _avg: DeviceLookupBoardAvgAggregateOutputType | null
+    _sum: DeviceLookupBoardSumAggregateOutputType | null
+    _min: DeviceLookupBoardMinAggregateOutputType | null
+    _max: DeviceLookupBoardMaxAggregateOutputType | null
+  }
+
+  type GetDeviceLookupBoardGroupByPayload<T extends DeviceLookupBoardGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<DeviceLookupBoardGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof DeviceLookupBoardGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], DeviceLookupBoardGroupByOutputType[P]>
+            : GetScalarType<T[P], DeviceLookupBoardGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type DeviceLookupBoardSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    DeviceMapBoard?: boolean | DeviceLookupBoard$DeviceMapBoardArgs<ExtArgs>
+    _count?: boolean | DeviceLookupBoardCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceLookupBoard"]>
+
+  export type DeviceLookupBoardSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["deviceLookupBoard"]>
+
+  export type DeviceLookupBoardSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["deviceLookupBoard"]>
+
+  export type DeviceLookupBoardSelectScalar = {
+    id?: boolean
+    name?: boolean
+  }
+
+  export type DeviceLookupBoardOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name", ExtArgs["result"]["deviceLookupBoard"]>
+  export type DeviceLookupBoardInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceMapBoard?: boolean | DeviceLookupBoard$DeviceMapBoardArgs<ExtArgs>
+    _count?: boolean | DeviceLookupBoardCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type DeviceLookupBoardIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type DeviceLookupBoardIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $DeviceLookupBoardPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "DeviceLookupBoard"
+    objects: {
+      DeviceMapBoard: Prisma.$DeviceMapBoardPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string
+    }, ExtArgs["result"]["deviceLookupBoard"]>
+    composites: {}
+  }
+
+  type DeviceLookupBoardGetPayload<S extends boolean | null | undefined | DeviceLookupBoardDefaultArgs> = $Result.GetResult<Prisma.$DeviceLookupBoardPayload, S>
+
+  type DeviceLookupBoardCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<DeviceLookupBoardFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: DeviceLookupBoardCountAggregateInputType | true
+    }
+
+  export interface DeviceLookupBoardDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['DeviceLookupBoard'], meta: { name: 'DeviceLookupBoard' } }
+    /**
+     * Find zero or one DeviceLookupBoard that matches the filter.
+     * @param {DeviceLookupBoardFindUniqueArgs} args - Arguments to find a DeviceLookupBoard
+     * @example
+     * // Get one DeviceLookupBoard
+     * const deviceLookupBoard = await prisma.deviceLookupBoard.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends DeviceLookupBoardFindUniqueArgs>(args: SelectSubset<T, DeviceLookupBoardFindUniqueArgs<ExtArgs>>): Prisma__DeviceLookupBoardClient<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one DeviceLookupBoard that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {DeviceLookupBoardFindUniqueOrThrowArgs} args - Arguments to find a DeviceLookupBoard
+     * @example
+     * // Get one DeviceLookupBoard
+     * const deviceLookupBoard = await prisma.deviceLookupBoard.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends DeviceLookupBoardFindUniqueOrThrowArgs>(args: SelectSubset<T, DeviceLookupBoardFindUniqueOrThrowArgs<ExtArgs>>): Prisma__DeviceLookupBoardClient<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first DeviceLookupBoard that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceLookupBoardFindFirstArgs} args - Arguments to find a DeviceLookupBoard
+     * @example
+     * // Get one DeviceLookupBoard
+     * const deviceLookupBoard = await prisma.deviceLookupBoard.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends DeviceLookupBoardFindFirstArgs>(args?: SelectSubset<T, DeviceLookupBoardFindFirstArgs<ExtArgs>>): Prisma__DeviceLookupBoardClient<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first DeviceLookupBoard that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceLookupBoardFindFirstOrThrowArgs} args - Arguments to find a DeviceLookupBoard
+     * @example
+     * // Get one DeviceLookupBoard
+     * const deviceLookupBoard = await prisma.deviceLookupBoard.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends DeviceLookupBoardFindFirstOrThrowArgs>(args?: SelectSubset<T, DeviceLookupBoardFindFirstOrThrowArgs<ExtArgs>>): Prisma__DeviceLookupBoardClient<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more DeviceLookupBoards that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceLookupBoardFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all DeviceLookupBoards
+     * const deviceLookupBoards = await prisma.deviceLookupBoard.findMany()
+     * 
+     * // Get first 10 DeviceLookupBoards
+     * const deviceLookupBoards = await prisma.deviceLookupBoard.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const deviceLookupBoardWithIdOnly = await prisma.deviceLookupBoard.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends DeviceLookupBoardFindManyArgs>(args?: SelectSubset<T, DeviceLookupBoardFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a DeviceLookupBoard.
+     * @param {DeviceLookupBoardCreateArgs} args - Arguments to create a DeviceLookupBoard.
+     * @example
+     * // Create one DeviceLookupBoard
+     * const DeviceLookupBoard = await prisma.deviceLookupBoard.create({
+     *   data: {
+     *     // ... data to create a DeviceLookupBoard
+     *   }
+     * })
+     * 
+     */
+    create<T extends DeviceLookupBoardCreateArgs>(args: SelectSubset<T, DeviceLookupBoardCreateArgs<ExtArgs>>): Prisma__DeviceLookupBoardClient<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many DeviceLookupBoards.
+     * @param {DeviceLookupBoardCreateManyArgs} args - Arguments to create many DeviceLookupBoards.
+     * @example
+     * // Create many DeviceLookupBoards
+     * const deviceLookupBoard = await prisma.deviceLookupBoard.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends DeviceLookupBoardCreateManyArgs>(args?: SelectSubset<T, DeviceLookupBoardCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many DeviceLookupBoards and returns the data saved in the database.
+     * @param {DeviceLookupBoardCreateManyAndReturnArgs} args - Arguments to create many DeviceLookupBoards.
+     * @example
+     * // Create many DeviceLookupBoards
+     * const deviceLookupBoard = await prisma.deviceLookupBoard.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceLookupBoards and only return the `id`
+     * const deviceLookupBoardWithIdOnly = await prisma.deviceLookupBoard.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceLookupBoardCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceLookupBoardCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a DeviceLookupBoard.
+     * @param {DeviceLookupBoardDeleteArgs} args - Arguments to delete one DeviceLookupBoard.
+     * @example
+     * // Delete one DeviceLookupBoard
+     * const DeviceLookupBoard = await prisma.deviceLookupBoard.delete({
+     *   where: {
+     *     // ... filter to delete one DeviceLookupBoard
+     *   }
+     * })
+     * 
+     */
+    delete<T extends DeviceLookupBoardDeleteArgs>(args: SelectSubset<T, DeviceLookupBoardDeleteArgs<ExtArgs>>): Prisma__DeviceLookupBoardClient<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one DeviceLookupBoard.
+     * @param {DeviceLookupBoardUpdateArgs} args - Arguments to update one DeviceLookupBoard.
+     * @example
+     * // Update one DeviceLookupBoard
+     * const deviceLookupBoard = await prisma.deviceLookupBoard.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends DeviceLookupBoardUpdateArgs>(args: SelectSubset<T, DeviceLookupBoardUpdateArgs<ExtArgs>>): Prisma__DeviceLookupBoardClient<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more DeviceLookupBoards.
+     * @param {DeviceLookupBoardDeleteManyArgs} args - Arguments to filter DeviceLookupBoards to delete.
+     * @example
+     * // Delete a few DeviceLookupBoards
+     * const { count } = await prisma.deviceLookupBoard.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends DeviceLookupBoardDeleteManyArgs>(args?: SelectSubset<T, DeviceLookupBoardDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceLookupBoards.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceLookupBoardUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many DeviceLookupBoards
+     * const deviceLookupBoard = await prisma.deviceLookupBoard.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends DeviceLookupBoardUpdateManyArgs>(args: SelectSubset<T, DeviceLookupBoardUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceLookupBoards and returns the data updated in the database.
+     * @param {DeviceLookupBoardUpdateManyAndReturnArgs} args - Arguments to update many DeviceLookupBoards.
+     * @example
+     * // Update many DeviceLookupBoards
+     * const deviceLookupBoard = await prisma.deviceLookupBoard.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceLookupBoards and only return the `id`
+     * const deviceLookupBoardWithIdOnly = await prisma.deviceLookupBoard.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceLookupBoardUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceLookupBoardUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one DeviceLookupBoard.
+     * @param {DeviceLookupBoardUpsertArgs} args - Arguments to update or create a DeviceLookupBoard.
+     * @example
+     * // Update or create a DeviceLookupBoard
+     * const deviceLookupBoard = await prisma.deviceLookupBoard.upsert({
+     *   create: {
+     *     // ... data to create a DeviceLookupBoard
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the DeviceLookupBoard we want to update
+     *   }
+     * })
+     */
+    upsert<T extends DeviceLookupBoardUpsertArgs>(args: SelectSubset<T, DeviceLookupBoardUpsertArgs<ExtArgs>>): Prisma__DeviceLookupBoardClient<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of DeviceLookupBoards.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceLookupBoardCountArgs} args - Arguments to filter DeviceLookupBoards to count.
+     * @example
+     * // Count the number of DeviceLookupBoards
+     * const count = await prisma.deviceLookupBoard.count({
+     *   where: {
+     *     // ... the filter for the DeviceLookupBoards we want to count
+     *   }
+     * })
+    **/
+    count<T extends DeviceLookupBoardCountArgs>(
+      args?: Subset<T, DeviceLookupBoardCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], DeviceLookupBoardCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a DeviceLookupBoard.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceLookupBoardAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends DeviceLookupBoardAggregateArgs>(args: Subset<T, DeviceLookupBoardAggregateArgs>): Prisma.PrismaPromise<GetDeviceLookupBoardAggregateType<T>>
+
+    /**
+     * Group by DeviceLookupBoard.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceLookupBoardGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends DeviceLookupBoardGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: DeviceLookupBoardGroupByArgs['orderBy'] }
+        : { orderBy?: DeviceLookupBoardGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, DeviceLookupBoardGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDeviceLookupBoardGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the DeviceLookupBoard model
+   */
+  readonly fields: DeviceLookupBoardFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for DeviceLookupBoard.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__DeviceLookupBoardClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    DeviceMapBoard<T extends DeviceLookupBoard$DeviceMapBoardArgs<ExtArgs> = {}>(args?: Subset<T, DeviceLookupBoard$DeviceMapBoardArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the DeviceLookupBoard model
+   */
+  interface DeviceLookupBoardFieldRefs {
+    readonly id: FieldRef<"DeviceLookupBoard", 'Int'>
+    readonly name: FieldRef<"DeviceLookupBoard", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * DeviceLookupBoard findUnique
+   */
+  export type DeviceLookupBoardFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceLookupBoardInclude<ExtArgs> | null
+    /**
+     * Filter, which DeviceLookupBoard to fetch.
+     */
+    where: DeviceLookupBoardWhereUniqueInput
+  }
+
+  /**
+   * DeviceLookupBoard findUniqueOrThrow
+   */
+  export type DeviceLookupBoardFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceLookupBoardInclude<ExtArgs> | null
+    /**
+     * Filter, which DeviceLookupBoard to fetch.
+     */
+    where: DeviceLookupBoardWhereUniqueInput
+  }
+
+  /**
+   * DeviceLookupBoard findFirst
+   */
+  export type DeviceLookupBoardFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceLookupBoardInclude<ExtArgs> | null
+    /**
+     * Filter, which DeviceLookupBoard to fetch.
+     */
+    where?: DeviceLookupBoardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of DeviceLookupBoards to fetch.
+     */
+    orderBy?: DeviceLookupBoardOrderByWithRelationInput | DeviceLookupBoardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for DeviceLookupBoards.
+     */
+    cursor?: DeviceLookupBoardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` DeviceLookupBoards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` DeviceLookupBoards.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of DeviceLookupBoards.
+     */
+    distinct?: DeviceLookupBoardScalarFieldEnum | DeviceLookupBoardScalarFieldEnum[]
+  }
+
+  /**
+   * DeviceLookupBoard findFirstOrThrow
+   */
+  export type DeviceLookupBoardFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceLookupBoardInclude<ExtArgs> | null
+    /**
+     * Filter, which DeviceLookupBoard to fetch.
+     */
+    where?: DeviceLookupBoardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of DeviceLookupBoards to fetch.
+     */
+    orderBy?: DeviceLookupBoardOrderByWithRelationInput | DeviceLookupBoardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for DeviceLookupBoards.
+     */
+    cursor?: DeviceLookupBoardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` DeviceLookupBoards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` DeviceLookupBoards.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of DeviceLookupBoards.
+     */
+    distinct?: DeviceLookupBoardScalarFieldEnum | DeviceLookupBoardScalarFieldEnum[]
+  }
+
+  /**
+   * DeviceLookupBoard findMany
+   */
+  export type DeviceLookupBoardFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceLookupBoardInclude<ExtArgs> | null
+    /**
+     * Filter, which DeviceLookupBoards to fetch.
+     */
+    where?: DeviceLookupBoardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of DeviceLookupBoards to fetch.
+     */
+    orderBy?: DeviceLookupBoardOrderByWithRelationInput | DeviceLookupBoardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing DeviceLookupBoards.
+     */
+    cursor?: DeviceLookupBoardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` DeviceLookupBoards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` DeviceLookupBoards.
+     */
+    skip?: number
+    distinct?: DeviceLookupBoardScalarFieldEnum | DeviceLookupBoardScalarFieldEnum[]
+  }
+
+  /**
+   * DeviceLookupBoard create
+   */
+  export type DeviceLookupBoardCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceLookupBoardInclude<ExtArgs> | null
+    /**
+     * The data needed to create a DeviceLookupBoard.
+     */
+    data: XOR<DeviceLookupBoardCreateInput, DeviceLookupBoardUncheckedCreateInput>
+  }
+
+  /**
+   * DeviceLookupBoard createMany
+   */
+  export type DeviceLookupBoardCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many DeviceLookupBoards.
+     */
+    data: DeviceLookupBoardCreateManyInput | DeviceLookupBoardCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * DeviceLookupBoard createManyAndReturn
+   */
+  export type DeviceLookupBoardCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceLookupBoards.
+     */
+    data: DeviceLookupBoardCreateManyInput | DeviceLookupBoardCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * DeviceLookupBoard update
+   */
+  export type DeviceLookupBoardUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceLookupBoardInclude<ExtArgs> | null
+    /**
+     * The data needed to update a DeviceLookupBoard.
+     */
+    data: XOR<DeviceLookupBoardUpdateInput, DeviceLookupBoardUncheckedUpdateInput>
+    /**
+     * Choose, which DeviceLookupBoard to update.
+     */
+    where: DeviceLookupBoardWhereUniqueInput
+  }
+
+  /**
+   * DeviceLookupBoard updateMany
+   */
+  export type DeviceLookupBoardUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update DeviceLookupBoards.
+     */
+    data: XOR<DeviceLookupBoardUpdateManyMutationInput, DeviceLookupBoardUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceLookupBoards to update
+     */
+    where?: DeviceLookupBoardWhereInput
+    /**
+     * Limit how many DeviceLookupBoards to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * DeviceLookupBoard updateManyAndReturn
+   */
+  export type DeviceLookupBoardUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * The data used to update DeviceLookupBoards.
+     */
+    data: XOR<DeviceLookupBoardUpdateManyMutationInput, DeviceLookupBoardUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceLookupBoards to update
+     */
+    where?: DeviceLookupBoardWhereInput
+    /**
+     * Limit how many DeviceLookupBoards to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * DeviceLookupBoard upsert
+   */
+  export type DeviceLookupBoardUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceLookupBoardInclude<ExtArgs> | null
+    /**
+     * The filter to search for the DeviceLookupBoard to update in case it exists.
+     */
+    where: DeviceLookupBoardWhereUniqueInput
+    /**
+     * In case the DeviceLookupBoard found by the `where` argument doesn't exist, create a new DeviceLookupBoard with this data.
+     */
+    create: XOR<DeviceLookupBoardCreateInput, DeviceLookupBoardUncheckedCreateInput>
+    /**
+     * In case the DeviceLookupBoard was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<DeviceLookupBoardUpdateInput, DeviceLookupBoardUncheckedUpdateInput>
+  }
+
+  /**
+   * DeviceLookupBoard delete
+   */
+  export type DeviceLookupBoardDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceLookupBoardInclude<ExtArgs> | null
+    /**
+     * Filter which DeviceLookupBoard to delete.
+     */
+    where: DeviceLookupBoardWhereUniqueInput
+  }
+
+  /**
+   * DeviceLookupBoard deleteMany
+   */
+  export type DeviceLookupBoardDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which DeviceLookupBoards to delete
+     */
+    where?: DeviceLookupBoardWhereInput
+    /**
+     * Limit how many DeviceLookupBoards to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * DeviceLookupBoard.DeviceMapBoard
+   */
+  export type DeviceLookupBoard$DeviceMapBoardArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
+    where?: DeviceMapBoardWhereInput
+    orderBy?: DeviceMapBoardOrderByWithRelationInput | DeviceMapBoardOrderByWithRelationInput[]
+    cursor?: DeviceMapBoardWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: DeviceMapBoardScalarFieldEnum | DeviceMapBoardScalarFieldEnum[]
+  }
+
+  /**
+   * DeviceLookupBoard without action
+   */
+  export type DeviceLookupBoardDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceLookupBoard
+     */
+    select?: DeviceLookupBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceLookupBoard
+     */
+    omit?: DeviceLookupBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceLookupBoardInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Model DeviceMapArchitecture
    */
 
@@ -20598,6 +21913,1071 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: DeviceMapSocInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model DeviceMapBoard
+   */
+
+  export type AggregateDeviceMapBoard = {
+    _count: DeviceMapBoardCountAggregateOutputType | null
+    _avg: DeviceMapBoardAvgAggregateOutputType | null
+    _sum: DeviceMapBoardSumAggregateOutputType | null
+    _min: DeviceMapBoardMinAggregateOutputType | null
+    _max: DeviceMapBoardMaxAggregateOutputType | null
+  }
+
+  export type DeviceMapBoardAvgAggregateOutputType = {
+    device_id: number | null
+    board_id: number | null
+  }
+
+  export type DeviceMapBoardSumAggregateOutputType = {
+    device_id: number | null
+    board_id: number | null
+  }
+
+  export type DeviceMapBoardMinAggregateOutputType = {
+    device_id: number | null
+    board_id: number | null
+  }
+
+  export type DeviceMapBoardMaxAggregateOutputType = {
+    device_id: number | null
+    board_id: number | null
+  }
+
+  export type DeviceMapBoardCountAggregateOutputType = {
+    device_id: number
+    board_id: number
+    _all: number
+  }
+
+
+  export type DeviceMapBoardAvgAggregateInputType = {
+    device_id?: true
+    board_id?: true
+  }
+
+  export type DeviceMapBoardSumAggregateInputType = {
+    device_id?: true
+    board_id?: true
+  }
+
+  export type DeviceMapBoardMinAggregateInputType = {
+    device_id?: true
+    board_id?: true
+  }
+
+  export type DeviceMapBoardMaxAggregateInputType = {
+    device_id?: true
+    board_id?: true
+  }
+
+  export type DeviceMapBoardCountAggregateInputType = {
+    device_id?: true
+    board_id?: true
+    _all?: true
+  }
+
+  export type DeviceMapBoardAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which DeviceMapBoard to aggregate.
+     */
+    where?: DeviceMapBoardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of DeviceMapBoards to fetch.
+     */
+    orderBy?: DeviceMapBoardOrderByWithRelationInput | DeviceMapBoardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: DeviceMapBoardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` DeviceMapBoards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` DeviceMapBoards.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned DeviceMapBoards
+    **/
+    _count?: true | DeviceMapBoardCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: DeviceMapBoardAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: DeviceMapBoardSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: DeviceMapBoardMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: DeviceMapBoardMaxAggregateInputType
+  }
+
+  export type GetDeviceMapBoardAggregateType<T extends DeviceMapBoardAggregateArgs> = {
+        [P in keyof T & keyof AggregateDeviceMapBoard]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDeviceMapBoard[P]>
+      : GetScalarType<T[P], AggregateDeviceMapBoard[P]>
+  }
+
+
+
+
+  export type DeviceMapBoardGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: DeviceMapBoardWhereInput
+    orderBy?: DeviceMapBoardOrderByWithAggregationInput | DeviceMapBoardOrderByWithAggregationInput[]
+    by: DeviceMapBoardScalarFieldEnum[] | DeviceMapBoardScalarFieldEnum
+    having?: DeviceMapBoardScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: DeviceMapBoardCountAggregateInputType | true
+    _avg?: DeviceMapBoardAvgAggregateInputType
+    _sum?: DeviceMapBoardSumAggregateInputType
+    _min?: DeviceMapBoardMinAggregateInputType
+    _max?: DeviceMapBoardMaxAggregateInputType
+  }
+
+  export type DeviceMapBoardGroupByOutputType = {
+    device_id: number
+    board_id: number
+    _count: DeviceMapBoardCountAggregateOutputType | null
+    _avg: DeviceMapBoardAvgAggregateOutputType | null
+    _sum: DeviceMapBoardSumAggregateOutputType | null
+    _min: DeviceMapBoardMinAggregateOutputType | null
+    _max: DeviceMapBoardMaxAggregateOutputType | null
+  }
+
+  type GetDeviceMapBoardGroupByPayload<T extends DeviceMapBoardGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<DeviceMapBoardGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof DeviceMapBoardGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], DeviceMapBoardGroupByOutputType[P]>
+            : GetScalarType<T[P], DeviceMapBoardGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type DeviceMapBoardSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    board_id?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupBoard?: boolean | DeviceLookupBoardDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapBoard"]>
+
+  export type DeviceMapBoardSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    board_id?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupBoard?: boolean | DeviceLookupBoardDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapBoard"]>
+
+  export type DeviceMapBoardSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    device_id?: boolean
+    board_id?: boolean
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupBoard?: boolean | DeviceLookupBoardDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["deviceMapBoard"]>
+
+  export type DeviceMapBoardSelectScalar = {
+    device_id?: boolean
+    board_id?: boolean
+  }
+
+  export type DeviceMapBoardOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"device_id" | "board_id", ExtArgs["result"]["deviceMapBoard"]>
+  export type DeviceMapBoardInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupBoard?: boolean | DeviceLookupBoardDefaultArgs<ExtArgs>
+  }
+  export type DeviceMapBoardIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupBoard?: boolean | DeviceLookupBoardDefaultArgs<ExtArgs>
+  }
+  export type DeviceMapBoardIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    DeviceEntry?: boolean | DeviceEntryDefaultArgs<ExtArgs>
+    DeviceLookupBoard?: boolean | DeviceLookupBoardDefaultArgs<ExtArgs>
+  }
+
+  export type $DeviceMapBoardPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "DeviceMapBoard"
+    objects: {
+      DeviceEntry: Prisma.$DeviceEntryPayload<ExtArgs>
+      DeviceLookupBoard: Prisma.$DeviceLookupBoardPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      device_id: number
+      board_id: number
+    }, ExtArgs["result"]["deviceMapBoard"]>
+    composites: {}
+  }
+
+  type DeviceMapBoardGetPayload<S extends boolean | null | undefined | DeviceMapBoardDefaultArgs> = $Result.GetResult<Prisma.$DeviceMapBoardPayload, S>
+
+  type DeviceMapBoardCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<DeviceMapBoardFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: DeviceMapBoardCountAggregateInputType | true
+    }
+
+  export interface DeviceMapBoardDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['DeviceMapBoard'], meta: { name: 'DeviceMapBoard' } }
+    /**
+     * Find zero or one DeviceMapBoard that matches the filter.
+     * @param {DeviceMapBoardFindUniqueArgs} args - Arguments to find a DeviceMapBoard
+     * @example
+     * // Get one DeviceMapBoard
+     * const deviceMapBoard = await prisma.deviceMapBoard.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends DeviceMapBoardFindUniqueArgs>(args: SelectSubset<T, DeviceMapBoardFindUniqueArgs<ExtArgs>>): Prisma__DeviceMapBoardClient<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one DeviceMapBoard that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {DeviceMapBoardFindUniqueOrThrowArgs} args - Arguments to find a DeviceMapBoard
+     * @example
+     * // Get one DeviceMapBoard
+     * const deviceMapBoard = await prisma.deviceMapBoard.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends DeviceMapBoardFindUniqueOrThrowArgs>(args: SelectSubset<T, DeviceMapBoardFindUniqueOrThrowArgs<ExtArgs>>): Prisma__DeviceMapBoardClient<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first DeviceMapBoard that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceMapBoardFindFirstArgs} args - Arguments to find a DeviceMapBoard
+     * @example
+     * // Get one DeviceMapBoard
+     * const deviceMapBoard = await prisma.deviceMapBoard.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends DeviceMapBoardFindFirstArgs>(args?: SelectSubset<T, DeviceMapBoardFindFirstArgs<ExtArgs>>): Prisma__DeviceMapBoardClient<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first DeviceMapBoard that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceMapBoardFindFirstOrThrowArgs} args - Arguments to find a DeviceMapBoard
+     * @example
+     * // Get one DeviceMapBoard
+     * const deviceMapBoard = await prisma.deviceMapBoard.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends DeviceMapBoardFindFirstOrThrowArgs>(args?: SelectSubset<T, DeviceMapBoardFindFirstOrThrowArgs<ExtArgs>>): Prisma__DeviceMapBoardClient<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more DeviceMapBoards that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceMapBoardFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all DeviceMapBoards
+     * const deviceMapBoards = await prisma.deviceMapBoard.findMany()
+     * 
+     * // Get first 10 DeviceMapBoards
+     * const deviceMapBoards = await prisma.deviceMapBoard.findMany({ take: 10 })
+     * 
+     * // Only select the `device_id`
+     * const deviceMapBoardWithDevice_idOnly = await prisma.deviceMapBoard.findMany({ select: { device_id: true } })
+     * 
+     */
+    findMany<T extends DeviceMapBoardFindManyArgs>(args?: SelectSubset<T, DeviceMapBoardFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a DeviceMapBoard.
+     * @param {DeviceMapBoardCreateArgs} args - Arguments to create a DeviceMapBoard.
+     * @example
+     * // Create one DeviceMapBoard
+     * const DeviceMapBoard = await prisma.deviceMapBoard.create({
+     *   data: {
+     *     // ... data to create a DeviceMapBoard
+     *   }
+     * })
+     * 
+     */
+    create<T extends DeviceMapBoardCreateArgs>(args: SelectSubset<T, DeviceMapBoardCreateArgs<ExtArgs>>): Prisma__DeviceMapBoardClient<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many DeviceMapBoards.
+     * @param {DeviceMapBoardCreateManyArgs} args - Arguments to create many DeviceMapBoards.
+     * @example
+     * // Create many DeviceMapBoards
+     * const deviceMapBoard = await prisma.deviceMapBoard.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends DeviceMapBoardCreateManyArgs>(args?: SelectSubset<T, DeviceMapBoardCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many DeviceMapBoards and returns the data saved in the database.
+     * @param {DeviceMapBoardCreateManyAndReturnArgs} args - Arguments to create many DeviceMapBoards.
+     * @example
+     * // Create many DeviceMapBoards
+     * const deviceMapBoard = await prisma.deviceMapBoard.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many DeviceMapBoards and only return the `device_id`
+     * const deviceMapBoardWithDevice_idOnly = await prisma.deviceMapBoard.createManyAndReturn({
+     *   select: { device_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends DeviceMapBoardCreateManyAndReturnArgs>(args?: SelectSubset<T, DeviceMapBoardCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a DeviceMapBoard.
+     * @param {DeviceMapBoardDeleteArgs} args - Arguments to delete one DeviceMapBoard.
+     * @example
+     * // Delete one DeviceMapBoard
+     * const DeviceMapBoard = await prisma.deviceMapBoard.delete({
+     *   where: {
+     *     // ... filter to delete one DeviceMapBoard
+     *   }
+     * })
+     * 
+     */
+    delete<T extends DeviceMapBoardDeleteArgs>(args: SelectSubset<T, DeviceMapBoardDeleteArgs<ExtArgs>>): Prisma__DeviceMapBoardClient<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one DeviceMapBoard.
+     * @param {DeviceMapBoardUpdateArgs} args - Arguments to update one DeviceMapBoard.
+     * @example
+     * // Update one DeviceMapBoard
+     * const deviceMapBoard = await prisma.deviceMapBoard.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends DeviceMapBoardUpdateArgs>(args: SelectSubset<T, DeviceMapBoardUpdateArgs<ExtArgs>>): Prisma__DeviceMapBoardClient<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more DeviceMapBoards.
+     * @param {DeviceMapBoardDeleteManyArgs} args - Arguments to filter DeviceMapBoards to delete.
+     * @example
+     * // Delete a few DeviceMapBoards
+     * const { count } = await prisma.deviceMapBoard.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends DeviceMapBoardDeleteManyArgs>(args?: SelectSubset<T, DeviceMapBoardDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceMapBoards.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceMapBoardUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many DeviceMapBoards
+     * const deviceMapBoard = await prisma.deviceMapBoard.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends DeviceMapBoardUpdateManyArgs>(args: SelectSubset<T, DeviceMapBoardUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more DeviceMapBoards and returns the data updated in the database.
+     * @param {DeviceMapBoardUpdateManyAndReturnArgs} args - Arguments to update many DeviceMapBoards.
+     * @example
+     * // Update many DeviceMapBoards
+     * const deviceMapBoard = await prisma.deviceMapBoard.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more DeviceMapBoards and only return the `device_id`
+     * const deviceMapBoardWithDevice_idOnly = await prisma.deviceMapBoard.updateManyAndReturn({
+     *   select: { device_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends DeviceMapBoardUpdateManyAndReturnArgs>(args: SelectSubset<T, DeviceMapBoardUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one DeviceMapBoard.
+     * @param {DeviceMapBoardUpsertArgs} args - Arguments to update or create a DeviceMapBoard.
+     * @example
+     * // Update or create a DeviceMapBoard
+     * const deviceMapBoard = await prisma.deviceMapBoard.upsert({
+     *   create: {
+     *     // ... data to create a DeviceMapBoard
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the DeviceMapBoard we want to update
+     *   }
+     * })
+     */
+    upsert<T extends DeviceMapBoardUpsertArgs>(args: SelectSubset<T, DeviceMapBoardUpsertArgs<ExtArgs>>): Prisma__DeviceMapBoardClient<$Result.GetResult<Prisma.$DeviceMapBoardPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of DeviceMapBoards.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceMapBoardCountArgs} args - Arguments to filter DeviceMapBoards to count.
+     * @example
+     * // Count the number of DeviceMapBoards
+     * const count = await prisma.deviceMapBoard.count({
+     *   where: {
+     *     // ... the filter for the DeviceMapBoards we want to count
+     *   }
+     * })
+    **/
+    count<T extends DeviceMapBoardCountArgs>(
+      args?: Subset<T, DeviceMapBoardCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], DeviceMapBoardCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a DeviceMapBoard.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceMapBoardAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends DeviceMapBoardAggregateArgs>(args: Subset<T, DeviceMapBoardAggregateArgs>): Prisma.PrismaPromise<GetDeviceMapBoardAggregateType<T>>
+
+    /**
+     * Group by DeviceMapBoard.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DeviceMapBoardGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends DeviceMapBoardGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: DeviceMapBoardGroupByArgs['orderBy'] }
+        : { orderBy?: DeviceMapBoardGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, DeviceMapBoardGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDeviceMapBoardGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the DeviceMapBoard model
+   */
+  readonly fields: DeviceMapBoardFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for DeviceMapBoard.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__DeviceMapBoardClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    DeviceEntry<T extends DeviceEntryDefaultArgs<ExtArgs> = {}>(args?: Subset<T, DeviceEntryDefaultArgs<ExtArgs>>): Prisma__DeviceEntryClient<$Result.GetResult<Prisma.$DeviceEntryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    DeviceLookupBoard<T extends DeviceLookupBoardDefaultArgs<ExtArgs> = {}>(args?: Subset<T, DeviceLookupBoardDefaultArgs<ExtArgs>>): Prisma__DeviceLookupBoardClient<$Result.GetResult<Prisma.$DeviceLookupBoardPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the DeviceMapBoard model
+   */
+  interface DeviceMapBoardFieldRefs {
+    readonly device_id: FieldRef<"DeviceMapBoard", 'Int'>
+    readonly board_id: FieldRef<"DeviceMapBoard", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * DeviceMapBoard findUnique
+   */
+  export type DeviceMapBoardFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
+    /**
+     * Filter, which DeviceMapBoard to fetch.
+     */
+    where: DeviceMapBoardWhereUniqueInput
+  }
+
+  /**
+   * DeviceMapBoard findUniqueOrThrow
+   */
+  export type DeviceMapBoardFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
+    /**
+     * Filter, which DeviceMapBoard to fetch.
+     */
+    where: DeviceMapBoardWhereUniqueInput
+  }
+
+  /**
+   * DeviceMapBoard findFirst
+   */
+  export type DeviceMapBoardFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
+    /**
+     * Filter, which DeviceMapBoard to fetch.
+     */
+    where?: DeviceMapBoardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of DeviceMapBoards to fetch.
+     */
+    orderBy?: DeviceMapBoardOrderByWithRelationInput | DeviceMapBoardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for DeviceMapBoards.
+     */
+    cursor?: DeviceMapBoardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` DeviceMapBoards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` DeviceMapBoards.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of DeviceMapBoards.
+     */
+    distinct?: DeviceMapBoardScalarFieldEnum | DeviceMapBoardScalarFieldEnum[]
+  }
+
+  /**
+   * DeviceMapBoard findFirstOrThrow
+   */
+  export type DeviceMapBoardFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
+    /**
+     * Filter, which DeviceMapBoard to fetch.
+     */
+    where?: DeviceMapBoardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of DeviceMapBoards to fetch.
+     */
+    orderBy?: DeviceMapBoardOrderByWithRelationInput | DeviceMapBoardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for DeviceMapBoards.
+     */
+    cursor?: DeviceMapBoardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` DeviceMapBoards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` DeviceMapBoards.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of DeviceMapBoards.
+     */
+    distinct?: DeviceMapBoardScalarFieldEnum | DeviceMapBoardScalarFieldEnum[]
+  }
+
+  /**
+   * DeviceMapBoard findMany
+   */
+  export type DeviceMapBoardFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
+    /**
+     * Filter, which DeviceMapBoards to fetch.
+     */
+    where?: DeviceMapBoardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of DeviceMapBoards to fetch.
+     */
+    orderBy?: DeviceMapBoardOrderByWithRelationInput | DeviceMapBoardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing DeviceMapBoards.
+     */
+    cursor?: DeviceMapBoardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` DeviceMapBoards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` DeviceMapBoards.
+     */
+    skip?: number
+    distinct?: DeviceMapBoardScalarFieldEnum | DeviceMapBoardScalarFieldEnum[]
+  }
+
+  /**
+   * DeviceMapBoard create
+   */
+  export type DeviceMapBoardCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
+    /**
+     * The data needed to create a DeviceMapBoard.
+     */
+    data: XOR<DeviceMapBoardCreateInput, DeviceMapBoardUncheckedCreateInput>
+  }
+
+  /**
+   * DeviceMapBoard createMany
+   */
+  export type DeviceMapBoardCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many DeviceMapBoards.
+     */
+    data: DeviceMapBoardCreateManyInput | DeviceMapBoardCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * DeviceMapBoard createManyAndReturn
+   */
+  export type DeviceMapBoardCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * The data used to create many DeviceMapBoards.
+     */
+    data: DeviceMapBoardCreateManyInput | DeviceMapBoardCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * DeviceMapBoard update
+   */
+  export type DeviceMapBoardUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
+    /**
+     * The data needed to update a DeviceMapBoard.
+     */
+    data: XOR<DeviceMapBoardUpdateInput, DeviceMapBoardUncheckedUpdateInput>
+    /**
+     * Choose, which DeviceMapBoard to update.
+     */
+    where: DeviceMapBoardWhereUniqueInput
+  }
+
+  /**
+   * DeviceMapBoard updateMany
+   */
+  export type DeviceMapBoardUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update DeviceMapBoards.
+     */
+    data: XOR<DeviceMapBoardUpdateManyMutationInput, DeviceMapBoardUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceMapBoards to update
+     */
+    where?: DeviceMapBoardWhereInput
+    /**
+     * Limit how many DeviceMapBoards to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * DeviceMapBoard updateManyAndReturn
+   */
+  export type DeviceMapBoardUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * The data used to update DeviceMapBoards.
+     */
+    data: XOR<DeviceMapBoardUpdateManyMutationInput, DeviceMapBoardUncheckedUpdateManyInput>
+    /**
+     * Filter which DeviceMapBoards to update
+     */
+    where?: DeviceMapBoardWhereInput
+    /**
+     * Limit how many DeviceMapBoards to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * DeviceMapBoard upsert
+   */
+  export type DeviceMapBoardUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
+    /**
+     * The filter to search for the DeviceMapBoard to update in case it exists.
+     */
+    where: DeviceMapBoardWhereUniqueInput
+    /**
+     * In case the DeviceMapBoard found by the `where` argument doesn't exist, create a new DeviceMapBoard with this data.
+     */
+    create: XOR<DeviceMapBoardCreateInput, DeviceMapBoardUncheckedCreateInput>
+    /**
+     * In case the DeviceMapBoard was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<DeviceMapBoardUpdateInput, DeviceMapBoardUncheckedUpdateInput>
+  }
+
+  /**
+   * DeviceMapBoard delete
+   */
+  export type DeviceMapBoardDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
+    /**
+     * Filter which DeviceMapBoard to delete.
+     */
+    where: DeviceMapBoardWhereUniqueInput
+  }
+
+  /**
+   * DeviceMapBoard deleteMany
+   */
+  export type DeviceMapBoardDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which DeviceMapBoards to delete
+     */
+    where?: DeviceMapBoardWhereInput
+    /**
+     * Limit how many DeviceMapBoards to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * DeviceMapBoard without action
+   */
+  export type DeviceMapBoardDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the DeviceMapBoard
+     */
+    select?: DeviceMapBoardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the DeviceMapBoard
+     */
+    omit?: DeviceMapBoardOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DeviceMapBoardInclude<ExtArgs> | null
   }
 
 
@@ -38322,6 +40702,14 @@ export namespace Prisma {
   export type DeviceLookupSocScalarFieldEnum = (typeof DeviceLookupSocScalarFieldEnum)[keyof typeof DeviceLookupSocScalarFieldEnum]
 
 
+  export const DeviceLookupBoardScalarFieldEnum: {
+    id: 'id',
+    name: 'name'
+  };
+
+  export type DeviceLookupBoardScalarFieldEnum = (typeof DeviceLookupBoardScalarFieldEnum)[keyof typeof DeviceLookupBoardScalarFieldEnum]
+
+
   export const DeviceMapArchitectureScalarFieldEnum: {
     device_id: 'device_id',
     architecture_id: 'architecture_id'
@@ -38362,6 +40750,14 @@ export namespace Prisma {
   };
 
   export type DeviceMapSocScalarFieldEnum = (typeof DeviceMapSocScalarFieldEnum)[keyof typeof DeviceMapSocScalarFieldEnum]
+
+
+  export const DeviceMapBoardScalarFieldEnum: {
+    device_id: 'device_id',
+    board_id: 'board_id'
+  };
+
+  export type DeviceMapBoardScalarFieldEnum = (typeof DeviceMapBoardScalarFieldEnum)[keyof typeof DeviceMapBoardScalarFieldEnum]
 
 
   export const MapDeviceOsScalarFieldEnum: {
@@ -38596,6 +40992,13 @@ export namespace Prisma {
   export type DeviceLookupSocOrderByRelevanceFieldEnum = (typeof DeviceLookupSocOrderByRelevanceFieldEnum)[keyof typeof DeviceLookupSocOrderByRelevanceFieldEnum]
 
 
+  export const DeviceLookupBoardOrderByRelevanceFieldEnum: {
+    name: 'name'
+  };
+
+  export type DeviceLookupBoardOrderByRelevanceFieldEnum = (typeof DeviceLookupBoardOrderByRelevanceFieldEnum)[keyof typeof DeviceLookupBoardOrderByRelevanceFieldEnum]
+
+
   export const DeviceMapIdentifierOrderByRelevanceFieldEnum: {
     identifier: 'identifier'
   };
@@ -38815,12 +41218,12 @@ export namespace Prisma {
 
   export type ColorLookupWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    name?: string
     AND?: ColorLookupWhereInput | ColorLookupWhereInput[]
     OR?: ColorLookupWhereInput[]
     NOT?: ColorLookupWhereInput | ColorLookupWhereInput[]
-    name?: StringFilter<"ColorLookup"> | string
     DeviceImageColors?: DeviceImageColorsListRelationFilter
-  }, "id">
+  }, "id" | "name">
 
   export type ColorLookupOrderByWithAggregationInput = {
     id?: SortOrder
@@ -38858,6 +41261,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelListRelationFilter
     DeviceMapRelease?: DeviceMapReleaseListRelationFilter
     DeviceMapSoc?: DeviceMapSocListRelationFilter
+    DeviceMapBoard?: DeviceMapBoardListRelationFilter
     MapDeviceOs?: MapDeviceOsListRelationFilter
     OsEntryPreinstalled?: OsEntryPreinstalledListRelationFilter
     SourceMapDevice?: SourceMapDeviceListRelationFilter
@@ -38878,6 +41282,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelOrderByRelationAggregateInput
     DeviceMapRelease?: DeviceMapReleaseOrderByRelationAggregateInput
     DeviceMapSoc?: DeviceMapSocOrderByRelationAggregateInput
+    DeviceMapBoard?: DeviceMapBoardOrderByRelationAggregateInput
     MapDeviceOs?: MapDeviceOsOrderByRelationAggregateInput
     OsEntryPreinstalled?: OsEntryPreinstalledOrderByRelationAggregateInput
     SourceMapDevice?: SourceMapDeviceOrderByRelationAggregateInput
@@ -38902,6 +41307,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelListRelationFilter
     DeviceMapRelease?: DeviceMapReleaseListRelationFilter
     DeviceMapSoc?: DeviceMapSocListRelationFilter
+    DeviceMapBoard?: DeviceMapBoardListRelationFilter
     MapDeviceOs?: MapDeviceOsListRelationFilter
     OsEntryPreinstalled?: OsEntryPreinstalledListRelationFilter
     SourceMapDevice?: SourceMapDeviceListRelationFilter
@@ -39325,6 +41731,49 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"DeviceLookupSoc"> | string
   }
 
+  export type DeviceLookupBoardWhereInput = {
+    AND?: DeviceLookupBoardWhereInput | DeviceLookupBoardWhereInput[]
+    OR?: DeviceLookupBoardWhereInput[]
+    NOT?: DeviceLookupBoardWhereInput | DeviceLookupBoardWhereInput[]
+    id?: IntFilter<"DeviceLookupBoard"> | number
+    name?: StringFilter<"DeviceLookupBoard"> | string
+    DeviceMapBoard?: DeviceMapBoardListRelationFilter
+  }
+
+  export type DeviceLookupBoardOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    DeviceMapBoard?: DeviceMapBoardOrderByRelationAggregateInput
+    _relevance?: DeviceLookupBoardOrderByRelevanceInput
+  }
+
+  export type DeviceLookupBoardWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: DeviceLookupBoardWhereInput | DeviceLookupBoardWhereInput[]
+    OR?: DeviceLookupBoardWhereInput[]
+    NOT?: DeviceLookupBoardWhereInput | DeviceLookupBoardWhereInput[]
+    name?: StringFilter<"DeviceLookupBoard"> | string
+    DeviceMapBoard?: DeviceMapBoardListRelationFilter
+  }, "id">
+
+  export type DeviceLookupBoardOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    _count?: DeviceLookupBoardCountOrderByAggregateInput
+    _avg?: DeviceLookupBoardAvgOrderByAggregateInput
+    _max?: DeviceLookupBoardMaxOrderByAggregateInput
+    _min?: DeviceLookupBoardMinOrderByAggregateInput
+    _sum?: DeviceLookupBoardSumOrderByAggregateInput
+  }
+
+  export type DeviceLookupBoardScalarWhereWithAggregatesInput = {
+    AND?: DeviceLookupBoardScalarWhereWithAggregatesInput | DeviceLookupBoardScalarWhereWithAggregatesInput[]
+    OR?: DeviceLookupBoardScalarWhereWithAggregatesInput[]
+    NOT?: DeviceLookupBoardScalarWhereWithAggregatesInput | DeviceLookupBoardScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"DeviceLookupBoard"> | number
+    name?: StringWithAggregatesFilter<"DeviceLookupBoard"> | string
+  }
+
   export type DeviceMapArchitectureWhereInput = {
     AND?: DeviceMapArchitectureWhereInput | DeviceMapArchitectureWhereInput[]
     OR?: DeviceMapArchitectureWhereInput[]
@@ -39555,6 +42004,52 @@ export namespace Prisma {
     NOT?: DeviceMapSocScalarWhereWithAggregatesInput | DeviceMapSocScalarWhereWithAggregatesInput[]
     device_id?: IntWithAggregatesFilter<"DeviceMapSoc"> | number
     soc_id?: IntWithAggregatesFilter<"DeviceMapSoc"> | number
+  }
+
+  export type DeviceMapBoardWhereInput = {
+    AND?: DeviceMapBoardWhereInput | DeviceMapBoardWhereInput[]
+    OR?: DeviceMapBoardWhereInput[]
+    NOT?: DeviceMapBoardWhereInput | DeviceMapBoardWhereInput[]
+    device_id?: IntFilter<"DeviceMapBoard"> | number
+    board_id?: IntFilter<"DeviceMapBoard"> | number
+    DeviceEntry?: XOR<DeviceEntryScalarRelationFilter, DeviceEntryWhereInput>
+    DeviceLookupBoard?: XOR<DeviceLookupBoardScalarRelationFilter, DeviceLookupBoardWhereInput>
+  }
+
+  export type DeviceMapBoardOrderByWithRelationInput = {
+    device_id?: SortOrder
+    board_id?: SortOrder
+    DeviceEntry?: DeviceEntryOrderByWithRelationInput
+    DeviceLookupBoard?: DeviceLookupBoardOrderByWithRelationInput
+  }
+
+  export type DeviceMapBoardWhereUniqueInput = Prisma.AtLeast<{
+    device_id_board_id?: DeviceMapBoardDevice_idBoard_idCompoundUniqueInput
+    AND?: DeviceMapBoardWhereInput | DeviceMapBoardWhereInput[]
+    OR?: DeviceMapBoardWhereInput[]
+    NOT?: DeviceMapBoardWhereInput | DeviceMapBoardWhereInput[]
+    device_id?: IntFilter<"DeviceMapBoard"> | number
+    board_id?: IntFilter<"DeviceMapBoard"> | number
+    DeviceEntry?: XOR<DeviceEntryScalarRelationFilter, DeviceEntryWhereInput>
+    DeviceLookupBoard?: XOR<DeviceLookupBoardScalarRelationFilter, DeviceLookupBoardWhereInput>
+  }, "device_id_board_id">
+
+  export type DeviceMapBoardOrderByWithAggregationInput = {
+    device_id?: SortOrder
+    board_id?: SortOrder
+    _count?: DeviceMapBoardCountOrderByAggregateInput
+    _avg?: DeviceMapBoardAvgOrderByAggregateInput
+    _max?: DeviceMapBoardMaxOrderByAggregateInput
+    _min?: DeviceMapBoardMinOrderByAggregateInput
+    _sum?: DeviceMapBoardSumOrderByAggregateInput
+  }
+
+  export type DeviceMapBoardScalarWhereWithAggregatesInput = {
+    AND?: DeviceMapBoardScalarWhereWithAggregatesInput | DeviceMapBoardScalarWhereWithAggregatesInput[]
+    OR?: DeviceMapBoardScalarWhereWithAggregatesInput[]
+    NOT?: DeviceMapBoardScalarWhereWithAggregatesInput | DeviceMapBoardScalarWhereWithAggregatesInput[]
+    device_id?: IntWithAggregatesFilter<"DeviceMapBoard"> | number
+    board_id?: IntWithAggregatesFilter<"DeviceMapBoard"> | number
   }
 
   export type MapDeviceOsWhereInput = {
@@ -40493,6 +42988,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
@@ -40511,6 +43007,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -40528,6 +43025,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
@@ -40546,6 +43044,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -40910,6 +43409,42 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
   }
 
+  export type DeviceLookupBoardCreateInput = {
+    name: string
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceLookupBoardInput
+  }
+
+  export type DeviceLookupBoardUncheckedCreateInput = {
+    id?: number
+    name: string
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceLookupBoardInput
+  }
+
+  export type DeviceLookupBoardUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceLookupBoardNestedInput
+  }
+
+  export type DeviceLookupBoardUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceLookupBoardNestedInput
+  }
+
+  export type DeviceLookupBoardCreateManyInput = {
+    id?: number
+    name: string
+  }
+
+  export type DeviceLookupBoardUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type DeviceLookupBoardUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
   export type DeviceMapArchitectureCreateInput = {
     DeviceEntry: DeviceEntryCreateNestedOneWithoutDeviceMapArchitectureInput
     DeviceLookupArchitecture: DeviceLookupArchitectureCreateNestedOneWithoutDeviceMapArchitectureInput
@@ -41089,6 +43624,40 @@ export namespace Prisma {
   export type DeviceMapSocUncheckedUpdateManyInput = {
     device_id?: IntFieldUpdateOperationsInput | number
     soc_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type DeviceMapBoardCreateInput = {
+    DeviceEntry: DeviceEntryCreateNestedOneWithoutDeviceMapBoardInput
+    DeviceLookupBoard: DeviceLookupBoardCreateNestedOneWithoutDeviceMapBoardInput
+  }
+
+  export type DeviceMapBoardUncheckedCreateInput = {
+    device_id: number
+    board_id: number
+  }
+
+  export type DeviceMapBoardUpdateInput = {
+    DeviceEntry?: DeviceEntryUpdateOneRequiredWithoutDeviceMapBoardNestedInput
+    DeviceLookupBoard?: DeviceLookupBoardUpdateOneRequiredWithoutDeviceMapBoardNestedInput
+  }
+
+  export type DeviceMapBoardUncheckedUpdateInput = {
+    device_id?: IntFieldUpdateOperationsInput | number
+    board_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type DeviceMapBoardCreateManyInput = {
+    device_id: number
+    board_id: number
+  }
+
+  export type DeviceMapBoardUpdateManyMutationInput = {
+
+  }
+
+  export type DeviceMapBoardUncheckedUpdateManyInput = {
+    device_id?: IntFieldUpdateOperationsInput | number
+    board_id?: IntFieldUpdateOperationsInput | number
   }
 
   export type MapDeviceOsCreateInput = {
@@ -42066,6 +44635,12 @@ export namespace Prisma {
     none?: DeviceMapSocWhereInput
   }
 
+  export type DeviceMapBoardListRelationFilter = {
+    every?: DeviceMapBoardWhereInput
+    some?: DeviceMapBoardWhereInput
+    none?: DeviceMapBoardWhereInput
+  }
+
   export type MapDeviceOsListRelationFilter = {
     every?: MapDeviceOsWhereInput
     some?: MapDeviceOsWhereInput
@@ -42110,6 +44685,10 @@ export namespace Prisma {
   }
 
   export type DeviceMapSocOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type DeviceMapBoardOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -42512,6 +45091,35 @@ export namespace Prisma {
     id?: SortOrder
   }
 
+  export type DeviceLookupBoardOrderByRelevanceInput = {
+    fields: DeviceLookupBoardOrderByRelevanceFieldEnum | DeviceLookupBoardOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type DeviceLookupBoardCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+  }
+
+  export type DeviceLookupBoardAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type DeviceLookupBoardMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+  }
+
+  export type DeviceLookupBoardMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+  }
+
+  export type DeviceLookupBoardSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
   export type DeviceLookupArchitectureScalarRelationFilter = {
     is?: DeviceLookupArchitectureWhereInput
     isNot?: DeviceLookupArchitectureWhereInput
@@ -42711,6 +45319,41 @@ export namespace Prisma {
   export type DeviceMapSocSumOrderByAggregateInput = {
     device_id?: SortOrder
     soc_id?: SortOrder
+  }
+
+  export type DeviceLookupBoardScalarRelationFilter = {
+    is?: DeviceLookupBoardWhereInput
+    isNot?: DeviceLookupBoardWhereInput
+  }
+
+  export type DeviceMapBoardDevice_idBoard_idCompoundUniqueInput = {
+    device_id: number
+    board_id: number
+  }
+
+  export type DeviceMapBoardCountOrderByAggregateInput = {
+    device_id?: SortOrder
+    board_id?: SortOrder
+  }
+
+  export type DeviceMapBoardAvgOrderByAggregateInput = {
+    device_id?: SortOrder
+    board_id?: SortOrder
+  }
+
+  export type DeviceMapBoardMaxOrderByAggregateInput = {
+    device_id?: SortOrder
+    board_id?: SortOrder
+  }
+
+  export type DeviceMapBoardMinOrderByAggregateInput = {
+    device_id?: SortOrder
+    board_id?: SortOrder
+  }
+
+  export type DeviceMapBoardSumOrderByAggregateInput = {
+    device_id?: SortOrder
+    board_id?: SortOrder
   }
 
   export type OsEntryScalarRelationFilter = {
@@ -43592,6 +46235,13 @@ export namespace Prisma {
     connect?: DeviceMapSocWhereUniqueInput | DeviceMapSocWhereUniqueInput[]
   }
 
+  export type DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput = {
+    create?: XOR<DeviceMapBoardCreateWithoutDeviceEntryInput, DeviceMapBoardUncheckedCreateWithoutDeviceEntryInput> | DeviceMapBoardCreateWithoutDeviceEntryInput[] | DeviceMapBoardUncheckedCreateWithoutDeviceEntryInput[]
+    connectOrCreate?: DeviceMapBoardCreateOrConnectWithoutDeviceEntryInput | DeviceMapBoardCreateOrConnectWithoutDeviceEntryInput[]
+    createMany?: DeviceMapBoardCreateManyDeviceEntryInputEnvelope
+    connect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+  }
+
   export type MapDeviceOsCreateNestedManyWithoutDeviceEntryInput = {
     create?: XOR<MapDeviceOsCreateWithoutDeviceEntryInput, MapDeviceOsUncheckedCreateWithoutDeviceEntryInput> | MapDeviceOsCreateWithoutDeviceEntryInput[] | MapDeviceOsUncheckedCreateWithoutDeviceEntryInput[]
     connectOrCreate?: MapDeviceOsCreateOrConnectWithoutDeviceEntryInput | MapDeviceOsCreateOrConnectWithoutDeviceEntryInput[]
@@ -43653,6 +46303,13 @@ export namespace Prisma {
     connectOrCreate?: DeviceMapSocCreateOrConnectWithoutDeviceEntryInput | DeviceMapSocCreateOrConnectWithoutDeviceEntryInput[]
     createMany?: DeviceMapSocCreateManyDeviceEntryInputEnvelope
     connect?: DeviceMapSocWhereUniqueInput | DeviceMapSocWhereUniqueInput[]
+  }
+
+  export type DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput = {
+    create?: XOR<DeviceMapBoardCreateWithoutDeviceEntryInput, DeviceMapBoardUncheckedCreateWithoutDeviceEntryInput> | DeviceMapBoardCreateWithoutDeviceEntryInput[] | DeviceMapBoardUncheckedCreateWithoutDeviceEntryInput[]
+    connectOrCreate?: DeviceMapBoardCreateOrConnectWithoutDeviceEntryInput | DeviceMapBoardCreateOrConnectWithoutDeviceEntryInput[]
+    createMany?: DeviceMapBoardCreateManyDeviceEntryInputEnvelope
+    connect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
   }
 
   export type MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput = {
@@ -43784,6 +46441,20 @@ export namespace Prisma {
     update?: DeviceMapSocUpdateWithWhereUniqueWithoutDeviceEntryInput | DeviceMapSocUpdateWithWhereUniqueWithoutDeviceEntryInput[]
     updateMany?: DeviceMapSocUpdateManyWithWhereWithoutDeviceEntryInput | DeviceMapSocUpdateManyWithWhereWithoutDeviceEntryInput[]
     deleteMany?: DeviceMapSocScalarWhereInput | DeviceMapSocScalarWhereInput[]
+  }
+
+  export type DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput = {
+    create?: XOR<DeviceMapBoardCreateWithoutDeviceEntryInput, DeviceMapBoardUncheckedCreateWithoutDeviceEntryInput> | DeviceMapBoardCreateWithoutDeviceEntryInput[] | DeviceMapBoardUncheckedCreateWithoutDeviceEntryInput[]
+    connectOrCreate?: DeviceMapBoardCreateOrConnectWithoutDeviceEntryInput | DeviceMapBoardCreateOrConnectWithoutDeviceEntryInput[]
+    upsert?: DeviceMapBoardUpsertWithWhereUniqueWithoutDeviceEntryInput | DeviceMapBoardUpsertWithWhereUniqueWithoutDeviceEntryInput[]
+    createMany?: DeviceMapBoardCreateManyDeviceEntryInputEnvelope
+    set?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    disconnect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    delete?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    connect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    update?: DeviceMapBoardUpdateWithWhereUniqueWithoutDeviceEntryInput | DeviceMapBoardUpdateWithWhereUniqueWithoutDeviceEntryInput[]
+    updateMany?: DeviceMapBoardUpdateManyWithWhereWithoutDeviceEntryInput | DeviceMapBoardUpdateManyWithWhereWithoutDeviceEntryInput[]
+    deleteMany?: DeviceMapBoardScalarWhereInput | DeviceMapBoardScalarWhereInput[]
   }
 
   export type MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput = {
@@ -43918,6 +46589,20 @@ export namespace Prisma {
     update?: DeviceMapSocUpdateWithWhereUniqueWithoutDeviceEntryInput | DeviceMapSocUpdateWithWhereUniqueWithoutDeviceEntryInput[]
     updateMany?: DeviceMapSocUpdateManyWithWhereWithoutDeviceEntryInput | DeviceMapSocUpdateManyWithWhereWithoutDeviceEntryInput[]
     deleteMany?: DeviceMapSocScalarWhereInput | DeviceMapSocScalarWhereInput[]
+  }
+
+  export type DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput = {
+    create?: XOR<DeviceMapBoardCreateWithoutDeviceEntryInput, DeviceMapBoardUncheckedCreateWithoutDeviceEntryInput> | DeviceMapBoardCreateWithoutDeviceEntryInput[] | DeviceMapBoardUncheckedCreateWithoutDeviceEntryInput[]
+    connectOrCreate?: DeviceMapBoardCreateOrConnectWithoutDeviceEntryInput | DeviceMapBoardCreateOrConnectWithoutDeviceEntryInput[]
+    upsert?: DeviceMapBoardUpsertWithWhereUniqueWithoutDeviceEntryInput | DeviceMapBoardUpsertWithWhereUniqueWithoutDeviceEntryInput[]
+    createMany?: DeviceMapBoardCreateManyDeviceEntryInputEnvelope
+    set?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    disconnect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    delete?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    connect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    update?: DeviceMapBoardUpdateWithWhereUniqueWithoutDeviceEntryInput | DeviceMapBoardUpdateWithWhereUniqueWithoutDeviceEntryInput[]
+    updateMany?: DeviceMapBoardUpdateManyWithWhereWithoutDeviceEntryInput | DeviceMapBoardUpdateManyWithWhereWithoutDeviceEntryInput[]
+    deleteMany?: DeviceMapBoardScalarWhereInput | DeviceMapBoardScalarWhereInput[]
   }
 
   export type MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput = {
@@ -44382,6 +47067,48 @@ export namespace Prisma {
     deleteMany?: DeviceMapSocScalarWhereInput | DeviceMapSocScalarWhereInput[]
   }
 
+  export type DeviceMapBoardCreateNestedManyWithoutDeviceLookupBoardInput = {
+    create?: XOR<DeviceMapBoardCreateWithoutDeviceLookupBoardInput, DeviceMapBoardUncheckedCreateWithoutDeviceLookupBoardInput> | DeviceMapBoardCreateWithoutDeviceLookupBoardInput[] | DeviceMapBoardUncheckedCreateWithoutDeviceLookupBoardInput[]
+    connectOrCreate?: DeviceMapBoardCreateOrConnectWithoutDeviceLookupBoardInput | DeviceMapBoardCreateOrConnectWithoutDeviceLookupBoardInput[]
+    createMany?: DeviceMapBoardCreateManyDeviceLookupBoardInputEnvelope
+    connect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+  }
+
+  export type DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceLookupBoardInput = {
+    create?: XOR<DeviceMapBoardCreateWithoutDeviceLookupBoardInput, DeviceMapBoardUncheckedCreateWithoutDeviceLookupBoardInput> | DeviceMapBoardCreateWithoutDeviceLookupBoardInput[] | DeviceMapBoardUncheckedCreateWithoutDeviceLookupBoardInput[]
+    connectOrCreate?: DeviceMapBoardCreateOrConnectWithoutDeviceLookupBoardInput | DeviceMapBoardCreateOrConnectWithoutDeviceLookupBoardInput[]
+    createMany?: DeviceMapBoardCreateManyDeviceLookupBoardInputEnvelope
+    connect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+  }
+
+  export type DeviceMapBoardUpdateManyWithoutDeviceLookupBoardNestedInput = {
+    create?: XOR<DeviceMapBoardCreateWithoutDeviceLookupBoardInput, DeviceMapBoardUncheckedCreateWithoutDeviceLookupBoardInput> | DeviceMapBoardCreateWithoutDeviceLookupBoardInput[] | DeviceMapBoardUncheckedCreateWithoutDeviceLookupBoardInput[]
+    connectOrCreate?: DeviceMapBoardCreateOrConnectWithoutDeviceLookupBoardInput | DeviceMapBoardCreateOrConnectWithoutDeviceLookupBoardInput[]
+    upsert?: DeviceMapBoardUpsertWithWhereUniqueWithoutDeviceLookupBoardInput | DeviceMapBoardUpsertWithWhereUniqueWithoutDeviceLookupBoardInput[]
+    createMany?: DeviceMapBoardCreateManyDeviceLookupBoardInputEnvelope
+    set?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    disconnect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    delete?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    connect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    update?: DeviceMapBoardUpdateWithWhereUniqueWithoutDeviceLookupBoardInput | DeviceMapBoardUpdateWithWhereUniqueWithoutDeviceLookupBoardInput[]
+    updateMany?: DeviceMapBoardUpdateManyWithWhereWithoutDeviceLookupBoardInput | DeviceMapBoardUpdateManyWithWhereWithoutDeviceLookupBoardInput[]
+    deleteMany?: DeviceMapBoardScalarWhereInput | DeviceMapBoardScalarWhereInput[]
+  }
+
+  export type DeviceMapBoardUncheckedUpdateManyWithoutDeviceLookupBoardNestedInput = {
+    create?: XOR<DeviceMapBoardCreateWithoutDeviceLookupBoardInput, DeviceMapBoardUncheckedCreateWithoutDeviceLookupBoardInput> | DeviceMapBoardCreateWithoutDeviceLookupBoardInput[] | DeviceMapBoardUncheckedCreateWithoutDeviceLookupBoardInput[]
+    connectOrCreate?: DeviceMapBoardCreateOrConnectWithoutDeviceLookupBoardInput | DeviceMapBoardCreateOrConnectWithoutDeviceLookupBoardInput[]
+    upsert?: DeviceMapBoardUpsertWithWhereUniqueWithoutDeviceLookupBoardInput | DeviceMapBoardUpsertWithWhereUniqueWithoutDeviceLookupBoardInput[]
+    createMany?: DeviceMapBoardCreateManyDeviceLookupBoardInputEnvelope
+    set?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    disconnect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    delete?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    connect?: DeviceMapBoardWhereUniqueInput | DeviceMapBoardWhereUniqueInput[]
+    update?: DeviceMapBoardUpdateWithWhereUniqueWithoutDeviceLookupBoardInput | DeviceMapBoardUpdateWithWhereUniqueWithoutDeviceLookupBoardInput[]
+    updateMany?: DeviceMapBoardUpdateManyWithWhereWithoutDeviceLookupBoardInput | DeviceMapBoardUpdateManyWithWhereWithoutDeviceLookupBoardInput[]
+    deleteMany?: DeviceMapBoardScalarWhereInput | DeviceMapBoardScalarWhereInput[]
+  }
+
   export type DeviceEntryCreateNestedOneWithoutDeviceMapArchitectureInput = {
     create?: XOR<DeviceEntryCreateWithoutDeviceMapArchitectureInput, DeviceEntryUncheckedCreateWithoutDeviceMapArchitectureInput>
     connectOrCreate?: DeviceEntryCreateOrConnectWithoutDeviceMapArchitectureInput
@@ -44484,6 +47211,34 @@ export namespace Prisma {
     upsert?: DeviceLookupSocUpsertWithoutDeviceMapSocInput
     connect?: DeviceLookupSocWhereUniqueInput
     update?: XOR<XOR<DeviceLookupSocUpdateToOneWithWhereWithoutDeviceMapSocInput, DeviceLookupSocUpdateWithoutDeviceMapSocInput>, DeviceLookupSocUncheckedUpdateWithoutDeviceMapSocInput>
+  }
+
+  export type DeviceEntryCreateNestedOneWithoutDeviceMapBoardInput = {
+    create?: XOR<DeviceEntryCreateWithoutDeviceMapBoardInput, DeviceEntryUncheckedCreateWithoutDeviceMapBoardInput>
+    connectOrCreate?: DeviceEntryCreateOrConnectWithoutDeviceMapBoardInput
+    connect?: DeviceEntryWhereUniqueInput
+  }
+
+  export type DeviceLookupBoardCreateNestedOneWithoutDeviceMapBoardInput = {
+    create?: XOR<DeviceLookupBoardCreateWithoutDeviceMapBoardInput, DeviceLookupBoardUncheckedCreateWithoutDeviceMapBoardInput>
+    connectOrCreate?: DeviceLookupBoardCreateOrConnectWithoutDeviceMapBoardInput
+    connect?: DeviceLookupBoardWhereUniqueInput
+  }
+
+  export type DeviceEntryUpdateOneRequiredWithoutDeviceMapBoardNestedInput = {
+    create?: XOR<DeviceEntryCreateWithoutDeviceMapBoardInput, DeviceEntryUncheckedCreateWithoutDeviceMapBoardInput>
+    connectOrCreate?: DeviceEntryCreateOrConnectWithoutDeviceMapBoardInput
+    upsert?: DeviceEntryUpsertWithoutDeviceMapBoardInput
+    connect?: DeviceEntryWhereUniqueInput
+    update?: XOR<XOR<DeviceEntryUpdateToOneWithWhereWithoutDeviceMapBoardInput, DeviceEntryUpdateWithoutDeviceMapBoardInput>, DeviceEntryUncheckedUpdateWithoutDeviceMapBoardInput>
+  }
+
+  export type DeviceLookupBoardUpdateOneRequiredWithoutDeviceMapBoardNestedInput = {
+    create?: XOR<DeviceLookupBoardCreateWithoutDeviceMapBoardInput, DeviceLookupBoardUncheckedCreateWithoutDeviceMapBoardInput>
+    connectOrCreate?: DeviceLookupBoardCreateOrConnectWithoutDeviceMapBoardInput
+    upsert?: DeviceLookupBoardUpsertWithoutDeviceMapBoardInput
+    connect?: DeviceLookupBoardWhereUniqueInput
+    update?: XOR<XOR<DeviceLookupBoardUpdateToOneWithWhereWithoutDeviceMapBoardInput, DeviceLookupBoardUpdateWithoutDeviceMapBoardInput>, DeviceLookupBoardUncheckedUpdateWithoutDeviceMapBoardInput>
   }
 
   export type DeviceEntryCreateNestedOneWithoutMapDeviceOsInput = {
@@ -45717,6 +48472,24 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type DeviceMapBoardCreateWithoutDeviceEntryInput = {
+    DeviceLookupBoard: DeviceLookupBoardCreateNestedOneWithoutDeviceMapBoardInput
+  }
+
+  export type DeviceMapBoardUncheckedCreateWithoutDeviceEntryInput = {
+    board_id: number
+  }
+
+  export type DeviceMapBoardCreateOrConnectWithoutDeviceEntryInput = {
+    where: DeviceMapBoardWhereUniqueInput
+    create: XOR<DeviceMapBoardCreateWithoutDeviceEntryInput, DeviceMapBoardUncheckedCreateWithoutDeviceEntryInput>
+  }
+
+  export type DeviceMapBoardCreateManyDeviceEntryInputEnvelope = {
+    data: DeviceMapBoardCreateManyDeviceEntryInput | DeviceMapBoardCreateManyDeviceEntryInput[]
+    skipDuplicates?: boolean
+  }
+
   export type MapDeviceOsCreateWithoutDeviceEntryInput = {
     OsEntry: OsEntryCreateNestedOneWithoutMapDeviceOsInput
   }
@@ -45961,6 +48734,30 @@ export namespace Prisma {
     soc_id?: IntFilter<"DeviceMapSoc"> | number
   }
 
+  export type DeviceMapBoardUpsertWithWhereUniqueWithoutDeviceEntryInput = {
+    where: DeviceMapBoardWhereUniqueInput
+    update: XOR<DeviceMapBoardUpdateWithoutDeviceEntryInput, DeviceMapBoardUncheckedUpdateWithoutDeviceEntryInput>
+    create: XOR<DeviceMapBoardCreateWithoutDeviceEntryInput, DeviceMapBoardUncheckedCreateWithoutDeviceEntryInput>
+  }
+
+  export type DeviceMapBoardUpdateWithWhereUniqueWithoutDeviceEntryInput = {
+    where: DeviceMapBoardWhereUniqueInput
+    data: XOR<DeviceMapBoardUpdateWithoutDeviceEntryInput, DeviceMapBoardUncheckedUpdateWithoutDeviceEntryInput>
+  }
+
+  export type DeviceMapBoardUpdateManyWithWhereWithoutDeviceEntryInput = {
+    where: DeviceMapBoardScalarWhereInput
+    data: XOR<DeviceMapBoardUpdateManyMutationInput, DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryInput>
+  }
+
+  export type DeviceMapBoardScalarWhereInput = {
+    AND?: DeviceMapBoardScalarWhereInput | DeviceMapBoardScalarWhereInput[]
+    OR?: DeviceMapBoardScalarWhereInput[]
+    NOT?: DeviceMapBoardScalarWhereInput | DeviceMapBoardScalarWhereInput[]
+    device_id?: IntFilter<"DeviceMapBoard"> | number
+    board_id?: IntFilter<"DeviceMapBoard"> | number
+  }
+
   export type MapDeviceOsUpsertWithWhereUniqueWithoutDeviceEntryInput = {
     where: MapDeviceOsWhereUniqueInput
     update: XOR<MapDeviceOsUpdateWithoutDeviceEntryInput, MapDeviceOsUncheckedUpdateWithoutDeviceEntryInput>
@@ -46180,6 +48977,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
@@ -46197,6 +48995,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -46261,6 +49060,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
@@ -46278,6 +49078,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -46516,6 +49317,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
@@ -46533,6 +49335,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -46587,6 +49390,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
@@ -46604,6 +49408,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -46705,6 +49510,40 @@ export namespace Prisma {
     data: XOR<DeviceMapSocUpdateManyMutationInput, DeviceMapSocUncheckedUpdateManyWithoutDeviceLookupSocInput>
   }
 
+  export type DeviceMapBoardCreateWithoutDeviceLookupBoardInput = {
+    DeviceEntry: DeviceEntryCreateNestedOneWithoutDeviceMapBoardInput
+  }
+
+  export type DeviceMapBoardUncheckedCreateWithoutDeviceLookupBoardInput = {
+    device_id: number
+  }
+
+  export type DeviceMapBoardCreateOrConnectWithoutDeviceLookupBoardInput = {
+    where: DeviceMapBoardWhereUniqueInput
+    create: XOR<DeviceMapBoardCreateWithoutDeviceLookupBoardInput, DeviceMapBoardUncheckedCreateWithoutDeviceLookupBoardInput>
+  }
+
+  export type DeviceMapBoardCreateManyDeviceLookupBoardInputEnvelope = {
+    data: DeviceMapBoardCreateManyDeviceLookupBoardInput | DeviceMapBoardCreateManyDeviceLookupBoardInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type DeviceMapBoardUpsertWithWhereUniqueWithoutDeviceLookupBoardInput = {
+    where: DeviceMapBoardWhereUniqueInput
+    update: XOR<DeviceMapBoardUpdateWithoutDeviceLookupBoardInput, DeviceMapBoardUncheckedUpdateWithoutDeviceLookupBoardInput>
+    create: XOR<DeviceMapBoardCreateWithoutDeviceLookupBoardInput, DeviceMapBoardUncheckedCreateWithoutDeviceLookupBoardInput>
+  }
+
+  export type DeviceMapBoardUpdateWithWhereUniqueWithoutDeviceLookupBoardInput = {
+    where: DeviceMapBoardWhereUniqueInput
+    data: XOR<DeviceMapBoardUpdateWithoutDeviceLookupBoardInput, DeviceMapBoardUncheckedUpdateWithoutDeviceLookupBoardInput>
+  }
+
+  export type DeviceMapBoardUpdateManyWithWhereWithoutDeviceLookupBoardInput = {
+    where: DeviceMapBoardScalarWhereInput
+    data: XOR<DeviceMapBoardUpdateManyMutationInput, DeviceMapBoardUncheckedUpdateManyWithoutDeviceLookupBoardInput>
+  }
+
   export type DeviceEntryCreateWithoutDeviceMapArchitectureInput = {
     name: string
     is_internal?: boolean | null
@@ -46716,6 +49555,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
@@ -46733,6 +49573,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -46779,6 +49620,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
@@ -46796,6 +49638,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -46832,6 +49675,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
@@ -46849,6 +49693,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -46881,6 +49726,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
@@ -46898,6 +49744,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -46914,6 +49761,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
@@ -46931,6 +49779,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -46963,6 +49812,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
@@ -46980,6 +49830,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -46996,6 +49847,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
@@ -47013,6 +49865,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -47045,6 +49898,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
@@ -47062,6 +49916,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -47078,6 +49933,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
@@ -47095,6 +49951,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
@@ -47141,6 +49998,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
@@ -47158,6 +50016,7 @@ export namespace Prisma {
     DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -47183,6 +50042,126 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
   }
 
+  export type DeviceEntryCreateWithoutDeviceMapBoardInput = {
+    name: string
+    is_internal?: boolean | null
+    legacy_unique_key?: string | null
+    DeviceLookupCategory: DeviceLookupCategoryCreateNestedOneWithoutDeviceEntryInput
+    DeviceLookupImage?: DeviceLookupImageCreateNestedOneWithoutDeviceEntryInput
+    DeviceGroupMapDevice?: DeviceGroupMapDeviceCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapArchitecture?: DeviceMapArchitectureCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapIdentifier?: DeviceMapIdentifierCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
+    OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
+    SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
+  }
+
+  export type DeviceEntryUncheckedCreateWithoutDeviceMapBoardInput = {
+    id?: number
+    name: string
+    category_id: number
+    image_id?: number | null
+    is_internal?: boolean | null
+    legacy_unique_key?: string | null
+    DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapArchitecture?: DeviceMapArchitectureUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapIdentifier?: DeviceMapIdentifierUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
+    OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
+    SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
+  }
+
+  export type DeviceEntryCreateOrConnectWithoutDeviceMapBoardInput = {
+    where: DeviceEntryWhereUniqueInput
+    create: XOR<DeviceEntryCreateWithoutDeviceMapBoardInput, DeviceEntryUncheckedCreateWithoutDeviceMapBoardInput>
+  }
+
+  export type DeviceLookupBoardCreateWithoutDeviceMapBoardInput = {
+    name: string
+  }
+
+  export type DeviceLookupBoardUncheckedCreateWithoutDeviceMapBoardInput = {
+    id?: number
+    name: string
+  }
+
+  export type DeviceLookupBoardCreateOrConnectWithoutDeviceMapBoardInput = {
+    where: DeviceLookupBoardWhereUniqueInput
+    create: XOR<DeviceLookupBoardCreateWithoutDeviceMapBoardInput, DeviceLookupBoardUncheckedCreateWithoutDeviceMapBoardInput>
+  }
+
+  export type DeviceEntryUpsertWithoutDeviceMapBoardInput = {
+    update: XOR<DeviceEntryUpdateWithoutDeviceMapBoardInput, DeviceEntryUncheckedUpdateWithoutDeviceMapBoardInput>
+    create: XOR<DeviceEntryCreateWithoutDeviceMapBoardInput, DeviceEntryUncheckedCreateWithoutDeviceMapBoardInput>
+    where?: DeviceEntryWhereInput
+  }
+
+  export type DeviceEntryUpdateToOneWithWhereWithoutDeviceMapBoardInput = {
+    where?: DeviceEntryWhereInput
+    data: XOR<DeviceEntryUpdateWithoutDeviceMapBoardInput, DeviceEntryUncheckedUpdateWithoutDeviceMapBoardInput>
+  }
+
+  export type DeviceEntryUpdateWithoutDeviceMapBoardInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
+    DeviceLookupCategory?: DeviceLookupCategoryUpdateOneRequiredWithoutDeviceEntryNestedInput
+    DeviceLookupImage?: DeviceLookupImageUpdateOneWithoutDeviceEntryNestedInput
+    DeviceGroupMapDevice?: DeviceGroupMapDeviceUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapArchitecture?: DeviceMapArchitectureUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapIdentifier?: DeviceMapIdentifierUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
+    OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
+    SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
+  }
+
+  export type DeviceEntryUncheckedUpdateWithoutDeviceMapBoardInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    category_id?: IntFieldUpdateOperationsInput | number
+    image_id?: NullableIntFieldUpdateOperationsInput | number | null
+    is_internal?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legacy_unique_key?: NullableStringFieldUpdateOperationsInput | string | null
+    DeviceGroupMapDevice?: DeviceGroupMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapArchitecture?: DeviceMapArchitectureUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapIdentifier?: DeviceMapIdentifierUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
+  }
+
+  export type DeviceLookupBoardUpsertWithoutDeviceMapBoardInput = {
+    update: XOR<DeviceLookupBoardUpdateWithoutDeviceMapBoardInput, DeviceLookupBoardUncheckedUpdateWithoutDeviceMapBoardInput>
+    create: XOR<DeviceLookupBoardCreateWithoutDeviceMapBoardInput, DeviceLookupBoardUncheckedCreateWithoutDeviceMapBoardInput>
+    where?: DeviceLookupBoardWhereInput
+  }
+
+  export type DeviceLookupBoardUpdateToOneWithWhereWithoutDeviceMapBoardInput = {
+    where?: DeviceLookupBoardWhereInput
+    data: XOR<DeviceLookupBoardUpdateWithoutDeviceMapBoardInput, DeviceLookupBoardUncheckedUpdateWithoutDeviceMapBoardInput>
+  }
+
+  export type DeviceLookupBoardUpdateWithoutDeviceMapBoardInput = {
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type DeviceLookupBoardUncheckedUpdateWithoutDeviceMapBoardInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
   export type DeviceEntryCreateWithoutMapDeviceOsInput = {
     name: string
     is_internal?: boolean | null
@@ -47195,6 +50174,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
   }
@@ -47212,6 +50192,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
   }
@@ -47308,6 +50289,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
   }
@@ -47325,6 +50307,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
   }
@@ -48311,6 +51294,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceCreateNestedManyWithoutDeviceEntryInput
   }
@@ -48328,6 +51312,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
     SourceMapDevice?: SourceMapDeviceUncheckedCreateNestedManyWithoutDeviceEntryInput
   }
@@ -48430,6 +51415,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
   }
@@ -48447,6 +51433,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
   }
@@ -49437,6 +52424,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledCreateNestedManyWithoutDeviceEntryInput
   }
@@ -49454,6 +52442,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedCreateNestedManyWithoutDeviceEntryInput
     DeviceMapSoc?: DeviceMapSocUncheckedCreateNestedManyWithoutDeviceEntryInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedCreateNestedManyWithoutDeviceEntryInput
     MapDeviceOs?: MapDeviceOsUncheckedCreateNestedManyWithoutDeviceEntryInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedCreateNestedManyWithoutDeviceEntryInput
   }
@@ -49522,6 +52511,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
   }
@@ -49539,6 +52529,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
   }
@@ -49655,6 +52646,10 @@ export namespace Prisma {
     soc_id: number
   }
 
+  export type DeviceMapBoardCreateManyDeviceEntryInput = {
+    board_id: number
+  }
+
   export type MapDeviceOsCreateManyDeviceEntryInput = {
     os_id: number
   }
@@ -49742,6 +52737,18 @@ export namespace Prisma {
 
   export type DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryInput = {
     soc_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type DeviceMapBoardUpdateWithoutDeviceEntryInput = {
+    DeviceLookupBoard?: DeviceLookupBoardUpdateOneRequiredWithoutDeviceMapBoardNestedInput
+  }
+
+  export type DeviceMapBoardUncheckedUpdateWithoutDeviceEntryInput = {
+    board_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryInput = {
+    board_id?: IntFieldUpdateOperationsInput | number
   }
 
   export type MapDeviceOsUpdateWithoutDeviceEntryInput = {
@@ -49863,6 +52870,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
@@ -49880,6 +52888,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -49917,6 +52926,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUpdateManyWithoutDeviceEntryNestedInput
@@ -49934,6 +52944,7 @@ export namespace Prisma {
     DeviceMapModel?: DeviceMapModelUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapRelease?: DeviceMapReleaseUncheckedUpdateManyWithoutDeviceEntryNestedInput
     DeviceMapSoc?: DeviceMapSocUncheckedUpdateManyWithoutDeviceEntryNestedInput
+    DeviceMapBoard?: DeviceMapBoardUncheckedUpdateManyWithoutDeviceEntryNestedInput
     MapDeviceOs?: MapDeviceOsUncheckedUpdateManyWithoutDeviceEntryNestedInput
     OsEntryPreinstalled?: OsEntryPreinstalledUncheckedUpdateManyWithoutDeviceEntryNestedInput
     SourceMapDevice?: SourceMapDeviceUncheckedUpdateManyWithoutDeviceEntryNestedInput
@@ -49975,6 +52986,22 @@ export namespace Prisma {
   }
 
   export type DeviceMapSocUncheckedUpdateManyWithoutDeviceLookupSocInput = {
+    device_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type DeviceMapBoardCreateManyDeviceLookupBoardInput = {
+    device_id: number
+  }
+
+  export type DeviceMapBoardUpdateWithoutDeviceLookupBoardInput = {
+    DeviceEntry?: DeviceEntryUpdateOneRequiredWithoutDeviceMapBoardNestedInput
+  }
+
+  export type DeviceMapBoardUncheckedUpdateWithoutDeviceLookupBoardInput = {
+    device_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type DeviceMapBoardUncheckedUpdateManyWithoutDeviceLookupBoardInput = {
     device_id?: IntFieldUpdateOperationsInput | number
   }
 

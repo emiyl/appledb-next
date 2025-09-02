@@ -180,6 +180,11 @@ exports.Prisma.DeviceLookupSocScalarFieldEnum = {
   name: 'name'
 };
 
+exports.Prisma.DeviceLookupBoardScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
 exports.Prisma.DeviceMapArchitectureScalarFieldEnum = {
   device_id: 'device_id',
   architecture_id: 'architecture_id'
@@ -205,6 +210,11 @@ exports.Prisma.DeviceMapReleaseScalarFieldEnum = {
 exports.Prisma.DeviceMapSocScalarFieldEnum = {
   device_id: 'device_id',
   soc_id: 'soc_id'
+};
+
+exports.Prisma.DeviceMapBoardScalarFieldEnum = {
+  device_id: 'device_id',
+  board_id: 'board_id'
 };
 
 exports.Prisma.MapDeviceOsScalarFieldEnum = {
@@ -361,6 +371,10 @@ exports.Prisma.DeviceLookupSocOrderByRelevanceFieldEnum = {
   name: 'name'
 };
 
+exports.Prisma.DeviceLookupBoardOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
 exports.Prisma.DeviceMapIdentifierOrderByRelevanceFieldEnum = {
   identifier: 'identifier'
 };
@@ -444,11 +458,13 @@ exports.Prisma.ModelName = {
   DeviceLookupCategory: 'DeviceLookupCategory',
   DeviceLookupImage: 'DeviceLookupImage',
   DeviceLookupSoc: 'DeviceLookupSoc',
+  DeviceLookupBoard: 'DeviceLookupBoard',
   DeviceMapArchitecture: 'DeviceMapArchitecture',
   DeviceMapIdentifier: 'DeviceMapIdentifier',
   DeviceMapModel: 'DeviceMapModel',
   DeviceMapRelease: 'DeviceMapRelease',
   DeviceMapSoc: 'DeviceMapSoc',
+  DeviceMapBoard: 'DeviceMapBoard',
   MapDeviceOs: 'MapDeviceOs',
   OsEntry: 'OsEntry',
   OsEntryBuildTrain: 'OsEntryBuildTrain',
