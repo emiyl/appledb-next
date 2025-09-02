@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Entry, EntryType, OsEntry, DeviceEntry, EntryListFilter } from '@/types'
-import deviceStyles from '@/styles/DeviceEntryList.module.scss';
+import styles from '@/styles/EntryList.module.scss';
 import EntryListFilterRow from './EntryListFilterRow';
 
 import { defaultOsEntryListFilter, defaultOsEntryListSettings } from '@/utils';
@@ -17,7 +17,7 @@ type EntryTypeConfig<F, S, R, FR, D> = {
     filter: F,
     settings: S,
     row: R,
-    styles?: Record<string, string>,
+    style: string,
     apiEndpoint: string,
     getApiParams: (filter: F, settings: S, page: number) => Record<string, string>,
     processApiData?: (data: D[]) => D[]
@@ -39,7 +39,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
         },
         settings: defaultOsEntryListSettings,
         row: OsEntryListItem,
-        styles: undefined,
+        style: styles.os,
         apiEndpoint: 'os-entries',
         getApiParams: (filter, settings, page) => ({
             release: filter.releaseKinds.release.toString(),
@@ -70,7 +70,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
         },
         settings: defaultDeviceEntryListSettings,
         row: DeviceEntryListItem,
-        styles: deviceStyles,
+        style: styles.device,
         apiEndpoint: 'device',
         getApiParams: (filter, settings, page) => ({
             search: filter.search,
@@ -195,7 +195,7 @@ export function EntryList({ entryType }: { entryType: EntryType }) {
                 ref={stickyRef}
                 isStuck={isStuck}
             />
-            <div className={entryTypeConfig[entryType].styles?.container}>
+            <div className={entryTypeConfig[entryType].style}>
                 {entries.map((entry) => {
                     const RowComponent = entryTypeConfig[entryType].row;
                     return (
