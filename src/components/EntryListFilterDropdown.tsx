@@ -43,9 +43,6 @@ const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entry
             {filterRows.map((rowKey) => (
                 <div className={styles.row} key={rowKey as string}>
                     <h3>{rowStrings[rowKey]}</h3>
-                    <p>
-                        {JSON.stringify(filter[rowKey as keyof typeof filter])}
-                    </p>
                     {filterItems
                         .filter(({ id }) =>
                             !(filter[rowKey as keyof typeof filter] as unknown as any[]).includes(id)
