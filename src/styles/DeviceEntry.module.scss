@@ -24,7 +24,25 @@
     padding-top: 1em;
 }
 
-@media (max-width: 600px) {
+.infoTable {
+    margin-block: 2em;
+
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 1.75em;
+
+    h5 {
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+@media (max-width: 800px) {
     .deviceHeader {
         flex-direction: column-reverse;
         gap: 1em;
@@ -35,14 +53,10 @@
             max-width: 12em;
         }
     }
-}
 
-.infoTable {
-    margin-block: 2em;
-    
-    h5 {
-        margin: 0;
-        padding: 0;
-        text-transform: uppercase;
+    .infoTable {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
     }
 }
