@@ -14,7 +14,8 @@
                 "contents": [],
                 "active": [],
                 "hidden": false,
-                "param": "category",
+                "webParam": "category",
+                "apiParam": "category_id",
                 "apiRoute": "/api/device-categories"
             }
         }
@@ -23,7 +24,6 @@
         "endpoint": "device",
         "params": {
             "search": "search",
-            "categoryID": "category",
             "page": "default",
             "limit": 100
         }

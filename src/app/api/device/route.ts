@@ -1,5 +1,7 @@
+import { config } from '@fortawesome/fontawesome-svg-core';
 import { NextRequest } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import deviceEntryListConfig from '../../../../config/DeviceEntryList.json';
 
 export async function GET(req: NextRequest) {
     const { searchParams } = req.nextUrl;

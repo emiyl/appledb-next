@@ -22,14 +22,16 @@
                 "contents": [],
                 "active": [],
                 "hidden": false,
-                "param": "os_name",
+                "webParam": "os_name",
+                "apiParam": "name_id",
                 "apiRoute": "/api/os-names"
             },
             "device": {
                 "label": "Device",
                 "contents": [],
                 "active": [],
-                "param": "device",
+                "webParam": "device",
+                "apiParam": "device_id",
                 "hidden": true
             }
         }

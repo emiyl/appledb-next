@@ -73,10 +73,15 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
                 sdk: filter.releaseKinds.sdk.toString(),
                 simulator: filter.releaseKinds.simulator.toString(),
                 search: filter[params.search].toString(),
-                name_id: filter.filters[params.osName].active.map((x: { id: number }) => x.id).join(','),
                 reverse: settings.reverseOrder ? 'true' : 'false',
                 page: p.toString(),
-                limit: params.limit.toString()
+                limit: params.limit.toString(),
+                ...Object.fromEntries(
+                    Object.entries(filter.filters).map(([key, value]) => {
+                        const v = value as { apiParam: string; active: { id: number }[] };
+                        return [v.apiParam, v.active.map((x: { id: number }) => x.id).join(',')];
+                    })
+                )
             }
         },
         processApiData: (data: OsEntry[]) => {
@@ -116,10 +121,15 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
 
             return {
                 search: filter[params.search],
-                category_id: filter.filters[params.categoryID].active.map((x: { id: number }) => x.id).join(','),
                 reverse: settings.reverseOrder ? 'true' : 'false',
                 page: p.toString(),
-                limit: params.limit.toString()
+                limit: params.limit.toString(),
+                ...Object.fromEntries(
+                    Object.entries(filter.filters).map(([key, value]) => {
+                        const v = value as { apiParam: string; active: { id: number }[] };
+                        return [v.apiParam, v.active.map((x: { id: number }) => x.id).join(',')];
+                    })
+                )
             }
         },
         processApiData: (data: DeviceEntry[]) => data,
@@ -139,8 +149,6 @@ export function EntryList({ entryType }: { entryType: EntryType }) {
 
     const [filter, setFilter] = useState(() => getFilter);
     const [settings, setSettings] = useState(() => entryTypeConfig[entryType].settings);
-
-    console.log(filter);
 
     const loadEntries = useCallback(async (append: boolean, page: number = 1) => {
         const url_base = `/api/${entryTypeConfig[entryType].apiEndpoint}?`;
