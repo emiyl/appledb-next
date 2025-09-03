@@ -1,0 +1,46 @@
+{
+    "webURLParams": {
+        "search": "search",
+        "osName": "os"
+    },
+    "settings": {
+        "reverseOrder": false,
+        "showBuildString": true
+    },
+    "filter": {
+        "releaseKinds": {
+            "Release": true,
+            "Beta": true,
+            "Internal": false,
+            "SDK": false,
+            "Simulator": false
+        },
+        "search": "",
+        "filters": {
+            "os_name": {
+                "label": "Firmware name",
+                "contents": [],
+                "active": [],
+                "hidden": false,
+                "param": "os_name",
+                "apiRoute": "/api/os-names"
+            },
+            "device": {
+                "label": "Device",
+                "contents": [],
+                "active": [],
+                "param": "device",
+                "hidden": true
+            }
+        }
+    },
+    "api": {
+        "endpoint": "os-entries",
+        "params": {
+            "search": "search",
+            "osName": "os_name",
+            "page": "default",
+            "limit": 100
+        }
+    }
+}

@@ -17,14 +17,11 @@ export type OsEntryListFilter = {
     },
     search: string;
     filters: EntryListFilterItem;
-    filter_id: number[];
-    device_id: number[];
 };
 
 export type DeviceEntryListFilter = {
     search: string;
     filters: EntryListFilterItem;
-    filter_id: number[];
 };
 
 export type EntryListFilter = OsEntryListFilter | DeviceEntryListFilter;

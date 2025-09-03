@@ -1,0 +1,31 @@
+{
+    "webURLParams": {
+        "search": "search",
+        "deviceCategory": "category"
+    },
+    "settings": {
+        "reverseOrder": false
+    },
+    "filter": {
+        "search": "",
+        "filters": {
+            "category": {
+                "label": "Device category",
+                "contents": [],
+                "active": [],
+                "hidden": false,
+                "param": "category",
+                "apiRoute": "/api/device-categories"
+            }
+        }
+    },
+    "api": {
+        "endpoint": "device",
+        "params": {
+            "search": "search",
+            "categoryID": "category",
+            "page": "default",
+            "limit": 100
+        }
+    }
+}
