@@ -18,6 +18,7 @@ type Device = {
         id: number;
         name: string;
     }[];
+    ids: number[];
     identifiers: string[];
     models: string[];
     socs: string[];
@@ -65,6 +66,7 @@ function normalizeDevices(devices: any[]): Device {
             id: 0,
             name: "Unknown"
         }],
+        ids: [],
         identifiers: [],
         models: [],
         socs: [],
@@ -90,6 +92,7 @@ function normalizeDevices(devices: any[]): Device {
 
     let release_dates: any[] = []
     let categories = new Set<{ id: number; name: string }>();
+    let ids = new Set<number>();
     let identifiers = new Set<string>();
     let models = new Set<string>();
     let socs = new Set<string>();
@@ -97,6 +100,8 @@ function normalizeDevices(devices: any[]): Device {
     let boards = new Set<string>();
 
     for (const dev of devices) {
+        ids.add(dev.id);
+
         if (dev.DeviceMapRelease) {
             release_dates.push(...dev.DeviceMapRelease);
         }
@@ -137,6 +142,7 @@ function normalizeDevices(devices: any[]): Device {
 
     device.releaseDateString = formatReleaseDates(release_dates);
     device.category = Array.from(categories);
+    device.ids = Array.from(ids);
     device.identifiers = Array.from(identifiers).sort();
     device.models = Array.from(models).sort();
     device.socs = Array.from(socs).sort();
@@ -161,7 +167,7 @@ const DeviceEntry: React.FC<DeviceEntryProps> = ({ deviceIds }) => {
             setLoading(false);
             return;
         }
-        const idsParam = deviceIds.join(",");
+        const idsParam = deviceIds.join(';');
         fetch(`/api/device?device_id=${idsParam}`)
             .then(res => {
                 if (!res.ok) throw new Error("Failed to fetch device");
@@ -200,7 +206,25 @@ const DeviceEntry: React.FC<DeviceEntryProps> = ({ deviceIds }) => {
                     {JSON.stringify(device, null, 4)}
                 </pre>
             </pre> */}
-            <EntryList entryType={EntryType.Os} />
+            <h2 style={{ marginBottom: "1.1em" }}>Firmware versions</h2>
+            <div>
+                <EntryList entryType={EntryType.Os} overrideFilter={{
+                    "filters": {
+                        "device": {
+                            "label": "Device",
+                            "active": device.ids.map(id => ({ id, name: id.toString() })),
+                            "hidden": true,
+                            "apiParam": "device_id",
+                            "apiRoute": "/api/device-names"
+                        },
+                        "os_name": {
+                            "label": "",
+                            "active": [],
+                            "hidden": true
+                        }
+                    }
+                }} />
+            </div>
         </div>
     );
 };

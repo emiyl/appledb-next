@@ -11,12 +11,12 @@ export async function GET(req: NextRequest) {
     const offset = (page - 1) * limit;
 
     const categoryIdFilter = searchParams.get('category_id')
-        ?.split(',')
+        ?.split(';')
         .map(id => parseInt(id))
         .filter(id => !isNaN(id));
 
     const deviceIdFilter = searchParams.get('device_id')
-        ?.split(',')
+        ?.split(';')
         .map(id => parseInt(id))
         .filter(id => !isNaN(id));
 
@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
         : undefined;
 
     const legacyUniqueKey = searchParams.get("legacyKey")
-        ?.split(',');
+        ?.split(';');
 
     const reverse = searchParams.get('reverse') === 'true';
 

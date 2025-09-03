@@ -19,7 +19,7 @@ interface EntryListFilterProps {
 }
 
 const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter, setFilter, settings, setSettings, ref, isStuck }) => {
-    const filterItems = filter.filters
+    const filterItems = filter.filters || {};
 
     useEffect(() => {
         async function fetchMultipleNames() {
@@ -34,8 +34,10 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
                     const data = await response.json();
                     
                     const tempFilter = filter;
-                    tempFilter.filters[key].contents = data;
-                    setFilter(tempFilter);
+                    if (tempFilter.filters && tempFilter.filters[key]) {
+                        tempFilter.filters[key].contents = data;
+                        setFilter(tempFilter);
+                    }
                 } catch (error) {
                     console.error(`Error fetching ${label}:`, error);
                 }
@@ -54,8 +56,8 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
         const params = new URLSearchParams(window.location.search);
 
         for (const [key, item] of Object.entries(filterItems)) {
-            if (item.active.length > 0) {
-                params.set(item.webParam || key, item.active.map(({ id }) => obfuscateNumber(id)).join(','));
+            if (item.active.length > 0 && !item.hidden) {
+                params.set(item.webParam || key, item.active.map(({ id }) => obfuscateNumber(id)).join(';'));
             }
             else {
                 params.delete(item.webParam || key);
@@ -65,8 +67,6 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
         window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
         
     }, [filter]);
-
-    console.log(filterItems)
 
     return (
         <div
@@ -106,7 +106,7 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
                             )
                         })
                 }
-                {Object.entries(filterItems).map(([key, item]) => (
+                {Object.entries(filterItems).filter(([_, item]) => !item.hidden).map(([key, item]) => (
                     item.active.map(({ id, name }) => {
                         if (collapseNames && currentItemDrawn >= collapseNamesThreshold) return null;
                         currentItemDrawn++;

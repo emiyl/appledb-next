@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Entry, EntryType, OsEntry, DeviceEntry, OsEntryReleaseKind } from '@/types'
+import { Entry, EntryType, OsEntry, DeviceEntry, OsEntryReleaseKind, EntryListFilter } from '@/types'
 import styles from '@/styles/EntryList.module.scss';
 import EntryListFilterComponent from './EntryListFilter';
 
@@ -26,12 +26,12 @@ type EntryTypeConfig<F, S, R, FR, D> = {
 
 function handleIdCsv(ids: string) {
     if (!ids) return [];
-    return ids.split(',').map((id: string) => deobfuscateNumber(Number(id.trim()))) || [];
+    return ids.split(';').map((id: string) => deobfuscateNumber(Number(id.trim()))) || [];
 }
 
 const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any>> = {
     [EntryType.Os]: {
-        filter: (searchParams: any) => {
+        filter: (searchParams: any, overrideFilter?: EntryListFilter) => {
             const config = osEntryListConfig;
 
             return {
@@ -43,14 +43,18 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
                         value
                     ])
                 ),
-                filters: Object.fromEntries(
-                    Object.entries(config.filter.filters).map(([key, value]) => {
-                        const v = value as { webParam: string; contents: {id: number, name: string}[] };
-                        const ids = handleIdCsv(searchParams.get(v.webParam) || '');
-                        v.contents = v.contents.filter((item: { id: number; name: string }) => ids.includes(item.id));
-                        return [key, v];
-                    })
-                )
+                ...(overrideFilter ? overrideFilter : {}),
+                filters: {
+                    ...Object.fromEntries(
+                        Object.entries(config.filter.filters).map(([key, value]) => {
+                            const v = value as { webParam: string; contents: {id: number, name: string}[] };
+                            const ids = handleIdCsv(searchParams.get(v.webParam) || '');
+                            v.contents = v.contents.filter((item: { id: number; name: string }) => ids.includes(item.id));
+                            return [key, v];
+                        }),
+                    ),
+                    ...(overrideFilter ? overrideFilter.filters : {}),
+                },
             };
         },
         settings: () => {
@@ -80,7 +84,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
                 ...Object.fromEntries(
                     Object.entries(filter.filters).map(([key, value]) => {
                         const v = value as { apiParam: string; active: { id: number }[] };
-                        return [v.apiParam, v.active.map((x: { id: number }) => x.id).join(',')];
+                        return [v.apiParam, v.active.map((x: { id: number }) => x.id).join(';')];
                     })
                 )
             }
@@ -93,19 +97,23 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
         },
     },
     [EntryType.Device]: {
-        filter: (searchParams: any) => {
+        filter: (searchParams: any, overrideFilter?: EntryListFilter) => {
             const config = deviceEntryListConfig;
             return {
                 ...config.filter,
                 search: searchParams.get('search') || '',
-                filters: Object.fromEntries(
-                    Object.entries(config.filter.filters).map(([key, value]) => {
-                        const v = value as { webParam: string; contents: {id: number, name: string}[] };
-                        const ids = handleIdCsv(searchParams.get(v.webParam) || '');
-                        v.contents = v.contents.filter((item: { id: number; name: string }) => ids.includes(item.id));
-                        return [key, v];
-                    })
-                )
+                ...(overrideFilter ? overrideFilter : {}),
+                filters: {
+                    ...Object.fromEntries(
+                        Object.entries(config.filter.filters).map(([key, value]) => {
+                            const v = value as { webParam: string; contents: {id: number, name: string}[] };
+                            const ids = handleIdCsv(searchParams.get(v.webParam) || '');
+                            v.contents = v.contents.filter((item: { id: number; name: string }) => ids.includes(item.id));
+                            return [key, v];
+                        }),
+                    ),
+                    ...(overrideFilter ? overrideFilter.filters : {}),
+                },
             };
         },
         settings: () => {
@@ -129,7 +137,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
                 ...Object.fromEntries(
                     Object.entries(filter.filters).map(([key, value]) => {
                         const v = value as { apiParam: string; active: { id: number }[] };
-                        return [v.apiParam, v.active.map((x: { id: number }) => x.id).join(',')];
+                        return [v.apiParam, v.active.map((x: { id: number }) => x.id).join(';')];
                     })
                 )
             }
@@ -138,7 +146,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
     }
 };
 
-export function EntryList({ entryType }: { entryType: EntryType }) {
+export function EntryList({ entryType, overrideFilter }: { entryType: EntryType, overrideFilter?: EntryListFilter }) {
     const [entries, setEntries] = useState<Entry[]>([]);
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
@@ -147,12 +155,15 @@ export function EntryList({ entryType }: { entryType: EntryType }) {
     const areParamsChanging = useRef(false);
     const searchParams = useSearchParams();
 
-    const [filter, setFilter] = useState(() => entryTypeConfig[entryType].filter(searchParams));
+    const [filter, setFilter] = useState(() => entryTypeConfig[entryType].filter(searchParams, overrideFilter));
     const [settings, setSettings] = useState(() => entryTypeConfig[entryType].settings);
+
+    let [noEntriesText, setNoEntriesText] = useState("Loading...");
 
     const loadEntries = useCallback(async (append: boolean, page: number = 1) => {
         const url_base = `/api/${entryTypeConfig[entryType].apiEndpoint}?`;
         const url_params = new URLSearchParams(entryTypeConfig[entryType].getApiParams(filter, settings, page));
+
 
         const res = await fetch(url_base + url_params.toString(), {
             method: 'GET',
@@ -177,6 +188,8 @@ export function EntryList({ entryType }: { entryType: EntryType }) {
         } else {
             setEntries(data);
         }
+
+        setNoEntriesText("No entries found.");
 
         setHasMore(data.length > 0);
     }, [filter, settings, entryType]);
@@ -235,6 +248,8 @@ export function EntryList({ entryType }: { entryType: EntryType }) {
             if (sentinel) observer.unobserve(sentinel);
         };
     }, []);
+
+    if (entries.length === 0) return <p>{noEntriesText}</p>;
 
     return (
         <div style={{ overflow: 'visible' }}>

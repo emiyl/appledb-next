@@ -43,7 +43,7 @@ const OsEntryListItem: React.FC<OsEntryListRowProps> = ({ entry }) => {
                     {releaseDate.length > 0 ? <li>Released on {releaseDate[0]}</li> : <li>Unknown release date</li>}
                 </ul>
                 <div>
-                    <Link href={`/device/${entry.name.replace(/\s+/g, '-')}.${obfuscateNumber(entry.id)}`}>View device page</Link>
+                    <Link href={`/device/${entry.name.replace(/\s+/g, '-').replace(/[^\w-]+/g, '')}.${obfuscateNumber(entry.id)}`}>View device page</Link>
                 </div>
             </div>
         </div>
