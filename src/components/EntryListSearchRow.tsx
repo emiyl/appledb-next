@@ -72,7 +72,7 @@ const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, set
             </div>
             <div ref={settingsRef}>
                 <div
-                    className={`${styles.filterItem} ${styles.add} ${styles.filterSelected} ${styles.toggleDropdown}`}
+                    className={styles.filterItem}
                     onClick={() => setShowSettingsDropdown(!showSettingsDropdown)}
                 >
                     <div className={styles.filterIcon}><FontAwesomeIcon icon={faCog} /></div>

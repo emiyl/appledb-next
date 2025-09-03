@@ -44,6 +44,20 @@ $gap: 1.5em;
     }
 }
 
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+    }
+    
+    .mobileDate {
+        margin-top: .5em;
+    }
+}
+
 .imageWrapper {
     height: 8em;
     display: flex;

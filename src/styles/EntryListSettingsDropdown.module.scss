@@ -16,11 +16,11 @@ $dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
 
     display: flex;
     flex-flow: column nowrap;
-    gap: 1em;
+    gap: 1.2em;
     z-index: 10;
 
     h3 {
-        margin-block: 0em;
+        margin-block: 0em 4px;
         width: 100%;
     }
 }
@@ -28,7 +28,51 @@ $dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
 .row {
     display: flex;
     flex-flow: row wrap;
-    gap: .7em;
+    gap: 1.5em;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.reverseOrder, .showBuildString {
+    all: unset;
+    cursor: pointer;
+    
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+        transition: opacity 0.2s;
+        opacity: 1;
+        background-color: $c-text-lightest;
+    }
+}
+
+.reverseOrder::before {
+    background: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg');
+    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg') no-repeat center / contain;
+    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg') no-repeat center / contain;
+}
+
+.reverseOrder.active::before {
+    background: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg');
+    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg') no-repeat center / contain;
+    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg') no-repeat center / contain;
+    transform: scaleY(-1);
+}
+
+.showBuildString::before {
+    background: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye.svg');
+    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye.svg') no-repeat center / contain;
+    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye.svg') no-repeat center / contain;
+}
+
+.showBuildString.active::before {
+    background: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye-slash.svg');
+    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye-slash.svg') no-repeat center / contain;
+    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye-slash.svg') no-repeat center / contain;
 }
 
 @media screen and (max-width: 800px) {

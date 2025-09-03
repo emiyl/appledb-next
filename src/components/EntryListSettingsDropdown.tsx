@@ -28,9 +28,10 @@ const EntryListSettingsDropdown: React.FC<EntryListSettingsDropdownProps> = ({ s
                 <div className={styles.row} key={key}>
                     <span>{rowStrings[key]}</span>
                     <input
-                    type="checkbox"
-                    checked={!!value}
-                    onChange={() => handleCheckboxChange(key as keyof typeof settings)}
+                        className={`${styles[key]} ${value ? styles.active : ''}`}
+                        type="checkbox"
+                        checked={!!value}
+                        onChange={() => handleCheckboxChange(key as keyof typeof settings)}
                     />
                 </div>
             ))}
