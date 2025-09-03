@@ -200,12 +200,6 @@ const DeviceEntry: React.FC<DeviceEntryProps> = ({ deviceIds }) => {
         <div>
             <DeviceHeader device={device} />
             <DeviceInfoTable device={device} />
-            {/* <h2>Device Data (JSON)</h2>
-            <pre>
-                <pre>
-                    {JSON.stringify(device, null, 4)}
-                </pre>
-            </pre> */}
             <h2 style={{ marginBottom: "1.1em" }}>Firmware versions</h2>
             <div>
                 <EntryList entryType={EntryType.Os} overrideFilter={{
@@ -303,27 +297,45 @@ type DeviceInfoTableProps = {
 };
 
 const DeviceInfoTable: React.FC<DeviceInfoTableProps> = ({ device }) => {
+    const [infoItems, setInfoItems] = useState([
+        { label: "Identifier", values: device.identifiers },
+        { label: "Model", values: device.models },
+        { label: "System on Chip (SoC)", values: device.socs },
+        { label: "Architecture", values: device.archs },
+        { label: "Board", values: device.boards }
+    ].map(item => ({
+        ...item,
+        visibleItems: 3
+    })));
+
     return (
         (
-            [
-                { label: "Identifier", values: device.identifiers },
-                { label: "Model", values: device.models },
-                { label: "System on Chip (SoC)", values: device.socs },
-                { label: "Architecture", values: device.archs },
-                { label: "Board", values: device.boards }
-            ].some(({ values }) => values.length > 0) && (
+            infoItems.some(({ values }) => values.length > 0) && (
                 <div className={styles.infoTable}>
-                    {[
-                        { label: "Identifier", values: device.identifiers },
-                        { label: "Model", values: device.models },
-                        { label: "System on Chip (SoC)", values: device.socs },
-                        { label: "Architecture", values: device.archs },
-                        { label: "Board", values: device.boards }
-                    ].map(({ label, values }) =>
+                    {infoItems.map(({ label, values, visibleItems }) =>
                         values.length > 0 && (
                             <React.Fragment key={label}>
                                 <h5>{label}</h5>
-                                <p>{values.join(", ")}</p>
+                                <p>
+                                    {values.slice(0, visibleItems).join(", ")}
+                                    {values.length > visibleItems && (
+                                        <span> and {values.length - visibleItems} more
+                                            <a
+                                                onClick={e => {
+                                                    e.preventDefault();
+                                                    setInfoItems(prev =>
+                                                        prev.map(item =>
+                                                            item.label === label
+                                                                ? { ...item, visibleItems: values.length }
+                                                                : item
+                                                        )
+                                                    );
+                                                }}
+                                                style={{ cursor: "pointer" }}
+                                            > ...</a>
+                                        </span>
+                                    )}
+                                </p>
                             </React.Fragment>
                         )
                     )}
