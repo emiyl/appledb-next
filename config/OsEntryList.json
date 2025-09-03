@@ -1,8 +1,4 @@
 {
-    "webURLParams": {
-        "search": "search",
-        "osName": "os"
-    },
     "settings": {
         "reverseOrder": false,
         "showBuildString": true
@@ -30,9 +26,10 @@
                 "label": "Device",
                 "contents": [],
                 "active": [],
+                "hidden": true,
                 "webParam": "device",
                 "apiParam": "device_id",
-                "hidden": true
+                "apiRoute": "/api/device-names"
             }
         }
     },

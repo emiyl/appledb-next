@@ -36,20 +36,21 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
 
             return {
                 ...config.filter,
-                search: searchParams.get(config.webURLParams.search) || '',
+                search: searchParams.get('search') || '',
                 'releaseKinds': Object.fromEntries(
                     Object.entries(config.filter.releaseKinds).map(([key, value]) => [
                         OsEntryReleaseKind[key as keyof typeof OsEntryReleaseKind],
                         value
                     ])
                 ),
-                filters: {
-                    ...config.filter.filters,
-                    'os_name': {
-                        ...config.filter.filters['os_name'],
-                        contents: handleIdCsv(searchParams.get(config.webURLParams.osName) || '')
-                    }
-                }
+                filters: Object.fromEntries(
+                    Object.entries(config.filter.filters).map(([key, value]) => {
+                        const v = value as { webParam: string; contents: {id: number, name: string}[] };
+                        const ids = handleIdCsv(searchParams.get(v.webParam) || '');
+                        v.contents = v.contents.filter((item: { id: number; name: string }) => ids.includes(item.id));
+                        return [key, v];
+                    })
+                )
             };
         },
         settings: () => {
@@ -96,14 +97,15 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
             const config = deviceEntryListConfig;
             return {
                 ...config.filter,
-                search: searchParams.get(config.webURLParams.search) || '',
-                filters: {
-                    ...config.filter.filters,
-                    'category': {
-                        ...config.filter.filters['category'],
-                        contents: handleIdCsv(searchParams.get(config.webURLParams.deviceCategory) || '')
-                    }
-                }
+                search: searchParams.get('search') || '',
+                filters: Object.fromEntries(
+                    Object.entries(config.filter.filters).map(([key, value]) => {
+                        const v = value as { webParam: string; contents: {id: number, name: string}[] };
+                        const ids = handleIdCsv(searchParams.get(v.webParam) || '');
+                        v.contents = v.contents.filter((item: { id: number; name: string }) => ids.includes(item.id));
+                        return [key, v];
+                    })
+                )
             };
         },
         settings: () => {
@@ -143,18 +145,15 @@ export function EntryList({ entryType }: { entryType: EntryType }) {
     const loaderRef = useRef<HTMLDivElement | null>(null);
     const hasMounted = useRef(false);
     const areParamsChanging = useRef(false);
-
     const searchParams = useSearchParams();
-    const getFilter = entryTypeConfig[entryType].filter(searchParams);
 
-    const [filter, setFilter] = useState(() => getFilter);
+    const [filter, setFilter] = useState(() => entryTypeConfig[entryType].filter(searchParams));
     const [settings, setSettings] = useState(() => entryTypeConfig[entryType].settings);
 
     const loadEntries = useCallback(async (append: boolean, page: number = 1) => {
         const url_base = `/api/${entryTypeConfig[entryType].apiEndpoint}?`;
-        const url_params = new URLSearchParams(
-            entryTypeConfig[entryType].getApiParams(filter, settings, page)
-        );
+        const url_params = new URLSearchParams(entryTypeConfig[entryType].getApiParams(filter, settings, page));
+
         const res = await fetch(url_base + url_params.toString(), {
             method: 'GET',
             headers: {
@@ -162,6 +161,7 @@ export function EntryList({ entryType }: { entryType: EntryType }) {
                 'Accept': 'application/json'
             }
         });
+
         const rawData = await res.json();
         const data: Entry[] = entryTypeConfig[entryType].processApiData
             ? entryTypeConfig[entryType].processApiData(rawData)

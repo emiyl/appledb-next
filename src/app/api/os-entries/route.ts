@@ -1,5 +1,3 @@
-import { MapDeviceOs } from './../../../generated/prisma/index.d';
-import { OsEntry } from '@/types';
 import { NextRequest } from 'next/server';
 import { prisma } from '@/lib/prisma';
 

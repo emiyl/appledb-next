@@ -1,8 +1,4 @@
 {
-    "webURLParams": {
-        "search": "search",
-        "deviceCategory": "category"
-    },
     "settings": {
         "reverseOrder": false
     },

@@ -23,9 +23,8 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
 
     useEffect(() => {
         async function fetchMultipleNames() {
-            const names: { [key: string]: { id: number; name: string }[] } = {};
-            for (const [key, { contents, apiRoute, label }] of Object.entries(filterItems)) {
-                if (!apiRoute) continue;
+            for (const [key, { apiRoute, hidden, label }] of Object.entries(filterItems)) {
+                if (!apiRoute || hidden) continue;
 
                 try {
                     const response = await fetch(apiRoute);
@@ -66,6 +65,8 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
         window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
         
     }, [filter]);
+
+    console.log(filterItems)
 
     return (
         <div
