@@ -32,13 +32,13 @@ function handleIdCsv(ids: string) {
 const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any>> = {
     [EntryType.Os]: {
         filter: (searchParams: any, overrideFilter?: EntryListFilter) => {
-            const config = osEntryListConfig;
+            const { filter } = osEntryListConfig;
 
             return {
-                ...config.filter,
+                ...filter,
                 search: searchParams.get('search') || '',
                 'releaseKinds': Object.fromEntries(
-                    Object.entries(config.filter.releaseKinds).map(([key, value]) => [
+                    Object.entries(filter.releaseKinds).map(([key, value]) => [
                         OsEntryReleaseKind[key as keyof typeof OsEntryReleaseKind],
                         value
                     ])
@@ -46,7 +46,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
                 ...(overrideFilter ? overrideFilter : {}),
                 filters: {
                     ...Object.fromEntries(
-                        Object.entries(config.filter.filters).map(([key, value]) => {
+                        Object.entries(filter.filters).map(([key, value]) => {
                             const v = value as { webParam: string; contents: {id: number, name: string}[] };
                             const ids = handleIdCsv(searchParams.get(v.webParam) || '');
                             v.contents = v.contents.filter((item: { id: number; name: string }) => ids.includes(item.id));
@@ -58,7 +58,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
             };
         },
         settings: () => {
-            const settings = osEntryListConfig.settings;
+            const { settings } = osEntryListConfig;
             return {
                 reverseOrder: settings.reverseOrder,
                 showBuildString: settings.showBuildString
@@ -98,14 +98,14 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
     },
     [EntryType.Device]: {
         filter: (searchParams: any, overrideFilter?: EntryListFilter) => {
-            const config = deviceEntryListConfig;
+            const { filter } = deviceEntryListConfig;
             return {
-                ...config.filter,
+                ...filter,
                 search: searchParams.get('search') || '',
                 ...(overrideFilter ? overrideFilter : {}),
                 filters: {
                     ...Object.fromEntries(
-                        Object.entries(config.filter.filters).map(([key, value]) => {
+                        Object.entries(filter.filters).map(([key, value]) => {
                             const v = value as { webParam: string; contents: {id: number, name: string}[] };
                             const ids = handleIdCsv(searchParams.get(v.webParam) || '');
                             v.contents = v.contents.filter((item: { id: number; name: string }) => ids.includes(item.id));
@@ -117,7 +117,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
             };
         },
         settings: () => {
-            const settings = deviceEntryListConfig.settings;
+            const { settings } = deviceEntryListConfig;
             return {
                 reverseOrder: settings.reverseOrder,
             }
@@ -156,7 +156,7 @@ export function EntryList({ entryType, overrideFilter }: { entryType: EntryType,
     const searchParams = useSearchParams();
 
     const [filter, setFilter] = useState(() => entryTypeConfig[entryType].filter(searchParams, overrideFilter));
-    const [settings, setSettings] = useState(() => entryTypeConfig[entryType].settings);
+    const [settings, setSettings] = useState(() => entryTypeConfig[entryType].settings());
 
     let [noEntriesText, setNoEntriesText] = useState("Loading...");
 
