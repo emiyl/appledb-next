@@ -16,7 +16,6 @@ type EntryListFilterDropdownProps = {
 const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entryType, filterObject, setFilterObject, filterItems }) => {
     const [filterItemsTruncateCount, setFilterItemsTruncateCount] = React.useState(5);
     const [filterItemsIncrement, setFilterItemsIncrement] = React.useState(10);
-    const { filters } = filterObject;
     
     return (
         <div className={styles.dropdown}>
@@ -26,12 +25,13 @@ const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entry
                     setFilter={setFilterObject as React.Dispatch<React.SetStateAction<OsEntryListFilter>>}
                 />
             )}
-            { Object.entries(filters)
+            { Object.entries(filterItems ?? {})
             .filter(([_, filterValue]) => !filterValue.hidden)
             .map(([filterKey, filterValue]) => (
                 <div className={styles.row} key={filterKey}>
                     <h3>{filterValue.label}</h3>
-                    { filterValue.contents
+                    { filterValue.contents &&
+                    filterValue.contents
                     .filter(item => !filterValue.active.some(activeItem => activeItem.id === item.id))
                     .slice(0, filterItemsTruncateCount)
                     .map(({ id, name }) => (
@@ -53,7 +53,8 @@ const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entry
                             })}
                         />
                     ))}
-                    {filterItemsTruncateCount < filterValue.contents.length - filterValue.active.length && (
+                    {filterValue.contents &&
+                        filterItemsTruncateCount < filterValue.contents.length - filterValue.active.length && (
                         <EntryListFilterItemComponent
                             label="Show more"
                             icon={faCaretDown}
