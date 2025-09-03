@@ -10,6 +10,23 @@ export const defaultOsEntryListFilter: OsEntryListFilter = {
         [OsEntryReleaseKind.Simulator]: false
     },
 	search: '',
+    filters: {
+        'os_name': {
+            label: "Firmware name",
+            contents: [],
+			active: [],
+            hidden: false,
+            param: 'os_name',
+            apiRoute: '/api/os-names'
+        },
+        'device': {
+            label: "Device",
+            contents: [],
+			active: [],
+            param: 'device',
+            hidden: true
+        }
+    },
 	filter_id: [],
 	device_id: []
 };

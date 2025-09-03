@@ -1,61 +1,60 @@
 import React from 'react';
 import styles from '@/styles/EntryListFilterDropdown.module.scss';
-import { EntryType, EntryListFilter, OsEntryListFilter } from '@/types';
+import { EntryType, EntryListFilter, OsEntryListFilter, EntryListFilterItem } from '@/types';
 import { faCaretDown, faPlus } from '@fortawesome/free-solid-svg-icons';
 
-import EntryListFilterItem from './EntryListFilterItem';
+import EntryListFilterItemComponent from './EntryListFilterItem';
 import OsEntryListFilterDropdownReleaseKind from './OsEntryListFilterDropdownReleaseKind';
 
 type EntryListFilterDropdownProps = {
     entryType: EntryType;
-    filter: EntryListFilter;
-    setFilter: React.Dispatch<React.SetStateAction<EntryListFilter>>;
-    filterItems: { id: number; name: string }[];
+    filterObject: EntryListFilter;
+    setFilterObject: React.Dispatch<React.SetStateAction<EntryListFilter>>;
+    filterItems: EntryListFilterItem;
 };
 
-const rowStrings: Record<string, Record<string, string>> = {
-    [EntryType.Os]: { filter_id: 'Firmware name' },
-    [EntryType.Device]: { category_id: 'Device category' },
-};
-
-const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entryType, filter, setFilter, filterItems }) => {
+const EntryListFilterDropdown: React.FC<EntryListFilterDropdownProps> = ({ entryType, filterObject, setFilterObject, filterItems }) => {
     const [filterItemsTruncateCount, setFilterItemsTruncateCount] = React.useState(5);
     const [filterItemsIncrement, setFilterItemsIncrement] = React.useState(10);
+    const { filters } = filterObject;
     
-    const filterRows = Object.keys(filter)
-        .filter((key) => !['search', 'releaseKinds'].includes(key));
-
     return (
         <div className={styles.dropdown}>
             {entryType === EntryType.Os && (
                 <OsEntryListFilterDropdownReleaseKind
-                    filter={filter as OsEntryListFilter}
-                    setFilter={setFilter as React.Dispatch<React.SetStateAction<OsEntryListFilter>>}
+                    filter={filterObject as OsEntryListFilter}
+                    setFilter={setFilterObject as React.Dispatch<React.SetStateAction<OsEntryListFilter>>}
                 />
             )}
-            {filterRows.map((rowKey) => (
-                <div className={styles.row} key={rowKey as string}>
-                    <h3>{rowStrings[entryType][rowKey]}</h3>
-                    {filterItems
-                        .filter(({ id }) =>
-                            !(filter[rowKey as keyof typeof filter] as unknown as any[]).includes(id)
-                        )
-                        .slice(0, filterItemsTruncateCount)
-                        .map(({ id, name }) => (
-                            <EntryListFilterItem
-                                key={id}
-                                label={name}
-                                icon={faPlus}
-                                classes={[styles.filterItem]}
-                                onClick={() => setFilter((prevFilter: any) => ({
-                                    ...prevFilter,
-                                    [rowKey]: [...(prevFilter as any)[rowKey], id]
-                                }))}
-                            />
-                        ))
-                    }
-                    {filterItemsTruncateCount < filterItems.filter(({ id }) => !((filter[rowKey as keyof typeof filter] as number[]).includes(id))).length && (
-                        <EntryListFilterItem
+            { Object.entries(filters)
+            .filter(([_, filterValue]) => !filterValue.hidden)
+            .map(([filterKey, filterValue]) => (
+                <div className={styles.row} key={filterKey}>
+                    <h3>{filterValue.label}</h3>
+                    { filterValue.contents
+                    .filter(item => !filterValue.active.some(activeItem => activeItem.id === item.id))
+                    .slice(0, filterItemsTruncateCount)
+                    .map(({ id, name }) => (
+                        <EntryListFilterItemComponent
+                            key={id}
+                            label={name}
+                            icon={faPlus}
+                            classes={[styles.filterItem]}
+                            onClick={() => setFilterObject((prevFilter: any) => {
+                                const newFilters = { ...prevFilter.filters };
+                                const active = newFilters[filterKey].active || [];
+                                if (!active.includes(id)) {
+                                    newFilters[filterKey] = {
+                                        ...newFilters[filterKey],
+                                        active: [...active, {id, name}]
+                                    };
+                                }
+                                return { ...prevFilter, filters: newFilters };
+                            })}
+                        />
+                    ))}
+                    {filterItemsTruncateCount < filterValue.contents.length - filterValue.active.length && (
+                        <EntryListFilterItemComponent
                             label="Show more"
                             icon={faCaretDown}
                             classes={[styles.filterItem]}

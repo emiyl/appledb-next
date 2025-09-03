@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Entry, EntryType, OsEntry, DeviceEntry, EntryListFilter } from '@/types'
 import styles from '@/styles/EntryList.module.scss';
-import EntryListFilterRow from './EntryListFilterRow';
+import EntryListFilterComponent from './EntryListFilter';
 
 import { defaultOsEntryListFilter, defaultOsEntryListSettings } from '@/utils';
 import OsEntryListItem from './OsEntryListItem';
@@ -34,7 +34,14 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
             return {
                 ...defaultOsEntryListFilter,
                 search: searchParams.get('search') || '',
-                filter_id: handleIdCsv(searchParams.get('os') || '')
+                filter_id: handleIdCsv(searchParams.get('os') || ''),
+                filters: {
+                    ...defaultOsEntryListFilter.filters,
+                    'os_name': {
+                        ...defaultOsEntryListFilter.filters['os_name'],
+                        contents: handleIdCsv(searchParams.get('os') || '')
+                    }
+                }
             };
         },
         settings: defaultOsEntryListSettings,
@@ -48,7 +55,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
             sdk: filter.releaseKinds.sdk.toString(),
             simulator: filter.releaseKinds.simulator.toString(),
             search: filter.search,
-            name_id: filter.filter_id.join(','),
+            name_id: filter.filters['os_name'].active.map((x: { id: number }) => x.id).join(','),
             reverse: settings.reverseOrder ? 'true' : 'false',
             page: page.toString(),
             limit: '100'
@@ -65,7 +72,14 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
             return {
                 ...defaultDeviceEntryListFilter,
                 search: searchParams.get('search') || '',
-                filter_id: handleIdCsv(searchParams.get('category') || '')
+                filter_id: handleIdCsv(searchParams.get('category') || ''),
+                filters: {
+                    ...defaultDeviceEntryListFilter.filters,
+                    'category': {
+                        ...defaultDeviceEntryListFilter.filters['category'],
+                        contents: handleIdCsv(searchParams.get('category') || '')
+                    }
+                }
             };
         },
         settings: defaultDeviceEntryListSettings,
@@ -74,7 +88,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
         apiEndpoint: 'device',
         getApiParams: (filter, settings, page) => ({
             search: filter.search,
-            category_id: filter.filter_id.join(','),
+            category_id: filter.filters['category'].active.map((x: { id: number }) => x.id).join(','),
             reverse: settings.reverseOrder ? 'true' : 'false',
             page: page.toString(),
             limit: '100'
@@ -186,7 +200,7 @@ export function EntryList({ entryType }: { entryType: EntryType }) {
     return (
         <div style={{ overflow: 'visible' }}>
             <div ref={sentinelRef} style={{ height: 1 }}></div>
-            <EntryListFilterRow
+            <EntryListFilterComponent
                 entryType={entryType}
                 filter={filter}
                 setFilter={setFilter}

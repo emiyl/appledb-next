@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMagnifyingGlass, faCog } from '@fortawesome/free-solid-svg-icons';
 import EntryListFilterDropdown from './EntryListFilterDropdown';
 import EntryListSettingsDropdown from './EntryListSettingsDropdown';
-import { EntryType, EntryListFilter, EntryListSettings, OsEntryListSettings } from '@/types';
+import { EntryType, EntryListFilter, EntryListSettings, OsEntryListSettings, EntryListFilterItem } from '@/types';
 
 type SearchRowProps = {
     entryType: EntryType;
@@ -13,10 +13,10 @@ type SearchRowProps = {
     setFilter: React.Dispatch<React.SetStateAction<EntryListFilter>>;
     settings: EntryListSettings;
     setSettings: React.Dispatch<React.SetStateAction<EntryListSettings>>;
-    names: { id: number; name: string }[];
+    filterItems: EntryListFilterItem;
 };
 
-const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, settings, setSettings, names }) => {
+const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, settings, setSettings, filterItems }) => {
     const [showFilterDropdown, setShowFilterDropdown] = useState(false);
     const [showSettingsDropdown, setShowSettingsDropdown] = useState(false);
 
@@ -52,9 +52,9 @@ const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, set
                 {showFilterDropdown && (
                     <EntryListFilterDropdown
                         entryType={entryType}
-                        filter={filter}
-                        setFilter={setFilter}
-                        filterItems={names}
+                        filterObject={filter}
+                        setFilterObject={setFilter}
+                        filterItems={filterItems}
                     />
                 )}
             </div>
