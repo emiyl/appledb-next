@@ -56,10 +56,10 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
 
         for (const [key, item] of Object.entries(filterItems)) {
             if (item.active.length > 0) {
-                params.set(item.param || key, item.active.map(({ id }) => obfuscateNumber(id)).join(','));
+                params.set(item.webParam || key, item.active.map(({ id }) => obfuscateNumber(id)).join(','));
             }
             else {
-                params.delete(item.param || key);
+                params.delete(item.webParam || key);
             }
         }
 

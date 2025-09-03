@@ -6,7 +6,8 @@ export type EntryListFilterItem = {
         contents: { id: number, name: string }[];
         active: { id: number, name: string }[];
         hidden: boolean;
-        param?: string;
+        webParam?: string;
+        apiParam?: string;
         apiRoute?: string | undefined;
     };
 };
