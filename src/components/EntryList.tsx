@@ -249,8 +249,6 @@ export function EntryList({ entryType, overrideFilter }: { entryType: EntryType,
         };
     }, []);
 
-    if (entries.length === 0) return <p>{noEntriesText}</p>;
-
     return (
         <div style={{ overflow: 'visible' }}>
             <div ref={sentinelRef} style={{ height: 1 }}></div>
@@ -263,18 +261,22 @@ export function EntryList({ entryType, overrideFilter }: { entryType: EntryType,
                 ref={stickyRef}
                 isStuck={isStuck}
             />
-            <div className={entryTypeConfig[entryType].style}>
-                {entries.map((entry) => {
-                    const RowComponent = entryTypeConfig[entryType].row;
-                    return (
-                        <RowComponent
-                            key={entry.id}
-                            entry={entry}
-                            showBuildString={settings.showBuildString}
-                        />
-                    );
-                })}
-            </div>
+            {
+                entries.length > 0 ? (
+                    <div className={entryTypeConfig[entryType].style}>
+                        {entries.map((entry) => {
+                            const RowComponent = entryTypeConfig[entryType].row;
+                            return (
+                                <RowComponent
+                                    key={entry.id}
+                                    entry={entry}
+                                    showBuildString={settings.showBuildString}
+                                />
+                            );
+                        })}
+                    </div>
+                ) : <p>{noEntriesText}</p>
+            }
             {hasMore && <div ref={loaderRef}></div>}
         </div>
     );
