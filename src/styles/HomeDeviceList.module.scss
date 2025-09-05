@@ -1,0 +1,54 @@
+@use '@/styles/variables.scss' as *;
+
+.gridView {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin-top: 2em;
+    gap: 2em;
+
+    @media (max-width: 1400px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+$image-height: 5em;
+
+.gridBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform $t-hover, background $t-hover, box-shadow $t-hover;
+    border-radius: 1em;
+    
+    margin-inline: -1em;
+    padding-inline: 1em;
+
+    @media (max-width: 1400px) {
+        margin-inline: 0;
+        padding-inline: 0;
+    }
+
+    h3 {
+        margin-block: 3em 0;
+        padding-bottom: 1em;
+    }
+
+    img {
+        max-height: $image-height;
+        margin-top: 2em;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        background: radial-gradient(circle, var(--c-bg-light) 40%, var(--c-bg-lighter) 140%);
+        cursor: pointer;
+        box-shadow: var(--filter-item-shadow);
+    }
+}
+
+.gridImage {
+    height: $image-height;
+}
