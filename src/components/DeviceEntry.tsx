@@ -190,6 +190,24 @@ const DeviceEntry: React.FC<DeviceEntryProps> = ({ deviceIds }) => {
             });
     }, [deviceIds]);
 
+    const [hasOsEntries, setHasOsEntries] = useState<boolean | null>(null);
+
+    useEffect(() => {
+        if (!device || device.ids.length === 0) {
+            setHasOsEntries(null);
+            return;
+        }
+        fetch('/api/devices-with-os-entries')
+            .then(res => {
+                if (!res.ok) throw new Error("Failed to fetch devices with OS entries");
+                return res.json();
+            })
+            .then((ids: number[]) => {
+                setHasOsEntries(device.ids.some(id => ids.includes(id)));
+            })
+            .catch(() => setHasOsEntries(null));
+    }, [device]);
+
     if (loading) return <div>Loading device...</div>;
     if (error) return <div>Error: {error}</div>;
     if (!device) return <div>
@@ -201,25 +219,29 @@ const DeviceEntry: React.FC<DeviceEntryProps> = ({ deviceIds }) => {
         <div>
             <DeviceHeader device={device} />
             <DeviceInfoTable device={device} />
-            <h2 style={{ marginBottom: "1.1em" }}>Firmware versions</h2>
-            <div>
-                <EntryList entryType={EntryType.Os} overrideFilter={{
-                    "filters": {
-                        "device": {
-                            "label": "Device",
-                            "active": device.ids.map(id => ({ id, name: id.toString() })),
-                            "hidden": true,
-                            "apiParam": "device_id",
-                            "apiRoute": "/api/device-names"
-                        },
-                        "os_name": {
-                            "label": "",
-                            "active": [],
-                            "hidden": true
-                        }
-                    }
-                }} />
-            </div>
+            {hasOsEntries && (
+                <>
+                    <h2 style={{ marginBottom: "1.1em" }}>Firmware versions</h2>
+                    <div>
+                        <EntryList entryType={EntryType.Os} overrideFilter={{
+                            "filters": {
+                                "device": {
+                                    "label": "Device",
+                                    "active": device.ids.map(id => ({ id, name: id.toString() })),
+                                    "hidden": true,
+                                    "apiParam": "device_id",
+                                    "apiRoute": "/api/device-names"
+                                },
+                                "os_name": {
+                                    "label": "",
+                                    "active": [],
+                                    "hidden": true
+                                }
+                            }
+                        }} />
+                    </div>
+                </>
+            )}
         </div>
     );
 };
