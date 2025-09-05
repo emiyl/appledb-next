@@ -2,8 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import styles from '@/styles/DeviceEntryListRow.module.scss';
 import { DeviceEntry } from '@/types'
-import { formatDateToString } from '@/utils';
+import { formatDateToString, isDarkModeFunc } from '@/utils';
 import { obfuscateNumber } from '@/utils/obfuscate';
+import Image from './Image';
 
 interface OsEntryListRowProps {
     entry: DeviceEntry;
@@ -11,11 +12,12 @@ interface OsEntryListRowProps {
 
 const OsEntryListItem: React.FC<OsEntryListRowProps> = ({ entry }) => {
     let device_image = entry.DeviceLookupImage
+    const isDarkMode = isDarkModeFunc();
 
     let image = device_image.name || 'logo';
-    let colors = device_image.DeviceImageColors && device_image.DeviceImageColors.length > 0 
-        ? device_image.DeviceImageColors.map(color => color.ColorLookup.name) 
-        : ['0'];
+    let colors = device_image.DeviceImageColors && device_image.DeviceImageColors.length > 0
+        ? device_image.DeviceImageColors.map(color => [color.ColorLookup.name, color.dark_mode && isDarkMode ? '_dark' : ''].join(''))
+        : [['0', isDarkMode ? '_dark' : ''].join('')];
 
     let architectures = entry.DeviceMapArchitecture.map(arch => arch.DeviceLookupArchitecture.name);
     let identifiers = entry.DeviceMapIdentifier.map(id => id.identifier);
@@ -27,13 +29,7 @@ const OsEntryListItem: React.FC<OsEntryListRowProps> = ({ entry }) => {
         <div className={styles.row}>
             <div className={styles.column}>
                 <h3>{entry.name}</h3>
-                <div className={styles.imageWrapper}>
-                    <picture>
-                        <source srcSet={`https://img.appledb.dev/device@main/${image}/${colors[0]}.avif`} type="image/avif" />
-                        <source srcSet={`https://img.appledb.dev/device@main/${image}/${colors[0]}.webp`} type="image/webp" />
-                        <img src={`https://img.appledb.dev/device@main/${image}/${colors[0]}.png`} alt={entry.name} />
-                    </picture>
-                </div>
+                <Image src={`https://img.appledb.dev/device@main/${image}/${colors[0]}`} alt={entry.name} className={styles.imageWrapper} />
             </div>
             <div className={styles.column}>
                 <ul>

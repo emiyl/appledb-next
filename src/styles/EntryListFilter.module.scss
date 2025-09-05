@@ -25,7 +25,7 @@ $boundary: 2.5em;
     inset: 0;
     
     backdrop-filter: blur(10px);
-    background: $liquid-glass-bg;
+    // background: $liquid-glass-bg;
     mask-image: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 1) 0%,
@@ -61,12 +61,13 @@ $boundary: 2.5em;
     // background: $c-bg-lighter;
     flex-grow: 1;
 
-    box-shadow: $liquid-glass-shadow;
-    background: $liquid-glass-bg;
-    backdrop-filter: $liquid-glass-bg-blur;
+    // box-shadow: $liquid-glass-shadow;
+    background: var(--c-bg-light);
+    // backdrop-filter: $liquid-glass-bg-blur;
+    box-shadow: var(--filter-item-shadow);
 
     i {
-        color: $c-text-light;
+        color: var(--c-text-light);
     }
 }
 
@@ -76,6 +77,7 @@ $boundary: 2.5em;
     font-size: 1em;
     background: none;
     width: 0px;
+    color: var(--c-text);
 
     &:focus {
         outline: none;
@@ -95,9 +97,8 @@ $boundary: 2.5em;
 }
 
 .filterItem {
-    box-shadow: $liquid-glass-shadow;
-    background: $liquid-glass-bg;
-    backdrop-filter: $liquid-glass-bg-blur;
+    box-shadow: var(--filter-item-shadow);
+    background: var(--c-bg-light);
 
     border-radius: 300px;
     display: flex;
@@ -120,71 +121,50 @@ $boundary: 2.5em;
     }
 
     &.release {
-        background: $c-release-lighter;
-        color: $c-release-text;
+        background: var(--c-release-lighter);
+        color: var(--c-release-text);
     }
     &.beta {
-        background: $c-beta-lighter;
-        color: $c-beta-text;
+        background: var(--c-beta-lighter);
+        color: var(--c-beta-text);
     }
     &.rc {
-        background: $c-rc-lighter;
-        color: $c-rc-text;
+        background: var(--c-rc-lighter);
+        color: var(--c-rc-text);
     }
     &.internal {
-        background: $c-internal-light;
-        color: $c-internal-text;
+        background: var(--c-internal-light);
+        color: var(--c-internal-text);
     }
 
     &:hover {
-        background: $c-border;
+        background: var(--c-border);
         transform: scale(1.02);
 
-        // &.add {
-        //     background: $c-border-dark;
-        // }
-        
-        // &.filterSelected .filterIcon {
-        //     background: $c-border-dark;
-        // }
-
         &.release {
-            background: $c-release-lighter;
+            background: var(--c-release-lighter);
             .filterIcon {
-                background: $c-release-light;
+                background: var(--c-release-light);
             }
         }
         &.beta {
-            background: $c-beta-lighter;
+            background: var(--c-beta-lighter);
             .filterIcon {
-                background: $c-beta-light;
+                background: var(--c-beta-light);
             }
         }
         &.rc {
-            background: $c-rc-lighter;
+            background: var(--c-rc-lighter);
             .filterIcon {
-                background: $c-rc-light;
+                background: var(--c-rc-light);
             }
         }
         &.internal {
-            background: $c-internal-lighter;
+            background: var(--c-internal-lighter);
             .filterIcon {
-                background: $c-internal-light;
+                background: var(--c-internal-light);
             }
         }
-    }
-}
-
-.filterContainer {
-    .filterItem {
-        transition: box-shadow .5s ease-in-out;
-    }
-}
-
-.filterContainer.stuck {
-    .filterItem {
-        transition: box-shadow .5s ease-in-out;
-        box-shadow: $liquid-glass-shadow-intense !important;
     }
 }
 

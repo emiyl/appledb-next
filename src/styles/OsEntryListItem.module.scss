@@ -8,13 +8,13 @@
     padding-block: 1.2em;
     margin-inline: 0em;
     cursor: pointer;
-    border-bottom: 1px solid $c-border;
+    border-bottom: 1px solid var(--c-border);
     transition: background $t-hover, color $t-hover;
 
     &:hover {
         border-radius: 12px;
-        background: $c-bg-light;
-        color: $c-text-accent;
+        background: var(--c-bg-light);
+        color: var(--c-text-accent);
         border-bottom: 1px solid #00000000;
         padding-inline: 1em;
         margin-inline: -1em;
@@ -45,7 +45,7 @@
 
     i {
         font-size: .3em;
-        color: $c-text-lightest;
+        color: var(--c-text-lightest);
     }
 }
 

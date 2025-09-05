@@ -1,0 +1,293 @@
+@use "sass:color";
+@use '@/styles/variables.scss' as *;
+
+// Light mode
+
+$c-bg: #f6f6f6;
+$c-bg-light: #f3f4f5;
+$c-bg-lighter: #eaeaea;
+$c-bg-arrow: #ccc;
+
+$c-brand: #17b3cf;
+
+$c-text: #2c3e50;
+$c-text-light: #3a5169;
+$c-text-lighter: #4e6e8e;
+$c-text-lightest: #6a8bad;
+$c-text-quote: #999;
+$c-text-accent: $c-brand;
+
+$c-border: #eaecef;
+$c-border-dark: #dfe2e5;
+
+$c-release: #039be5;
+$c-beta: #ab47bc;
+$c-rc: $c-beta;
+$c-internal: #fbc02d;
+$c-rsr: $c-text;
+$c-sdk: $c-text;
+$c-simulator: $c-text;
+
+$c-tip: #43b983;
+$c-tip-bg: $c-bg-light;
+$c-tip-title: $c-text;
+$c-tip-text: $c-text;
+$c-tip-text-accent: $c-text-accent;
+
+$c-warning: #e7c000;
+$c-warning-bg: #fffae3;
+$c-warning-title: #ad9000;
+$c-warning-text: #746000;
+$c-warning-text-accent: $c-text;
+
+$c-danger: #cc0000;
+$c-danger-bg: #ffe0e0;
+$c-danger-title: #990000;
+$c-danger-text: #660000;
+$c-danger-text-accent: $c-text;
+
+$c-details-bg: #eee;
+
+// Dark mode
+
+$c-dark-bg: #22272e;
+$c-dark-bg-light: #2b313a;
+$c-dark-bg-lighter: #262c34;
+$c-dark-bg-arrow: $c-bg-arrow;
+
+$c-dark-brand: $c-brand;
+
+$c-dark-text: #adbac7;
+$c-dark-text-light: #96a7b7;
+$c-dark-text-lighter: #8b9eb0;
+$c-dark-text-lightest: #8094a8;
+$c-dark-text-quote: $c-text-quote;
+$c-dark-text-accent: $c-text-accent;
+
+$c-dark-border: #3e4c5a;
+$c-dark-border-dark: #34404c;
+
+$c-dark-release: $c-release;
+$c-dark-beta: $c-beta;
+$c-dark-rc: $c-dark-beta;
+$c-dark-internal: $c-internal;
+$c-dark-rsr: $c-dark-text;
+$c-dark-sdk: $c-dark-text;
+$c-dark-simulator: $c-dark-text;
+
+$c-dark-tip: $c-tip;
+$c-dark-tip-bg: $c-dark-bg-light;
+$c-dark-tip-title: $c-dark-text;
+$c-dark-tip-text: $c-dark-text;
+$c-dark-tip-text-accent: $c-dark-text-accent;
+
+$c-dark-warning: $c-warning;
+$c-dark-warning-bg: $c-warning-bg;
+$c-dark-warning-title: $c-warning-title;
+$c-dark-warning-text: $c-warning-text;
+$c-dark-warning-text-accent: $c-dark-text-accent;
+
+$c-dark-danger: $c-danger;
+$c-dark-danger-bg: $c-danger-bg;
+$c-dark-danger-title: $c-danger-title;
+$c-dark-danger-text: $c-danger-text;
+$c-dark-danger-text-accent: $c-dark-text;
+
+$c-dark-details-bg: $c-details-bg;
+
+// CSS
+
+:root {
+    --c-brand: #{$c-brand};
+    --c-brand-light: #{color.adjust($c-brand, $lightness: 10%)};
+
+    --c-bg: #{$c-bg};
+    --c-bg-light: #{$c-bg-light};
+    --c-bg-lighter: #{$c-bg-lighter};
+    --c-bg-navbar: #{color.adjust($c-bg, $alpha: -0.5)};
+    --c-bg-sidebar: var(--c-bg);
+    --c-bg-arrow: #{$c-bg-arrow};
+
+    --c-text: #{$c-text};
+    --c-text-accent: #{$c-brand};
+    --c-text-light: #{$c-text-light};
+    --c-text-lighter: #{$c-text-lighter};
+    --c-text-lightest: #{$c-text-lightest};
+    --c-text-quote: #{$c-text-quote};
+
+    --c-border: #{$c-border};
+    --c-border-dark: #{$c-border-dark};
+
+    --c-release: #{$c-release};
+    --c-release-light: #{color.mix($c-release, $c-bg, $light-mix)};
+    --c-release-lighter: #{color.mix($c-release, $c-bg, $lighter-mix)};
+    --c-release-dark: #{color.mix($c-release, $c-text, $dark-mix)};
+    --c-release-text: #{color.mix($c-release, $c-text, $text-mix)};
+
+    --c-beta: #{$c-beta};
+    --c-beta-light: #{color.mix($c-beta, $c-bg, $light-mix)};
+    --c-beta-lighter: #{color.mix($c-beta, $c-bg, $lighter-mix)};
+    --c-beta-dark: #{color.mix($c-beta, $c-text, $dark-mix)};
+    --c-beta-text: #{color.mix($c-beta, $c-text, $text-mix)};
+
+    --c-rc: #{$c-rc};
+    --c-rc-light: #{color.mix($c-rc, $c-bg, $light-mix)};
+    --c-rc-lighter: #{color.mix($c-rc, $c-bg, $lighter-mix)};
+    --c-rc-dark: #{color.mix($c-rc, $c-text, $dark-mix)};
+    --c-rc-text: #{color.mix($c-rc, $c-text, $text-mix)};
+
+    --c-internal: #{$c-internal};
+    --c-internal-light: #{color.mix($c-internal, $c-bg, $light-mix)};
+    --c-internal-lighter: #{color.mix($c-internal, $c-bg, $lighter-mix)};
+    --c-internal-dark: #{color.mix($c-internal, $c-text, $dark-mix)};
+    --c-internal-text: #{color.mix($c-internal, $c-text, $text-mix)};
+
+    --c-rsr: #{$c-text};
+    --c-rsr-light: #{color.mix($c-rsr, $c-bg, $light-mix)};
+    --c-rsr-lighter: #{color.mix($c-rsr, $c-bg, $lighter-mix)};
+    --c-rsr-dark: #{color.mix($c-rsr, $c-text, $dark-mix)};
+    --c-rsr-text: #{color.mix($c-rsr, $c-text, $text-mix)};
+
+    --c-sdk: #{$c-sdk};
+    --c-sdk-light: #{color.mix($c-sdk, $c-bg, $light-mix)};
+    --c-sdk-lighter: #{color.mix($c-sdk, $c-bg, $lighter-mix)};
+    --c-sdk-dark: #{color.mix($c-sdk, $c-text, $dark-mix)};
+    --c-sdk-text: #{color.mix($c-sdk, $c-text, $text-mix)};
+
+    --c-simulator: #{$c-simulator};
+    --c-simulator-light: #{color.mix($c-simulator, $c-bg, $light-mix)};
+    --c-simulator-lighter: #{color.mix($c-simulator, $c-bg, $lighter-mix)};
+    --c-simulator-dark: #{color.mix($c-simulator, $c-text, $dark-mix)};
+    --c-simulator-text: #{color.mix($c-simulator, $c-text, $text-mix)};
+
+    --c-tip: #{$c-tip};
+    --c-tip-bg: #{$c-tip-bg};
+    --c-tip-title: #{$c-tip-title};
+    --c-tip-text: #{$c-tip-text};
+    --c-tip-text-accent: #{$c-tip-text-accent};
+
+    --c-warning: #{$c-warning};
+    --c-warning-bg: #{$c-warning-bg};
+    --c-warning-title: #{$c-warning-title};
+    --c-warning-text: #{$c-warning-text};
+    --c-warning-text-accent: #{$c-warning-text-accent};
+
+    --c-danger: #{$c-danger};
+    --c-danger-bg: #{$c-danger-bg};
+    --c-danger-title: #{$c-danger-title};
+    --c-danger-text: #{$c-danger-text};
+    --c-danger-text-accent: #{$c-danger-text-accent};
+
+    --c-details-bg: #{$c-details-bg};
+
+    --c-badge-tip: #{$c-tip};
+    --c-badge-warning: #{$c-warning};
+    --c-badge-danger: #{$c-danger};
+
+    --c-code-bg-color: #282c34;
+    --c-code-hl-bg-color: color.adjust(black, $alpha: -0.34);
+    --c-code-ln-color: #9e9e9e;
+
+    --filter-item-shadow: 0 12px 32px #00000010, 0 2px 6px #0000000f;
+    --navbar-border-bottom: 1px solid #{c-bg};
+    --navbar-shadow: 0 12px 32px #00000005,
+        0 2px 6px #0000000f;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --c-brand: #{$c-dark-brand};
+        --c-brand-light: #{color.adjust($c-dark-brand, $lightness: 10%)};
+
+        --c-bg: #{$c-dark-bg};
+        --c-bg-light: #{$c-dark-bg-light};
+        --c-bg-lighter: #{$c-dark-bg-lighter};
+        --c-bg-navbar: #{color.adjust($c-dark-bg, $alpha: -0.5)};
+        --c-bg-sidebar: var(--c-bg);
+        --c-bg-arrow: #{$c-dark-bg-arrow};
+
+        --c-text: #{$c-dark-text};
+        --c-text-accent: #{$c-dark-text-accent};
+        --c-text-light: #{$c-dark-text-light};
+        --c-text-lighter: #{$c-dark-text-lighter};
+        --c-text-lightest: #{$c-dark-text-lightest};
+        --c-text-quote: #{$c-dark-text-quote};
+
+        --c-border: #{$c-dark-border};
+        --c-border-dark: #{$c-dark-border-dark};
+
+        --c-release: #{$c-dark-release};
+        --c-release-light: #{color.mix($c-dark-release, $c-dark-bg, $light-mix)};
+        --c-release-lighter: #{color.mix($c-dark-release, $c-dark-bg, $lighter-mix)};
+        --c-release-dark: #{color.mix($c-dark-release, $c-dark-text, $dark-mix)};
+        --c-release-text: #{color.mix($c-dark-release, $c-dark-text, $text-mix)};
+
+        --c-beta: #{$c-dark-beta};
+        --c-beta-light: #{color.mix($c-dark-beta, $c-dark-bg, $light-mix)};
+        --c-beta-lighter: #{color.mix($c-dark-beta, $c-dark-bg, $lighter-mix)};
+        --c-beta-dark: #{color.mix($c-dark-beta, $c-dark-text, $dark-mix)};
+        --c-beta-text: #{color.mix($c-dark-beta, $c-dark-text, $text-mix)};
+
+        --c-rc: #{$c-dark-rc};
+        --c-rc-light: #{color.mix($c-dark-rc, $c-dark-bg, $light-mix)};
+        --c-rc-lighter: #{color.mix($c-dark-rc, $c-dark-bg, $lighter-mix)};
+        --c-rc-dark: #{color.mix($c-dark-rc, $c-dark-text, $dark-mix)};
+        --c-rc-text: #{color.mix($c-dark-rc, $c-dark-text, $text-mix)};
+
+        --c-internal: #{$c-dark-internal};
+        --c-internal-light: #{color.mix($c-dark-internal, $c-dark-bg, $light-mix)};
+        --c-internal-lighter: #{color.mix($c-dark-internal, $c-dark-bg, $lighter-mix)};
+        --c-internal-dark: #{color.mix($c-dark-internal, $c-dark-text, $dark-mix)};
+        --c-internal-text: #{color.mix($c-dark-internal, $c-dark-text, $text-mix)};
+
+        --c-rsr: #{$c-dark-rsr};
+        --c-rsr-light: #{color.mix($c-dark-rsr, $c-dark-bg, $light-mix)};
+        --c-rsr-lighter: #{color.mix($c-dark-rsr, $c-dark-bg, $lighter-mix)};
+        --c-rsr-dark: #{color.mix($c-dark-rsr, $c-dark-text, $dark-mix)};
+        --c-rsr-text: #{color.mix($c-dark-rsr, $c-dark-text, $text-mix)};
+
+        --c-sdk: #{$c-dark-sdk};
+        --c-sdk-light: #{color.mix($c-dark-sdk, $c-dark-bg, $light-mix)};
+        --c-sdk-lighter: #{color.mix($c-dark-sdk, $c-dark-bg, $lighter-mix)};
+        --c-sdk-dark: #{color.mix($c-dark-sdk, $c-dark-text, $dark-mix)};
+        --c-sdk-text: #{color.mix($c-dark-sdk, $c-dark-text, $text-mix)};
+
+        --c-simulator: #{$c-dark-simulator};
+        --c-simulator-light: #{color.mix($c-dark-simulator, $c-dark-bg, $light-mix)};
+        --c-simulator-lighter: #{color.mix($c-dark-simulator, $c-dark-bg, $lighter-mix)};
+        --c-simulator-dark: #{color.mix($c-dark-simulator, $c-dark-text, $dark-mix)};
+        --c-simulator-text: #{color.mix($c-dark-simulator, $c-dark-text, $text-mix)};
+
+        --c-tip: #{$c-dark-tip};
+        --c-tip-bg: #{$c-dark-tip-bg};
+        --c-tip-title: #{$c-dark-tip-title};
+        --c-tip-text: #{$c-dark-tip-text};
+        --c-tip-text-accent: #{$c-dark-tip-text-accent};
+
+        --c-warning: #{$c-dark-warning};
+        --c-warning-bg: #{$c-dark-warning-bg};
+        --c-warning-title: #{$c-dark-warning-title};
+        --c-warning-text: #{$c-dark-warning-text};
+        --c-warning-text-accent: #{$c-dark-warning-text-accent};
+
+        --c-danger: #{$c-dark-danger};
+        --c-danger-bg: #{$c-dark-danger-bg};
+        --c-danger-title: #{$c-dark-danger-title};
+        --c-danger-text: #{$c-dark-danger-text};
+        --c-danger-text-accent: #{$c-dark-danger-text-accent};
+
+        --c-details-bg: #{$c-dark-details-bg};
+
+        --c-badge-tip: #{$c-dark-tip};
+        --c-badge-warning: #{$c-dark-warning};
+        --c-badge-danger: #{$c-dark-danger};
+
+        --c-code-bg-color: #282c34;
+        --c-code-hl-bg-color: color.adjust(black, $alpha: -0.34);
+        --c-code-ln-color: #9e9e9e;
+
+        --filter-item-shadow: 0 12px 32px #00000010, 0 2px 6px #0000000f;
+        --navbar-border-bottom: 1px solid #{$c-dark-border};
+        --navbar-shadow: none;
+    }
+}

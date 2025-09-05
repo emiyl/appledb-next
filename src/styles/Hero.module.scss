@@ -6,7 +6,7 @@
     flex-wrap: wrap;
 
     a {
-        color: $c-text;
+        color: var(--c-text);
     }
 }
 
@@ -29,7 +29,7 @@
     p {
         font-size: 1.5em;
         font-weight: 500;
-        color: $c-text-lightest;
+        color: var(--c-text-lightest);
     }
 }
 
@@ -61,7 +61,7 @@
 
     p {
         margin-block: .3em 0;
-        color: $c-text-lighter;
+        color: var(--c-text-lighter);
         font-size: .8em;
         font-weight: 400;
     }

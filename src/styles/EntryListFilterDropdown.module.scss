@@ -9,12 +9,13 @@ $dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
     margin-right: 2em;
     padding: 1.5em;
 
-    // background: $c-bg;
-    // box-shadow: 0 12px 32px #00000010, 0 2px 6px #0000000f;
+    background: var(--c-bg-light);
+    box-shadow: var(--filter-item-shadow);
+    // border: 1px solid var(--c-border);
 
-    background: $liquid-glass-bg;
-    backdrop-filter: $liquid-glass-bg-blur;
-    box-shadow: $liquid-glass-shadow-drop;
+    // background: $liquid-glass-bg;
+    // backdrop-filter: $liquid-glass-bg-blur;
+    // box-shadow: $liquid-glass-shadow-drop;
 
     max-width: $dropdown-max-width;
 
@@ -30,6 +31,12 @@ $dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
         margin-block: 0em;
         width: 100%;
     }
+}
+
+.filterItem {
+    background: var(--c-bg-lighter);
+    box-shadow: none;
+    // border: 1px solid var(--c-border);
 }
 
 .row {

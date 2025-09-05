@@ -6,11 +6,11 @@ $dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
     position: absolute;
     right: calc(calc(100% - $content-width) / 2);
     margin-top: .75em;
-    background: $c-bg;
+    background: var(--c-bg-light);
     border-radius: 24px;
     
     padding: 1.5em;
-    box-shadow: $liquid-glass-shadow;
+    box-shadow: var(--filter-item-shadow);
 
     max-width: $dropdown-max-width;
 
@@ -39,6 +39,7 @@ $dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
     cursor: pointer;
     
     &::before {
+        background-color: var(--c-text-light); /* this sets the visible colour */
         content: '';
         display: inline-block;
         width: 1em;
@@ -46,33 +47,36 @@ $dropdown-max-width: calc($content-width * 0.8 - 8px - 3em);
         vertical-align: middle;
         transition: opacity 0.2s;
         opacity: 1;
-        background-color: $c-text-lightest;
     }
 }
 
 .reverseOrder::before {
-    background: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg');
-    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg') no-repeat center / contain;
-    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg') no-repeat center / contain;
+    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg')
+        no-repeat center / contain;
+    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg')
+        no-repeat center / contain;
 }
 
 .reverseOrder.active::before {
-    background: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg');
-    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg') no-repeat center / contain;
-    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg') no-repeat center / contain;
+    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg')
+        no-repeat center / contain;
+    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/up-down.svg')
+        no-repeat center / contain;
     transform: scaleY(-1);
 }
 
 .showBuildString::before {
-    background: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye.svg');
-    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye.svg') no-repeat center / contain;
-    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye.svg') no-repeat center / contain;
+    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye-slash.svg')
+        no-repeat center / contain;
+    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye-slash.svg')
+        no-repeat center / contain;
 }
 
 .showBuildString.active::before {
-    background: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye-slash.svg');
-    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye-slash.svg') no-repeat center / contain;
-    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye-slash.svg') no-repeat center / contain;
+    mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye.svg')
+        no-repeat center / contain;
+    -webkit-mask: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/svgs/solid/eye.svg')
+        no-repeat center / contain;
 }
 
 @media screen and (max-width: 800px) {

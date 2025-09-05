@@ -1,11 +1,9 @@
 @use '@/styles/variables.scss' as *;
 
 .navbar {
-    background: $c-bg-navbar;
+    background: var(--c-bg-navbar);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
-    box-shadow: 0 12px 32px #00000005,
-                0 2px 6px #0000000f;
 
     line-height: $navbar-line-height;
     padding: $navbar-padding-v $navbar-padding-h;
@@ -20,6 +18,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    border-bottom: var(--navbar-border-bottom);
+    box-shadow: var(--navbar-shadow);
 }
 
 .logo {
@@ -31,7 +32,7 @@
 .siteName {
     font-size: 1.3rem;
     font-weight: 600;
-    color: $c-text;
+    color: var(--c-text);
     position: relative;
 }
 

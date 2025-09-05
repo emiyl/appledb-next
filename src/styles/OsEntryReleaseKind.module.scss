@@ -2,7 +2,7 @@
 
 .releaseKind {
     border-radius: 4em;
-    color: $c-text;
+    color: var(--c-text);
     border: 1px solid;
     height: 1em;
 
@@ -24,30 +24,30 @@
     }
 
     &.release {
-        color: $c-release;
+        color: var(--c-release);
     }
 
     &.beta {
-        color: $c-beta;
+        color: var(--c-beta);
     }
 
     &.rc {
-        color: $c-rc;
+        color: var(--c-rc);
     }
 
     &.internal {
-        color: $c-internal;
+        color: var(--c-internal);
     }
 
     &.rsr {
-        color: $c-rsr;
+        color: var(--c-rsr);
     }
     
     &.sdk {
-        color: $c-sdk;
+        color: var(--c-sdk);
     }
     
     &.simulator {
-        color: $c-simulator;
+        color: var(--c-simulator);
     }
 }

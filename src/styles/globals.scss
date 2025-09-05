@@ -1,25 +1,26 @@
 @use '@/styles/variables.scss' as *;
+@use '@/styles/palette.scss' as *;
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  background-color: $c-bg;
+    padding: 0;
+    margin: 0;
+    background-color: var(--c-bg);
 }
 
 body {
-  font-family: $font-family;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 1rem;
-  color: $c-text;
+    font-family: $font-family;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1rem;
+    color: var(--c-text);
 }
 
 a {
-  font-weight: 500;
-  color: $c-text-accent;
-  text-decoration: none;
-  overflow-wrap: break-word;
+    font-weight: 500;
+    color: var(--c-text-accent);
+    text-decoration: none;
+    overflow-wrap: break-word;
 }
 
 h1,
@@ -28,16 +29,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
-  line-height: 1.25;
+    font-weight: 600;
+    line-height: 1.25;
 }
 
 h1 {
-  font-size: 2.2em;
+    font-size: 2.2em;
 }
 
 code {
-  font-family: $font-family-code;
-  font-size: 0.95em;
-  color: $c-text-lighter;
+    font-family: $font-family-code;
+    font-size: 0.95em;
+    color: var(--c-text-lighter);
 }

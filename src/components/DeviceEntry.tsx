@@ -1,10 +1,11 @@
 'use client';
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { obfuscateNumber } from "@/utils/obfuscate";
 import styles from '@/styles/DeviceEntry.module.scss';
 import { EntryList } from "./EntryList";
+import Image from "./Image";
 import { EntryType } from "@/types/EntryType";
+import { isDarkModeFunc } from "@/utils";
 
 type DeviceMapRelease = {
     datetime: string;
@@ -248,15 +249,12 @@ type DeviceImageProps = {
     color: { name: string; dark_mode: boolean };
 };
 
-const DeviceImage: React.FC<DeviceImageProps> = ({ deviceImageKey, name, color }) => (
-    <div className={styles.deviceImage}>
-        <picture>
-            <source srcSet={`https://img.appledb.dev/device@main/${deviceImageKey}/${color.name}.avif`} type="image/avif" />
-            <source srcSet={`https://img.appledb.dev/device@main/${deviceImageKey}/${color.name}.webp`} type="image/webp" />
-            <img src={`https://img.appledb.dev/device@main/${deviceImageKey}/${color.name}.png`} alt={name} loading="lazy" />
-        </picture>
-    </div>
-);
+const DeviceImage: React.FC<DeviceImageProps> = ({ deviceImageKey, name, color }) => {
+    const darkMode = isDarkModeFunc() && color.dark_mode;
+    const baseUrl = `https://img.appledb.dev/device@main/${deviceImageKey}/${color.name}${darkMode ? '_dark' : ''}`;
+
+    return <Image src={baseUrl} alt={name} className={styles.deviceImage} />;
+};
 
 type DeviceHeaderProps = {
     device: Device;
