@@ -9,17 +9,17 @@
     margin-inline: 0em;
     cursor: pointer;
     border-bottom: 1px solid var(--c-border);
-    transition: background $t-hover, color $t-hover;
+    transition: background $t-hover, color $t-hover, margin $t-hover, padding $t-hover, border $t-hover, border-radius $t-hover;
 
     &:hover {
         border-radius: 12px;
         background: var(--c-bg-light);
         color: var(--c-text-accent);
         border-bottom: 1px solid #00000000;
-        padding-inline: 1em;
-        margin-inline: -1em;
         margin-top: -1px;
         padding-top: calc(1.2em + 1px);
+        margin-inline: -1em;
+        padding-inline: 1em;
 
         &:first-of-type {
             margin-top: 0;
