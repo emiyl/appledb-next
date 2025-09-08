@@ -97,6 +97,22 @@ export async function GET(req: NextRequest) {
         }
         : undefined;
 
+    const legacyUniqueKeyFilter = searchParams.get('legacy_key')
+        ?.split(';')
+        .map((key) => key.trim())
+        .filter((key) => key.length > 0);
+        
+    const legacyUniqueKeyCondition = legacyUniqueKeyFilter && legacyUniqueKeyFilter.length > 0
+        ? {
+            legacy_unique_key: {
+                in: legacyUniqueKeyFilter,
+            },
+        }
+        : undefined;
+
+    const includeSourceTypesExclusive = searchParams.get('include_source_types_exclusive')?.split(';').map(s => s.trim()).filter(s => s.length > 0) || [];
+    const excludeSourceTypes = searchParams.get('exclude_source_types')?.split(';').map(s => s.trim()).filter(s => s.length > 0) || [];
+
     const rawSearch = searchParams.get("search");
     const searchString = rawSearch ? decodeURIComponent(rawSearch).trim() : undefined;
 
@@ -110,6 +126,7 @@ export async function GET(req: NextRequest) {
                 ...(filtersEnabled && !simulator ? [{ is_simulator: false }] : []),
                 ...(nameIdCondition ? [nameIdCondition] : []),
                 ...(deviceIdCondition ? [deviceIdCondition] : []),
+                ...(legacyUniqueKeyCondition ? [legacyUniqueKeyCondition] : []),
                 {
                     search: {
                         contains: searchString,
@@ -144,8 +161,76 @@ export async function GET(req: NextRequest) {
                     device_id: true,
                 },
             },
+            SourceEntry: deviceIdFilter && deviceIdFilter.length > 0
+                ? {
+                    where: {
+                        ...(includeSourceTypesExclusive.length > 0
+                            ? { source_type: { in: includeSourceTypesExclusive } }
+                            : {}),
+                        ...(excludeSourceTypes.length > 0
+                            ? { source_type: { notIn: excludeSourceTypes } }
+                            : {}),
+                    },
+                    select: {
+                        id: true,
+                        source_type: true,
+                        SourceLink: {
+                            select: {
+                                url: true
+                            }
+                        },
+                        SourceMapDevice: {
+                            where: {
+                                device_id: {
+                                    in: deviceIdFilter
+                                }
+                            },
+                            select: {
+                                device_id: true,
+                                source_id: true
+                            }
+                        }
+                    }
+                }
+                : {
+                    where: {
+                        ...(includeSourceTypesExclusive.length > 0
+                            ? { source_type: { in: includeSourceTypesExclusive } }
+                            : {}),
+                        ...(excludeSourceTypes.length > 0
+                            ? { source_type: { notIn: excludeSourceTypes } }
+                            : {}),
+                    },
+                    select: {
+                        id: true,
+                        source_type: true,
+                        SourceLink: {
+                            select: {
+                                url: true
+                            }
+                        }
+                    }
+                }
         },
     });
+
+    // If deviceIdFilter is active, filter SourceEntry to only those with a matching SourceMapDevice
+    if (deviceIdFilter && deviceIdFilter.length > 0) {
+        for (const entry of entriesRaw) {
+            if (entry.SourceEntry) {
+                entry.SourceEntry = entry.SourceEntry.filter((source: any) =>
+                    source.SourceMapDevice &&
+                    source.SourceMapDevice.some((map: any) =>
+                        map.source_id === source.id && deviceIdFilter.includes(map.device_id)
+                    )
+                ).map((source: any) => {
+                    // Remove SourceMapDevice from the response for cleanliness
+                    const { SourceMapDevice, ...rest } = source;
+                    return rest;
+                });
+            }
+        }
+    }
 
     // Map device_id to array
     const entries = entriesRaw.map(entry => ({

@@ -3,6 +3,8 @@ import styles from '@/styles/OsEntryListItem.module.scss';
 import OsEntryReleaseKindStyles from '@/styles/OsEntryReleaseKind.module.scss'
 import { OsEntry } from '@/types'
 import { formatDateToString, getOsEntryReleaseKinds } from '@/utils';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 
 const OsEntryReleaseKindFlag: React.FC<{ osEntryReleaseKind: string }> = ({ osEntryReleaseKind }) => {
     return (
@@ -19,6 +21,20 @@ const OsEntryListItem: React.FC<{
     showBuildString: boolean;
 }> = ({ entry, showBuildString }) => {
     const osEntryReleaseKinds = getOsEntryReleaseKinds(entry);
+    
+    const sourceEntries = entry.SourceEntry || [];
+
+    const eligibleSourceEntries = sourceEntries.filter(se => {
+        if (entry.OsLookupName.name === 'macOS') {
+            if (se.source_type === 'installassistant') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+        return true;
+    });
 
     return (
         <div className={styles.row}>
@@ -37,6 +53,17 @@ const OsEntryListItem: React.FC<{
                 />
             ))}
             <div className={styles.separator} />
+            {eligibleSourceEntries.length === 1 && (
+                <a
+                    href={eligibleSourceEntries[0].SourceLink[0]?.url}
+                    className={styles.downloadLink}
+                    rel="noopener noreferrer"
+                    title="Download"
+                >
+                    <FontAwesomeIcon icon={faDownload} />
+                </a>
+            )}
+            {eligibleSourceEntries.length > 1 && <FontAwesomeIcon icon={faFolderOpen} />}
             {entry.release_datetime && (
                 <div className={styles.releaseDate}>
                     {formatDateToString(entry.release_datetime, entry.release_datetime_depth)}

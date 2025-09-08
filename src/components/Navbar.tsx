@@ -11,7 +11,7 @@ interface NavbarItem {
 
 const navbarItems: NavbarItem[] = [
     { title: 'Devices', route: '/device' },
-    { title: 'Firmware Table', route: '/firmware' },
+    { title: 'Firmware', route: '/firmware' },
 ];
 
 export default function Navbar() {

@@ -6,7 +6,7 @@ import styles from '@/styles/layout.module.scss';
 export default function OsEntryListPage() {
   return (
     <main className={styles.content}>
-      <h1>Firmware Table</h1>
+      <h1>Firmware List</h1>
       <Suspense fallback={<div>Loading...</div>}>
         <EntryList entryType={EntryType.Os} />
       </Suspense>

@@ -34,12 +34,11 @@
         }
     },
     "api": {
-        "endpoint": "os-entries",
+        "endpoint": "firmware",
         "params": {
-            "search": "search",
-            "osName": "os_name",
             "page": "default",
-            "limit": 100
+            "limit": 100,
+            "include_source_types_exclusive": ["ipsw", "installassistant"]
         }
     }
 }

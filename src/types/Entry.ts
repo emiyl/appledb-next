@@ -14,6 +14,19 @@ export type OsEntry = {
     OsLookupName: {
         name: string;
     };
+    SourceEntry?: {
+        id: number;
+        source_type: string;
+        SourceLink: {
+            url: string;
+        }[];
+        SourceMapDevice: {
+            device_id: number;
+        }[];
+    }[];
+    MapDeviceOs: {
+        device_id: number;
+    }[];
 };
 
 export type DeviceEntry = {

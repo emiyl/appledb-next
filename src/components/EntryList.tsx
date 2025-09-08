@@ -77,10 +77,18 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
                 internal: filter.releaseKinds.internal.toString(),
                 sdk: filter.releaseKinds.sdk.toString(),
                 simulator: filter.releaseKinds.simulator.toString(),
-                search: filter[params.search].toString(),
+                search: filter.search.toString(),
                 reverse: settings.reverseOrder ? 'true' : 'false',
                 page: p.toString(),
                 limit: params.limit.toString(),
+                ...Object.fromEntries(
+                    Object.entries(params)
+                        .filter(([key]) => !['reverse', 'page', 'limit'].includes(key))
+                        .map(([key, value]) => [
+                            key,
+                            Array.isArray(value) ? value.join(';') : value
+                        ])
+                ),
                 ...Object.fromEntries(
                     Object.entries(filter.filters).map(([key, value]) => {
                         const v = value as { apiParam: string; active: { id: number }[] };
@@ -130,10 +138,18 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
             const p = params.page === 'default' ? page : parseInt(params.page as string);
 
             return {
-                search: filter[params.search],
+                search: filter.search.toString(),
                 reverse: settings.reverseOrder ? 'true' : 'false',
                 page: p.toString(),
                 limit: params.limit.toString(),
+                ...Object.fromEntries(
+                    Object.entries(params)
+                        .filter(([key]) => !['reverse', 'page', 'limit'].includes(key))
+                        .map(([key, value]) => [
+                            key,
+                            Array.isArray(value) ? value.join(';') : value
+                        ])
+                ),
                 ...Object.fromEntries(
                     Object.entries(filter.filters).map(([key, value]) => {
                         const v = value as { apiParam: string; active: { id: number }[] };

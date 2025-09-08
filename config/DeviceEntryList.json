@@ -19,7 +19,6 @@
     "api": {
         "endpoint": "device",
         "params": {
-            "search": "search",
             "page": "default",
             "limit": 25
         }

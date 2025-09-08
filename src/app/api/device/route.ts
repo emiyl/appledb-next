@@ -25,7 +25,7 @@ export async function GET(req: NextRequest) {
         ? decodeURIComponent(rawSearch).replace(/[%_]/g, '\\$&').trim()
         : undefined;
 
-    const legacyUniqueKey = searchParams.get("legacyKey")
+    const legacyUniqueKey = searchParams.get("legacy_key")
         ?.split(';');
 
     const reverse = searchParams.get('reverse') === 'true';

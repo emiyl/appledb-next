@@ -4,7 +4,7 @@ import { deobfuscateNumber } from '@/utils/obfuscate';
 
 async function findDeviceId(name: string) {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-    const url = `${baseUrl}/api/device?legacyKey=${name}`;
+    const url = `${baseUrl}/api/device?legacy_key=${name}`;
     const res = await fetch(url);
     if (!res.ok) {
         throw new Error('Failed to fetch device');
