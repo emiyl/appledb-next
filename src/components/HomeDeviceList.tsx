@@ -12,7 +12,7 @@ const HomeDeviceList = () => {
                     src: "https://img.appledb.dev/images@256/mac_combo/0",
                     alt: "Mac Devices",
                     label: "Mac",
-                    link: `/device/category/Mac.${[24,25,26,27,28,29,30,37,47,50].map(id => obfuscateNumber(id)).join(';')}`
+                    link: `/device/category/Macs`
                 },
                 {
                     src: "https://img.appledb.dev/images@256/iphone_combo/0",
@@ -24,7 +24,7 @@ const HomeDeviceList = () => {
                     src: "https://img.appledb.dev/images@256/ipad_combo/0",
                     alt: "iPads",
                     label: "iPad",
-                    link: `/device/category/iPad.${[51,52,53,54].map(id => obfuscateNumber(id)).join(';')}`
+                    link: `/device/category/iPads`
                 },
                 {
                     src: "https://img.appledb.dev/device@256/Watch7,8/Silver",
@@ -54,7 +54,7 @@ const HomeDeviceList = () => {
                     src: "https://img.appledb.dev/device@256/iPod classic/0",
                     alt: "iPods",
                     label: "iPod",
-                    link: `/device/category/iPod.${[56,57,58,59,60].map(id => obfuscateNumber(id)).join(';')}`
+                    link: `/device/category/iPods`
                 }
             ].map(device => (
                 <Link key={device.label} href={device.link}>

@@ -6,14 +6,17 @@ import { EntryType } from '@/types';
 const overrides = [
     {
         "name": "Mac",
+        "slug": "Macs",
         "ids": [24,25,26,27,28,29,30,37,47,50]
     },
     {
         "name": "iPad",
+        "slug": "iPads",
         "ids": [51,52,53,54]
     },
     {
         "name": "iPod",
+        "slug": "iPods",
         "ids": [56,57,58,59,60]
     }
 ]
@@ -45,7 +48,7 @@ async function findDeviceCategory(identifier: string | number): Promise<DeviceCa
 }
 
 export default async function DeviceEntryListPage({ params }: { params: any }) {
-    const { slug } = params;
+    const { slug } = await params;
     const categories = slug.split(encodeURIComponent(';'));
     const ids = categories.map((d: string) => d.split('.').pop());
 
@@ -79,17 +82,18 @@ export default async function DeviceEntryListPage({ params }: { params: any }) {
         }
     }
 
-    if (!categoriesData.length) {
+    const override = overrides.find(o =>
+        (slug === o.slug ||
+            (o.ids.every(id => categoriesData.some(cat => cat.id === id)) &&
+            o.ids.length === categoriesData.length))
+    );
+
+    if (!categoriesData.length && !override) {
         return <main className={styles.content}>
             <h1>Error</h1>
             <p>Error decoding category IDs</p>
         </main>;
     }
-
-    const override = overrides.find(o =>
-        o.ids.every(id => categoriesData.some(cat => cat.id === id)) &&
-        o.ids.length === categoriesData.length
-    );
 
     const title = override ? override.name : categoriesData.map(cat => cat.name).join(', ');
 
