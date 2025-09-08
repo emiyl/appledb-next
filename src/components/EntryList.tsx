@@ -26,7 +26,7 @@ type EntryTypeConfig<F, S, R, FR, D> = {
 
 function handleIdCsv(ids: string) {
     if (!ids) return [];
-    return ids.split(';').map((id: string) => deobfuscateNumber(Number(id.trim()))) || [];
+    return ids.split(';').map((id: string) => deobfuscateNumber(id.trim())) || [];
 }
 
 const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any>> = {
