@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMagnifyingGlass, faCog } from '@fortawesome/free-solid-svg-icons';
 import EntryListFilterDropdown from './EntryListFilterDropdown';
 import EntryListSettingsDropdown from './EntryListSettingsDropdown';
-import { EntryType, EntryListFilter, EntryListSettings, OsEntryListSettings, EntryListFilterItem } from '@/types';
+import { EntryType, EntryListFilter, EntryListSettings, EntryListFilterItem } from '@/types';
 
 type SearchRowProps = {
     entryType: EntryType;
@@ -74,7 +74,7 @@ const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, set
             </div>
             <div ref={settingsRef}>
                 <div
-                    className={styles.filterItem}
+                    className={`${styles.filterItem} ${styles.settingsIcon}`}
                     onClick={() => setShowSettingsDropdown(!showSettingsDropdown)}
                 >
                     <div className={styles.filterIcon}><FontAwesomeIcon icon={faCog} /></div>

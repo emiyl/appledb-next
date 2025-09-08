@@ -96,6 +96,16 @@ $boundary: 2.5em;
     margin-inline: -6px;
 }
 
+.settingsIcon {
+    .filterIcon {
+        transition: transform 0.25s ease-in-out;
+    }
+
+    &:hover .filterIcon {
+        transform: rotate(45deg);
+    }
+}
+
 .filterItem {
     box-shadow: var(--filter-item-shadow);
     background: var(--c-bg-light);
