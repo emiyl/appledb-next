@@ -25,7 +25,7 @@ export default async function DeviceEntryPage({ params }: { params: any }) {
     const obfuscatedDeviceIds = ids.map((id: string) => id);
     let deviceIds: string[] = [];
     try {
-        deviceIds = obfuscatedDeviceIds.map((id: string) => deobfuscateNumber(Number(id)).toString());
+        deviceIds = obfuscatedDeviceIds.map((id: string) => deobfuscateNumber(id).toString());
     } catch (error) {
         try {
             const searchString = decodeURIComponent(slug.replace(`.${ids}`, '').replace(/-/g, ' '));

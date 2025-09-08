@@ -6,6 +6,10 @@
     margin-top: 2em;
     gap: 2em;
 
+    a {
+        color: var(--c-text) !important;
+    }
+
     @media (max-width: 1400px) {
         grid-template-columns: repeat(4, 1fr);
     }

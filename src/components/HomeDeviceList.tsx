@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from '@/components/Image'
 import styles from '@/styles/HomeDeviceList.module.scss';
+import { obfuscateNumber } from '@/utils';
+import Link from 'next/link';
 
 const HomeDeviceList = () => {
     return (
@@ -9,48 +11,58 @@ const HomeDeviceList = () => {
                 {
                     src: "https://img.appledb.dev/images@256/mac_combo/0",
                     alt: "Mac Devices",
-                    label: "Mac"
+                    label: "Mac",
+                    link: `/device/category/Mac.${[24,25,26,27,28,29,30,37,47,50].map(id => obfuscateNumber(id)).join(';')}`
                 },
                 {
                     src: "https://img.appledb.dev/images@256/iphone_combo/0",
                     alt: "iPhones",
-                    label: "iPhone"
+                    label: "iPhone",
+                    link: `/device/category/iPhone.${obfuscateNumber(55)}`
                 },
                 {
                     src: "https://img.appledb.dev/images@256/ipad_combo/0",
                     alt: "iPads",
-                    label: "iPad"
+                    label: "iPad",
+                    link: `/device/category/iPad.${[51,52,53,54].map(id => obfuscateNumber(id)).join(';')}`
                 },
                 {
                     src: "https://img.appledb.dev/device@256/Watch7,8/Silver",
                     alt: "Apple Watches",
-                    label: "Apple Watch"
+                    label: "Apple Watch",
+                    link: `/device/category/Apple-Watch.${obfuscateNumber(8)}`
                 },
                 {
                     src: "https://img.appledb.dev/device@256/AppleTV14,1/0",
                     alt: "Apple TVs",
-                    label: "Apple TV"
+                    label: "Apple TV",
+                    link: `/device/category/Apple-TV.${obfuscateNumber(7)}`
                 },
                 {
                     src: "https://img.appledb.dev/device@256/AudioAccessory6,1/Midnight",
                     alt: "HomePods",
-                    label: "HomePod"
+                    label: "HomePod",
+                    link: `/device/category/HomePod.${obfuscateNumber(22)}`
                 },
                 {
                     src: "https://img.appledb.dev/images@256/airpods_4/0",
                     alt: "AirPods",
-                    label: "AirPods"
+                    label: "AirPods",
+                    link: `/device/category/AirPods.${obfuscateNumber(3)}`
                 },
                 {
                     src: "https://img.appledb.dev/device@256/iPod classic/0",
                     alt: "iPods",
-                    label: "iPod"
+                    label: "iPod",
+                    link: `/device/category/iPod.${[56,57,58,59,60].map(id => obfuscateNumber(id)).join(';')}`
                 }
             ].map(device => (
-                <div className={styles.gridBox} key={device.label}>
-                    <Image src={device.src} alt={device.alt} className={styles.gridImage} />
-                    <h3>{device.label}</h3>
-                </div>
+                <Link key={device.label} href={device.link}>
+                    <div className={styles.gridBox}>
+                        <Image src={device.src} alt={device.alt} className={styles.gridImage} />
+                        <h3>{device.label}</h3>
+                    </div>
+                </Link>
             ))}
         </div>
     );
