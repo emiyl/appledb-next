@@ -49,7 +49,7 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
 
     const [collapseNames, setCollapseNames] = React.useState(true);
     const [collapseNamesThreshold] = React.useState(5);
-    const currentActiveFilterItems = Object.values(filterItems).flatMap(item => item.active);
+    const currentActiveFilterItems = Object.values(filterItems).filter(item => !item.hidden).flatMap(item => item.active);
     let currentItemDrawn = 0;
 
     useEffect(() => {

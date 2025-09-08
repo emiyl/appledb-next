@@ -41,23 +41,25 @@ const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, set
 
     return (
         <div className={styles.searchRow}>
-            <div ref={dropdownRef}>
-                <div
-                    className={`${styles.filterItem} ${styles.add} ${styles.filterSelected} ${styles.toggleDropdown}`}
-                    onClick={() => setShowFilterDropdown(!showFilterDropdown)}
-                >
-                    <div className={styles.filterIcon}><FontAwesomeIcon icon={faPlus} /></div>
-                </div>
+            {Object.values(filterItems).some(item => !item.hidden) && (
+                <div ref={dropdownRef}>
+                    <div
+                        className={`${styles.filterItem} ${styles.add} ${styles.filterSelected} ${styles.toggleDropdown}`}
+                        onClick={() => setShowFilterDropdown(!showFilterDropdown)}
+                    >
+                        <div className={styles.filterIcon}><FontAwesomeIcon icon={faPlus} /></div>
+                    </div>
 
-                {showFilterDropdown && (
-                    <EntryListFilterDropdown
-                        entryType={entryType}
-                        filterObject={filter}
-                        setFilterObject={setFilter}
-                        filterItems={filterItems}
-                    />
-                )}
-            </div>
+                    {showFilterDropdown && (
+                        <EntryListFilterDropdown
+                            entryType={entryType}
+                            filterObject={filter}
+                            setFilterObject={setFilter}
+                            filterItems={filterItems}
+                        />
+                    )}
+                </div>
+            )}
             <div className={styles.searchContainer}>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                 <input
