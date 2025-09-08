@@ -11,27 +11,27 @@ function generateMask(num: number): number {
     return mask;
 }
 
-const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-function convertToBase64(num: number): string {
+function convertToBase62(num: number): string {
     let n = num;
     if (n === 0) return chars[0];
     let result = '';
     while (n > 0) {
-        result = chars[n % 64] + result;
-        n = Math.floor(n / 64);
+        result = chars[n % 62] + result;
+        n = Math.floor(n / 62);
     }
     return result;
 }
 
-function convertFromBase64(str: string): number {
+function convertFromBase62(str: string): number {
     let num = 0;
     for (let i = 0; i < str.length; i++) {
         const index = chars.indexOf(str[i]);
         if (index === -1) {
-            throw new Error('Invalid base64 input');
+            throw new Error('Invalid base62 input');
         }
-        num = num * 64 + index;
+        num = num * 62 + index;
     }
     return num;
 }
@@ -50,7 +50,7 @@ export function obfuscateNumber(num: number): string {
     mixed = ((mixed << 3) | (mixed >> 17)) & 0xFFFFF; // Rotate left by 3 bits
     const mask = generateMask(num);
     const obfuscated = (mixed ^ mask) % 1000000;
-    return convertToBase64(obfuscated);
+    return convertToBase62(obfuscated);
 }
 
 /**
@@ -58,8 +58,8 @@ export function obfuscateNumber(num: number): string {
  * @param obfuscatedNum The obfuscated 6-digit number
  * @returns The original number
  */
-export function deobfuscateNumber(obfuscatedBase64Num: string): number {
-    const obfuscatedNum = convertFromBase64(obfuscatedBase64Num);
+export function deobfuscateNumber(obfuscatedBase62Num: string): number {
+    const obfuscatedNum = convertFromBase62(obfuscatedBase62Num);
     if (!Number.isInteger(obfuscatedNum) || obfuscatedNum < 0 || obfuscatedNum > 999999) {
         throw new Error('Input must be an integer between 0 and 999999');
     }
