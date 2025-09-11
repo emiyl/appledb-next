@@ -31,6 +31,8 @@ export function getOsEntryReleaseKindLabel(kind: OsEntryReleaseKind): string {
             return "Release";
         case OsEntryReleaseKind.Beta:
             return "Beta";
+        case OsEntryReleaseKind.RC:
+            return "RC";
         case OsEntryReleaseKind.Internal:
             return "Internal";
         case OsEntryReleaseKind.SDK:
@@ -46,6 +48,8 @@ export function getOsEntryReleaseKindClass(kind: OsEntryReleaseKind): string {
             return styles.release;
         case OsEntryReleaseKind.Beta:
             return styles.beta;
+        case OsEntryReleaseKind.RC:
+            return styles.rc;
         case OsEntryReleaseKind.Internal:
             return styles.internal;
         case OsEntryReleaseKind.SDK:

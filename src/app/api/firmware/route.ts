@@ -54,15 +54,17 @@ export async function GET(req: NextRequest) {
 
     const release = searchParams.get('release') === 'true';
     const beta = searchParams.get('beta') === 'true';
+    const rc = searchParams.get('rc') === 'true';
     const internal = searchParams.get('internal') === 'true';
     const sdk = searchParams.get('sdk') === 'true';
     const simulator = searchParams.get('simulator') === 'true';
 
-    const filtersEnabled = release || beta || internal || sdk || simulator;
+    const filtersEnabled = release || beta || rc || internal || sdk || simulator;
 
     const kindFilters = [];
     if (release) kindFilters.push({ is_release: true });
     if (beta) kindFilters.push({ is_beta: true });
+    if (rc) kindFilters.push({ is_rc: true });
     if (internal) kindFilters.push({ is_internal: true });
 
     const nameIdFilter = searchParams.get('name_id')

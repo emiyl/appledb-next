@@ -41,7 +41,7 @@ const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, set
 
     return (
         <div className={styles.searchRow}>
-            {Object.values(filterItems).some(item => !item.hidden) && (
+            {(Object.values(filterItems).some(item => !item.hidden) || entryType == EntryType.Os) && (
                 <div ref={dropdownRef}>
                     <div
                         className={`${styles.filterItem} ${styles.add} ${styles.filterSelected} ${styles.toggleDropdown}`}

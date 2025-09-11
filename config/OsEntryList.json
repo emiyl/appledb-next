@@ -7,6 +7,7 @@
         "releaseKinds": {
             "Release": true,
             "Beta": true,
+            "RC": true,
             "Internal": false,
             "SDK": false,
             "Simulator": false

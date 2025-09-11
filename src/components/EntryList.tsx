@@ -74,6 +74,7 @@ const entryTypeConfig: Record<EntryType, EntryTypeConfig<any, any, any, any, any
             return {
                 release: filter.releaseKinds.release.toString(),
                 beta: filter.releaseKinds.beta.toString(),
+                rc: filter.releaseKinds.rc.toString(),
                 internal: filter.releaseKinds.internal.toString(),
                 sdk: filter.releaseKinds.sdk.toString(),
                 simulator: filter.releaseKinds.simulator.toString(),
