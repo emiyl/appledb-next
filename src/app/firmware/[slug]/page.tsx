@@ -2,11 +2,7 @@ import { deobfuscateNumber } from '@/utils';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-interface FirmwarePageProps {
-    params: { slug: string };
-}
-
-export default async function FirmwarePage({ params }: FirmwarePageProps) {
+export default async function FirmwarePage({ params }: { params: any }) {
     const { slug } = await params;
     const firmwares = slug.split(encodeURIComponent(';'));
     const obfuscatedFirmwareIDs = firmwares.map((d: string) => d.split('.').pop());
@@ -15,7 +11,7 @@ export default async function FirmwarePage({ params }: FirmwarePageProps) {
         notFound();
     }
 
-    const firmwareIDs = obfuscatedFirmwareIDs.map((id) => {
+    const firmwareIDs = obfuscatedFirmwareIDs.map((id: string) => {
         if (typeof id !== 'string') {
             notFound();
         }
