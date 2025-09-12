@@ -17,24 +17,36 @@ const OsEntryListFilterDropdownReleaseKind: React.FC<OsEntryListFilterDropdownRe
                 <h3>Release types</h3>
             </div>
             <div className={styles.row}>
-            {
+                {
                     Object.values(OsEntryReleaseKind)
-                    .filter(kind => !filter.releaseKinds[kind])
-                    .map((kind) => (
-                        <EntryListFilterItem
-                            key={kind}
-                            label={getOsEntryReleaseKindLabel(kind)}
-                            icon={faPlus}
-                            classes={[getOsEntryReleaseKindClass(kind), styles.filterItem]}
-                            onClick={() => setFilter(prev => ({
-                                ...prev,
-                                releaseKinds: {
-                                    ...prev.releaseKinds,
-                                    [kind]: !prev.releaseKinds[kind]
-                                }
-                            }))}
-                        />
-                    ))
+                        .filter(kind => kind !== OsEntryReleaseKind.RC && !filter.releaseKinds[kind])
+                        .map((kind) => (
+                            <EntryListFilterItem
+                                key={kind}
+                                label={getOsEntryReleaseKindLabel(kind)}
+                                icon={faPlus}
+                                classes={[getOsEntryReleaseKindClass(kind), styles.filterItem]}
+                                onClick={() => setFilter(prev => {
+                                    if (kind === OsEntryReleaseKind.Beta) {
+                                        return {
+                                            ...prev,
+                                            releaseKinds: {
+                                                ...prev.releaseKinds,
+                                                [OsEntryReleaseKind.Beta]: !prev.releaseKinds[OsEntryReleaseKind.Beta],
+                                                [OsEntryReleaseKind.RC]: !prev.releaseKinds[OsEntryReleaseKind.Beta]
+                                            }
+                                        };
+                                    }
+                                    return {
+                                        ...prev,
+                                        releaseKinds: {
+                                            ...prev.releaseKinds,
+                                            [kind]: !prev.releaseKinds[kind]
+                                        }
+                                    };
+                                })}
+                            />
+                        ))
                 }
             </div>
         </>

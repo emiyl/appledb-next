@@ -11,7 +11,7 @@ export function getOsEntryReleaseKinds(entry: OsEntry): OsEntryReleaseKind[] {
         kinds.push(OsEntryReleaseKind.Beta);
     }
     if (entry.is_rc) {
-        kinds.push(OsEntryReleaseKind.Beta);
+        kinds.push(OsEntryReleaseKind.RC);
     }
     if (entry.is_internal) {
         kinds.push(OsEntryReleaseKind.Internal);

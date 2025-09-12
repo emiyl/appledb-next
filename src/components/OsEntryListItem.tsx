@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '@/styles/OsEntryListItem.module.scss';
 import OsEntryReleaseKindStyles from '@/styles/OsEntryReleaseKind.module.scss'
-import { OsEntry } from '@/types'
+import { OsEntry, OsEntryReleaseKind } from '@/types'
 import { formatDateToString, getOsEntryReleaseKinds } from '@/utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
@@ -21,7 +21,6 @@ const OsEntryListItem: React.FC<{
     showBuildString: boolean;
 }> = ({ entry, showBuildString }) => {
     const osEntryReleaseKinds = getOsEntryReleaseKinds(entry);
-    
     const sourceEntries = entry.SourceEntry || [];
 
     const eligibleSourceEntries = sourceEntries.filter(se => {
@@ -35,6 +34,7 @@ const OsEntryListItem: React.FC<{
         
         return true;
     });
+
 
     return (
         <div className={styles.row}>

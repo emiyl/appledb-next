@@ -85,7 +85,7 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
                 {
                     entryType === EntryType.Os &&
                     Object.values(OsEntryReleaseKind)
-                        .filter(kind => (filter as OsEntryListFilter).releaseKinds[kind])
+                        .filter(kind => kind !== OsEntryReleaseKind.RC && (filter as OsEntryListFilter).releaseKinds[kind])
                         .map((kind) => {
                             if (collapseNames && currentItemDrawn >= collapseNamesThreshold) return null;
                             currentItemDrawn++;
@@ -95,13 +95,29 @@ const EntryListFilterRow: React.FC<EntryListFilterProps> = ({ entryType, filter,
                                     label={getOsEntryReleaseKindLabel(kind)}
                                     icon={faXmark}
                                     classes={[getOsEntryReleaseKindClass(kind)]}
-                                    onClick={() => setFilter(prev => ({
-                                        ...prev,
-                                        releaseKinds: {
-                                            ...(prev as OsEntryListFilter).releaseKinds,
-                                            [kind]: !(prev as OsEntryListFilter).releaseKinds[kind]
+                                    onClick={() => setFilter(prev => {
+                                        if (kind === OsEntryReleaseKind.Beta) {
+                                            // Toggle both Beta and RC
+                                            const prevReleaseKinds = (prev as OsEntryListFilter).releaseKinds;
+                                            const newValue = !prevReleaseKinds[OsEntryReleaseKind.Beta];
+                                            return {
+                                                ...prev,
+                                                releaseKinds: {
+                                                    ...prevReleaseKinds,
+                                                    [OsEntryReleaseKind.Beta]: newValue,
+                                                    [OsEntryReleaseKind.RC]: newValue
+                                                }
+                                            };
+                                        } else {
+                                            return {
+                                                ...prev,
+                                                releaseKinds: {
+                                                    ...(prev as OsEntryListFilter).releaseKinds,
+                                                    [kind]: !(prev as OsEntryListFilter).releaseKinds[kind]
+                                                }
+                                            };
                                         }
-                                    }))}
+                                    })}
                                 />
                             )
                         })
