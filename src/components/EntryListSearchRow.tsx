@@ -41,7 +41,7 @@ const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, set
 
     function dropdownStyle(showDropdown: boolean): React.CSSProperties {
         return {
-            transition: 'opacity 0.2s ease-in-out',
+            transition: 'opacity 0.2s ease-in-out, visibility 0.2s ease-in-out',
             opacity: showDropdown ? 1 : 0,
             visibility: showDropdown ? 'visible' : 'hidden',
             pointerEvents: showDropdown ? 'auto' : 'none',
