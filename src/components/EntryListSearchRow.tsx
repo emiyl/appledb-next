@@ -39,6 +39,15 @@ const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, set
         };
     }, []);
 
+    function dropdownStyle(showDropdown: boolean): React.CSSProperties {
+        return {
+            transition: 'opacity 0.2s ease-in-out',
+            opacity: showDropdown ? 1 : 0,
+            visibility: showDropdown ? 'visible' : 'hidden',
+            pointerEvents: showDropdown ? 'auto' : 'none',
+        };
+    }
+
     return (
         <div className={styles.searchRow}>
             {(Object.values(filterItems).some(item => !item.hidden) || entryType == EntryType.Os) && (
@@ -50,14 +59,14 @@ const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, set
                         <div className={styles.filterIcon}><FontAwesomeIcon icon={faPlus} /></div>
                     </div>
 
-                    {showFilterDropdown && (
+                    <div style={dropdownStyle(showFilterDropdown)}>
                         <EntryListFilterDropdown
                             entryType={entryType}
                             filterObject={filter}
                             setFilterObject={setFilter}
                             filterItems={filterItems}
                         />
-                    )}
+                    </div>
                 </div>
             )}
             <div className={styles.searchContainer}>
@@ -80,13 +89,13 @@ const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, set
                     <div className={styles.filterIcon}><FontAwesomeIcon icon={faCog} /></div>
                 </div>
 
-                {showSettingsDropdown && (
+                <div style={dropdownStyle(showSettingsDropdown)}>
                     <EntryListSettingsDropdown
                         entryType={entryType}
                         settings={settings}
                         setSettings={setSettings}
                     />
-                )}
+                </div>
             </div>
         </div>
     );
