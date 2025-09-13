@@ -212,23 +212,22 @@ export function EntryList({ entryType, overrideFilter }: { entryType: EntryType,
     }, [filter, settings, entryType]);
 
     useEffect(() => {
-        if (areParamsChanging.current) {
-            areParamsChanging.current = false;
-        } else {
+        // Only load more if not on first page (handled by filter/settings effect)
+        if (page > 1) {
             loadEntries(true, page);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page]);
 
     useEffect(() => {
-        if (hasMounted.current) {
-            areParamsChanging.current = true;
-            setPage(1);
-            areParamsChanging.current = false;
-            loadEntries(false, 1);
-        } else {
-            hasMounted.current = true;
-        }
-    }, [filter, settings]);
+        // When filter/settings change, reset entries and page, then load first page
+        setEntries([]);
+        setPage(1);
+        setHasMore(true);
+        setNoEntriesText("Loading...");
+        loadEntries(false, 1);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [filter, settings, entryType]);
 
     useEffect(() => {
         if (!loaderRef.current || !hasMore) return;
