@@ -69,7 +69,9 @@ $gap: 1.5em;
 .imageWrapper {
     display: flex;
     gap: .5em;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
+    height: 8em;
+    overflow: hidden;
 }
 
 .imageItem {
