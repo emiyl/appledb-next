@@ -99,7 +99,12 @@ export default async function DeviceEntryListPage({ params }: { params: any }) {
 
     return (
         <main className={styles.content}>
-            <h1 style={{marginBottom: '28px'}}>Device List ({title})</h1>
+            <div style={{marginBottom: '28px'}}>
+                <h1>Device List ({title})</h1>
+                <p>
+                    Please select a device from the list below.
+                </p>
+            </div>
             <EntryList entryType={EntryType.Device} overrideFilter={{
                 "filters": {
                     "category": {
