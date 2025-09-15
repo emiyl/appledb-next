@@ -21,5 +21,15 @@ export function formatDateToString(date: Date, depth: number): string | undefine
             throw new Error('Invalid depth value. Use 1, 2, or 3.');
     }
 
+    if (!(date instanceof Date) || isNaN(date.getTime())) {
+        try {
+            date = new Date(date);
+            if (isNaN(date.getTime())) {
+                throw new Error('Invalid date object provided.');
+            }
+        } catch {
+            throw new Error('Invalid date object provided.');
+        }
+    }
     return date.toLocaleDateString('en-US', options);
 }
