@@ -28,17 +28,19 @@ const OsEntryListItem: React.FC<OsEntryListRowProps> = ({ entry }) => {
     return (
         <div className={styles.row}>
             <div className={styles.column}>
-                <h3>{entry.name}</h3>
-                <div className={styles.imageWrapper}>
-                    {colors.slice(0, 3).map((color, idx) => (
-                        <Image
-                            key={idx}
-                            src={`https://img.appledb.dev/device@main/${image}/${color}`}
-                            alt={entry.name}
-                            className={styles.imageItem}
-                        />
-                    ))}
-                </div>
+                <Link href={`/device/${entry.name.replace(/\s+/g, '-').replace(/[^\w-]+/g, '')}.${obfuscateNumber(entry.id)}`}>
+                    <h3 className={styles.deviceName}>{entry.name}</h3>
+                    <div className={styles.imageWrapper}>
+                        {colors.slice(0, 3).map((color, idx) => (
+                            <Image
+                                key={idx}
+                                src={`https://img.appledb.dev/device@main/${image}/${color}`}
+                                alt={entry.name}
+                                className={styles.imageItem}
+                            />
+                        ))}
+                    </div>
+                </Link>
             </div>
             <div className={styles.column}>
                 <ul>
@@ -47,7 +49,7 @@ const OsEntryListItem: React.FC<OsEntryListRowProps> = ({ entry }) => {
                     {models.length > 0 && <li>Model{models.length > 1 ? 's' : ''}: {models.join(', ')}</li>}
                     {releaseDate.length > 0 ? <li>Released on {releaseDate[0]}</li> : <li>Unknown release date</li>}
                 </ul>
-                <div className={styles.mobileDate}>
+                <div className={styles.deviceLink}>
                     <Link href={`/device/${entry.name.replace(/\s+/g, '-').replace(/[^\w-]+/g, '')}.${obfuscateNumber(entry.id)}`}>View device page</Link>
                 </div>
             </div>

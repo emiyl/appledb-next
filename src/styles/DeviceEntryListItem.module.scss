@@ -44,6 +44,14 @@ $gap: 1.5em;
     }
 }
 
+.deviceName {
+    color: var(--c-text);
+}
+
+.deviceLink {
+    color: var(--c-brand);
+}
+
 @media (max-width: 600px) {
     .row {
         flex-direction: column;
@@ -53,7 +61,7 @@ $gap: 1.5em;
         width: 100%;
     }
     
-    .mobileDate {
+    .deviceLink {
         margin-top: .5em;
     }
 }
