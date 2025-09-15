@@ -49,10 +49,12 @@ const OsEntryListItem: React.FC<{
                     type="button"
                     className={styles.downloadLink}
                     title="Download"
-                    onClick={() => {
+                    onClick={e => {
+                        e.stopPropagation();
+                        e.preventDefault();
                         const url = eligibleSourceEntries[0].SourceLink[0]?.url;
                         if (url) {
-                            window.open(url, 'noopener,noreferrer');
+                            window.location.href = url;
                         }
                     }}
                 >

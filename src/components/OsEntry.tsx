@@ -14,7 +14,7 @@ const OsEntryComponent: React.FC<OsEntryProps> = ({ entry }) => {
     return (
         <div>
             <h1 className={styles.title}>{entry.OsLookupName.name} {entry.version}</h1>
-            <p className={styles.meta}>
+            <div className={styles.meta}>
                 {entry.release_datetime && (
                     <span>
                         {formatDateToString(entry.release_datetime, entry.release_datetime_depth)}
@@ -27,7 +27,7 @@ const OsEntryComponent: React.FC<OsEntryProps> = ({ entry }) => {
                         osEntryReleaseKind={kind}
                     />
                 ))}
-            </p>
+            </div>
 
             <h2>JSON</h2>
             <pre>
