@@ -22,6 +22,7 @@ const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, set
 
     const dropdownRef = useRef<HTMLDivElement>(null);
     const settingsRef = useRef<HTMLDivElement>(null);
+    const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
@@ -75,10 +76,16 @@ const SearchRow: React.FC<SearchRowProps> = ({ entryType, filter, setFilter, set
                     type="text"
                     placeholder="Search..."
                     className={styles.searchBar}
-                    onChange={(e) => setFilter((prev) => ({
-                        ...prev,
-                        search: e.target.value
-                    }))}
+                    onChange={(e) => {
+                        const value = e.target.value;
+                        if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
+                        debounceTimeout.current = setTimeout(() => {
+                            setFilter((prev) => ({
+                                ...prev,
+                                search: value
+                            }));
+                        }, 300);
+                    }}
                 />
             </div>
             <div ref={settingsRef}>
