@@ -1,32 +1,27 @@
 import { deobfuscateNumber } from '@/utils';
-import { Metadata } from 'next';
+import OsEntry from '@/components/OsEntry';
 import { notFound } from 'next/navigation';
+import styles from '@/styles/layout.module.scss';
 
 export default async function FirmwarePage({ params }: { params: any }) {
     const { slug } = await params;
-    const firmwares = slug.split(encodeURIComponent(';'));
-    const obfuscatedFirmwareIDs = firmwares.map((d: string) => d.split('.').pop());
+    const obfuscatedFirmwareID = slug.split('.').pop();
 
-    if (!obfuscatedFirmwareIDs) {
+    if (!obfuscatedFirmwareID) {
         notFound();
     }
 
-    const firmwareIDs = obfuscatedFirmwareIDs.map((id: string) => {
-        if (typeof id !== 'string') {
-            notFound();
-        }
-        try {
-            return deobfuscateNumber(id).toString();
-        } catch (error) {
-            notFound();
-        }
-    });
+    const firmwareID = deobfuscateNumber(obfuscatedFirmwareID).toString();
+
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/firmware?id=${firmwareID}`);
+    if (!res.ok) {
+        notFound();
+    }
+    const firmware = await res.json();
 
     return (
-        <main>
-            <h1>Firmware: {slug}</h1>
-            {/* Render firmware details here */}
-            <p>Firmware details will appear here.</p>
+        <main className={styles.content}>
+            <OsEntry entry={firmware[0]} />
         </main>
     );
 }

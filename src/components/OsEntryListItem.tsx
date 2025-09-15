@@ -1,20 +1,11 @@
 import React from 'react';
 import styles from '@/styles/OsEntryListItem.module.scss';
-import OsEntryReleaseKindStyles from '@/styles/OsEntryReleaseKind.module.scss'
-import { OsEntry, OsEntryReleaseKind } from '@/types'
-import { formatDateToString, getOsEntryReleaseKinds } from '@/utils';
+import { OsEntry } from '@/types'
+import { formatDateToString, getOsEntryReleaseKinds, obfuscateNumber } from '@/utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
-
-const OsEntryReleaseKindFlag: React.FC<{ osEntryReleaseKind: string }> = ({ osEntryReleaseKind }) => {
-    return (
-        <div
-            className={`${OsEntryReleaseKindStyles.releaseKind} ${OsEntryReleaseKindStyles[osEntryReleaseKind] || ''}`}
-        >
-            {osEntryReleaseKind}
-        </div>
-    );
-};
+import OsEntryReleaseKindFlag from './OsEntryReleaseKindFlag';
+import Link from 'next/link';
 
 const OsEntryListItem: React.FC<{
     entry: OsEntry;
@@ -37,9 +28,9 @@ const OsEntryListItem: React.FC<{
 
 
     return (
-        <div className={styles.row}>
+        <Link href={`/firmware/${entry.OsLookupName.name.replace(/\s+/g, '-')}-${entry.version.replace(/\s+/g, '-')}.${obfuscateNumber(entry.id)}`} className={styles.row}>
             <div className={styles.name}>
-                {`${entry.OsLookupName.name} ${entry.version}`}
+                {entry.OsLookupName.name} {entry.version}
             </div>
             {showBuildString && entry.build && (
                 <code className={styles.build}>
@@ -54,14 +45,19 @@ const OsEntryListItem: React.FC<{
             ))}
             <div className={styles.separator} />
             {eligibleSourceEntries.length === 1 && (
-                <a
-                    href={eligibleSourceEntries[0].SourceLink[0]?.url}
+                <button
+                    type="button"
                     className={styles.downloadLink}
-                    rel="noopener noreferrer"
                     title="Download"
+                    onClick={() => {
+                        const url = eligibleSourceEntries[0].SourceLink[0]?.url;
+                        if (url) {
+                            window.open(url, 'noopener,noreferrer');
+                        }
+                    }}
                 >
                     <FontAwesomeIcon icon={faDownload} />
-                </a>
+                </button>
             )}
             {eligibleSourceEntries.length > 1 && <FontAwesomeIcon icon={faFolderOpen} />}
             {entry.release_datetime && (
@@ -69,7 +65,7 @@ const OsEntryListItem: React.FC<{
                     {formatDateToString(entry.release_datetime, entry.release_datetime_depth)}
                 </div>
             )}
-        </div>
+        </Link>
     );
 };
 

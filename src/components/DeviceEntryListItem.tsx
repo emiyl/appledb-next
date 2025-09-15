@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '@/styles/DeviceEntryListRow.module.scss';
+import styles from '@/styles/DeviceEntryListItem.module.scss';
 import { DeviceEntry } from '@/types'
 import { formatDateToString, isDarkModeFunc } from '@/utils';
 import { obfuscateNumber } from '@/utils/obfuscate';
@@ -29,7 +29,16 @@ const OsEntryListItem: React.FC<OsEntryListRowProps> = ({ entry }) => {
         <div className={styles.row}>
             <div className={styles.column}>
                 <h3>{entry.name}</h3>
-                <Image src={`https://img.appledb.dev/device@main/${image}/${colors[0]}`} alt={entry.name} className={styles.imageWrapper} />
+                <div className={styles.imageWrapper}>
+                    {colors.slice(0, 3).map((color, idx) => (
+                        <Image
+                            key={idx}
+                            src={`https://img.appledb.dev/device@main/${image}/${color}`}
+                            alt={entry.name}
+                            className={styles.imageItem}
+                        />
+                    ))}
+                </div>
             </div>
             <div className={styles.column}>
                 <ul>

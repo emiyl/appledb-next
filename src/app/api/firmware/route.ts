@@ -67,6 +67,19 @@ export async function GET(req: NextRequest) {
     if (rc) kindFilters.push({ is_rc: true });
     if (internal) kindFilters.push({ is_internal: true });
 
+    const firmwareIdFilter = searchParams.get('id')
+        ?.split(';')
+        .map((id) => parseInt(id))
+        .filter((id) => !isNaN(id));
+
+    const firmwareIdCondition = firmwareIdFilter && firmwareIdFilter.length > 0
+        ? {
+            id: {
+                in: firmwareIdFilter,
+            },
+        }
+        : undefined;
+
     const nameIdFilter = searchParams.get('name_id')
         ?.split(';')
         .map((id) => parseInt(id))
@@ -126,6 +139,7 @@ export async function GET(req: NextRequest) {
                 ...(kindFilters.length > 0 ? [{ OR: kindFilters }] : []),
                 ...(filtersEnabled && !sdk ? [{ is_sdk: false }] : []),
                 ...(filtersEnabled && !simulator ? [{ is_simulator: false }] : []),
+                ...(firmwareIdCondition ? [firmwareIdCondition] : []),
                 ...(nameIdCondition ? [nameIdCondition] : []),
                 ...(deviceIdCondition ? [deviceIdCondition] : []),
                 ...(legacyUniqueKeyCondition ? [legacyUniqueKeyCondition] : []),

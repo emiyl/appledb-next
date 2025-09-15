@@ -59,6 +59,12 @@ $gap: 1.5em;
 }
 
 .imageWrapper {
+    display: flex;
+    gap: .5em;
+    flex-flow: row nowrap;
+}
+
+.imageItem {
     height: 8em;
     display: flex;
     align-items: center;
