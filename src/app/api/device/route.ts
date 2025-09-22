@@ -179,7 +179,7 @@ export async function GET(req: NextRequest) {
 
         GROUP BY d.id, c.name, i.name
 
-        ORDER BY MIN(r.datetime) ${orderDirection} NULLS LAST
+        ORDER BY MIN(r.datetime) ${orderDirection} NULLS LAST, d.name ASC
         OFFSET $1
         LIMIT $2;
     `, ...params);
